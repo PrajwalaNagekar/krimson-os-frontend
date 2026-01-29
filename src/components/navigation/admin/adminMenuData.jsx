@@ -1,0 +1,111 @@
+import React from "react";
+import {
+  LayoutDashboard,
+  Users,
+  UserPlus,
+  Settings,
+  Briefcase,
+  DollarSign,
+  CheckSquare,
+  Bell,
+  FileText,
+  Activity,
+  Server,
+  BarChart,
+  LifeBuoy,
+  Database,
+  Building,
+} from "lucide-react";
+
+export const ADMIN_MENU_ITEMS = [
+  {
+    id: "ad1",
+    name: "Control Dashboard",
+    path: "/dashboard/admin",
+    icon: <LayoutDashboard size={20} />,
+  },
+  {
+    id: "ad2",
+    name: "Admissions Console",
+    path: "/dashboard/admin/admissions",
+    icon: <UserPlus size={20} />,
+  },
+  {
+    id: "ad3",
+    name: "User Management",
+    path: "/dashboard/admin/users",
+    icon: <Users size={20} />,
+  },
+  {
+    id: "ad4",
+    name: "Class Config",
+    path: "/dashboard/admin/classes",
+    icon: <Building size={20} />,
+  },
+  {
+    id: "ad5",
+    name: "HR Admin",
+    path: "/dashboard/admin/hr",
+    icon: <Briefcase size={20} />,
+  },
+  {
+    id: "ad6",
+    name: "Finance Control",
+    path: "/dashboard/admin/finance",
+    icon: <DollarSign size={20} />,
+  },
+  {
+    id: "ad7",
+    name: "Attendance Oversight",
+    path: "/dashboard/admin/attendance",
+    icon: <CheckSquare size={20} />,
+  },
+  {
+    id: "ad8",
+    name: "Notification Center",
+    path: "/dashboard/admin/notifications",
+    icon: <Bell size={20} />,
+  },
+  {
+    id: "ad9",
+    name: "Compliance Vault",
+    path: "/dashboard/admin/compliance",
+    icon: <FileText size={20} />,
+  },
+  {
+    id: "ad10",
+    name: "Audit Trail",
+    path: "/dashboard/admin/audit",
+    icon: <Activity size={20} />,
+  },
+  {
+    id: "ad11",
+    name: "Infrastructure",
+    path: "/dashboard/admin/infrastructure",
+    icon: <Server size={20} />,
+  },
+  {
+    id: "ad12",
+    name: "Data Recovery",
+    path: "/dashboard/admin/backup",
+    icon: <Database size={20} />,
+  },
+  {
+    id: "ad13",
+    name: "Analytics Engine",
+    path: "/dashboard/admin/analytics",
+    icon: <BarChart size={20} />,
+  },
+  {
+    id: "ad14",
+    name: "System Config",
+    path: "/dashboard/admin/settings",
+    icon: <Settings size={20} />,
+  },
+  {
+    id: "ad15",
+    name: "Support Tickets",
+    path: "/dashboard/admin/helpdesk",
+    icon: <LifeBuoy size={20} />,
+  },
+];
