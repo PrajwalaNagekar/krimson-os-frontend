@@ -7,14 +7,14 @@ import {
 } from 'lucide-react';
 
 const AttendanceTracker = () => {
-  const { attendance } = STUDENT_DATA;
+  const { attendance, attendanceContext } = STUDENT_DATA;
+  const { currentMonth, daysInMonth, heatmapStart } = attendanceContext;
 
   /* =========================
      MONTHLY HEATMAP DATA
   ========================= */
-  const daysInMonth = 31;
   const calendarGrid = Array.from({ length: daysInMonth }, (_, i) => {
-    const dateStr = `2026-01-${String(i + 1).padStart(2, '0')}`;
+    const dateStr = `${heatmapStart}${String(i + 1).padStart(2, '0')}`;
     let status = 'neutral';
 
     if (attendance.heatmap.present.includes(dateStr)) status = 'present';
@@ -114,7 +114,7 @@ const AttendanceTracker = () => {
           <div className="bg-white p-8 rounded-3xl shadow-sm">
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-bold text-slate-800">
-                January 2026
+                {currentMonth}
               </h3>
               <div className="flex gap-4 text-xs font-bold text-slate-500">
                 <span className="flex items-center gap-1">

@@ -11,28 +11,8 @@ const Support = () => {
   const [ticketForm, setTicketForm] = useState({ subject: '', category: 'Academic', description: '', priority: 'Medium' });
   const [ticketSubmitted, setTicketSubmitted] = useState(false);
 
-  const user = STUDENT_DATA.user;
-
-  // Mock FAQs
-  const faqs = [
-    // Academic
-    { id: 1, question: "How do I start a new assignment?", category: "Academic", answer: "Go to the Assignments tab, click on the assignment card, and press 'Start'. Ensure you submit before the due date." },
-    { id: 2, question: "My grade isn't updating after submission.", category: "Academic", answer: "Grades may take up to 24 hours to sync after teacher approval. If it takes longer, please raise a ticket." },
-    { id: 3, question: "Where can I find the exam syllabus?", category: "Academic", answer: "The syllabus is available in the 'Resources' section under each subject folder, or directly on the Exam Dashboard." },
-    { id: 4, question: "How do I request a re-evaluation?", category: "Academic", answer: "You can request a re-evaluation within 3 days of result declaration via the 'Grades' page." },
-    
-    // Technical
-    { id: 5, question: "I can't log in to the library portal.", category: "Technical", answer: "Ensure you are using your student ID (e.g., S-2023-XXX). Reset your password in Settings if the issue persists." },
-    { id: 6, question: "How to connect to school WiFi?", category: "Technical", answer: "Use network 'School_Student' and your student credentials. If it fails, forget the network and try again." },
-    { id: 7, question: "My profile picture isn't uploading.", category: "Technical", answer: "Please ensure the image file is under 2MB and in JPG or PNG format." },
-    { id: 8, question: "Tablet/Laptop not syncing with projector.", category: "Technical", answer: "For screen mirroring issues, ensure both devices are on the same 'Classroom' network." },
-
-    // Wellness
-    { id: 9, question: "I feel overwhelmed with exam stress.", category: "Wellness", answer: "It's okay to feel this way. Visit the Wellness Corner to book a session with our counselor or try our breathing exercises." },
-    { id: 10, question: "How to manage study time better?", category: "Wellness", answer: "Check out the 'Study Tips' in your Analytics dashboard or speak to a student mentor for a personalized schedule." },
-    { id: 11, question: "Who can I talk to about bullying?", category: "Wellness", answer: "We have a zero-tolerance policy. Please reach out to the Counselor directly or submit an anonymous report via the 'Request Help' tab." },
-    { id: 12, question: "I'm having trouble sleeping due to anxiety.", category: "Wellness", answer: "Our Wellness Corner has guided sleep meditations. If it persists, please book a chat with the school counselor." },
-  ];
+  const { user, supportFaqs } = STUDENT_DATA;
+  const faqs = supportFaqs.faqs;
 
   const filteredFaqs = faqs.filter(f => f.question.toLowerCase().includes(searchQuery.toLowerCase()) || f.category.toLowerCase().includes(searchQuery.toLowerCase()));
 
@@ -262,38 +242,27 @@ const Support = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 hover:border-green-200 transition-all">
-                      <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-4">
-                          <Book size={24} />
-                      </div>
-                      <h3 className="font-bold text-slate-800 text-lg mb-2">Stress Management Guide</h3>
-                      <p className="text-sm text-slate-500 mb-4">Techniques to handle exam pressure and anxiety.</p>
-                      <button className="text-green-600 text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
-                          Read Article <ChevronRight size={16} />
-                      </button>
-                  </div>
+                  {supportFaqs.wellnessArticles.map((article, idx) => {
+                      const Icon = { Book, Heart, User }[article.icon] || Book;
+                      const colors = {
+                        green: { bg: 'bg-green-100', text: 'text-green-600', hover: 'hover:border-green-200' },
+                        blue: { bg: 'bg-blue-100', text: 'text-blue-600', hover: 'hover:border-blue-200' },
+                        purple: { bg: 'bg-purple-100', text: 'text-purple-600', hover: 'hover:border-purple-200' }
+                      }[article.color] || { bg: 'bg-gray-100', text: 'text-gray-600', hover: 'hover:border-gray-200' };
 
-                  <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 hover:border-blue-200 transition-all">
-                      <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-4">
-                          <Heart size={24} />
-                      </div>
-                      <h3 className="font-bold text-slate-800 text-lg mb-2">Mindfulness Exercises</h3>
-                      <p className="text-sm text-slate-500 mb-4">5-minute breathing exercises to reset your focus.</p>
-                      <button className="text-blue-600 text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
-                          Start Session <ChevronRight size={16} />
-                      </button>
-                  </div>
-
-                   <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 hover:border-purple-200 transition-all">
-                      <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center mb-4">
-                          <User size={24} />
-                      </div>
-                      <h3 className="font-bold text-slate-800 text-lg mb-2">Peer Support Group</h3>
-                      <p className="text-sm text-slate-500 mb-4">Join the weekly student support circle on Fridays.</p>
-                      <button className="text-purple-600 text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
-                          View Details <ChevronRight size={16} />
-                      </button>
-                  </div>
+                      return (
+                          <div key={idx} className={`bg-white p-6 rounded-3xl shadow-sm border border-slate-100 ${colors.hover} transition-all`}>
+                              <div className={`w-12 h-12 ${colors.bg} ${colors.text} rounded-xl flex items-center justify-center mb-4`}>
+                                  <Icon size={24} />
+                              </div>
+                              <h3 className="font-bold text-slate-800 text-lg mb-2">{article.title}</h3>
+                              <p className="text-sm text-slate-500 mb-4">{article.desc}</p>
+                              <button className={`${colors.text} text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all`}>
+                                  {article.action} <ChevronRight size={16} />
+                              </button>
+                          </div>
+                      );
+                  })}
               </div>
            </div>
        )}

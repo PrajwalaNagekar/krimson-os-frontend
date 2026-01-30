@@ -5,8 +5,9 @@ import { authService } from '../../../services/authService';
 import { X, Plus, Trash2, Camera, User, Phone, Mail, Lock, Bell, CheckCircle, Shield, FileText, Download, AlertCircle, Layout } from 'lucide-react';
 
 const ProfileAndGoals = () => {
-  const [profileData, setProfileData] = useState(STUDENT_DATA.profile);
-  const [userData, setUserData] = useState(authService.getCurrentUser() || STUDENT_DATA.user);
+  const { profile, user, analytics, profileActivityLog } = STUDENT_DATA;
+  const [profileData, setProfileData] = useState(profile);
+  const [userData, setUserData] = useState(authService.getCurrentUser() || user);
   
   // Tab State
   const [activeTab, setActiveTab] = useState('overview'); // 'overview', 'security', 'preferences', 'permissions', 'activity'
@@ -23,11 +24,7 @@ const ProfileAndGoals = () => {
     theme: 'light'
   });
 
-  const [activityLog] = useState([
-    { id: 1, action: 'Login', time: 'Today, 09:00 AM', ip: '192.168.1.10' },
-    { id: 2, action: 'Submitted Assignment', time: 'Yesterday, 02:30 PM', ip: '192.168.1.10' },
-    { id: 3, action: 'Updated Profile', time: 'Jan 10, 11:15 AM', ip: '192.168.1.10' },
-  ]);
+  const activityLog = profileActivityLog.recentActivity;
 
   // Handlers
   const handleEditProfile = () => setActiveModal('profile');
@@ -69,7 +66,7 @@ const ProfileAndGoals = () => {
 
   const combinedProfileData = {
     ...profileData,
-    overallGrade: STUDENT_DATA.analytics.grade,
+    overallGrade: analytics.grade,
     onEditProfile: handleEditProfile,
     onEditGoals: handleEditGoals,
     onEditInterests: handleEditInterests,

@@ -3,7 +3,7 @@ import { STUDENT_DATA } from '../../../data/studentData';
 import { Download, TrendingUp, TrendingDown, Minus, Quote, BookOpen, Calculator, Award } from 'lucide-react';
 
 const GradesReport = () => {
-  const { grades } = STUDENT_DATA;
+  const { grades, gradesTeacherInsights } = STUDENT_DATA;
   const user = STUDENT_DATA.user;
 
   // Function to handle printing/downloading PDF
@@ -196,13 +196,15 @@ const GradesReport = () => {
               <div className="p-4 bg-orange-50/50 rounded-2xl border border-orange-100 relative">
                 <Quote className="absolute top-4 left-4 text-orange-200" size={40} />
                 <p className="relative z-10 text-slate-700 text-sm italic leading-relaxed pt-2 pl-4">
-                  "Jude has shown remarkable improvement in <span className="font-bold text-orange-700">Mathematics</span> and Physics this term. His problem-solving skills have advanced significantly. However, he needs to focus more on <span className="font-bold text-slate-800">History</span> essays to improve his overall grade."
+                  {gradesTeacherInsights.remarks.split(/(\*\*.*?\*\*)/).map((part, i) => 
+                      part.startsWith('**') ? <span key={i} className="font-bold text-orange-700">{part.slice(2, -2)}</span> : part
+                  )}
                 </p>
                 <div className="mt-4 flex items-center gap-3 relative z-10 pl-4">
-                  <div className="w-8 h-8 rounded-full bg-orange-200 flex items-center justify-center text-orange-700 font-bold text-xs">SA</div>
+                  <div className="w-8 h-8 rounded-full bg-orange-200 flex items-center justify-center text-orange-700 font-bold text-xs">{gradesTeacherInsights.teacherInitials}</div>
                   <div>
-                    <p className="text-xs font-bold text-slate-800">Sarah Anderson</p>
-                    <p className="text-[10px] text-slate-400">Class Teacher</p>
+                    <p className="text-xs font-bold text-slate-800">{gradesTeacherInsights.teacherName}</p>
+                    <p className="text-[10px] text-slate-400">{gradesTeacherInsights.teacherRole}</p>
                   </div>
                 </div>
               </div>
@@ -210,17 +212,18 @@ const GradesReport = () => {
               <div className="p-4 bg-blue-50/50 rounded-2xl border border-blue-100">
                 <h4 className="font-bold text-blue-800 text-sm mb-2">Areas of Strength</h4>
                 <div className="flex flex-wrap gap-2">
-                   <span className="px-3 py-1 bg-white border border-blue-100 rounded-full text-xs font-medium text-blue-600 shadow-sm">Critical Thinking</span>
-                   <span className="px-3 py-1 bg-white border-blue-100 border rounded-full text-xs font-medium text-blue-600 shadow-sm">Mathematical Logic</span>
-                   <span className="px-3 py-1 bg-white border border-blue-100 rounded-full text-xs font-medium text-blue-600 shadow-sm">Peer Collaboration</span>
+                   {gradesTeacherInsights.strengths.map((strength, idx) => (
+                      <span key={idx} className="px-3 py-1 bg-white border border-blue-100 rounded-full text-xs font-medium text-blue-600 shadow-sm">{strength}</span>
+                   ))}
                 </div>
               </div>
 
                <div className="p-4 bg-red-50/50 rounded-2xl border border-red-100">
                 <h4 className="font-bold text-red-800 text-sm mb-2">Areas for Improvement</h4>
                  <div className="flex flex-wrap gap-2">
-                   <span className="px-3 py-1 bg-white border border-red-100 rounded-full text-xs font-medium text-red-600 shadow-sm">Time Management</span>
-                   <span className="px-3 py-1 bg-white border border-red-100 rounded-full text-xs font-medium text-red-600 shadow-sm">Essay Structure</span>
+                   {gradesTeacherInsights.improvements.map((improvement, idx) => (
+                      <span key={idx} className="px-3 py-1 bg-white border border-red-100 rounded-full text-xs font-medium text-red-600 shadow-sm">{improvement}</span>
+                   ))}
                 </div>
               </div>
             </div>

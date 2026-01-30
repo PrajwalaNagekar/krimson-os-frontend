@@ -11,7 +11,7 @@ import {
 
 const MyProgress = () => {
   const navigate = useNavigate();
-  const { myProgress, resources } = STUDENT_DATA; // Destructure resources
+  const { myProgress, resources, chapterDetails } = STUDENT_DATA;
   const [selectedSubject, setSelectedSubject] = useState('All');
   const [selectedChapter, setSelectedChapter] = useState(null);
   
@@ -93,60 +93,7 @@ const MyProgress = () => {
 
   // Mock assignments and quizzes for each chapter
   const getChapterDetails = (chapterId) => {
-    // In real implementation, this would come from studentData
-    const assignmentsMock = [
-      { id: 1, name: 'Problem Set 1', status: 'completed', score: 95 },
-      { id: 2, name: 'Worksheet Practice', status: 'completed', score: 88 },
-      { id: 3, name: 'Advanced Problems', status: 'in-progress', score: null },
-    ];
-
-    const quizzesMock = [
-      { id: 1, name: 'Chapter Quiz', status: 'completed', score: 92 },
-      { id: 2, name: 'Practice Test', status: 'pending', score: null },
-    ];
-
-    const aiSuggestions = [
-      {
-        id: 1,
-        type: 'Remedial',
-        title: 'Core Concept Review',
-        description: 'Review the fundamental principles to improve your baseline understanding.',
-        icon: <RefreshCw size={18} className="text-orange-500" />,
-        color: 'bg-orange-50 border-orange-200 text-orange-700',
-        badge: 'Needs Attention'
-      },
-      {
-        id: 2,
-        type: 'Concept',
-        title: 'Advanced Applications',
-        description: 'Explore real-world applications to deepen your mastery of this topic.',
-        icon: <Lightbulb size={18} className="text-purple-500" />,
-        color: 'bg-purple-50 border-purple-200 text-purple-700',
-        badge: 'Recommended'
-      }
-    ];
-
-    // Mock Concept Weakness Data (linked to specific topics)
-    const conceptWeaknesses = [
-      {
-        id: 1,
-        topic: 'Quadratic Formula',
-        weakness: 'Sign Errors in Discriminant',
-        observation: 'Frequent calculation errors when a or c is negative.',
-        recommendation: 'Use parentheses for every substitution: b² - 4(a)(c)',
-        fix: 'Practice: 5 Discriminant Calcs'
-      },
-      {
-        id: 2,
-        topic: 'Nature of Roots',
-        weakness: 'Condition Memorization',
-        observation: 'Mixing up conditions for D > 0 (real/distinct) and D = 0 (real/equal).',
-        recommendation: 'Visualizing the graph touching vs crossing the x-axis helps retention.',
-        fix: 'Review: Graphical Interpretation'
-      }
-    ];
-
-    return { assignments: assignmentsMock, quizzes: quizzesMock, aiSuggestions, conceptWeaknesses };
+     return chapterDetails[chapterId] || chapterDetails.default;
   };
 
   return (
@@ -453,7 +400,11 @@ const MyProgress = () => {
                     <div key={suggestion.id} className={`p-4 rounded-xl border ${suggestion.color} transition-all hover:shadow-md cursor-pointer group`}>
                       <div className="flex justify-between items-start mb-2">
                         <div className="p-2 bg-white rounded-lg shadow-sm group-hover:scale-110 transition-transform">
-                          {suggestion.icon}
+                          {(() => {
+                            const IconCmp = { RefreshCw, TrendingUp, Lightbulb }[suggestion.icon] || Lightbulb;
+                            const iconColor = suggestion.type === 'Remedial' ? 'text-orange-500' : 'text-purple-500';
+                            return <IconCmp size={18} className={iconColor} />;
+                          })()}
                         </div>
                         <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-1 bg-white/50 rounded-md">
                           {suggestion.type}

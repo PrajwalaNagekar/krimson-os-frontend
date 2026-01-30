@@ -3,7 +3,7 @@ import { STUDENT_DATA } from '../../../data/studentData';
 import { TrendingUp, Target, Award, Lightbulb } from 'lucide-react';
 
 const PerformanceAnalytics = () => {
-  const { analytics, user } = STUDENT_DATA;
+  const { analytics, analyticsFocusArea } = STUDENT_DATA;
 
   // --- SVG Radar Chart Helpers ---
   const radarRadius = 100;
@@ -183,10 +183,10 @@ const PerformanceAnalytics = () => {
                </div>
             </div>
 
-            <div className="bg-orange-50 border border-orange-100 p-6 rounded-3xl">
-                <h4 className="font-bold text-orange-800 mb-2">Focus Area</h4>
-                <p className="text-sm text-orange-700">
-                    Your <strong>Chemistry</strong> score (78%) is slightly below your average. Consistent revision of organic compounds is recommended this week.
+            <div className={`bg-${analyticsFocusArea.color}-50 border border-${analyticsFocusArea.color}-100 p-6 rounded-3xl`}>
+                <h4 className={`font-bold text-${analyticsFocusArea.color}-800 mb-2`}>Focus Area</h4>
+                <p className={`text-sm text-${analyticsFocusArea.color}-700`}>
+                    {analyticsFocusArea.message}
                 </p>
             </div>
          </div>

@@ -3,16 +3,10 @@ import { STUDENT_DATA } from '../../../data/studentData';
 import { Calendar, Clock, FileText, TrendingUp, AlertTriangle, Download, BarChart3, TrendingDown, Award, ExternalLink } from 'lucide-react';
 
 const ExamDashboard = () => {
-  const { exams } = STUDENT_DATA;
+  const { exams, examPerformance } = STUDENT_DATA;
 
   // Mock performance data
-  const performanceData = {
-    average: 82,
-    strongest: { subject: 'Mathematics', score: 95 },
-    weakest: { subject: 'History', score: 68 },
-    term1Avg: 78,
-    term2Avg: 86
-  };
+
 
   return (
     <div className="space-y-8">
@@ -105,10 +99,10 @@ const ExamDashboard = () => {
               <div>
                 <div className="flex justify-between text-xs font-bold text-slate-500 mb-2">
                   <span>Average Score</span>
-                  <span className="text-blue-600">{performanceData.average}%</span>
+                  <span className="text-blue-600">{examPerformance.average}%</span>
                 </div>
                 <div className="w-full bg-slate-100 h-3 rounded-full overflow-hidden">
-                  <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full transition-all shadow-md" style={{ width: `${performanceData.average}%` }}></div>
+                  <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full transition-all shadow-md" style={{ width: `${examPerformance.average}%` }}></div>
                 </div>
               </div>
               
@@ -118,8 +112,8 @@ const ExamDashboard = () => {
                   <Award className="text-green-600" size={24} />
                   <div className="flex-1">
                     <p className="text-xs font-bold text-green-700 uppercase">Strongest Subject</p>
-                    <p className="text-base font-bold text-slate-800">{performanceData.strongest.subject}</p>
-                    <p className="text-sm font-bold text-green-600">{performanceData.strongest.score}%</p>
+                    <p className="text-base font-bold text-slate-800">{examPerformance.strongest.subject}</p>
+                    <p className="text-sm font-bold text-green-600">{examPerformance.strongest.score}%</p>
                   </div>
                 </div>
               </div>
@@ -130,8 +124,8 @@ const ExamDashboard = () => {
                   <TrendingDown className="text-red-600" size={24} />
                   <div className="flex-1">
                     <p className="text-xs font-bold text-red-700 uppercase">Needs Improvement</p>
-                    <p className="text-base font-bold text-slate-800">{performanceData.weakest.subject}</p>
-                    <p className="text-sm font-bold text-red-600">{performanceData.weakest.score}%</p>
+                    <p className="text-base font-bold text-slate-800">{examPerformance.weakest.subject}</p>
+                    <p className="text-sm font-bold text-red-600">{examPerformance.weakest.score}%</p>
                   </div>
                 </div>
               </div>
@@ -152,11 +146,11 @@ const ExamDashboard = () => {
               <div>
                 <div className="flex justify-between text-xs font-bold text-slate-500 mb-2">
                   <span>Term 1</span>
-                  <span className="text-purple-600">{performanceData.term1Avg}%</span>
+                  <span className="text-purple-600">{examPerformance.term1Avg}%</span>
                 </div>
                 <div className="w-full bg-slate-100 h-8 rounded-full overflow-hidden">
-                  <div className="bg-gradient-to-r from-purple-400 to-pink-400 h-full rounded-full flex items-center justify-end pr-3 text-white text-xs font-bold" style={{ width: `${performanceData.term1Avg}%` }}>
-                    {performanceData.term1Avg}%
+                  <div className="bg-gradient-to-r from-purple-400 to-pink-400 h-full rounded-full flex items-center justify-end pr-3 text-white text-xs font-bold" style={{ width: `${examPerformance.term1Avg}%` }}>
+                    {examPerformance.term1Avg}%
                   </div>
                 </div>
               </div>
@@ -164,11 +158,11 @@ const ExamDashboard = () => {
               <div>
                 <div className="flex justify-between text-xs font-bold text-slate-500 mb-2">
                   <span>Term 2</span>
-                  <span className="text-cyan-600">{performanceData.term2Avg}%</span>
+                  <span className="text-cyan-600">{examPerformance.term2Avg}%</span>
                 </div>
                 <div className="w-full bg-slate-100 h-8 rounded-full overflow-hidden">
-                  <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full flex items-center justify-end pr-3 text-white text-xs font-bold" style={{ width: `${performanceData.term2Avg}%` }}>
-                    {performanceData.term2Avg}%
+                  <div className="bg-gradient-to-r from-cyan-400 to-blue-500 h-full rounded-full flex items-center justify-end pr-3 text-white text-xs font-bold" style={{ width: `${examPerformance.term2Avg}%` }}>
+                    {examPerformance.term2Avg}%
                   </div>
                 </div>
               </div>
@@ -177,7 +171,7 @@ const ExamDashboard = () => {
               <div className="flex items-center gap-2 p-3 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
                 <TrendingUp className="text-green-600" size={16} />
                 <span className="text-xs font-bold text-green-700">
-                  +{performanceData.term2Avg - performanceData.term1Avg}% Improvement
+                  +{examPerformance.term2Avg - examPerformance.term1Avg}% Improvement
                 </span>
               </div>
             </div>

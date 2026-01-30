@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { STUDENT_DATA } from '../../../data/studentData';
 import { 
   BookOpen, Calendar, AlertCircle, CheckCircle, Clock, 
   ChevronDown, ChevronUp, XCircle, Trophy, User, Hash,
@@ -10,84 +11,8 @@ const LibraryAccount = () => {
   const [showHistory, setShowHistory] = useState(false);
   const [hoveredCard, setHoveredCard] = useState(null);
 
-  // Mock student data
-  const studentInfo = {
-    name: 'Alex Johnson',
-    studentId: 'STU2024001',
-    academicYear: '2025-2026',
-  };
-
-  // Mock issued books data
-  const issuedBooks = [
-    {
-      id: 1,
-      bookTitle: 'Advanced Physics: Quantum Mechanics',
-      author: 'Dr. Sarah Mitchell',
-      issueDate: '2026-01-10',
-      dueDate: '2026-02-10',
-      status: 'issued',
-      daysRemaining: 14,
-    },
-    {
-      id: 2,
-      bookTitle: 'Mathematical Analysis Vol. 2',
-      author: 'Prof. James Chen',
-      issueDate: '2026-01-15',
-      dueDate: '2026-01-30',
-      status: 'dueSoon',
-      daysRemaining: 3,
-    },
-    {
-      id: 3,
-      bookTitle: 'Introduction to Organic Chemistry',
-      author: 'Dr. Emily Parker',
-      issueDate: '2025-12-20',
-      dueDate: '2026-01-20',
-      status: 'overdue',
-      daysOverdue: 7,
-    },
-    {
-      id: 4,
-      bookTitle: 'World History: Modern Era',
-      author: 'Michael Anderson',
-      issueDate: '2026-01-05',
-      dueDate: '2026-02-05',
-      status: 'issued',
-      daysRemaining: 9,
-    },
-  ];
-
-  // Mock borrowing history
-  const borrowingHistory = [
-    {
-      id: 1,
-      bookTitle: 'Fundamentals of Biology',
-      issueDate: '2025-11-01',
-      returnDate: '2025-11-28',
-      status: 'returnedOnTime',
-    },
-    {
-      id: 2,
-      bookTitle: 'English Literature Anthology',
-      issueDate: '2025-10-15',
-      returnDate: '2025-11-20',
-      status: 'returnedLate',
-    },
-    {
-      id: 3,
-      bookTitle: 'Calculus and Analytical Geometry',
-      issueDate: '2025-09-05',
-      returnDate: '2025-10-04',
-      status: 'returnedOnTime',
-    },
-    {
-      id: 4,
-      bookTitle: 'Environmental Science',
-      issueDate: '2025-08-20',
-      returnDate: '2025-09-19',
-      status: 'returnedOnTime',
-    },
-  ];
+  const { libraryData, user } = STUDENT_DATA;
+  const { currentLoans: issuedBooks, borrowingHistory } = libraryData;
 
   // Calculate overdue summary
   const overdueInfo = {
@@ -193,13 +118,13 @@ const LibraryAccount = () => {
                 <div className="p-1.5 bg-white/20 rounded-lg">
                   <User size={16} />
                 </div>
-                <span className="text-sm font-semibold">{studentInfo.name}</span>
+                <span className="text-sm font-semibold">{user.name}</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="p-1.5 bg-white/20 rounded-lg">
                   <Hash size={16} />
                 </div>
-                <span className="text-sm font-medium">{studentInfo.studentId}</span>
+                <span className="text-sm font-medium">{user.rollNo || 'STU2024001'}</span>
               </div>
             </div>
           </div>

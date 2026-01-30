@@ -1827,4 +1827,742 @@ export const STUDENT_DATA = {
       totalDaysActive: 87,
     },
   },
+
+  // Detailed Mastery Data for Assignments
+  masteryData: {
+    3: {
+      score: 92,
+      status: "Mastered",
+      concepts: [
+        { name: "Quadratic Equations", strength: "strong" },
+        { name: "Factorization", strength: "strong" },
+        { name: "Graph Interpretation", strength: "partial" },
+      ],
+      nextAction: "advance",
+      nextActionText: "You can proceed to Assignment 12: Advanced Algebra",
+      feedback: {
+        wellDone:
+          "Excellent grasp of quadratic solving techniques and systematic approach.",
+        improve: "Minor improvements needed in graph interpretation.",
+        reason:
+          "Your mastery score is 92%, demonstrating strong understanding of core concepts.",
+        nextSteps:
+          "Continue to advanced algebra topics and review graph interpretation notes.",
+      },
+      canProgress: true,
+    },
+    5: {
+      score: 78,
+      status: "Strong Pass",
+      concepts: [
+        { name: "Photosynthesis", strength: "strong" },
+        { name: "Cell Structure", strength: "partial" },
+        { name: "Enzymes", strength: "strong" },
+      ],
+      nextAction: "reinforcement",
+      nextActionText: "Complete one reinforcement task before next assignment",
+      feedback: {
+        wellDone: "Great understanding of photosynthesis and enzyme functions.",
+        improve: "Cell structure details need more attention.",
+        reason:
+          "Your score of 78% shows solid understanding with room for reinforcement.",
+        nextSteps:
+          "Complete the cell structure review quiz, then proceed to next assignment.",
+      },
+      canProgress: true,
+      reinforcementTask: "Cell Structure Review Quiz (5 questions)",
+    },
+    6: {
+      score: 55,
+      status: "Weak",
+      concepts: [
+        { name: "Essay Structure", strength: "partial" },
+        { name: "Thesis Development", strength: "weak" },
+        { name: "Citation Format", strength: "strong" },
+      ],
+      nextAction: "remedial",
+      nextActionText: "Complete remedial tasks before proceeding",
+      feedback: {
+        wellDone: "Your citation formatting is accurate and consistent.",
+        improve:
+          "Thesis statements need more clarity and essay structure requires improvement.",
+        reason:
+          "With a score of 55%, additional practice is needed to build mastery.",
+        nextSteps:
+          "Watch the essay structure tutorial, complete 5 practice exercises, and retake assessment.",
+      },
+      canProgress: false,
+      remedialTasks: [
+        "Watch: Essay Structure Fundamentals (12 min)",
+        "Read: Thesis Development Guide",
+        "Practice: 5 Thesis Writing Exercises",
+        "Reassessment Quiz",
+      ],
+    },
+    7: {
+      score: 35,
+      status: "Not Mastered",
+      concepts: [
+        { name: "Trigonometry Basics", strength: "weak" },
+        { name: "Angle Calculation", strength: "weak" },
+        { name: "Unit Circle", strength: "weak" },
+      ],
+      nextAction: "block",
+      nextActionText: "Progress blocked - Full remediation required",
+      feedback: {
+        wellDone: "You showed effort in attempting all questions.",
+        improve: "Core trigonometry concepts need comprehensive review.",
+        reason:
+          "Your score of 35% indicates fundamental gaps that must be addressed.",
+        nextSteps:
+          "Complete the full remedial program and schedule a review session with your teacher.",
+      },
+      canProgress: false,
+      teacherNotified: true,
+      remedialTasks: [
+        "Watch: Trigonometry Foundations (20 min)",
+        "Read: Unit Circle Explained (with examples)",
+        "Practice: 10 Basic Angle Questions",
+        "Practice: 10 Unit Circle Questions",
+        "One-on-one Teacher Session",
+        "Complete Reassessment",
+      ],
+    },
+    10: {
+      score: 88,
+      status: "Strong Pass",
+      concepts: [
+        { name: "Ionic Bonding", strength: "strong" },
+        { name: "Covalent Bonding", strength: "strong" },
+        { name: "Metallic Bonding", strength: "partial" },
+      ],
+      nextAction: "reinforcement",
+      nextActionText: "Complete one reinforcement task before next assignment",
+      feedback: {
+        wellDone:
+          "Excellent understanding of ionic and covalent bonding principles.",
+        improve: "Metallic bonding concepts need slight review.",
+        reason: "Your 88% demonstrates strong mastery with minor gaps.",
+        nextSteps:
+          "Review metallic bonding notes and proceed to molecular geometry.",
+      },
+      canProgress: true,
+      reinforcementTask: "Metallic Bonding Quick Review (3 questions)",
+    },
+    11: {
+      score: 65,
+      status: "Pass",
+      concepts: [
+        { name: "Timeline Accuracy", strength: "strong" },
+        { name: "Historical Analysis", strength: "partial" },
+        { name: "Context Understanding", strength: "partial" },
+      ],
+      nextAction: "reinforcement",
+      nextActionText: "Complete targeted practice before next assignment",
+      feedback: {
+        wellDone: "Timeline dates and events are accurate and well-organized.",
+        improve:
+          "Historical analysis lacks depth. Add more context and significance to events.",
+        reason:
+          "Your 65% shows good factual knowledge but needs deeper analytical thinking.",
+        nextSteps:
+          "Read the historical analysis guide and practice with 2 sample events.",
+      },
+      canProgress: true,
+      reinforcementTask: "Historical Analysis Practice (2 events)",
+    },
+  },
+
+  assignmentHistory: {
+    3: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-15",
+        masteryScore: 85,
+        status: "Strong Pass",
+        concepts: [
+          { name: "Quadratic Equations", strength: "strong" },
+          { name: "Factorization", strength: "partial" },
+          { name: "Graph Interpretation", strength: "weak" },
+        ],
+        feedback: {
+          strengths: "Good problem-solving approach with quadratic equations.",
+          improvements: "Graph interpretation needs more practice.",
+        },
+        hasResponses: true,
+      },
+      {
+        attemptNumber: 2,
+        date: "2026-01-20",
+        masteryScore: 92,
+        status: "Mastered",
+        concepts: [
+          { name: "Quadratic Equations", strength: "strong" },
+          { name: "Factorization", strength: "strong" },
+          { name: "Graph Interpretation", strength: "partial" },
+        ],
+        feedback: {
+          strengths: "Excellent mastery of core algebra concepts.",
+          improvements: "Minor improvements in graph interpretation.",
+        },
+        hasResponses: true,
+      },
+    ],
+    5: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-18",
+        masteryScore: 78,
+        status: "Strong Pass",
+        concepts: [
+          { name: "Photosynthesis", strength: "strong" },
+          { name: "Cell Structure", strength: "partial" },
+          { name: "Enzymes", strength: "strong" },
+        ],
+        feedback: {
+          strengths: "Strong understanding of photosynthesis and enzymes.",
+          improvements: "Cell structure details need review.",
+        },
+        hasResponses: true,
+      },
+    ],
+    6: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-10",
+        masteryScore: 48,
+        status: "Weak",
+        concepts: [
+          { name: "Essay Structure", strength: "weak" },
+          { name: "Thesis Development", strength: "weak" },
+          { name: "Citation Format", strength: "partial" },
+        ],
+        feedback: {
+          strengths: "Basic citation format is present.",
+          improvements:
+            "Thesis needs clarity, essay structure requires improvement.",
+        },
+        hasResponses: true,
+      },
+      {
+        attemptNumber: 2,
+        date: "2026-01-14",
+        masteryScore: 55,
+        status: "Weak",
+        concepts: [
+          { name: "Essay Structure", strength: "partial" },
+          { name: "Thesis Development", strength: "weak" },
+          { name: "Citation Format", strength: "strong" },
+        ],
+        feedback: {
+          strengths:
+            "Citation format improved, essay structure shows progress.",
+          improvements: "Thesis development still needs work.",
+        },
+        hasResponses: true,
+      },
+    ],
+    7: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-12",
+        masteryScore: 35,
+        status: "Not Mastered",
+        concepts: [
+          { name: "Trigonometry Basics", strength: "weak" },
+          { name: "Angle Calculation", strength: "weak" },
+          { name: "Unit Circle", strength: "weak" },
+        ],
+        feedback: {
+          strengths: "Effort shown in attempting all questions.",
+          improvements: "Core trigonometry concepts need comprehensive review.",
+        },
+        hasResponses: true,
+      },
+    ],
+    10: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-22",
+        masteryScore: 88,
+        status: "Strong Pass",
+        concepts: [
+          { name: "Ionic Bonding", strength: "strong" },
+          { name: "Covalent Bonding", strength: "strong" },
+          { name: "Metallic Bonding", strength: "partial" },
+        ],
+        feedback: {
+          strengths: "Excellent grasp of ionic and covalent bonding.",
+          improvements: "Metallic bonding needs slight review.",
+        },
+        hasResponses: true,
+      },
+    ],
+    11: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-25",
+        masteryScore: 65,
+        status: "Pass",
+        concepts: [
+          { name: "Timeline Accuracy", strength: "strong" },
+          { name: "Historical Analysis", strength: "partial" },
+          { name: "Context Understanding", strength: "partial" },
+        ],
+        feedback: {
+          strengths: "Timeline dates and events are accurate.",
+          improvements: "Historical analysis needs more depth.",
+        },
+        hasResponses: true,
+      },
+    ],
+  },
+
+  conceptWeaknessAnalysis: {
+    6: [
+      // English Essay (Weak)
+      {
+        concept: "Thesis Development",
+        gap: "Lack of Specificity",
+        observation:
+          "Thesis statements tend to be broad generalizations rather than arguable claims.",
+        recommendation:
+          'Use the "Though/However" formula to create tension in your argument.',
+        action: "Practice: Refine 3 broad thesis statements",
+      },
+      {
+        concept: "Essay Structure",
+        gap: "Topic Sentence Alignment",
+        observation:
+          "Paragraphs often drift from the main point introduced in the topic sentence.",
+        recommendation:
+          "Ensure every sentence in the body paragraph directly supports the topic sentence.",
+        action: "Review: Paragraph Unity Guide",
+      },
+    ],
+    7: [
+      // Trigonometry (Not Mastered)
+      {
+        concept: "Unit Circle",
+        gap: "Quadrant-Sign Confusion",
+        observation:
+          "Consistently misidentifying +/- signs for Sine and Cosine in Quadrants II and III.",
+        recommendation:
+          'Remember "All Students Take Calculus" (ASTC) mnemonic for signs.',
+        action: "Drill: 20 Quadrant Sign Identification problems",
+      },
+      {
+        concept: "Angle Calculation",
+        gap: "Reference Angle Calculation",
+        observation:
+          "Difficulty converting obtuse angles to acute reference angles.",
+        recommendation:
+          "Visualize the angle to the nearest x-axis (180° or 360°).",
+        action: "Practice: Find reference angles for 10 given angles",
+      },
+    ],
+    5: [
+      // Biology (Strong Pass - but has partial concept)
+      {
+        concept: "Cell Structure",
+        gap: "Organelle Function Differentiation",
+        observation:
+          "Confusing functions of Golgi Apparatus and Endoplasmic Reticulum.",
+        recommendation:
+          "Create a comparison table highlighting synthesis vs. packaging roles.",
+        action: "Task: Complete Organelle Match-up Activity",
+      },
+    ],
+  },
+
+  // Chapter Details with Assignments, Quizzes, AI Suggestions
+  chapterDetails: {
+    default: {
+      assignments: [
+        { id: 1, name: "Problem Set 1", status: "completed", score: 95 },
+        { id: 2, name: "Worksheet Practice", status: "completed", score: 88 },
+        {
+          id: 3,
+          name: "Advanced Problems",
+          status: "in-progress",
+          score: null,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Chapter Quiz", status: "completed", score: 92 },
+        { id: 2, name: "Practice Test", status: "pending", score: null },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Core Concept Review",
+          description:
+            "Review the fundamental principles to improve your baseline understanding.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+          badge: "Needs Attention",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Advanced Application",
+          description: "Try solving real-world problems using these concepts.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+          badge: "Recommended",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Quadratic Formula",
+          weakness: "Sign Errors in Discriminant",
+          observation: "Frequent calculation errors when a or c is negative.",
+          recommendation:
+            "Use parentheses for every substitution: b² - 4(a)(c)",
+          fix: "Practice: 5 Discriminant Calcs",
+        },
+      ],
+    },
+  },
+
+  recommendedResources: [
+    { title: "Advanced Calculus Guide", subject: "MATH", icon: "📐" },
+    { title: "Periodic Table Study", subject: "CHEMISTRY", icon: "⚗️" },
+    { title: "World History Timeline", subject: "HISTORY", icon: "📜" },
+  ],
+
+  communicationMessages: [
+    {
+      id: 1,
+      category: "school",
+      from: "Principal's Office",
+      subject: "Winter Break Update",
+      content:
+        "The school will remain closed from Dec 24th to Jan 2nd for winter break. Classes will resume on Jan 3rd. Wishing all students and parents a wonderful holiday season!",
+      timestamp: "2026-01-19T09:30:00",
+      time: "2 hrs ago",
+      unread: true,
+      priority: "high",
+      requiresAck: true,
+      icon: "Building2",
+    },
+    {
+      id: 2,
+      category: "teacher",
+      from: "Mrs. Davis (English)",
+      subject: "Essay Feedback: Improving Thesis Statements",
+      content:
+        "Hi Alex, I've reviewed your latest essay. Your arguments are strong, but work on refining your thesis statement to be more specific. See the attached comments for details.",
+      timestamp: "2026-01-18T14:15:00",
+      time: "Yesterday",
+      unread: false,
+      priority: "medium",
+      requiresAck: false,
+      icon: "User",
+    },
+    {
+      id: 3,
+      category: "private",
+      from: "Mr. Sharma (Physics)",
+      subject: "Regarding Physics Project",
+      content:
+        "Alex, please meet me after class to discuss your project proposal. I have some suggestions for the experiment setup.",
+      timestamp: "2026-01-15T10:00:00",
+      time: "Jan 15",
+      unread: true,
+      priority: "low",
+      requiresAck: false,
+      icon: "Lock",
+    },
+  ],
+
+  examPerformance: {
+    average: 82,
+    strongest: { subject: "Mathematics", score: 95 },
+    weakest: { subject: "History", score: 68 },
+    term1Avg: 78,
+    term2Avg: 82,
+    examHistory: [
+      { id: 1, exam: "Mid-Term 1", date: "Oct 2025", score: 78, grade: "B+" },
+      { id: 2, exam: "Final Term 1", date: "Dec 2025", score: 81, grade: "A-" },
+      { id: 3, exam: "Unit Test 1", date: "Jan 2026", score: 85, grade: "A" },
+    ],
+  },
+
+  gradesTeacherInsights: [
+    {
+      teacher: "Mr. Sharma",
+      subject: "Mathematics",
+      insight:
+        "Alex is showing consistent improvement in calculus. Needs to focus more on probability.",
+      date: "Jan 15, 2026",
+    },
+    {
+      teacher: "Mrs. Davis",
+      subject: "English",
+      insight:
+        "Great creativity in writing assignments. Grammar usage has improved significantly.",
+      date: "Jan 12, 2026",
+    },
+  ],
+
+  libraryData: {
+    issuedBooks: [
+      {
+        id: 1,
+        title: "Advanced Physics Concepts",
+        author: "H.C. Verma",
+        issueDate: "2026-01-15",
+        dueDate: "2026-01-29",
+        cover: "https://covers.openlibrary.org/b/id/8259443-M.jpg",
+        status: "Overdue",
+        fine: 15,
+      },
+      {
+        id: 2,
+        title: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        issueDate: "2026-01-20",
+        dueDate: "2026-02-03",
+        cover: "https://covers.openlibrary.org/b/id/12632205-M.jpg",
+        status: "Active",
+        fine: 0,
+      },
+    ],
+    borrowingHistory: [
+      {
+        id: 101,
+        title: "A Brief History of Time",
+        author: "Stephen Hawking",
+        returnedDate: "2025-12-15",
+        status: "Returned",
+      },
+      {
+        id: 102,
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        returnedDate: "2025-11-20",
+        status: "Returned",
+      },
+    ],
+    stats: {
+      booksRead: 12,
+      currentLoans: 2,
+      fineDue: 15,
+      totalVisits: 45,
+    },
+  },
+
+  profileActivityLog: [
+    { id: 1, action: "Login", time: "Today, 09:00 AM", ip: "192.168.1.10" },
+    {
+      id: 2,
+      action: "Submitted Assignment",
+      time: "Yesterday, 02:30 PM",
+      ip: "192.168.1.10",
+    },
+    {
+      id: 3,
+      action: "Updated Profile",
+      time: "Jan 10, 11:15 AM",
+      ip: "192.168.1.10",
+    },
+  ],
+
+  supportFaqs: [
+    {
+      id: 1,
+      question: "How do I start a new assignment?",
+      category: "Academic",
+      answer:
+        "Go to the Assignments tab, click on the assignment card, and press 'Start'. Ensure you submit before the due date.",
+    },
+    {
+      id: 2,
+      question: "My grade isn't updating after submission.",
+      category: "Academic",
+      answer:
+        "Grades may take up to 24 hours to sync after teacher approval. If it takes longer, please raise a ticket.",
+    },
+    {
+      id: 3,
+      question: "Where can I find the exam syllabus?",
+      category: "Academic",
+      answer:
+        "The syllabus is available in the 'Resources' section under each subject folder, or directly on the Exam Dashboard.",
+    },
+    {
+      id: 4,
+      question: "How do I request a re-evaluation?",
+      category: "Academic",
+      answer:
+        "You can request a re-evaluation within 3 days of result declaration via the 'Grades' page.",
+    },
+    {
+      id: 5,
+      question: "I can't log in to the library portal.",
+      category: "Technical",
+      answer:
+        "Ensure you are using your student ID (e.g., S-2023-XXX). Reset your password in Settings if the issue persists.",
+    },
+    {
+      id: 6,
+      question: "How to connect to school WiFi?",
+      category: "Technical",
+      answer:
+        "Use network 'School_Student' and your student credentials. If it fails, forget the network and try again.",
+    },
+    {
+      id: 7,
+      question: "My profile picture isn't uploading.",
+      category: "Technical",
+      answer:
+        "Please ensure the image file is under 2MB and in JPG or PNG format.",
+    },
+    {
+      id: 8,
+      question: "Tablet/Laptop not syncing with projector.",
+      category: "Technical",
+      answer:
+        "For screen mirroring issues, ensure both devices are on the same 'Classroom' network.",
+    },
+    {
+      id: 9,
+      question: "I feel overwhelmed with exam stress.",
+      category: "Wellness",
+      answer:
+        "It's okay to feel this way. Visit the Wellness Corner to book a session with our counselor or try our breathing exercises.",
+    },
+    {
+      id: 10,
+      question: "How to manage study time better?",
+      category: "Wellness",
+      answer:
+        "Check out the 'Study Tips' in your Analytics dashboard or speak to a student mentor for a personalized schedule.",
+    },
+    {
+      id: 11,
+      question: "Who can I talk to about bullying?",
+      category: "Wellness",
+      answer:
+        "We have a zero-tolerance policy. Please reach out to the Counselor directly or submit an anonymous report via the 'Request Help' tab.",
+    },
+    {
+      id: 12,
+      question: "I'm having trouble sleeping due to anxiety.",
+      category: "Wellness",
+      answer:
+        "Our Wellness Corner has guided sleep meditations. If it persists, please book a chat with the school counselor.",
+    },
+  ],
+  // Screen 10: Library Account
+  libraryData: {
+    currentLoans: [
+      {
+        id: 1,
+        bookTitle: "A Brief History of Time",
+        author: "Stephen Hawking",
+        issueDate: "2026-01-10",
+        dueDate: "2026-01-24",
+        status: "overdue",
+        daysOverdue: 6,
+      },
+      {
+        id: 2,
+        bookTitle: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        issueDate: "2026-01-20",
+        dueDate: "2026-02-03",
+        status: "normal",
+        daysRemaining: 4,
+      },
+    ],
+    borrowingHistory: [
+      {
+        id: 101,
+        bookTitle: "1984",
+        issueDate: "2025-12-01",
+        returnDate: "2025-12-15",
+        status: "returnedOnTime",
+      },
+      {
+        id: 102,
+        bookTitle: "The Great Gatsby",
+        issueDate: "2025-11-10",
+        returnDate: "2025-11-26",
+        status: "returnedLate",
+      },
+    ],
+  },
+
+  // Screen 12: Help & Support (Simple Version)
+  helpAndSupport: {
+    options: [
+      {
+        id: 1,
+        title: "Browse FAQs",
+        description:
+          "Find answers to common questions about exams, fees, and login issues.",
+        icon: "HelpCircle",
+        color: "blue",
+      },
+      {
+        id: 2,
+        title: "Raise a Ticket",
+        description:
+          "Report a technical problem or academic concern to the administration.",
+        icon: "MessageCircle",
+        color: "purple",
+      },
+    ],
+    concerns: {
+      title: "Wellness Helpline",
+      description:
+        "Feeling stressed or anxious? Talk to our counselors confidentially.",
+      action: "Chat with Counselor",
+    },
+  },
+
+  // Screen 9: Tasks
+  tasks: [
+    {
+      id: 1,
+      title: "Complete Math Worksheet",
+      dueDate: "Today, 5:00 PM",
+      status: "pending",
+      priority: "high",
+    },
+    {
+      id: 2,
+      title: "Read Chapter 4: History",
+      dueDate: "Tomorrow",
+      status: "in-progress",
+      priority: "medium",
+    },
+    {
+      id: 3,
+      title: "Submit Science Project Proposal",
+      dueDate: "Jan 15",
+      status: "completed",
+      priority: "high",
+    },
+  ],
+
+  // Screen 1: Attendance Context
+  attendanceContext: {
+    currentMonth: "January 2026",
+    daysInMonth: 31,
+    heatmapStart: "2026-01-",
+  },
+
+  // Analytics Focus Area
+  analyticsFocusArea: {
+    subject: "Chemistry",
+    score: 78,
+    message:
+      "Your Chemistry score (78%) is slightly below your average. Consistent revision of organic compounds is recommended this week.",
+    color: "orange",
+  },
 };

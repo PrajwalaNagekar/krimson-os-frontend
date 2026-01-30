@@ -11,92 +11,10 @@ const CommunicationHub = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [expandedMessage, setExpandedMessage] = useState(null);
   const [acknowledgedMessages, setAcknowledgedMessages] = useState(new Set());
+  const { communicationMessages } = STUDENT_DATA;
 
   // Static mock data - will be replaced with API calls in future
-  const mockMessages = [
-    {
-      id: 1,
-      category: "school",
-      from: "Principal's Office",
-      subject: "Winter Break Update",
-      content: "The school will remain closed from Dec 24th to Jan 2nd for winter break. Classes will resume on Jan 3rd. Wishing all students and parents a wonderful holiday season!",
-      timestamp: "2026-01-19T09:30:00",
-      time: "2 hrs ago",
-      unread: true,
-      priority: "high",
-      requiresAck: true,
-      icon: Building2
-    },
-    {
-      id: 2,
-      category: "school",
-      from: "Admin Office",
-      subject: "Fee Payment Reminder",
-      content: "Term 2 fee payment is due by January 31st. Please ensure timely payment to avoid late fees.",
-      timestamp: "2026-01-18T14:20:00",
-      time: "Yesterday",
-      unread: false,
-      priority: "normal",
-      requiresAck: false,
-      icon: Building2
-    },
-    {
-      id: 3,
-      category: "teacher",
-      from: "Mrs. Davis",
-      subject: "English - Essay Submission",
-      subjectCode: "ENG-10B",
-      content: "Reminder: Your essay on Romeo & Juliet is due tomorrow by 11:59 PM. Please submit via the assignment portal. Looking forward to reading your analysis!",
-      timestamp: "2026-01-19T08:15:00",
-      time: "4 hrs ago",
-      unread: true,
-      priority: "high",
-      requiresAck: false,
-      icon: BookOpen,
-      avatar: "https://i.pravatar.cc/150?img=5"
-    },
-    {
-      id: 4,
-      category: "teacher",
-      from: "Mr. Sharma",
-      subject: "Physics - Lab Report Feedback",
-      subjectCode: "PHY-10B",
-      content: "Excellent work on your optics lab report! Your observations were detailed and conclusions well-reasoned. Grade: A+",
-      timestamp: "2026-01-18T16:45:00",
-      time: "Yesterday",
-      unread: false,
-      priority: "normal",
-      requiresAck: false,
-      icon: BookOpen,
-      avatar: "https://i.pravatar.cc/150?img=8"
-    },
-    {
-      id: 5,
-      category: "private",
-      from: "Ms. Kumar (Mathematics)",
-      content: "Hi Alex, I noticed you're struggling with trigonometry. I'm available for extra help sessions every Thursday after school. Would you like to join?",
-      timestamp: "2026-01-19T10:00:00",
-      time: "2 hrs ago",
-      unread: true,
-      priority: "normal",
-      requiresAck: false,
-      icon: User,
-      avatar: "https://i.pravatar.cc/150?img=9"
-    },
-    {
-      id: 6,
-      category: "private",
-      from: "Dr. Patel (Chemistry)",
-      content: "Great participation in today's class discussion on organic chemistry! Keep up the excellent work.",
-      timestamp: "2026-01-18T12:30:00",
-      time: "Yesterday",
-      unread: false,
-      priority: "low",
-      requiresAck: false,
-      icon: User,
-      avatar: "https://i.pravatar.cc/150?img=7"
-    }
-  ];
+
 
   const categories = [
     { id: 'all', label: 'All Messages', icon: MessageCircle, color: 'cyan' },
@@ -106,10 +24,10 @@ const CommunicationHub = () => {
   ];
 
   const filteredMessages = selectedCategory === 'all' 
-    ? mockMessages 
-    : mockMessages.filter(msg => msg.category === selectedCategory);
+    ? communicationMessages 
+    : communicationMessages.filter(msg => msg.category === selectedCategory);
 
-  const unreadCount = mockMessages.filter(msg => msg.unread).length;
+  const unreadCount = communicationMessages.filter(msg => msg.unread).length;
 
   const handleAcknowledge = (messageId) => {
     setAcknowledgedMessages(prev => new Set([...prev, messageId]));
@@ -158,8 +76,8 @@ const CommunicationHub = () => {
             const Icon = cat.icon;
             const isActive = selectedCategory === cat.id;
             const categoryCount = cat.id === 'all' 
-              ? mockMessages.length 
-              : mockMessages.filter(m => m.category === cat.id).length;
+              ? communicationMessages.length 
+              : communicationMessages.filter(m => m.category === cat.id).length;
             
             return (
               <button
@@ -185,7 +103,7 @@ const CommunicationHub = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {filteredMessages.length > 0 ? (
             filteredMessages.map(message => {
-              const Icon = message.icon;
+              const Icon = { Building2, BookOpen, User }[message.icon] || MessageCircle;
               const isExpanded = expandedMessage === message.id;
               const isAcknowledged = acknowledgedMessages.has(message.id);
               
