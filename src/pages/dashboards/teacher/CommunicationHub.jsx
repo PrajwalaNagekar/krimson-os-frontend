@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TEACHER_DATA } from '../../../data/teacherData';
-import { 
+import {
   Send, MessageSquare, Users, Filter, Search, Clock,
   CheckCircle, AlertCircle, Tag, Copy, Edit, Trash2,
   X, ChevronDown, Bell, Archive, Shield, FileText,
@@ -118,17 +118,17 @@ const CommunicationHub = () => {
       if (filterType === 'broadcast' && msg.type !== 'broadcast') return false;
       if (filterType === 'unread' && msg.read) return false;
     }
-    
+
     // Filter by tag
     if (filterTag !== 'all' && msg.tag !== filterTag) return false;
-    
+
     // Filter by search
     if (searchQuery) {
       return msg.from.toLowerCase().includes(searchQuery.toLowerCase()) ||
-             msg.subject.toLowerCase().includes(searchQuery.toLowerCase()) ||
-             (msg.studentName && msg.studentName.toLowerCase().includes(searchQuery.toLowerCase()));
+        msg.subject.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (msg.studentName && msg.studentName.toLowerCase().includes(searchQuery.toLowerCase()));
     }
-    
+
     return true;
   });
 
@@ -169,7 +169,7 @@ const CommunicationHub = () => {
     const now = new Date();
     const diff = now - date;
     const hours = Math.floor(diff / (1000 * 60 * 60));
-    
+
     if (hours < 1) return 'Just now';
     if (hours < 24) return `${hours}h ago`;
     if (hours < 48) return 'Yesterday';
@@ -182,7 +182,7 @@ const CommunicationHub = () => {
       <div className="bg-gradient-to-r from-cyan-400 via-blue-400 to-pink-400 rounded-3xl p-6 md:p-8 text-white shadow-xl relative overflow-hidden">
         <div className="absolute right-0 top-0 w-48 h-48 md:w-64 md:h-64 bg-white opacity-10 rounded-full blur-3xl -mr-16 -mt-16"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 md:w-40 md:h-40 bg-pink-300 opacity-20 rounded-full blur-3xl -ml-10 -mb-10"></div>
-        
+
         <div className="relative z-10">
           <div className="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-3 backdrop-blur-sm shadow-sm">
             Communication & Messaging Hub
@@ -196,16 +196,16 @@ const CommunicationHub = () => {
                 {stats.total} messages • {stats.unread} unread
               </p>
             </div>
-            
+
             <div className="flex items-center gap-3">
-              <button 
+              <button
                 onClick={() => setShowCompose(true)}
                 className="px-6 py-3 bg-white text-blue-600 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2 active:scale-95"
               >
                 <Send size={20} />
                 <div className="text-left">
                   <div>Compose</div>
-                  <div className="text-[10px] opacity-70">get in app</div>
+                  {/* <div className="text-[10px] opacity-70">get in app</div> */}
                 </div>
               </button>
             </div>
@@ -215,12 +215,11 @@ const CommunicationHub = () => {
 
       {/* Quick Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div 
-          className={`p-4 md:p-6 rounded-3xl shadow-sm border-2 transition-all cursor-pointer ${
-            filterType === 'all' 
-              ? 'bg-gradient-to-br from-blue-500 to-cyan-500 text-white border-blue-500 shadow-lg' 
-              : 'bg-white border-blue-200 hover:border-blue-300 hover:shadow-lg hover:scale-105 transition-all duration-300'
-          }`}
+        <div
+          className={`p-4 md:p-6 rounded-3xl shadow-sm border-2 transition-all cursor-pointer ${filterType === 'all'
+            ? 'bg-gradient-to-br from-blue-500 to-cyan-500 text-white border-blue-500 shadow-lg'
+            : 'bg-white border-blue-200 hover:border-blue-300 hover:shadow-lg hover:scale-105 transition-all duration-300'
+            }`}
           onClick={() => setFilterType('all')}
         >
           <div className="flex items-center justify-between mb-2">
@@ -232,15 +231,13 @@ const CommunicationHub = () => {
           <h3 className={`text-2xl md:text-3xl font-bold ${filterType === 'all' ? 'text-white' : 'text-slate-800'}`}>
             {stats.total}
           </h3>
-          <p className="text-[10px] text-slate-400 mt-1">get in app</p>
         </div>
 
-        <div 
-          className={`p-4 md:p-6 rounded-3xl shadow-sm border-2 transition-all cursor-pointer ${
-            filterType === 'unread' 
-              ? 'bg-gradient-to-br from-orange-500 to-amber-500 text-white border-orange-500 shadow-lg' 
-              : 'bg-white border-orange-200 hover:border-orange-300 hover:shadow-lg hover:scale-105 transition-all duration-300'
-          }`}
+        <div
+          className={`p-4 md:p-6 rounded-3xl shadow-sm border-2 transition-all cursor-pointer ${filterType === 'unread'
+            ? 'bg-gradient-to-br from-orange-500 to-amber-500 text-white border-orange-500 shadow-lg'
+            : 'bg-white border-orange-200 hover:border-orange-300 hover:shadow-lg hover:scale-105 transition-all duration-300'
+            }`}
           onClick={() => setFilterType('unread')}
         >
           <div className="flex items-center justify-between mb-2">
@@ -252,15 +249,13 @@ const CommunicationHub = () => {
           <h3 className={`text-2xl md:text-3xl font-bold ${filterType === 'unread' ? 'text-white' : 'text-orange-600'}`}>
             {stats.unread}
           </h3>
-          <p className="text-[10px] text-slate-400 mt-1">get in app</p>
         </div>
 
-        <div 
-          className={`p-4 md:p-6 rounded-3xl shadow-sm border-2 transition-all cursor-pointer ${
-            filterType === 'direct' 
-              ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-500 shadow-lg' 
-              : 'bg-white border-purple-200 hover:border-purple-300 hover:shadow-lg hover:scale-105 transition-all duration-300'
-          }`}
+        <div
+          className={`p-4 md:p-6 rounded-3xl shadow-sm border-2 transition-all cursor-pointer ${filterType === 'direct'
+            ? 'bg-gradient-to-br from-purple-500 to-pink-500 text-white border-purple-500 shadow-lg'
+            : 'bg-white border-purple-200 hover:border-purple-300 hover:shadow-lg hover:scale-105 transition-all duration-300'
+            }`}
           onClick={() => setFilterType('direct')}
         >
           <div className="flex items-center justify-between mb-2">
@@ -272,15 +267,14 @@ const CommunicationHub = () => {
           <h3 className={`text-2xl md:text-3xl font-bold ${filterType === 'direct' ? 'text-white' : 'text-purple-600'}`}>
             {stats.direct}
           </h3>
-          <p className="text-[10px] text-slate-400 mt-1">get in app</p>
+
         </div>
 
-        <div 
-          className={`p-4 md:p-6 rounded-3xl shadow-sm border-2 transition-all cursor-pointer ${
-            filterType === 'broadcast' 
-              ? 'bg-gradient-to-br from-green-500 to-emerald-500 text-white border-green-500 shadow-lg' 
-              : 'bg-white border-green-200 hover:border-green-300 hover:shadow-lg hover:scale-105 transition-all duration-300'
-          }`}
+        <div
+          className={`p-4 md:p-6 rounded-3xl shadow-sm border-2 transition-all cursor-pointer ${filterType === 'broadcast'
+            ? 'bg-gradient-to-br from-green-500 to-emerald-500 text-white border-green-500 shadow-lg'
+            : 'bg-white border-green-200 hover:border-green-300 hover:shadow-lg hover:scale-105 transition-all duration-300'
+            }`}
           onClick={() => setFilterType('broadcast')}
         >
           <div className="flex items-center justify-between mb-2">
@@ -292,7 +286,7 @@ const CommunicationHub = () => {
           <h3 className={`text-2xl md:text-3xl font-bold ${filterType === 'broadcast' ? 'text-white' : 'text-green-600'}`}>
             {stats.broadcast}
           </h3>
-          <p className="text-[10px] text-slate-400 mt-1">get in app</p>
+
         </div>
       </div>
 
@@ -312,7 +306,7 @@ const CommunicationHub = () => {
               Save time with pre-written templates for recurring messages like homework reminders, attendance alerts, and parent meetings.
             </p>
           </div>
-          <button 
+          <button
             onClick={() => setShowTemplates(!showTemplates)}
             className="px-6 py-3 bg-white text-purple-600 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
           >
@@ -366,11 +360,10 @@ const CommunicationHub = () => {
               <button
                 key={tag}
                 onClick={() => setFilterTag(tag)}
-                className={`px-4 py-2 rounded-xl font-bold text-xs transition-all ${
-                  filterTag === tag
-                    ? 'bg-blue-500 text-white shadow-md'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                }`}
+                className={`px-4 py-2 rounded-xl font-bold text-xs transition-all ${filterTag === tag
+                  ? 'bg-blue-500 text-white shadow-md'
+                  : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  }`}
               >
                 {tag === 'all' ? 'All Tags' : tag}
               </button>
@@ -382,13 +375,12 @@ const CommunicationHub = () => {
       {/* Messages List */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {filteredMessages.map((message) => (
-          <div 
+          <div
             key={message.id}
-            className={`bg-white rounded-3xl p-6 shadow-md border-2 transition-all duration-300 cursor-pointer ${
-              !message.read 
-                ? 'border-blue-400 bg-blue-50/30' 
-                : 'border-transparent hover:border-blue-200'
-            } hover:shadow-xl`}
+            className={`bg-white rounded-3xl p-6 shadow-md border-2 transition-all duration-300 cursor-pointer ${!message.read
+              ? 'border-blue-400 bg-blue-50/30'
+              : 'border-transparent hover:border-blue-200'
+              } hover:shadow-xl`}
             onClick={() => setSelectedMessage(message)}
           >
             {/* Message Header */}
@@ -460,8 +452,8 @@ const CommunicationHub = () => {
           <MessageSquare className="mx-auto text-slate-300 mb-3" size={48} />
           <h3 className="text-lg font-bold text-slate-800 mb-2">No Messages Found</h3>
           <p className="text-sm text-slate-500">
-            {searchQuery || filterType !== 'all' || filterTag !== 'all' 
-              ? 'Try adjusting your filters' 
+            {searchQuery || filterType !== 'all' || filterTag !== 'all'
+              ? 'Try adjusting your filters'
               : 'No messages yet'}
           </p>
         </div>
@@ -555,14 +547,14 @@ const CommunicationHub = () => {
                 <Send size={18} />
                 <div className="text-left">
                   <div>Reply</div>
-                  <div className="text-[10px] opacity-80">get in app</div>
+
                 </div>
               </button>
               <button className="px-6 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
                 <Archive size={18} />
                 <div className="text-left">
                   <div>Archive</div>
-                  <div className="text-[10px] text-slate-400">get in app</div>
+
                 </div>
               </button>
             </div>
