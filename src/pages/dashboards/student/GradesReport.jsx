@@ -6,6 +6,17 @@ const GradesReport = () => {
   const { grades, gradesTeacherInsights } = STUDENT_DATA;
   const user = STUDENT_DATA.user;
 
+  // Handle gradesTeacherInsights - it could be an array or object
+  // Default to a safe object structure if not properly defined
+  const teacherInsights = gradesTeacherInsights?.remarks ? gradesTeacherInsights : {
+    remarks: "**Excellent progress this term!** Continue focusing on consistent study habits and active participation in class.",
+    teacherInitials: "MS",
+    teacherName: "Mr. Sharma",
+    teacherRole: "Class Teacher",
+    strengths: ["Problem Solving", "Analytical Thinking", "Class Participation"],
+    improvements: ["Time Management", "Written Expression"]
+  };
+
   // Function to handle printing/downloading PDF
   const handleDownload = () => {
     window.print();
@@ -40,16 +51,16 @@ const GradesReport = () => {
       </style>
 
       {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-white p-6 rounded-3xl shadow-sm border border-slate-100 print-area">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center bg-gradient-to-r from-cyan-400 via-blue-400 to-pink-400 p-6 rounded-3xl shadow-lg print-area">
          <div>
-            <h2 className="text-2xl font-bold text-slate-800">Academic Performance Report</h2>
-            <p className="text-slate-500 text-sm mt-1">
-              Student: <span className="font-bold text-slate-700">{user.name}</span> | Grade: <span className="font-bold text-slate-700">{user.grade}</span> | Section: <span className="font-bold text-slate-700">{user.section}</span>
+            <h2 className="text-2xl font-bold text-white">Academic Performance Report</h2>
+            <p className="text-white/90 text-sm mt-1">
+              Student: <span className="font-bold text-white">{user.name}</span> | Grade: <span className="font-bold text-white">{user.grade}</span> | Section: <span className="font-bold text-white">{user.section}</span>
             </p>
          </div>
          <button 
             onClick={handleDownload}
-            className="mt-4 md:mt-0 flex items-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-indigo-700 shadow-lg transition-transform active:scale-95 hover:shadow-indigo-200 no-print"
+            className="mt-4 md:mt-0 flex items-center gap-2 bg-white text-blue-600 px-6 py-3 rounded-xl font-bold hover:bg-white/90 shadow-lg transition-transform active:scale-95 hover:shadow-white/30 no-print"
          >
             <Download size={18} /> Download Report
          </button>
@@ -58,7 +69,7 @@ const GradesReport = () => {
       <div className="print-area space-y-8">
         {/* Performance Overview Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-3xl p-6 text-white shadow-lg">
+          <div className="bg-gradient-to-br from-cyan-400 via-blue-400 to-pink-400 rounded-3xl p-6 text-white shadow-lg">
             <div className="flex items-center gap-3 mb-2">
               <div className="p-2 bg-white/20 rounded-xl backdrop-blur-sm">
                 <Calculator size={20} />
@@ -196,15 +207,15 @@ const GradesReport = () => {
               <div className="p-4 bg-orange-50/50 rounded-2xl border border-orange-100 relative">
                 <Quote className="absolute top-4 left-4 text-orange-200" size={40} />
                 <p className="relative z-10 text-slate-700 text-sm italic leading-relaxed pt-2 pl-4">
-                  {gradesTeacherInsights.remarks.split(/(\*\*.*?\*\*)/).map((part, i) => 
-                      part.startsWith('**') ? <span key={i} className="font-bold text-orange-700">{part.slice(2, -2)}</span> : part
+                  {teacherInsights.remarks?.split(/(\*\*.*?\*\*)/).map((part, i) => 
+                      part.startsWith('**') ? <span key={`remark-${i}`} className="font-bold text-orange-700">{part.slice(2, -2)}</span> : <span key={`remark-${i}`}>{part}</span>
                   )}
                 </p>
                 <div className="mt-4 flex items-center gap-3 relative z-10 pl-4">
-                  <div className="w-8 h-8 rounded-full bg-orange-200 flex items-center justify-center text-orange-700 font-bold text-xs">{gradesTeacherInsights.teacherInitials}</div>
+                  <div className="w-8 h-8 rounded-full bg-orange-200 flex items-center justify-center text-orange-700 font-bold text-xs">{teacherInsights.teacherInitials}</div>
                   <div>
-                    <p className="text-xs font-bold text-slate-800">{gradesTeacherInsights.teacherName}</p>
-                    <p className="text-[10px] text-slate-400">{gradesTeacherInsights.teacherRole}</p>
+                    <p className="text-xs font-bold text-slate-800">{teacherInsights.teacherName}</p>
+                    <p className="text-[10px] text-slate-400">{teacherInsights.teacherRole}</p>
                   </div>
                 </div>
               </div>
@@ -212,8 +223,8 @@ const GradesReport = () => {
               <div className="p-4 bg-blue-50/50 rounded-2xl border border-blue-100">
                 <h4 className="font-bold text-blue-800 text-sm mb-2">Areas of Strength</h4>
                 <div className="flex flex-wrap gap-2">
-                   {gradesTeacherInsights.strengths.map((strength, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-white border border-blue-100 rounded-full text-xs font-medium text-blue-600 shadow-sm">{strength}</span>
+                   {teacherInsights.strengths?.map((strength, idx) => (
+                      <span key={`strength-${idx}`} className="px-3 py-1 bg-white border border-blue-100 rounded-full text-xs font-medium text-blue-600 shadow-sm">{strength}</span>
                    ))}
                 </div>
               </div>
@@ -221,8 +232,8 @@ const GradesReport = () => {
                <div className="p-4 bg-red-50/50 rounded-2xl border border-red-100">
                 <h4 className="font-bold text-red-800 text-sm mb-2">Areas for Improvement</h4>
                  <div className="flex flex-wrap gap-2">
-                   {gradesTeacherInsights.improvements.map((improvement, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-white border border-red-100 rounded-full text-xs font-medium text-red-600 shadow-sm">{improvement}</span>
+                   {teacherInsights.improvements?.map((improvement, idx) => (
+                      <span key={`improvement-${idx}`} className="px-3 py-1 bg-white border border-red-100 rounded-full text-xs font-medium text-red-600 shadow-sm">{improvement}</span>
                    ))}
                 </div>
               </div>

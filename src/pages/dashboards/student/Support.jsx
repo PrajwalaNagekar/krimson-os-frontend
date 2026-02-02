@@ -12,7 +12,14 @@ const Support = () => {
   const [ticketSubmitted, setTicketSubmitted] = useState(false);
 
   const { user, supportFaqs } = STUDENT_DATA;
-  const faqs = supportFaqs.faqs;
+  
+  // Handle supportFaqs - it could be an array or object
+  const faqs = Array.isArray(supportFaqs) ? supportFaqs : (supportFaqs?.faqs || []);
+  const wellnessArticles = supportFaqs?.wellnessArticles || [
+    { icon: 'Book', color: 'green', title: 'Managing Exam Stress', desc: 'Practical techniques to stay calm during exams.', action: 'Read Article' },
+    { icon: 'Heart', color: 'blue', title: 'Building Resilience', desc: 'Develop mental strength to handle challenges.', action: 'Learn More' },
+    { icon: 'User', color: 'purple', title: 'Self-Care Tips', desc: 'Simple habits for better mental health.', action: 'Explore Tips' }
+  ];
 
   const filteredFaqs = faqs.filter(f => f.question.toLowerCase().includes(searchQuery.toLowerCase()) || f.category.toLowerCase().includes(searchQuery.toLowerCase()));
 
@@ -242,7 +249,7 @@ const Support = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {supportFaqs.wellnessArticles.map((article, idx) => {
+                  {wellnessArticles.map((article, idx) => {
                       const Icon = { Book, Heart, User }[article.icon] || Book;
                       const colors = {
                         green: { bg: 'bg-green-100', text: 'text-green-600', hover: 'hover:border-green-200' },

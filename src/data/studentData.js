@@ -305,6 +305,271 @@ export const STUDENT_DATA = {
     ],
   },
 
+  // Class Details for Timetable (Current Topic, Latest Post, Upcoming Work, Key Resources)
+  classDetails: {
+    // Monday Classes
+    "Math-1-Monday": {
+      currentTopic: "Quadratic Equations and Graphing Parabolas",
+      latestPost: {
+        message:
+          "Great work on today's practice problems! Remember to review the vertex form before our next class.",
+        time: "2 hours ago",
+      },
+      upcomingWork: [
+        {
+          title: "Trigonometry Worksheet",
+          dueDate: "Today 5:00 PM",
+          type: "assignment",
+          priority: "high",
+        },
+        {
+          title: "Chapter 4 Quiz - Quadratics",
+          dueDate: "Tomorrow 9:00 AM",
+          type: "quiz",
+          priority: "medium",
+        },
+      ],
+      keyResources: [
+        {
+          title: "Quadratic Equations Guide",
+          type: "document",
+          icon: "📄",
+          url: "#",
+        },
+        {
+          title: "Practice Problems Set",
+          type: "worksheet",
+          icon: "📝",
+          url: "#",
+        },
+        {
+          title: "Khan Academy - Quadratics",
+          type: "video",
+          icon: "🎥",
+          url: "#",
+        },
+        {
+          title: "Graphing Calculator Tool",
+          type: "tool",
+          icon: "🔧",
+          url: "#",
+        },
+      ],
+    },
+    "English-2-Monday": {
+      currentTopic: "Shakespeare - Romeo & Juliet Act 3 Analysis",
+      latestPost: {
+        message:
+          "The essay submissions were impressive! Remember that our group discussion on themes is scheduled for next week.",
+        time: "3 hours ago",
+      },
+      upcomingWork: [
+        {
+          title: "Essay on Romeo & Juliet",
+          dueDate: "Tomorrow 11:59 PM",
+          type: "essay",
+          priority: "high",
+        },
+        {
+          title: "Reading - Act 4 & 5",
+          dueDate: "Wednesday",
+          type: "reading",
+          priority: "medium",
+        },
+      ],
+      keyResources: [
+        {
+          title: "Romeo & Juliet Full Text",
+          type: "document",
+          icon: "📖",
+          url: "#",
+        },
+        {
+          title: "Character Analysis Notes",
+          type: "document",
+          icon: "📄",
+          url: "#",
+        },
+        {
+          title: "Literary Devices Guide",
+          type: "reference",
+          icon: "📚",
+          url: "#",
+        },
+        { title: "BBC Shakespeare Video", type: "video", icon: "🎥", url: "#" },
+      ],
+    },
+    "Physics-3-Monday": {
+      currentTopic: "Optics - Refraction and Lens Experiments",
+      latestPost: {
+        message:
+          "Lab safety reminder: Please bring your safety goggles for tomorrow's practical session on lenses.",
+        time: "1 hour ago",
+      },
+      upcomingWork: [
+        {
+          title: "Lab Report - Optics Experiment",
+          dueDate: "Wednesday 11:59 PM",
+          type: "lab report",
+          priority: "high",
+        },
+        {
+          title: "Unit Test - Waves & Optics",
+          dueDate: "Friday",
+          type: "test",
+          priority: "urgent",
+        },
+      ],
+      keyResources: [
+        { title: "Optics Lab Manual", type: "document", icon: "📄", url: "#" },
+        {
+          title: "Refraction Simulation",
+          type: "interactive",
+          icon: "🔬",
+          url: "#",
+        },
+        { title: "Ray Diagrams Tutorial", type: "video", icon: "🎥", url: "#" },
+        {
+          title: "Physics Formula Sheet",
+          type: "reference",
+          icon: "📋",
+          url: "#",
+        },
+      ],
+    },
+    "Chemistry-4-Monday": {
+      currentTopic: "Organic Chemistry - Functional Groups and Nomenclature",
+      latestPost: {
+        message:
+          "Don't forget to review the IUPAC naming conventions we discussed. Practice makes perfect!",
+        time: "30 minutes ago",
+      },
+      upcomingWork: [
+        {
+          title: "Organic Chemistry Assignment",
+          dueDate: "Thursday",
+          type: "assignment",
+          priority: "medium",
+        },
+        {
+          title: "Group Project Presentation",
+          dueDate: "Next Monday",
+          type: "project",
+          priority: "high",
+        },
+      ],
+      keyResources: [
+        {
+          title: "Functional Groups Chart",
+          type: "reference",
+          icon: "📊",
+          url: "#",
+        },
+        { title: "IUPAC Naming Guide", type: "document", icon: "📄", url: "#" },
+        {
+          title: "Organic Chemistry 3D Models",
+          type: "interactive",
+          icon: "🧪",
+          url: "#",
+        },
+        {
+          title: "Practice Questions",
+          type: "worksheet",
+          icon: "📝",
+          url: "#",
+        },
+      ],
+    },
+
+    // Tuesday Classes
+    "Chemistry-1-Tuesday": {
+      currentTopic: "Chemical Bonding - Ionic and Covalent Structures",
+      latestPost: {
+        message:
+          "Today's lab on ionic compounds was excellent! Make sure to complete your lab reports by Friday.",
+        time: "5 hours ago",
+      },
+      upcomingWork: [
+        {
+          title: "Chemical Bonding Lab Report",
+          dueDate: "Friday",
+          type: "lab report",
+          priority: "high",
+        },
+        {
+          title: "Bonding Quiz",
+          dueDate: "Next Tuesday",
+          type: "quiz",
+          priority: "medium",
+        },
+      ],
+      keyResources: [
+        {
+          title: "Bonding Theory Notes",
+          type: "document",
+          icon: "📄",
+          url: "#",
+        },
+        {
+          title: "Lewis Structure Tutorial",
+          type: "video",
+          icon: "🎥",
+          url: "#",
+        },
+        {
+          title: "Periodic Table Interactive",
+          type: "interactive",
+          icon: "🔬",
+          url: "#",
+        },
+        { title: "Practice Problems", type: "worksheet", icon: "📝", url: "#" },
+      ],
+    },
+    "History-2-Tuesday": {
+      currentTopic: "World War II - Major Battles and Turning Points",
+      latestPost: {
+        message:
+          "Your timeline projects are due next week. Remember to include primary sources and detailed analysis.",
+        time: "4 hours ago",
+      },
+      upcomingWork: [
+        {
+          title: "WWII Timeline Project",
+          dueDate: "Next Monday",
+          type: "project",
+          priority: "high",
+        },
+        {
+          title: "Chapter 8 Reading",
+          dueDate: "Thursday",
+          type: "reading",
+          priority: "medium",
+        },
+      ],
+      keyResources: [
+        {
+          title: "WWII Documentary Series",
+          type: "video",
+          icon: "🎥",
+          url: "#",
+        },
+        {
+          title: "Primary Sources Collection",
+          type: "document",
+          icon: "📚",
+          url: "#",
+        },
+        {
+          title: "Interactive WWII Map",
+          type: "interactive",
+          icon: "🗺️",
+          url: "#",
+        },
+        { title: "Timeline Template", type: "worksheet", icon: "📝", url: "#" },
+      ],
+    },
+  },
+
   // Screen 3: Attendance
   attendance: {
     heatmap: {
@@ -599,7 +864,191 @@ export const STUDENT_DATA = {
     { subject: "Science", term1: 88, term2: 85, trend: "down" },
   ],
 
-  // Screen 8: Communication
+  // Screen 8: Communication Hub - Messages with Priority \u0026 Expiry
+  communicationMessages: [
+    {
+      id: 1,
+      from: "Principal Office",
+      subject: "Parent-Teacher Meeting",
+      content:
+        "Mandatory parent-teacher meeting scheduled for all grade 10 students. Please inform your parents to attend on February 5th, 2026 at 10:00 AM in the main auditorium. Attendance is compulsory.",
+      time: "2 hrs ago",
+      timestamp: "2026-02-02T08:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "high",
+      isPinned: true,
+      unread: true,
+      requiresAck: true,
+      expiryDate: "2026-02-05T23:59:59",
+    },
+    {
+      id: 2,
+      from: "Exam Department",
+      subject: "Mid-Term Examination Schedule",
+      content:
+        "Mid-term examinations will commence from February 10th, 2026. The detailed schedule has been uploaded to your portal. Please check the exam section for venue and timing details.",
+      time: "5 hrs ago",
+      timestamp: "2026-02-02T05:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "high",
+      isPinned: true,
+      unread: true,
+      requiresAck: true,
+      expiryDate: "2026-02-10T23:59:59",
+    },
+    {
+      id: 3,
+      from: "Mrs. Davis (English)",
+      subject: "Shakespeare Workshop",
+      content:
+        "Join us for an exciting Shakespeare workshop this Saturday! We'll be analyzing Romeo & Juliet and performing selected scenes. Great opportunity to improve your literature understanding.",
+      time: "1 day ago",
+      timestamp: "2026-02-01T14:30:00",
+      category: "teacher",
+      icon: "BookOpen",
+      subjectCode: "ENG-10-B",
+      priority: "normal",
+      isPinned: false,
+      unread: true,
+      requiresAck: false,
+      expiryDate: "2026-02-08T23:59:59",
+    },
+    {
+      id: 4,
+      from: "Mr. Sharma (Physics)",
+      subject: "Lab Report Submission Reminder",
+      content:
+        "This is a reminder to submit your Physics lab reports on Newton's Laws by tomorrow 5 PM. Late submissions will incur penalty. Make sure to include all diagrams and calculations.",
+      time: "1 day ago",
+      timestamp: "2026-02-01T10:00:00",
+      category: "teacher",
+      icon: "BookOpen",
+      subjectCode: "PHY-10-B",
+      priority: "urgent",
+      isPinned: true,
+      unread: false,
+      requiresAck: true,
+      expiryDate: "2026-02-03T17:00:00",
+    },
+    {
+      id: 5,
+      from: "Sports Department",
+      subject: "Annual Sports Day Registration",
+      content:
+        "Registration for Annual Sports Day 2026 is now open! Choose from athletics, basketball, cricket, and many more events. Register before Feb 15th to secure your spot.",
+      time: "2 days ago",
+      timestamp: "2026-01-31T09:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "normal",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-02-15T23:59:59",
+    },
+    {
+      id: 6,
+      from: "Ms. Kumar (Mathematics)",
+      subject: "Extra Classes Announcement",
+      content:
+        "I'm conducting extra classes for Quadratic Equations this week. Sessions will be held on Wednesday and Friday from 4-5 PM in Room 201. All students are welcome!",
+      time: "2 days ago",
+      timestamp: "2026-01-31T08:00:00",
+      category: "teacher",
+      icon: "BookOpen",
+      subjectCode: "MATH-10-B",
+      priority: "normal",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-02-07T23:59:59",
+    },
+    {
+      id: 7,
+      from: "Counselor Ms. Reddy",
+      subject: "Career Guidance Session",
+      content:
+        "Individual career counseling sessions are available this month. If you'd like to discuss your future academic and career plans, please book a slot through the support section.",
+      time: "3 days ago",
+      timestamp: "2026-01-30T11:00:00",
+      category: "private",
+      icon: "User",
+      priority: "low",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-02-28T23:59:59",
+    },
+    {
+      id: 8,
+      from: "Library Department",
+      subject: "New Books Arrived",
+      content:
+        "We've added 50+ new books to our collection including latest science fiction, academic references, and competitive exam preparation materials. Visit the library to explore!",
+      time: "4 days ago",
+      timestamp: "2026-01-29T10:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "low",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-03-01T23:59:59",
+    },
+    {
+      id: 9,
+      from: "Dr. Patel (Chemistry)",
+      subject: "Chemistry Practical Rescheduled",
+      content:
+        "Tomorrow's chemistry practical on organic compounds has been rescheduled to Thursday 11 AM due to lab maintenance. Please bring your lab coats and safety goggles.",
+      time: "5 days ago",
+      timestamp: "2026-01-28T15:00:00",
+      category: "teacher",
+      icon: "BookOpen",
+      subjectCode: "CHEM-10-B",
+      priority: "urgent",
+      isPinned: false,
+      unread: false,
+      requiresAck: true,
+      expiryDate: "2026-02-06T23:59:59",
+    },
+    {
+      id: 10,
+      from: "Student Council",
+      subject: "Valentine's Day Fundraiser",
+      content:
+        "Student Council is organizing a Valentine's Day charity fundraiser! All proceeds will go to local community development. Support the cause and join us for fun activities!",
+      time: "1 week ago",
+      timestamp: "2026-01-26T12:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "low",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-02-14T23:59:59",
+    },
+    {
+      id: 11,
+      from: "Fee Department",
+      subject: "Term 2 Fee Payment Reminder",
+      content:
+        "This is a gentle reminder that Term 2 fees are due by January 31st, 2026. Please clear your dues to avoid late payment charges. Payment can be made online or at the accounts office.",
+      time: "1 week ago",
+      timestamp: "2026-01-25T09:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "high",
+      isPinned: false,
+      unread: false,
+      requiresAck: true,
+      expiryDate: "2026-01-31T23:59:59",
+    },
+  ],
+
+  // Screen 8: Communication (Legacy)
   messages: [
     {
       id: 1,
