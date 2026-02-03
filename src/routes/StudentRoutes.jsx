@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import StudentLayout from "../layouts/StudentLayout";
 import HomeDashboard from "../pages/dashboards/student/HomeDashboard";
 import TimetableSchedule from "../pages/dashboards/student/TimetableSchedule";
@@ -18,32 +18,37 @@ import BehaviorLog from "../pages/dashboards/student/BehaviorLog";
 import ParentLinkDashboard from "../pages/dashboards/student/ParentLinkDashboard";
 import CoCurricularActivities from "../pages/dashboards/student/CoCurricularActivities";
 import Support from "../pages/dashboards/student/Support";
-import ProfilePage from '../pages/common/ProfilePage';
-import ProfileAndGoals from '../pages/dashboards/student/ProfileAndGoals';
+import Facilities from "../pages/dashboards/student/Facilities";
+import ProfilePage from "../pages/common/ProfilePage";
+import ProfileAndGoals from "../pages/dashboards/student/ProfileAndGoals";
+import MyLearningSupport from "../pages/dashboards/student/MyLearningSupport";
 
 const StudentRoutes = () => {
   return (
     <Routes>
-        <Route element={<StudentLayout />}>
-           <Route index element={<HomeDashboard />} />
-           <Route path="timetable" element={<TimetableSchedule />} />
-           <Route path="attendance" element={<AttendanceTracker />} />
-           <Route path="assignments" element={<AssignmentsCenter />} />
-           <Route path="resources" element={<LessonResources />} />
-           <Route path="library-account" element={<LibraryAccount />} />
-           <Route path="exams" element={<ExamDashboard />} />
-           <Route path="grades" element={<GradesReport />} />
-           <Route path="communication" element={<CommunicationHub />} />
-           <Route path="analytics" element={<PerformanceAnalytics />} />
-           <Route path="progress" element={<MyProgress />} />
-           <Route path="lab-journey" element={<MyLabJourney />} />
-         
-           <Route path="behavior" element={<BehaviorLog />} />
-           <Route path="profile" element={<ProfileAndGoals />} />
-           <Route path="parentlink" element={<ParentLinkDashboard />} />
-           <Route path="activities" element={<CoCurricularActivities />} />
-           <Route path="support" element={<Support />} />
-        </Route>
+      <Route element={<StudentLayout />}>
+        <Route index element={<HomeDashboard />} />
+        <Route path="timetable" element={<TimetableSchedule />} />
+        <Route path="attendance" element={<AttendanceTracker />} />
+        <Route path="assignments" element={<AssignmentsCenter />} />
+        <Route path="resources" element={<LessonResources />} />
+        <Route path="library-account" element={<LibraryAccount />} />
+        <Route path="facilities" element={<Facilities />} />
+        <Route path="exams" element={<ExamDashboard />} />
+        <Route path="grades" element={<GradesReport />} />
+        <Route path="communication" element={<CommunicationHub />} />
+        <Route path="analytics" element={<PerformanceAnalytics />} />
+        <Route path="progress" element={<MyProgress />} />
+        <Route path="lab-journey" element={<MyLabJourney />} />
+        <Route path="learning-support" element={<MyLearningSupport />} />
+
+        <Route path="behavior" element={<BehaviorLog />} />
+
+        <Route path="parentlink" element={<ParentLinkDashboard />} />
+        <Route path="activities" element={<CoCurricularActivities />} />
+        <Route path="support" element={<Support />} />
+        <Route path="profile" element={<ProfileAndGoals />} />
+      </Route>
     </Routes>
   );
 };

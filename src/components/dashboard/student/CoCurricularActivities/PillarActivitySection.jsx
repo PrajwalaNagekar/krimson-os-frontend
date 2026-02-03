@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Sparkles, ChevronRight } from 'lucide-react';
-import PillarCard from './PillarCard';
-import PillarActivityList from './PillarActivityList';
-import PillarActivityDetail from './PillarActivityDetail';
+import React, { useState } from "react";
+import { Sparkles, ChevronRight } from "lucide-react";
+import PillarCard from "./PillarCard";
+import PillarActivityList from "./PillarActivityList";
+import PillarActivityDetail from "./PillarActivityDetail";
 
 /**
  * PillarActivitySection Component
  * Main component for displaying pillar activities with List to Detail (LB) layout
  * Shows 6 pillars: Imaginarium, Literary, Science & Astronomy, Leadership & Service, Sports & Wellness, Music & Dance
- * 
+ *
  * @param {Object} pillarActivities - Pillar activities data from studentData
  */
 const PillarActivitySection = ({ pillarActivities }) => {
@@ -18,12 +18,12 @@ const PillarActivitySection = ({ pillarActivities }) => {
   // Get pillar data based on selected pillar
   const getPillarData = (pillarName) => {
     const pillarMap = {
-      'Imaginarium': pillarActivities.imaginarium,
-      'Literary': pillarActivities.literary,
-      'Science & Astronomy': pillarActivities.scienceAstronomy,
-      'Leadership & Service': pillarActivities.leadershipService,
-      'Sports & Wellness': pillarActivities.sportsWellness,
-      'Music & Dance': pillarActivities.musicDance,
+      Imaginarium: pillarActivities.imaginarium,
+      Literary: pillarActivities.literary,
+      "Science & Astronomy": pillarActivities.scienceAstronomy,
+      "Leadership & Service": pillarActivities.leadershipService,
+      "Sports & Wellness": pillarActivities.sportsWellness,
+      "Music & Dance": pillarActivities.musicDance,
     };
     return pillarMap[pillarName] || [];
   };
@@ -49,37 +49,31 @@ const PillarActivitySection = ({ pillarActivities }) => {
   };
 
   return (
-    <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2">
-          <Sparkles className="text-purple-500" size={24} />
-          Pillar Activity Views
-          <span className="text-sm font-normal text-slate-500">
-            ({pillarActivities.totalPillarActivities} activities)
-          </span>
-        </h2>
-      </div>
-
-      {/* Breadcrumb Navigation */}
+    <>
+      {/* Breadcrumb Navigation - Enhanced */}
       {(selectedPillar || selectedActivity) && (
-        <div className="flex items-center gap-2 mb-6 text-sm">
+        <div className="flex items-center gap-3 mb-8 pb-4 border-b-2 border-slate-200">
           <button
             onClick={() => {
               setSelectedPillar(null);
               setSelectedActivity(null);
             }}
-            className="text-blue-600 hover:text-blue-700 font-medium"
+            className="text-blue-600 hover:text-blue-700 font-bold text-xl md:text-2xl transition-colors"
           >
             Pillars
           </button>
           {selectedPillar && (
             <>
-              <ChevronRight size={16} className="text-slate-400" />
+              <ChevronRight
+                size={24}
+                className="text-slate-400 flex-shrink-0"
+              />
               <button
                 onClick={() => setSelectedActivity(null)}
-                className={`font-medium ${
-                  selectedActivity ? 'text-blue-600 hover:text-blue-700' : 'text-slate-600'
+                className={`font-bold text-xl md:text-2xl transition-colors ${
+                  selectedActivity
+                    ? "text-blue-600 hover:text-blue-700"
+                    : "text-slate-800"
                 }`}
               >
                 {selectedPillar}
@@ -88,8 +82,13 @@ const PillarActivitySection = ({ pillarActivities }) => {
           )}
           {selectedActivity && (
             <>
-              <ChevronRight size={16} className="text-slate-400" />
-              <span className="text-slate-600">{selectedActivity.title}</span>
+              <ChevronRight
+                size={20}
+                className="text-slate-400 flex-shrink-0"
+              />
+              <span className="text-purple-600 font-semibold text-base md:text-lg">
+                {selectedActivity.title}
+              </span>
             </>
           )}
         </div>
@@ -123,7 +122,7 @@ const PillarActivitySection = ({ pillarActivities }) => {
           onBack={handleBack}
         />
       )}
-    </div>
+    </>
   );
 };
 
