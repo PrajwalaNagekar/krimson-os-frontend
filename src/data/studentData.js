@@ -4815,4 +4815,115 @@ export const STUDENT_DATA = {
       },
     ],
   },
+  // Screen 13: Support & Well-being
+  supportData: {
+    hero: {
+      title: "Student Support Hub",
+      subtitle:
+        "Need help with studies, technical issues, or just want to talk? We're here for you.",
+      placeholder: "Search for help (e.g., 'grades', 'wifi', 'stress')...",
+    },
+    tabs: [
+      "FAQs",
+      "Request Help",
+      "Connect with Wellbeing",
+      "Govt & Regulations",
+    ],
+    ticketForm: {
+      categories: ["Academic", "Technical", "Facility", "Other"],
+      priorities: ["Low", "Medium", "High", "Critical"],
+    },
+    recentTickets: [
+      {
+        id: "#TKT-1024",
+        title: "Library Access Issue",
+        status: "Resolved",
+        statusColor: "green",
+        time: "2 days ago",
+      },
+      {
+        id: "#TKT-1035",
+        title: "Grade Discrepancy in Math",
+        status: "Open",
+        statusColor: "blue",
+        time: "Today",
+      },
+    ],
+    counselorAvailability: {
+      days: "Monday - Friday",
+      hours: "9:00 AM - 3:00 PM",
+      walkInLabel: "Walk-in Hours",
+      walkInHours: "12:00 PM - 1:00 PM",
+      counselorName: "Dr. Emily Stone",
+      location: "Room 104",
+    },
+    wellnessArticles: [
+      {
+        icon: "Book",
+        color: "green",
+        title: "Managing Exam Stress",
+        desc: "Practical techniques to stay calm during exams.",
+        action: "Read Article",
+      },
+      {
+        icon: "Heart",
+        color: "blue",
+        title: "Building Resilience",
+        desc: "Develop mental strength to handle challenges.",
+        action: "Learn More",
+      },
+      {
+        icon: "User",
+        color: "purple",
+        title: "Self-Care Tips",
+        desc: "Simple habits for better mental health.",
+        action: "Explore Tips",
+      },
+    ],
+    regulations: [
+      {
+        icon: "Gavel",
+        title: "Compulsory Education Act",
+        badge: "MOE Singapore",
+        description:
+          "Under the Compulsory Education Act, all Singaporean children residing in Singapore are required to attend school regularly. This ensures every child has the opportunity to receive a core education.",
+        checklist: ["Mandatory primary education", "Regular attendance checks"],
+        action: "Read Full Act",
+        variant: "indigo",
+      },
+      {
+        icon: "Lock",
+        title: "PDPA & Data Privacy",
+        badge: "Data Protection",
+        description:
+          "Your personal data is protected under the Personal Data Protection Act (PDPA). Schools collect data only for educational purposes and ensure strict confidentiality.",
+        checklist: [
+          "Consent required for data use",
+          "Right to access your records",
+        ],
+        action: "View Privacy Policy",
+        variant: "purple",
+      },
+      {
+        icon: "Globe",
+        title: "Cyber Wellness",
+        badge: "Digital Safety",
+        description:
+          "Guidelines to ensure safe and responsible use of technology. Includes topics on cyberbullying, netiquette, and managing screen time effectively.",
+        checklist: [],
+        action: "Cyber Wellness Tips",
+        variant: "cyan",
+      },
+      {
+        icon: "Heart",
+        title: "Student Welfare",
+        badge: "Support",
+        description:
+          "Information on financial assistance schemes (FAS), bursaries, and counseling support available for students in need.",
+        checklist: [],
+        action: "Check Eligibility",
+        variant: "rose",
+      },
+    ],
+  },
 };
