@@ -12,6 +12,7 @@ import GradesReport from "../pages/dashboards/student/GradesReport";
 import CommunicationHub from "../pages/dashboards/student/CommunicationHub";
 import PerformanceAnalytics from "../pages/dashboards/student/PerformanceAnalytics";
 import MyProgress from "../pages/dashboards/student/MyProgress";
+import MyLabJourney from "../pages/dashboards/student/MyLabJourney";
 
 import BehaviorLog from "../pages/dashboards/student/BehaviorLog";
 import ParentLinkDashboard from "../pages/dashboards/student/ParentLinkDashboard";
@@ -35,6 +36,7 @@ const StudentRoutes = () => {
            <Route path="communication" element={<CommunicationHub />} />
            <Route path="analytics" element={<PerformanceAnalytics />} />
            <Route path="progress" element={<MyProgress />} />
+           <Route path="lab-journey" element={<MyLabJourney />} />
          
            <Route path="behavior" element={<BehaviorLog />} />
            <Route path="profile" element={<ProfileAndGoals />} />

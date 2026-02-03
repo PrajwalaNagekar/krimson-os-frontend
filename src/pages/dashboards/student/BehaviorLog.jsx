@@ -161,9 +161,7 @@ const BehaviorLog = () => {
                     </div>
                     <span>{achievement.date}</span>
                   </div>
-                  <span className="text-[10px] text-slate-400 flex items-center gap-1 italic opacity-70">
-                    Go to App <ExternalLink size={10} />
-                  </span>
+
                 </div>
               </div>
             );
@@ -200,7 +198,7 @@ const BehaviorLog = () => {
         <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border-2 border-orange-100">
           <h2 className="text-xl font-bold text-slate-800 mb-6 flex items-center gap-2">
             <AlertTriangle className="text-orange-500" size={24} />
-            Behavioral Notices
+            Character & Behaviour Notes (View)
           </h2>
 
           <div className="space-y-4">
@@ -255,11 +253,7 @@ const BehaviorLog = () => {
                     <span className="text-xs font-bold text-blue-600 uppercase">Counselor Notes</span>
                   </div>
                   <p className="text-sm text-slate-700 leading-relaxed mb-2">{warning.counselorNotes}</p>
-                  <div className="flex justify-end">
-                    <span className="text-[10px] text-slate-400 flex items-center gap-1 italic opacity-70">
-                      Go to App <ExternalLink size={10} />
-                    </span>
-                  </div>
+
                 </div>
               </div>
             ))}

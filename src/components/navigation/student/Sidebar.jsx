@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { 
   LayoutDashboard, Calendar, CalendarCheck, FileText, BookOpen, 
   CheckSquare, Award, MessageSquare, BarChart2, CreditCard, 
-  Activity, UserCircle, Users, Trophy, HelpCircle, LogOut, X 
+  Activity, UserCircle, Users, Trophy, HelpCircle, LogOut, X, Beaker 
 } from 'lucide-react';
 
 import { authService } from '../../../services/authService';
@@ -28,7 +28,7 @@ const Sidebar = ({ isOpen, onClose }) => {
     { name: "Grades", path: "/dashboard/student/grades", icon: <Award size={20} /> }, // Screen 7
     { name: "Messages", path: "/dashboard/student/communication", icon: <MessageSquare size={20} /> }, // Screen 8
     { name: "Analytics", path: "/dashboard/student/analytics", icon: <BarChart2 size={20} /> }, // Screen 9
-   
+    { name: "My Lab Journey", path: "/dashboard/student/lab-journey", icon: <Beaker size={20} /> }, // Lab Journey
     { name: "Behavior", path: "/dashboard/student/behavior", icon: <Activity size={20} /> }, // Screen 11
     { name: "Profile", path: "/dashboard/student/profile", icon: <UserCircle size={20} /> }, // Screen 12
     { name: "Parent Link", path: "/dashboard/student/parentlink", icon: <Users size={20} /> }, // Screen 13

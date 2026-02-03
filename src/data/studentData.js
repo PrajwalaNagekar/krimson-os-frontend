@@ -7,6 +7,432 @@ export const STUDENT_DATA = {
     avatar: "https://i.pravatar.cc/150?img=12",
     house: "Red House",
     attendance: "94%",
+    about:
+      "I am a passionate learner interested in Physics and Computer Science. I love building things and solving complex problems.",
+    skills: ["Physics", "Coding", "Debate", "Robotics"],
+    goals: [
+      "Achieve 95%+ in Physics",
+      "Win National Science Olympiad",
+      "Master Python Programming",
+      "Publish research paper",
+    ],
+    interests: [
+      "Quantum Physics",
+      "Machine Learning",
+      "Robotics",
+      "Space Exploration",
+      "Environmental Science",
+    ],
+    joinedClubs: [
+      {
+        id: 1,
+        name: "Robotics Club",
+        category: "STEM",
+        role: "Member",
+        joinedDate: "2025-09-01",
+      },
+      {
+        id: 2,
+        name: "Debate Society",
+        category: "Arts & Culture",
+        role: "Active Member",
+        joinedDate: "2025-09-15",
+      },
+    ],
+    joinedGroups: [
+      { id: 1, name: "Grade 10 Class Group", role: "Member" },
+      { id: 2, name: "Red House Team", role: "Member" },
+    ],
+    availableClubs: [
+      {
+        id: 1,
+        name: "Robotics Club",
+        category: "STEM",
+        description:
+          "Build and program robots, participate in competitions, and explore automation and AI.",
+        members: 45,
+      },
+      {
+        id: 2,
+        name: "Debate Society",
+        category: "Arts & Culture",
+        description:
+          "Develop critical thinking and public speaking skills through structured debates.",
+        members: 30,
+      },
+      {
+        id: 3,
+        name: "Science Club",
+        category: "STEM",
+        description:
+          "Conduct experiments, attend science fairs, and explore various scientific fields.",
+        members: 50,
+      },
+      {
+        id: 4,
+        name: "Coding Club",
+        category: "STEM",
+        description:
+          "Learn programming languages, participate in hackathons, and build software projects.",
+        members: 38,
+      },
+      {
+        id: 5,
+        name: "Drama Club",
+        category: "Arts & Culture",
+        description:
+          "Perform in plays, develop acting skills, and explore theatrical production.",
+        members: 25,
+      },
+      {
+        id: 6,
+        name: "Environmental Club",
+        category: "Environment",
+        description:
+          "Work on sustainability projects, organize clean-ups, and promote environmental awareness.",
+        members: 28,
+      },
+      {
+        id: 7,
+        name: "Chess Club",
+        category: "Sports & Games",
+        description:
+          "Learn chess strategies, participate in tournaments, and improve logical thinking.",
+        members: 20,
+      },
+      {
+        id: 8,
+        name: "Art Club",
+        category: "Arts & Culture",
+        description:
+          "Explore various art mediums, create artwork, and participate in exhibitions.",
+        members: 32,
+      },
+      {
+        id: 9,
+        name: "Music Band",
+        category: "Arts & Culture",
+        description:
+          "Play instruments, perform at events, and collaborate on musical compositions.",
+        members: 22,
+      },
+      {
+        id: 10,
+        name: "Astronomy Club",
+        category: "STEM",
+        description:
+          "Study celestial objects, use telescopes, and learn about space exploration.",
+        members: 18,
+      },
+    ],
+    email: "alex.johnson@school.edu",
+    phone: "+1 (555) 123-4567",
+
+    // Skill Badges
+    earnedSkills: [
+      {
+        id: 1,
+        name: "Python Programming",
+        category: "Technical",
+        proficiency: 75,
+        level: "Advanced",
+        earnedDate: "2025-10-15",
+        icon: "💻",
+        description: "Proficient in Python for data analysis and automation",
+      },
+      {
+        id: 2,
+        name: "Robotic Assembly",
+        category: "Technical",
+        proficiency: 65,
+        level: "Intermediate",
+        earnedDate: "2025-09-20",
+        icon: "🤖",
+        description: "Build and program robots for competitions",
+      },
+      {
+        id: 3,
+        name: "Public Speaking",
+        category: "Leadership",
+        proficiency: 80,
+        level: "Advanced",
+        earnedDate: "2025-11-05",
+        icon: "🎤",
+        description: "Confident speaker in debates and presentations",
+      },
+      {
+        id: 4,
+        name: "Research Methods",
+        category: "Academic",
+        proficiency: 70,
+        level: "Advanced",
+        earnedDate: "2025-08-30",
+        icon: "🔬",
+        description: "Design and conduct scientific research",
+      },
+      {
+        id: 5,
+        name: "Data Visualization",
+        category: "Technical",
+        proficiency: 60,
+        level: "Intermediate",
+        earnedDate: "2025-12-10",
+        icon: "📊",
+        description: "Create charts and graphs to present data",
+      },
+      {
+        id: 6,
+        name: "Team Leadership",
+        category: "Leadership",
+        proficiency: 85,
+        level: "Expert",
+        earnedDate: "2025-07-15",
+        icon: "👥",
+        description: "Lead and motivate team members effectively",
+      },
+      {
+        id: 7,
+        name: "Critical Thinking",
+        category: "Academic",
+        proficiency: 78,
+        level: "Advanced",
+        earnedDate: "2025-10-01",
+        icon: "🧠",
+        description: "Analyze complex problems and develop solutions",
+      },
+      {
+        id: 8,
+        name: "Digital Design",
+        category: "Creative",
+        proficiency: 50,
+        level: "Intermediate",
+        earnedDate: "2025-11-20",
+        icon: "🎨",
+        description: "Create digital artwork and graphics",
+      },
+    ],
+
+    recommendedSkills: [
+      {
+        id: 10,
+        name: "Machine Learning Basics",
+        category: "Technical",
+        reason: "Based on your Python skills and AI interests",
+        icon: "🤖",
+        difficulty: "Intermediate",
+      },
+      {
+        id: 11,
+        name: "Arduino Programming",
+        category: "Technical",
+        reason: "Complement your robotics knowledge",
+        icon: "⚡",
+        difficulty: "Beginner",
+      },
+      {
+        id: 12,
+        name: "Scientific Writing",
+        category: "Academic",
+        reason: "Perfect for publishing research papers",
+        icon: "📝",
+        difficulty: "Intermediate",
+      },
+      {
+        id: 13,
+        name: "3D Modeling",
+        category: "Creative",
+        reason: "Enhance your robotics and design projects",
+        icon: "🎲",
+        difficulty: "Intermediate",
+      },
+      {
+        id: 14,
+        name: "Debate Strategy",
+        category: "Leadership",
+        reason: "Build on your public speaking skills",
+        icon: "⚖️",
+        difficulty: "Advanced",
+      },
+    ],
+    achievements: [
+      {
+        id: 1,
+        title: "5 Day Streak",
+        icon: "🔥",
+        color: "orange",
+        description: "Perfect attendance",
+      },
+      {
+        id: 2,
+        title: "Math Wizard",
+        icon: "🎯",
+        color: "blue",
+        description: "95% in Math test",
+      },
+      {
+        id: 3,
+        title: "Quick Learner",
+        icon: "⚡",
+        color: "yellow",
+        description: "10+ modules completed",
+      },
+      {
+        id: 4,
+        title: "Team Player",
+        icon: "🤝",
+        color: "green",
+        description: "Group project excellence",
+      },
+      {
+        id: 5,
+        title: "Science Star",
+        icon: "🌟",
+        color: "purple",
+        description: "Science Fair Winner",
+      },
+      {
+        id: 6,
+        title: "Top Performer",
+        icon: "🏆",
+        color: "gold",
+        description: "Class Rank #3",
+      },
+    ],
+    leaderboard: {
+      classRank: 3,
+      gradeRank: 15,
+      totalStudents: 120,
+      points: 2450,
+    },
+
+    // Health Notes (Limited View)
+    healthNotes: {
+      bloodGroup: "O+",
+      height: "5'8\"",
+      weight: "65 kg",
+      allergies: ["Peanuts", "Dust"],
+      chronicConditions: [],
+      lastCheckupDate: "2025-12-15",
+      vaccinations: [
+        {
+          id: 1,
+          name: "COVID-19 Booster",
+          date: "2025-11-20",
+          status: "completed",
+        },
+        {
+          id: 2,
+          name: "Flu Shot",
+          date: "2025-10-05",
+          status: "completed",
+        },
+      ],
+      emergencyContact: {
+        name: "Sarah Johnson (Mother)",
+        relationship: "Parent",
+        phone: "+1 (555) 123-4567",
+      },
+      physicalActivitiesRestrictions: "None",
+      note: "Limited health information is displayed for privacy. Full medical records are maintained by school nurse and available to authorized personnel only.",
+    },
+  },
+
+  // Activity Log
+  profileActivityLog: {
+    recentActivity: [
+      {
+        id: 1,
+        action: "Logged in",
+        time: "2026-02-02 09:30 AM",
+        ip: "192.168.1.1",
+      },
+      {
+        id: 2,
+        action: "Submitted Assignment",
+        time: "2026-02-01 02:15 PM",
+        ip: "192.168.1.1",
+      },
+      {
+        id: 3,
+        action: "Updated Profile",
+        time: "2026-01-30 11:00 AM",
+        ip: "192.168.1.1",
+      },
+      {
+        id: 4,
+        action: "Password Changed",
+        time: "2026-01-15 10:00 AM",
+        ip: "192.168.1.1",
+      },
+      {
+        id: 5,
+        action: "Logged in",
+        time: "2026-01-14 09:00 AM",
+        ip: "192.168.1.1",
+      },
+    ],
+  },
+
+  // Portfolio Data
+  portfolio: {
+    projects: [
+      {
+        id: 1,
+        title: "Eco-Friendly Smart Home",
+        type: "Project",
+        date: "2025-11-15",
+        thumbnail:
+          "https://images.unsplash.com/photo-1558002038-1091a166111c?w=500&auto=format&fit=crop&q=60",
+        tags: ["Science", "Sustainability"],
+        showcase: true,
+      },
+      {
+        id: 2,
+        title: "History of Rome Timeline",
+        type: "Project",
+        date: "2025-10-20",
+        thumbnail:
+          "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=500&auto=format&fit=crop&q=60",
+        tags: ["History", "Research"],
+        showcase: false,
+      },
+    ],
+    labs: [
+      {
+        id: 3,
+        title: "Optics & Light Refraction",
+        type: "Lab",
+        date: "2026-01-10",
+        thumbnail:
+          "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop&q=60",
+        tags: ["Physics", "Lab Work"],
+        showcase: true,
+      },
+    ],
+    assessments: [
+      {
+        id: 4,
+        title: "Mid-Term Mathematics",
+        type: "Assessment",
+        date: "2025-12-10",
+        thumbnail:
+          "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&auto=format&fit=crop&q=60",
+        tags: ["Math", "Grade A"],
+        showcase: true,
+      },
+    ],
+    cca: [
+      {
+        id: 5,
+        title: "Debate Championship Winner",
+        type: "Achievement",
+        date: "2025-09-05",
+        thumbnail:
+          "https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=500&auto=format&fit=crop&q=60",
+        tags: ["Extra Curricular", "Public Speaking"],
+        showcase: true,
+      },
+    ],
   },
 
   // Screen 1: Home Dashboard
@@ -1048,6 +1474,239 @@ export const STUDENT_DATA = {
     },
   ],
 
+  // Screen 8: Groups - WhatsApp-style group communications
+  groups: [
+    {
+      id: 1,
+      name: "Class 10-B",
+      type: "class",
+      memberCount: 42,
+      avatar: "👥",
+      description: "Main class group for announcements and discussions",
+      lastMessage: {
+        sender: "Rahul Sharma",
+        content: "Did anyone complete the physics assignment?",
+        timestamp: "2026-02-02T13:30:00",
+        time: "1 hr ago",
+      },
+      unreadCount: 5,
+      messages: [
+        {
+          id: 1,
+          sender: "Priya Patel",
+          content: "Anyone have notes for chemistry chapter 5?",
+          timestamp: "2026-02-02T10:00:00",
+          time: "10:00 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "You",
+          content: "Yes, I have them. I'll share after school.",
+          timestamp: "2026-02-02T10:15:00",
+          time: "10:15 AM",
+          isOwn: true,
+          status: "read",
+        },
+        {
+          id: 3,
+          sender: "Arjun Singh",
+          content: "Thanks! That would be really helpful.",
+          timestamp: "2026-02-02T10:20:00",
+          time: "10:20 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 4,
+          sender: "Sneha Gupta",
+          content: "Don't forget the math quiz tomorrow!",
+          timestamp: "2026-02-02T12:00:00",
+          time: "12:00 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 5,
+          sender: "Rahul Sharma",
+          content: "Did anyone complete the physics assignment?",
+          timestamp: "2026-02-02T13:30:00",
+          time: "1:30 PM",
+          isOwn: false,
+          status: "delivered",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Science Club",
+      type: "club",
+      memberCount: 15,
+      avatar: "🔬",
+      description: "Science enthusiasts and project collaborators",
+      lastMessage: {
+        sender: "Ms. Kumar",
+        content: "Science fair meeting at 4 PM today",
+        timestamp: "2026-02-02T11:00:00",
+        time: "3 hrs ago",
+      },
+      unreadCount: 2,
+      messages: [
+        {
+          id: 1,
+          sender: "Ms. Kumar",
+          content: "Great work on your projects everyone! Keep it up.",
+          timestamp: "2026-02-02T09:00:00",
+          time: "9:00 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "Vikram Reddy",
+          content: "When is the next meeting?",
+          timestamp: "2026-02-02T09:30:00",
+          time: "9:30 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 3,
+          sender: "Ms. Kumar",
+          content: "Science fair meeting at 4 PM today",
+          timestamp: "2026-02-02T11:00:00",
+          time: "11:00 AM",
+          isOwn: false,
+          status: "delivered",
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: "Math Study Group",
+      type: "study",
+      memberCount: 8,
+      avatar: "📐",
+      description: "Collaborative math problem solving",
+      lastMessage: {
+        sender: "You",
+        content: "I figured out problem 12! Want me to explain?",
+        timestamp: "2026-02-01T16:45:00",
+        time: "Yesterday",
+      },
+      unreadCount: 0,
+      messages: [
+        {
+          id: 1,
+          sender: "Ananya Desai",
+          content: "Problem 12 is really tough! Anyone solved it?",
+          timestamp: "2026-02-01T15:00:00",
+          time: "Yesterday 3:00 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "Karan Mehta",
+          content: "Still working on it. The quadratic part is confusing.",
+          timestamp: "2026-02-01T15:30:00",
+          time: "Yesterday 3:30 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 3,
+          sender: "You",
+          content: "I figured out problem 12! Want me to explain?",
+          timestamp: "2026-02-01T16:45:00",
+          time: "Yesterday 4:45 PM",
+          isOwn: true,
+          status: "read",
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: "Football Team",
+      type: "sports",
+      memberCount: 22,
+      avatar: "⚽",
+      description: "School football team coordination",
+      lastMessage: {
+        sender: "Coach Williams",
+        content: "Practice tomorrow at 7 AM sharp!",
+        timestamp: "2026-02-01T18:00:00",
+        time: "Yesterday",
+      },
+      unreadCount: 1,
+      messages: [
+        {
+          id: 1,
+          sender: "Coach Williams",
+          content: "Great game today team! Excellent teamwork.",
+          timestamp: "2026-02-01T17:00:00",
+          time: "Yesterday 5:00 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "Captain Rohan",
+          content: "Thanks coach! Everyone played well.",
+          timestamp: "2026-02-01T17:15:00",
+          time: "Yesterday 5:15 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 3,
+          sender: "Coach Williams",
+          content: "Practice tomorrow at 7 AM sharp!",
+          timestamp: "2026-02-01T18:00:00",
+          time: "Yesterday 6:00 PM",
+          isOwn: false,
+          status: "delivered",
+        },
+      ],
+    },
+    {
+      id: 5,
+      name: "Debate Society",
+      type: "club",
+      memberCount: 12,
+      avatar: "🎤",
+      description: "Debate practice and competition updates",
+      lastMessage: {
+        sender: "Sarah Khan",
+        content: "Topic for Friday's debate: Climate Change Solutions",
+        timestamp: "2026-02-01T14:00:00",
+        time: "Yesterday",
+      },
+      unreadCount: 0,
+      messages: [
+        {
+          id: 1,
+          sender: "Mr. Patel",
+          content: "Remember to prepare your arguments for the next session.",
+          timestamp: "2026-02-01T10:00:00",
+          time: "Yesterday 10:00 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "Sarah Khan",
+          content: "Topic for Friday's debate: Climate Change Solutions",
+          timestamp: "2026-02-01T14:00:00",
+          time: "Yesterday 2:00 PM",
+          isOwn: false,
+          status: "read",
+        },
+      ],
+    },
+  ],
+
   // Screen 8: Communication (Legacy)
   messages: [
     {
@@ -1676,6 +2335,558 @@ export const STUDENT_DATA = {
         ],
       },
     ],
+
+    // Pillar Activity Views - Six Key Domains
+    pillarActivities: {
+      // Pillar overview stats
+      totalPillarActivities: 24,
+      pillarStats: [
+        { pillar: "Imaginarium", count: 4, points: 45, icon: "🎨" },
+        { pillar: "Literary", count: 4, points: 40, icon: "📚" },
+        { pillar: "Science & Astronomy", count: 4, points: 50, icon: "🔬" },
+        { pillar: "Leadership & Service", count: 4, points: 55, icon: "🤝" },
+        { pillar: "Sports & Wellness", count: 4, points: 60, icon: "⚽" },
+        { pillar: "Music & Dance", count: 4, points: 35, icon: "🎵" },
+      ],
+
+      // Detailed activities by pillar
+      imaginarium: [
+        {
+          id: 1,
+          title: "Digital Art Creation Workshop",
+          description:
+            "Created digital illustrations using advanced graphic design tools and techniques",
+          date: "2026-01-18",
+          duration: "3 days",
+          points: 15,
+          level: "Advanced",
+          mentors: ["Ms. Sarah Chen", "Mr. David Park"],
+          skills: ["Digital Design", "Creativity", "Visual Communication"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 2,
+          title: "3D Modeling Challenge",
+          description:
+            "Designed and rendered 3D models for a sustainable city project",
+          date: "2025-12-20",
+          duration: "1 week",
+          points: 12,
+          level: "Intermediate",
+          mentors: ["Mr. Alex Turner"],
+          skills: ["3D Modeling", "Problem Solving", "Innovation"],
+          status: "completed",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 3,
+          title: "Creative Photography Exhibition",
+          description: "Captured and curated a photo series on 'Urban Nature'",
+          date: "2025-11-15",
+          duration: "2 weeks",
+          points: 10,
+          level: "Beginner",
+          mentors: ["Ms. Rachel Green"],
+          skills: ["Photography", "Artistic Vision", "Curation"],
+          status: "completed",
+          certificate: true,
+          showcase: false,
+        },
+        {
+          id: 4,
+          title: "Innovation Hackathon",
+          description:
+            "Developed creative solutions for school sustainability challenges",
+          date: "2025-10-10",
+          duration: "2 days",
+          points: 8,
+          level: "Intermediate",
+          mentors: ["Dr. James Wilson"],
+          skills: ["Innovation", "Teamwork", "Design Thinking"],
+          status: "completed",
+          certificate: false,
+          showcase: true,
+        },
+      ],
+
+      literary: [
+        {
+          id: 5,
+          title: "Poetry Slam Competition",
+          description: "Performed original poetry on social justice themes",
+          date: "2026-01-12",
+          duration: "1 day",
+          points: 12,
+          level: "Advanced",
+          mentors: ["Mrs. Emma Thompson"],
+          skills: ["Creative Writing", "Public Speaking", "Expression"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 6,
+          title: "School Magazine Editorial Team",
+          description:
+            "Served as editor for the quarterly school literary magazine",
+          date: "2025-12-01",
+          duration: "3 months",
+          points: 15,
+          level: "Advanced",
+          mentors: ["Mr. Robert Brown"],
+          skills: ["Editing", "Leadership", "Content Creation"],
+          status: "in-progress",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 7,
+          title: "Book Club Leadership",
+          description: "Led weekly discussions on contemporary literature",
+          date: "2025-11-05",
+          duration: "Ongoing",
+          points: 8,
+          level: "Intermediate",
+          mentors: ["Ms. Lisa Anderson"],
+          skills: ["Critical Analysis", "Leadership", "Communication"],
+          status: "in-progress",
+          certificate: false,
+          showcase: false,
+        },
+        {
+          id: 8,
+          title: "Creative Writing Workshop",
+          description: "Completed intensive workshop on short story writing",
+          date: "2025-10-25",
+          duration: "5 days",
+          points: 5,
+          level: "Beginner",
+          mentors: ["Mr. Michael Davis"],
+          skills: [
+            "Storytelling",
+            "Narrative Structure",
+            "Character Development",
+          ],
+          status: "completed",
+          certificate: true,
+          showcase: false,
+        },
+      ],
+
+      scienceAstronomy: [
+        {
+          id: 9,
+          title: "Astronomy Night Observation",
+          description:
+            "Led stargazing session and identified 20+ celestial objects",
+          date: "2026-01-08",
+          duration: "1 night",
+          points: 15,
+          level: "Advanced",
+          mentors: ["Dr. Neil Sharma", "Ms. Stella Kumar"],
+          skills: ["Astronomy", "Scientific Observation", "Teaching"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 10,
+          title: "Science Fair Project - Renewable Energy",
+          description:
+            "Developed working solar panel efficiency comparison model",
+          date: "2025-12-15",
+          duration: "6 weeks",
+          points: 18,
+          level: "Advanced",
+          mentors: ["Dr. Priya Patel"],
+          skills: ["Research", "Experimentation", "Presentation"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 11,
+          title: "Rocket Launch Workshop",
+          description: "Built and launched model rockets studying aerodynamics",
+          date: "2025-11-20",
+          duration: "3 days",
+          points: 10,
+          level: "Intermediate",
+          mentors: ["Mr. Raj Gupta"],
+          skills: ["Physics", "Engineering", "Teamwork"],
+          status: "completed",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 12,
+          title: "Planetarium Visit & Report",
+          description:
+            "Attended planetarium show and wrote detailed astronomical report",
+          date: "2025-10-18",
+          duration: "1 day",
+          points: 7,
+          level: "Beginner",
+          mentors: ["Ms. Kavita Singh"],
+          skills: ["Astronomy", "Scientific Writing", "Research"],
+          status: "completed",
+          certificate: false,
+          showcase: false,
+        },
+      ],
+
+      leadershipService: [
+        {
+          id: 13,
+          title: "Community Clean-Up Drive Leader",
+          description:
+            "Organized and led 50+ volunteers in neighborhood cleanup",
+          date: "2026-01-15",
+          duration: "1 day",
+          points: 20,
+          level: "Advanced",
+          mentors: ["Mr. John Williams"],
+          skills: ["Leadership", "Community Service", "Organization"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 14,
+          title: "Peer Mentoring Program",
+          description:
+            "Mentored 5 junior students in math and science subjects",
+          date: "2025-12-01",
+          duration: "3 months",
+          points: 15,
+          level: "Advanced",
+          mentors: ["Mrs. Sandra Lee"],
+          skills: ["Mentoring", "Teaching", "Empathy"],
+          status: "in-progress",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 15,
+          title: "School Prefect Duties",
+          description:
+            "Served as school prefect maintaining discipline and assisting students",
+          date: "2025-09-01",
+          duration: "Ongoing",
+          points: 12,
+          level: "Intermediate",
+          mentors: ["Principal Dr. Monica Verma"],
+          skills: ["Leadership", "Responsibility", "Communication"],
+          status: "in-progress",
+          certificate: false,
+          showcase: false,
+        },
+        {
+          id: 16,
+          title: "Food Drive Organizer",
+          description:
+            "Collected and distributed food packages to 30+ families",
+          date: "2025-11-22",
+          duration: "2 weeks",
+          points: 8,
+          level: "Intermediate",
+          mentors: ["Mrs. Karen Martinez"],
+          skills: ["Organization", "Community Service", "Compassion"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+      ],
+
+      sportsWellness: [
+        {
+          id: 17,
+          title: "Inter-School Football Tournament",
+          description: "Represented school in regional football championship",
+          date: "2026-01-20",
+          duration: "3 days",
+          points: 20,
+          level: "Advanced",
+          mentors: ["Coach Mike Johnson"],
+          skills: ["Teamwork", "Physical Fitness", "Strategy"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 18,
+          title: "Yoga & Mindfulness Workshop",
+          description: "Completed wellness workshop focused on mental health",
+          date: "2025-12-10",
+          duration: "1 week",
+          points: 10,
+          level: "Beginner",
+          mentors: ["Ms. Priya Reddy"],
+          skills: ["Wellness", "Mindfulness", "Self-Care"],
+          status: "completed",
+          certificate: true,
+          showcase: false,
+        },
+        {
+          id: 19,
+          title: "Swimming Championship",
+          description: "Won silver medal in 100m freestyle event",
+          date: "2025-11-08",
+          duration: "2 days",
+          points: 18,
+          level: "Advanced",
+          mentors: ["Coach Sarah Wilson"],
+          skills: ["Swimming", "Endurance", "Discipline"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 20,
+          title: "Sports Day Volunteer",
+          description: "Assisted in organizing annual school sports day events",
+          date: "2025-10-05",
+          duration: "1 day",
+          points: 12,
+          level: "Intermediate",
+          mentors: ["Mr. David Clarke"],
+          skills: ["Organization", "Leadership", "Event Management"],
+          status: "completed",
+          certificate: false,
+          showcase: false,
+        },
+      ],
+
+      musicDance: [
+        {
+          id: 21,
+          title: "Annual Concert Performance",
+          description:
+            "Performed classical guitar solo at school annual concert",
+          date: "2026-01-25",
+          duration: "1 evening",
+          points: 12,
+          level: "Advanced",
+          mentors: ["Mr. Carlos Rodriguez"],
+          skills: ["Music", "Performance", "Stage Presence"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 22,
+          title: "Dance Competition - Contemporary",
+          description:
+            "Participated in inter-school contemporary dance competition",
+          date: "2025-12-18",
+          duration: "1 day",
+          points: 10,
+          level: "Intermediate",
+          mentors: ["Ms. Anjali Nair"],
+          skills: ["Dance", "Expression", "Coordination"],
+          status: "completed",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 23,
+          title: "School Band Member",
+          description: "Regular member of school band performing at events",
+          date: "2025-09-01",
+          duration: "Ongoing",
+          points: 8,
+          level: "Intermediate",
+          mentors: ["Mr. Thomas Lee"],
+          skills: ["Music", "Collaboration", "Rhythm"],
+          status: "in-progress",
+          certificate: false,
+          showcase: false,
+        },
+        {
+          id: 24,
+          title: "Vocal Training Workshop",
+          description:
+            "Completed beginner vocal training covering techniques and theory",
+          date: "2025-10-30",
+          duration: "4 weeks",
+          points: 5,
+          level: "Beginner",
+          mentors: ["Ms. Maria Santos"],
+          skills: ["Singing", "Vocal Technique", "Music Theory"],
+          status: "completed",
+          certificate: true,
+          showcase: false,
+        },
+      ],
+    },
+
+    // CCA Attendance Tracking
+    ccaAttendance: {
+      overview: {
+        totalActivities: 4,
+        totalSessions: 32,
+        attendedSessions: 28,
+        attendancePercentage: 87.5,
+        missedSessions: 4,
+      },
+      activities: [
+        {
+          id: 1,
+          name: "Robotics Club",
+          category: "STEM",
+          schedule: "Every Monday & Wednesday, 3:30 PM - 5:00 PM",
+          instructor: "Mr. David Park",
+          totalSessions: 12,
+          attendedSessions: 11,
+          missedSessions: 1,
+          attendancePercentage: 92,
+          sessions: [
+            {
+              date: "2026-01-27",
+              status: "present",
+              topic: "Arduino Programming Basics",
+            },
+            {
+              date: "2026-01-22",
+              status: "present",
+              topic: "Sensor Integration",
+            },
+            {
+              date: "2026-01-20",
+              status: "present",
+              topic: "Motor Control Systems",
+            },
+            {
+              date: "2026-01-15",
+              status: "absent",
+              topic: "Robot Assembly Workshop",
+              reason: "Medical appointment",
+            },
+            { date: "2026-01-13", status: "present", topic: "Circuit Design" },
+            {
+              date: "2026-01-08",
+              status: "present",
+              topic: "Power Supply Management",
+            },
+          ],
+        },
+        {
+          id: 2,
+          name: "Debate Society",
+          category: "Arts & Culture",
+          schedule: "Every Thursday, 4:00 PM - 5:30 PM",
+          instructor: "Ms. Rachel Adams",
+          totalSessions: 8,
+          attendedSessions: 7,
+          missedSessions: 1,
+          attendancePercentage: 87.5,
+          sessions: [
+            {
+              date: "2026-01-23",
+              status: "present",
+              topic: "Parliamentary Debate Practice",
+            },
+            {
+              date: "2026-01-16",
+              status: "present",
+              topic: "Argumentation Techniques",
+            },
+            {
+              date: "2026-01-09",
+              status: "present",
+              topic: "Public Speaking Skills",
+            },
+            {
+              date: "2026-01-02",
+              status: "absent",
+              topic: "Mock Debate Competition",
+              reason: "Family function",
+            },
+            {
+              date: "2025-12-19",
+              status: "present",
+              topic: "Research Methods",
+            },
+          ],
+        },
+        {
+          id: 3,
+          name: "Basketball Team",
+          category: "Sports",
+          schedule: "Every Tuesday & Friday, 4:00 PM - 5:30 PM",
+          instructor: "Coach Michael Brown",
+          totalSessions: 8,
+          attendedSessions: 7,
+          missedSessions: 1,
+          attendancePercentage: 87.5,
+          sessions: [
+            {
+              date: "2026-01-24",
+              status: "present",
+              topic: "Team Practice Match",
+            },
+            {
+              date: "2026-01-21",
+              status: "present",
+              topic: "Defensive Drills",
+            },
+            {
+              date: "2026-01-17",
+              status: "present",
+              topic: "Shooting Practice",
+            },
+            {
+              date: "2026-01-14",
+              status: "present",
+              topic: "Passing & Movement",
+            },
+            {
+              date: "2026-01-10",
+              status: "absent",
+              topic: "Conditioning Session",
+              reason: "Minor injury",
+            },
+          ],
+        },
+        {
+          id: 4,
+          name: "Music Band",
+          category: "Arts & Culture",
+          schedule: "Every Saturday, 10:00 AM - 12:00 PM",
+          instructor: "Ms. Emily Watson",
+          totalSessions: 4,
+          attendedSessions: 3,
+          missedSessions: 1,
+          attendancePercentage: 75,
+          sessions: [
+            {
+              date: "2026-01-25",
+              status: "present",
+              topic: "Full Band Rehearsal",
+            },
+            {
+              date: "2026-01-18",
+              status: "present",
+              topic: "New Song Practice",
+            },
+            {
+              date: "2026-01-11",
+              status: "absent",
+              topic: "Individual Section Practice",
+              reason: "Out of town",
+            },
+            {
+              date: "2026-01-04",
+              status: "present",
+              topic: "Ensemble Coordination",
+            },
+          ],
+        },
+      ],
+    },
   },
 
   // Legacy activities for backward compatibility
@@ -3012,6 +4223,596 @@ export const STUDENT_DATA = {
     score: 78,
     message:
       "Your Chemistry score (78%) is slightly below your average. Consistent revision of organic compounds is recommended this week.",
-    color: "orange",
+  },
+
+  // My Lab Journey Data
+  labJourney: {
+    // Lab Booking - Scheduled lab sessions
+    labBookings: [
+      {
+        id: 1,
+        subject: "Physics",
+        labName: "Optics Laboratory",
+        room: "Lab 3",
+        date: "2026-02-05",
+        time: "10:30 AM - 12:30 PM",
+        teacher: "Mr. Sharma",
+        experiment: "Refraction and Lens Experiments",
+        status: "upcoming",
+        prepStatus: "Completed",
+        materialsNeeded: ["Safety goggles", "Lab coat", "Calculator"],
+      },
+      {
+        id: 2,
+        subject: "Chemistry",
+        labName: "Organic Chemistry Lab",
+        room: "Lab 2",
+        date: "2026-02-06",
+        time: "02:00 PM - 04:00 PM",
+        teacher: "Dr. Patel",
+        experiment: "Functional Groups Analysis",
+        status: "upcoming",
+        prepStatus: "Pending",
+        materialsNeeded: ["Lab coat", "Gloves", "Safety goggles"],
+      },
+      {
+        id: 3,
+        subject: "Biology",
+        labName: "Microbiology Lab",
+        room: "Lab 4",
+        date: "2026-02-03",
+        time: "09:00 AM - 11:00 AM",
+        teacher: "Ms. Kapoor",
+        experiment: "Cell Structure Observation",
+        status: "completed",
+        prepStatus: "Completed",
+        materialsNeeded: ["Microscope slides", "Cover slips", "Lab coat"],
+      },
+      {
+        id: 4,
+        subject: "Physics",
+        labName: "Mechanics Lab",
+        room: "Lab 1",
+        date: "2026-02-08",
+        time: "11:00 AM - 01:00 PM",
+        teacher: "Mr. Sharma",
+        experiment: "Simple Pendulum - Time Period Calculation",
+        status: "upcoming",
+        prepStatus: "In Progress",
+        materialsNeeded: ["Stopwatch", "Meter scale", "Thread"],
+      },
+    ],
+
+    // Lab Safety Instructions - Hardcoded
+    safetyInstructions: {
+      generalRules: [
+        {
+          id: 1,
+          title: "Always Wear Proper PPE",
+          description:
+            "Lab coat, safety goggles, and closed-toe shoes are mandatory in all lab sessions.",
+          icon: "👔",
+          priority: "high",
+        },
+        {
+          id: 2,
+          title: "No Food or Drinks",
+          description:
+            "Absolutely no eating, drinking, or chewing gum in the laboratory.",
+          icon: "🚫",
+          priority: "high",
+        },
+        {
+          id: 3,
+          title: "Report All Accidents",
+          description:
+            "Immediately inform your teacher of any spills, breaks, or injuries, no matter how minor.",
+          icon: "🚨",
+          priority: "high",
+        },
+        {
+          id: 4,
+          title: "Read Instructions Carefully",
+          description:
+            "Before starting any experiment, read all instructions thoroughly and ask questions if unsure.",
+          icon: "📖",
+          priority: "medium",
+        },
+        {
+          id: 5,
+          title: "Keep Workspace Clean",
+          description:
+            "Maintain a tidy workspace. Clean up all materials and equipment after completing your work.",
+          icon: "🧹",
+          priority: "medium",
+        },
+      ],
+      equipmentHandling: [
+        {
+          id: 1,
+          title: "Handle Glassware with Care",
+          description:
+            "Check for cracks before use. Report damaged glassware immediately.",
+          icon: "🧪",
+        },
+        {
+          id: 2,
+          title: "Proper Chemical Handling",
+          description:
+            "Never touch, taste, or smell chemicals unless specifically instructed. Use spatulas and pipettes.",
+          icon: "⚗️",
+        },
+        {
+          id: 3,
+          title: "Electrical Safety",
+          description:
+            "Keep electrical equipment away from water. Turn off equipment when not in use.",
+          icon: "⚡",
+        },
+        {
+          id: 4,
+          title: "Bunsen Burner Safety",
+          description:
+            "Tie back long hair. Keep flammable materials away from flames. Turn off gas when done.",
+          icon: "🔥",
+        },
+      ],
+      emergencyProcedures: [
+        {
+          id: 1,
+          title: "Fire Emergency",
+          description:
+            "Alert others immediately. Use fire extinguisher if trained. Evacuate calmly through designated exits.",
+          icon: "🧯",
+        },
+        {
+          id: 2,
+          title: "Chemical Spill",
+          description:
+            "Alert teacher immediately. Do not attempt to clean large spills yourself. Evacuate if fumes are present.",
+          icon: "🧴",
+        },
+        {
+          id: 3,
+          title: "Eye Contact with Chemicals",
+          description:
+            "Rinse eyes at eyewash station for 15 minutes. Keep eyes open while rinsing. Seek medical attention.",
+          icon: "👁️",
+        },
+        {
+          id: 4,
+          title: "First Aid Station",
+          description:
+            "Location: Near Lab Entrance. Contains: bandages, burn gel, eye wash, emergency contact numbers.",
+          icon: "🏥",
+        },
+      ],
+    },
+
+    // Lab Logbook - Experiment entries
+    labLogbook: [
+      {
+        id: 1,
+        title: "Refraction Through Glass Slab",
+        subject: "Physics",
+        date: "2026-01-28",
+        labRoom: "Lab 3",
+        teacher: "Mr. Sharma",
+        hypothesis:
+          "Light bends when passing from one medium to another due to change in speed, following Snell's Law.",
+        procedure: [
+          "Set up glass slab on white paper with incident ray marked",
+          "Direct light ray at various angles through the glass slab",
+          "Mark emergent ray positions for each angle of incidence",
+          "Measure angles of incidence, refraction, and emergence",
+          "Calculate refractive index using Snell's Law formula",
+        ],
+        observations:
+          "Light ray bent towards normal when entering glass, bent away when exiting. Emergent ray parallel to incident ray but laterally displaced.",
+        conclusion:
+          "Verified Snell's Law. Calculated refractive index of glass: 1.52 (close to theoretical value of 1.5)",
+        status: "completed",
+        grade: "A",
+        aiSuggestion:
+          "Consider exploring how refraction varies with different wavelengths of light (dispersion).",
+      },
+      {
+        id: 2,
+        title: "Photosynthesis Rate Measurement",
+        subject: "Biology",
+        date: "2026-01-25",
+        labRoom: "Lab 4",
+        teacher: "Ms. Kapoor",
+        hypothesis:
+          "Rate of photosynthesis increases with light intensity up to a saturation point.",
+        procedure: [
+          "Set up aquatic plant (Hydrilla) in beaker with water",
+          "Place light source at varying distances (10cm, 20cm, 30cm, 40cm)",
+          "Count oxygen bubbles released per minute at each distance",
+          "Repeat measurements 3 times for accuracy",
+          "Plot graph of bubble rate vs. light intensity",
+        ],
+        observations:
+          "Bubble rate: 45/min at 10cm, 28/min at 20cm, 15/min at 30cm, 8/min at 40cm. Clear inverse relationship with distance.",
+        conclusion:
+          "Photosynthesis rate decreases with distance from light source (reduced light intensity). Supports hypothesis.",
+        status: "completed",
+        grade: "A+",
+        aiSuggestion:
+          "Excellent observation skills. Next, try varying CO₂ concentration to study limiting factors.",
+      },
+      {
+        id: 3,
+        title: "Acid-Base Titration",
+        subject: "Chemistry",
+        date: "2026-01-20",
+        labRoom: "Lab 2",
+        teacher: "Dr. Patel",
+        hypothesis:
+          "The unknown acid concentration can be determined by neutralization with a standard base solution.",
+        procedure: [
+          "Fill burette with 0.1M NaOH solution",
+          "Pipette 10ml unknown HCl into conical flask",
+          "Add 2 drops phenolphthalein indicator",
+          "Titrate slowly until persistent pink color appears",
+          "Record burette readings and calculate molarity",
+        ],
+        observations:
+          "Initial reading: 0.0ml, Final reading: 12.4ml. Solution turned from colorless to light pink at endpoint.",
+        conclusion:
+          "Unknown acid concentration calculated as 0.124M using neutralization equation. Endpoint clearly visible with phenolphthalein.",
+        status: "completed",
+        grade: "B+",
+        aiSuggestion:
+          "Good technique. For improvement, try multiple trials and calculate average to reduce error.",
+      },
+      {
+        id: 4,
+        title: "Pendulum Time Period vs Length",
+        subject: "Physics",
+        date: "2026-02-01",
+        labRoom: "Lab 1",
+        teacher: "Mr. Sharma",
+        hypothesis:
+          "Time period of a simple pendulum is directly proportional to the square root of its length.",
+        procedure: [
+          "Set up pendulum with 20cm thread length",
+          "Measure time for 20 oscillations, calculate average time period",
+          "Repeat for lengths: 40cm, 60cm, 80cm, 100cm",
+          "Plot graph of T² vs L",
+          "Calculate 'g' from slope of graph",
+        ],
+        observations:
+          "Linear relationship between T² and L observed. Slope = 4π²/g used to determine gravitational acceleration.",
+        conclusion:
+          "Verified T ∝ √L relationship. Calculated g = 9.78 m/s² (2% error from standard value 9.8 m/s²)",
+        status: "in-progress",
+        grade: null,
+        aiSuggestion:
+          "Include error analysis discussing possible sources of the 2% deviation (air resistance, human reaction time).",
+      },
+    ],
+
+    // Observation Notes - Detailed measurements
+    observationNotes: [
+      {
+        id: 1,
+        experimentTitle: "Refraction Through Glass Slab",
+        subject: "Physics",
+        date: "2026-01-28",
+        dataTable: [
+          {
+            trial: 1,
+            angleOfIncidence: 30,
+            angleOfRefraction: 19,
+            angleOfEmergence: 30,
+            lateralDisplacement: 0.8,
+          },
+          {
+            trial: 2,
+            angleOfIncidence: 45,
+            angleOfRefraction: 28,
+            angleOfEmergence: 45,
+            lateralDisplacement: 1.2,
+          },
+          {
+            trial: 3,
+            angleOfIncidence: 60,
+            angleOfRefraction: 35,
+            angleOfEmergence: 60,
+            lateralDisplacement: 1.6,
+          },
+        ],
+        qualitativeObservations: [
+          "Incident ray, refracted ray, and normal all lie in same plane",
+          "Emergent ray parallel to incident ray but displaced laterally",
+          "Greater angle of incidence results in larger lateral displacement",
+          "No dispersion observed (white light remained white)",
+        ],
+        aiSuggestion:
+          "Record glass slab thickness for more precise refractive index calculation.",
+      },
+      {
+        id: 2,
+        experimentTitle: "Photosynthesis Rate Measurement",
+        subject: "Biology",
+        date: "2026-01-25",
+        dataTable: [
+          {
+            distance: "10 cm",
+            trial1: 46,
+            trial2: 44,
+            trial3: 45,
+            average: 45,
+          },
+          {
+            distance: "20 cm",
+            trial1: 29,
+            trial2: 27,
+            trial3: 28,
+            average: 28,
+          },
+          {
+            distance: "30 cm",
+            trial1: 16,
+            trial2: 14,
+            trial3: 15,
+            average: 15,
+          },
+          {
+            distance: "40 cm",
+            trial1: 9,
+            trial2: 7,
+            trial3: 8,
+            average: 8,
+          },
+        ],
+        qualitativeObservations: [
+          "Plant appeared healthier and greener in brighter light",
+          "Bubbles more vigorous and consistent at 10cm distance",
+          "At 40cm, bubbles became irregular and slow",
+          "Water temperature remained constant (25°C) throughout",
+        ],
+        aiSuggestion:
+          "Consider recording bubble size as well as count for more accurate oxygen production measurement.",
+      },
+      {
+        id: 3,
+        experimentTitle: "Pendulum Time Period",
+        subject: "Physics",
+        date: "2026-02-01",
+        dataTable: [
+          { length: 20, time20Osc: 17.8, timePeriod: 0.89, tSquared: 0.79 },
+          { length: 40, time20Osc: 25.3, timePeriod: 1.27, tSquared: 1.61 },
+          { length: 60, time20Osc: 31.0, timePeriod: 1.55, tSquared: 2.4 },
+          { length: 80, time20Osc: 35.8, timePeriod: 1.79, tSquared: 3.2 },
+          { length: 100, time20Osc: 40.1, timePeriod: 2.01, tSquared: 4.04 },
+        ],
+        qualitativeObservations: [
+          "Pendulum motion remained in single plane for small amplitudes",
+          "Slight energy loss observed over multiple oscillations",
+          "Thread remained taut throughout oscillations",
+          "Air resistance effect minimal for small bob",
+        ],
+        aiSuggestion:
+          "Try varying bob mass to verify that time period is independent of mass.",
+      },
+    ],
+
+    // Inference Builder - Reasoning from observations
+    inferences: [
+      {
+        id: 1,
+        title: "Understanding Snell's Law",
+        subject: "Physics",
+        experiment: "Refraction Through Glass Slab",
+        date: "2026-01-29",
+        observation:
+          "Light bent towards normal when entering glass, bent away when exiting. Emergent ray parallel to incident ray.",
+        reasoning: [
+          {
+            step: 1,
+            question: "Why does light bend when entering glass?",
+            studentAnswer:
+              "Light slows down in glass because it's denser than air, causing the direction to change.",
+            aiCoaching:
+              "Excellent! This shows understanding of the relationship between medium density and light speed.",
+            strength: "strong",
+          },
+          {
+            step: 2,
+            question: "Why is the emergent ray parallel to the incident ray?",
+            studentAnswer:
+              "Because the light exits into the same medium (air) it entered from, and the surfaces are parallel.",
+            aiCoaching:
+              "Perfect reasoning! You've identified the key factors: parallel surfaces and same initial/final medium.",
+            strength: "strong",
+          },
+          {
+            step: 3,
+            question: "What real-world applications use this principle?",
+            studentAnswer:
+              "Eyeglasses, cameras, telescopes, and microscopes all use refraction to focus light.",
+            aiCoaching:
+              "Great examples! Can you think about how this relates to prisms and rainbows as well?",
+            strength: "strong",
+          },
+        ],
+        finalInference:
+          "Refraction occurs due to change in light speed across media. The refractive index quantifies this change. Parallel surfaces ensure emergent ray parallels incident ray despite lateral displacement.",
+        masteryLevel: "Advanced",
+      },
+      {
+        id: 2,
+        title: "Photosynthesis and Light Intensity",
+        subject: "Biology",
+        experiment: "Photosynthesis Rate Measurement",
+        date: "2026-01-26",
+        observation:
+          "Oxygen bubble rate decreased from 45/min to 8/min as light distance increased from 10cm to 40cm.",
+        reasoning: [
+          {
+            step: 1,
+            question: "What does the bubble rate represent?",
+            studentAnswer:
+              "The bubbles are oxygen gas produced during photosynthesis, so more bubbles mean faster photosynthesis.",
+            aiCoaching:
+              "Exactly right! You've made the connection between observable bubbles and the chemical process.",
+            strength: "strong",
+          },
+          {
+            step: 2,
+            question: "Why does increasing distance reduce bubble rate?",
+            studentAnswer:
+              "Light intensity decreases with distance, so less light energy is available for photosynthesis.",
+            aiCoaching:
+              "Good! This follows the inverse square law. Can you explain what might happen at very high light intensity?",
+            strength: "partial",
+          },
+          {
+            step: 3,
+            question: "What other factors could limit photosynthesis rate?",
+            studentAnswer:
+              "CO2 concentration, water availability, and temperature could also limit the rate.",
+            aiCoaching:
+              "Excellent understanding of limiting factors! You're thinking about the bigger picture of plant biology.",
+            strength: "strong",
+          },
+        ],
+        finalInference:
+          "Light intensity is a limiting factor for photosynthesis. As intensity increases, rate increases until another factor (CO2, water, enzymes) becomes limiting. This explains why plants need adequate sunlight for optimal growth.",
+        masteryLevel: "Proficient",
+      },
+      {
+        id: 3,
+        title: "Simple Harmonic Motion Principles",
+        subject: "Physics",
+        experiment: "Pendulum Time Period",
+        date: "2026-02-02",
+        observation:
+          "T² vs L graph showed linear relationship with slope proportional to 1/g.",
+        reasoning: [
+          {
+            step: 1,
+            question: "Why is the relationship between T² and L linear?",
+            studentAnswer:
+              "Because the formula T = 2π√(L/g) means T² = (4π²/g)L, which is y = mx form.",
+            aiCoaching:
+              "Outstanding mathematical insight! You've connected the physics formula to linear graph representation.",
+            strength: "strong",
+          },
+          {
+            step: 2,
+            question: "Why doesn't the bob's mass affect the time period?",
+            studentAnswer:
+              "I'm not completely sure, but I think gravity accelerates all masses equally?",
+            aiCoaching:
+              "You're on the right track! Think about F = ma and gravitational force. The mass cancels out in the equation.",
+            strength: "partial",
+          },
+          {
+            step: 3,
+            question: "What causes the 2% error in your calculated 'g' value?",
+            studentAnswer:
+              "Maybe air resistance, or I didn't count the oscillations perfectly, or the thread stretched slightly.",
+            aiCoaching:
+              "Excellent error analysis! These are all valid sources. Which do you think had the biggest impact?",
+            strength: "strong",
+          },
+        ],
+        finalInference:
+          "Simple pendulum motion depends only on length and gravity, not mass. This is characteristic of SHM where restoring force is proportional to displacement. Experimental errors are inevitable but can be minimized through careful technique.",
+        masteryLevel: "Proficient",
+      },
+    ],
+
+    // Reflection Journal - Metacognitive entries
+    reflectionJournal: [
+      {
+        id: 1,
+        title: "The Beauty of Physics in Everyday Life",
+        date: "2026-01-30",
+        linkedExperiments: ["Refraction Through Glass Slab"],
+        subjects: ["Physics"],
+        prompt:
+          "Reflect on how today's lab connects to your daily experiences.",
+        reflection:
+          "Today's refraction experiment made me realize why a straw looks bent in a glass of water - something I've seen countless times but never understood! The way light bends between air and water is the same principle. It's amazing how physics explains these 'magic tricks' of nature. I also thought about how eyeglasses work for my grandmother - they're using refraction to correct her vision by bending light before it enters her eye. Science suddenly feels less like abstract formulas and more like understanding the world around me. I want to observe more carefully in daily life now.",
+        tags: ["Real-world connection", "Curiosity", "Observation skills"],
+        skillsDeveloped: [
+          "Scientific observation",
+          "Critical thinking",
+          "Making connections",
+        ],
+        valuesReflection:
+          "This experience reminds me to stay curious and question ordinary things. There's so much to learn from simply paying attention.",
+        aiCoaching:
+          "Beautiful reflection! You're making strong connections between theory and observation. Consider: How might this principle apply to photography or art?",
+        mood: "Excited",
+      },
+      {
+        id: 2,
+        title: "Patience and Precision in Scientific Work",
+        date: "2026-01-26",
+        linkedExperiments: [
+          "Photosynthesis Rate Measurement",
+          "Acid-Base Titration",
+        ],
+        subjects: ["Biology", "Chemistry"],
+        prompt:
+          "What challenges did you face today, and what did you learn about yourself?",
+        reflection:
+          "Counting oxygen bubbles for a full minute was harder than I expected - I kept losing count and had to restart! It taught me that good science requires extreme patience and focus. I used to rush through things, but today I learned that careful, repeated measurements are what make results reliable. When I finally got consistent readings across three trials, I felt proud. It's not about being fast; it's about being accurate. The same thing happened during titration - one drop too many and I'd overshoot the endpoint. These labs are teaching me self-discipline and attention to detail, which I know will help in other subjects too, even beyond science.",
+        tags: ["Perseverance", "Self-discipline", "Attention to detail"],
+        skillsDeveloped: ["Patience", "Precision", "Experimental technique"],
+        valuesReflection:
+          "I'm learning that excellence requires patience. Quick results aren't always good results. This applies to studying for exams too - consistent effort over time beats last-minute cramming.",
+        aiCoaching:
+          "Wonderful self-awareness! You're developing a growth mindset. How might you apply this 'precision over speed' lesson to other areas of your academic work?",
+        mood: "Reflective",
+      },
+      {
+        id: 3,
+        title: "Understanding Through Struggle",
+        date: "2026-02-02",
+        linkedExperiments: ["Pendulum Time Period vs Length"],
+        subjects: ["Physics"],
+        prompt: "Describe a moment of confusion and how you worked through it.",
+        reflection:
+          "I was really confused when plotting T² vs L because my first graph wasn't linear at all - I thought I'd completely messed up the experiment. But instead of giving up, I rechecked my calculations and realized I had written down one length measurement wrong (60 cm instead of 80 cm). After correcting it, the beautiful straight line appeared! This taught me that mistakes don't mean failure - they're opportunities to check your work and learn. I also learned to stay calm when things don't match expectations. My initial frustration turned into satisfaction when I fixed the error. It felt like solving a puzzle. Mr. Sharma said 'Science is 10% inspiration and 90% perspiration,' and I really understand that now.",
+        tags: ["Problem-solving", "Resilience", "Error analysis"],
+        skillsDeveloped: [
+          "Troubleshooting",
+          "Self-correction",
+          "Emotional regulation",
+        ],
+        valuesReflection:
+          "Mistakes are valuable learning moments, not signs of incompetence. The key is to stay calm and methodically check your work. I want to carry this attitude into exams - even if I get stuck, I should stay calm and work through it.",
+        aiCoaching:
+          "Exceptional growth mindset! Your ability to persist through confusion is a key scientific skill. How did it feel when your corrected graph showed the expected linear relationship?",
+        mood: "Accomplished",
+      },
+      {
+        id: 4,
+        title: "Teamwork in the Laboratory",
+        date: "2026-01-28",
+        linkedExperiments: ["Photosynthesis Rate Measurement"],
+        subjects: ["Biology"],
+        prompt: "How did working with lab partners impact your learning today?",
+        reflection:
+          "Today I worked with Priya and Arjun on the photosynthesis experiment. Initially, we argued about who would control the light distance and who would count bubbles. But then we realized we could take turns and cross-check each other's counts. This made our data much more reliable! Arjun noticed patterns I missed, and Priya suggested we record water temperature (which I hadn't thought of). I learned that collaboration isn't about dividing work - it's about combining perspectives to get better results. Three pairs of eyes are definitely better than one in science. I also learned to listen more and be less stubborn about 'my way' of doing things. Different approaches can all be valid.",
+        tags: ["Teamwork", "Collaboration", "Communication"],
+        skillsDeveloped: [
+          "Collaborative problem-solving",
+          "Active listening",
+          "Flexibility",
+        ],
+        valuesReflection:
+          "Working together makes us all smarter. I should be more open to others' ideas instead of assuming my way is the only right way. Humility and teamwork are important values in science and in life.",
+        aiCoaching:
+          "Fantastic insight about collaboration! Scientific breakthroughs often come from teams combining different viewpoints. How can you bring this collaborative spirit to group projects in other subjects?",
+        mood: "Grateful",
+      },
+    ],
   },
 };
