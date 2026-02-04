@@ -1,31 +1,33 @@
-import React from 'react';
-import { STUDENT_DATA } from '../../../data/studentData';
+import React from "react";
+import { STUDENT_DATA } from "../../../data/studentData";
 import {
   AttendanceSummaryCard,
   MonthlyHeatmap,
   WeeklyTrendGraph,
   AttendanceWarning,
   LeaveRequestForm,
-} from '../../../components/dashboard/student/AttendanceTracker';
+  AttendanceTrends,
+  PunctualityStats,
+} from "../../../components/dashboard/student/AttendanceTracker";
 
 /**
  * AttendanceTracker Page
- * 
+ *
  * Layout: LF — Analytics
  * Data Control: Mixed
  * AI: AI3 Monitor
  * Purpose: Attendance trends and summaries
- * 
+ *
  * This component orchestrates the attendance tracking interface,
  * delegating rendering to specialized subcomponents.
  */
 const AttendanceTracker = () => {
-  const { attendance, attendanceContext } = STUDENT_DATA;
+  const { attendance, attendanceContext, behavior } = STUDENT_DATA;
   const { currentMonth, daysInMonth, heatmapStart } = attendanceContext;
 
   // Download handler for attendance certificate
   const handleDownload = () => {
-    alert('Downloading Attendance Certificate...');
+    alert("Downloading Attendance Certificate...");
     // AI3 Monitor: Track certificate download events
   };
 
@@ -37,7 +39,8 @@ const AttendanceTracker = () => {
           Attendance Trends and Summaries
         </h1>
         <p className="text-sm text-slate-500 mt-2">
-          Track your attendance patterns, view monthly heatmaps, and monitor weekly trends
+          Track your attendance patterns, view monthly heatmaps, and monitor
+          weekly trends
         </p>
       </div>
 
@@ -61,10 +64,25 @@ const AttendanceTracker = () => {
             presentDays={attendance.heatmap.present}
             absentDays={attendance.heatmap.absent}
           />
+        </div>
+      </div>
 
-          {/* Weekly Trend Graph */}
-          <WeeklyTrendGraph
-            chartData={attendance.weeklyAttendance || []}
+      {/* Full Width Graphs Section */}
+      <div className="space-y-6">
+        {/* Weekly Trend Graph */}
+        <WeeklyTrendGraph chartData={attendance.weeklyAttendance || []} />
+
+        {/* Attendance Trends Chart */}
+        <div className="bg-white rounded-3xl p-6 shadow-sm">
+          <AttendanceTrends trends={behavior.attendanceTrends} />
+        </div>
+
+        {/* Punctuality Stats */}
+        <div className="bg-white rounded-3xl p-6 shadow-sm">
+          <PunctualityStats
+            onTime={behavior.punctuality.onTime}
+            late={behavior.punctuality.late}
+            percentage={behavior.punctuality.percentage}
           />
         </div>
       </div>

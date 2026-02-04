@@ -196,18 +196,22 @@ const Sidebar = ({ isOpen, onClose }) => {
                   }`
                 }
               >
-                <span
-                  className={({ isActive }) =>
-                    isActive
-                      ? "text-blue-500 flex-shrink-0"
-                      : "text-white flex-shrink-0"
-                  }
-                >
-                  {item.icon}
-                </span>
-                <span className="text-xs md:text-sm font-medium">
-                  {item.name}
-                </span>
+                {({ isActive }) => (
+                  <>
+                    <span
+                      className={
+                        isActive
+                          ? "text-blue-500 flex-shrink-0"
+                          : "text-white flex-shrink-0"
+                      }
+                    >
+                      {item.icon}
+                    </span>
+                    <span className="text-xs md:text-sm font-medium">
+                      {item.name}
+                    </span>
+                  </>
+                )}
               </NavLink>
             ))}
           </div>
