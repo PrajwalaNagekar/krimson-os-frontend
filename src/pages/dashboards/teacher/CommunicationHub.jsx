@@ -9,7 +9,7 @@ import {
 
 const CommunicationHub = () => {
   // Sample message data
-  const [messages] = useState([
+  const [messages, setMessages] = useState([
     {
       id: 'M1',
       type: 'direct',
@@ -22,7 +22,8 @@ const CommunicationHub = () => {
       read: false,
       replied: false,
       tag: 'Academic',
-      archived: false
+      archived: false,
+      chatHistory: []
     },
     {
       id: 'M2',
@@ -36,7 +37,10 @@ const CommunicationHub = () => {
       read: true,
       replied: true,
       tag: 'Attendance',
-      archived: false
+      archived: false,
+      chatHistory: [
+        { role: 'teacher', content: 'Thank you for bringing this to my attention. I will check the attendance logs and get back to you shortly.', timestamp: '2026-01-19T09:45:00' }
+      ]
     },
     {
       id: 'M3',
@@ -50,7 +54,10 @@ const CommunicationHub = () => {
       read: true,
       replied: true,
       tag: 'Behavior',
-      archived: false
+      archived: false,
+      chatHistory: [
+        { role: 'teacher', content: 'It is a pleasure to teach Charlie. He has been very focused lately!', timestamp: '2026-01-18T17:30:00' }
+      ]
     },
     {
       id: 'M4',
@@ -65,7 +72,8 @@ const CommunicationHub = () => {
       tag: 'Academic',
       archived: false,
       recipients: 32,
-      sent: true
+      sent: true,
+      chatHistory: []
     },
   ]);
 
@@ -109,9 +117,126 @@ const CommunicationHub = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [showTemplates, setShowTemplates] = useState(false);
   const [showCompose, setShowCompose] = useState(false);
+  const [isReplying, setIsReplying] = useState(false);
+  const [replyText, setReplyText] = useState('');
+  const [isViewingArchive, setIsViewingArchive] = useState(false);
+
+  // New Message State
+  const [composeData, setComposeData] = useState({
+    recipientType: 'student', // student, class, parent, broadcast
+    recipientName: '',
+    subject: '',
+    tag: 'Academic',
+    content: ''
+  });
+
+  // Extract recipient lists from TEACHER_DATA
+  const studentList = TEACHER_DATA.attendance.map(s => s.name).sort();
+  const parentList = TEACHER_DATA.attendance.map(s => `Parent of ${s.name}`).sort();
+  const classList = TEACHER_DATA.classes.map(c => c.grade).sort();
+
+  // Handle Send New Message
+  const handleSendMessage = () => {
+    if (!composeData.subject.trim() || !composeData.content.trim() || !composeData.recipientName.trim()) return;
+
+    const newMessage = {
+      id: `M${Date.now()}`,
+      type: composeData.recipientType === 'broadcast' ? 'broadcast' : 'direct',
+      from: 'You',
+      studentName: composeData.recipientType === 'student' || composeData.recipientType === 'parent' ? composeData.recipientName : null,
+      classRoom: composeData.recipientType === 'class' ? composeData.recipientName : null,
+      subject: composeData.subject,
+      preview: composeData.content.substring(0, 50) + '...',
+      content: composeData.content,
+      timestamp: new Date().toISOString(),
+      read: true,
+      replied: false,
+      tag: composeData.tag,
+      archived: false,
+      chatHistory: [],
+      sent: true,
+      recipients: composeData.recipientType === 'broadcast' ? 45 : null // Mock recipient count for broadcast
+    };
+
+    setMessages(prev => [newMessage, ...prev]);
+    setShowCompose(false);
+    setComposeData({
+      recipientType: 'student',
+      recipientName: '',
+      subject: '',
+      tag: 'Academic',
+      content: ''
+    });
+  };
+
+  // Handle Use Template
+  const handleUseTemplate = (template) => {
+    setComposeData({
+      recipientType: template.category === 'Attendance' ? 'parent' : 'student',
+      recipientName: '',
+      subject: template.name,
+      tag: template.category,
+      content: template.content
+    });
+    setShowCompose(true);
+    setShowTemplates(false);
+    // Scroll to top to see modal if needed
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Handle Archive
+  const handleArchive = (id) => {
+    setMessages(prev => prev.map(msg =>
+      msg.id === id ? { ...msg, archived: true } : msg
+    ));
+    setSelectedMessage(null);
+  };
+
+  // Handle Restore from Archive
+  const handleRestore = (id) => {
+    setMessages(prev => prev.map(msg =>
+      msg.id === id ? { ...msg, archived: false } : msg
+    ));
+    setSelectedMessage(null);
+  };
+
+  // Handle Reply
+  const handleSendReply = (id) => {
+    if (!replyText.trim()) return;
+
+    const newReply = {
+      role: 'teacher',
+      content: replyText,
+      timestamp: new Date().toISOString()
+    };
+
+    setMessages(prev => prev.map(msg =>
+      msg.id === id ? {
+        ...msg,
+        replied: true,
+        read: true,
+        chatHistory: [...(msg.chatHistory || []), newReply]
+      } : msg
+    ));
+
+    // Update selected message to show the new reply without closing modal
+    setSelectedMessage(prev => ({
+      ...prev,
+      replied: true,
+      read: true,
+      chatHistory: [...(prev.chatHistory || []), newReply]
+    }));
+
+    setIsReplying(false);
+    setReplyText('');
+  };
 
   // Filter messages
   const filteredMessages = messages.filter(msg => {
+    // Filter based on whether we are viewing archive or inbox
+    if (isViewingArchive && !msg.archived) return false;
+    if (!isViewingArchive && msg.archived) return false;
+
     // Filter by type
     if (filterType !== 'all') {
       if (filterType === 'direct' && msg.type !== 'direct') return false;
@@ -134,10 +259,10 @@ const CommunicationHub = () => {
 
   // Calculate statistics
   const stats = {
-    total: messages.length,
-    unread: messages.filter(m => !m.read).length,
-    direct: messages.filter(m => m.type === 'direct').length,
-    broadcast: messages.filter(m => m.type === 'broadcast').length,
+    total: messages.filter(m => !m.archived).length,
+    unread: messages.filter(m => !m.read && !m.archived).length,
+    direct: messages.filter(m => m.type === 'direct' && !m.archived).length,
+    broadcast: messages.filter(m => m.type === 'broadcast' && !m.archived).length,
   };
 
   // Mock API call
@@ -190,10 +315,13 @@ const CommunicationHub = () => {
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
             <div>
               <h1 className="text-2xl md:text-3xl font-bold mb-2 tracking-tight">
-                Message Center
+                {isViewingArchive ? 'Message Archive' : 'Message Center'}
               </h1>
               <p className="opacity-90 font-medium text-sm md:text-base">
-                {stats.total} messages • {stats.unread} unread
+                {isViewingArchive
+                  ? `${messages.filter(m => m.archived).length} archived messages`
+                  : `${stats.total} messages • ${stats.unread} unread`
+                }
               </p>
             </div>
 
@@ -205,9 +333,17 @@ const CommunicationHub = () => {
                 <Send size={20} />
                 <div className="text-left">
                   <div>Compose</div>
-                  {/* <div className="text-[10px] opacity-70">get in app</div> */}
                 </div>
               </button>
+              {isViewingArchive && (
+                <button
+                  onClick={() => setIsViewingArchive(false)}
+                  className="px-6 py-3 bg-white/20 backdrop-blur-md text-white border border-white/30 rounded-xl font-bold hover:bg-white/30 transition-all flex items-center gap-2"
+                >
+                  <X size={20} />
+                  <span>Exit Archive</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -330,7 +466,10 @@ const CommunicationHub = () => {
                   <Copy size={16} className="text-white/60 cursor-pointer hover:text-white" />
                 </div>
                 <p className="text-xs text-white/80 line-clamp-3">{template.content}</p>
-                <button className="w-full mt-3 px-3 py-2 bg-white/30 text-white rounded-lg text-xs font-bold hover:bg-white/40 transition-colors">
+                <button
+                  onClick={() => handleUseTemplate(template)}
+                  className="w-full mt-3 px-3 py-2 bg-white/30 text-white rounded-lg text-xs font-bold hover:bg-white/40 transition-colors"
+                >
                   Use Template
                 </button>
               </div>
@@ -381,7 +520,15 @@ const CommunicationHub = () => {
               ? 'border-blue-400 bg-blue-50/30'
               : 'border-transparent hover:border-blue-200'
               } hover:shadow-xl`}
-            onClick={() => setSelectedMessage(message)}
+            onClick={() => {
+              setSelectedMessage(message);
+              // Mark as read when clicking if not already read
+              if (!message.read) {
+                setMessages(prev => prev.map(m =>
+                  m.id === message.id ? { ...m, read: true } : m
+                ));
+              }
+            }}
           >
             {/* Message Header */}
             <div className="flex items-start justify-between mb-4">
@@ -488,9 +635,12 @@ const CommunicationHub = () => {
               </p>
             </div>
           </div>
-          <button className="px-4 py-2 bg-blue-500 text-white rounded-xl text-xs font-bold hover:bg-blue-600 transition-colors flex items-center gap-2">
-            <Archive size={14} />
-            View Archive
+          <button
+            onClick={() => setIsViewingArchive(!isViewingArchive)}
+            className="px-4 py-2 bg-blue-500 text-white rounded-xl text-xs font-bold hover:bg-blue-600 transition-colors flex items-center gap-2"
+          >
+            {isViewingArchive ? <MessageSquare size={14} /> : <Archive size={14} />}
+            {isViewingArchive ? 'Return to Inbox' : 'View Archive'}
           </button>
         </div>
       </div>
@@ -525,7 +675,11 @@ const CommunicationHub = () => {
                 </div>
               </div>
               <button
-                onClick={() => setSelectedMessage(null)}
+                onClick={() => {
+                  setSelectedMessage(null);
+                  setIsReplying(false);
+                  setReplyText('');
+                }}
                 className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-colors"
               >
                 <X size={24} />
@@ -539,24 +693,193 @@ const CommunicationHub = () => {
                   {selectedMessage.content}
                 </p>
               </div>
+
+              {/* Chat History / Replies */}
+              {(selectedMessage.chatHistory && selectedMessage.chatHistory.length > 0) && (
+                <div className="mt-4 space-y-4">
+                  {selectedMessage.chatHistory.map((chat, idx) => (
+                    <div key={idx} className={`flex flex-col ${chat.role === 'teacher' ? 'items-end' : 'items-start'}`}>
+                      <div className={`max-w-[80%] p-4 rounded-2xl text-sm ${chat.role === 'teacher'
+                        ? 'bg-blue-500 text-white rounded-tr-none'
+                        : 'bg-slate-100 text-slate-700 rounded-tl-none'
+                        }`}>
+                        <p>{chat.content}</p>
+                        <p className={`text-[10px] mt-1 opacity-70 text-right`}>
+                          {formatTime(chat.timestamp)}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Action Buttons */}
-            <div className="grid grid-cols-2 gap-3">
-              <button className="px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-bold hover:from-blue-600 hover:to-purple-600 shadow-md transition-all flex items-center justify-center gap-2">
-                <Send size={18} />
-                <div className="text-left">
-                  <div>Reply</div>
-
+            {!isReplying ? (
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  onClick={() => setIsReplying(true)}
+                  className="px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-bold hover:from-blue-600 hover:to-purple-600 shadow-md transition-all flex items-center justify-center gap-2"
+                >
+                  <Send size={18} />
+                  <div className="text-left">
+                    <div>Reply</div>
+                  </div>
+                </button>
+                <button
+                  onClick={() => selectedMessage.archived ? handleRestore(selectedMessage.id) : handleArchive(selectedMessage.id)}
+                  className="px-6 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
+                >
+                  <Archive size={18} />
+                  <div className="text-left">
+                    <div>{selectedMessage.archived ? 'Restore' : 'Archive'}</div>
+                  </div>
+                </button>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <textarea
+                  value={replyText}
+                  onChange={(e) => setReplyText(e.target.value)}
+                  placeholder="Type your reply here..."
+                  className="w-full p-4 border-2 border-slate-200 rounded-2xl focus:border-blue-400 focus:outline-none min-h-[120px] text-sm font-medium"
+                />
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => {
+                      setIsReplying(false);
+                      setReplyText('');
+                    }}
+                    className="flex-1 px-6 py-3 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-all"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    onClick={() => handleSendReply(selectedMessage.id)}
+                    className="flex-1 px-6 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-600 shadow-md transition-all flex items-center justify-center gap-2"
+                  >
+                    <Send size={18} />
+                    <span>Send Reply</span>
+                  </button>
                 </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+      {/* Compose Message Modal */}
+      {showCompose && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-2xl w-full shadow-2xl animate-in fade-in zoom-in duration-300">
+            <div className="flex items-center justify-between mb-6 pb-6 border-b border-slate-200">
+              <h2 className="text-2xl font-bold text-slate-800">Compose New Message</h2>
+              <button
+                onClick={() => setShowCompose(false)}
+                className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-colors"
+              >
+                <X size={24} />
               </button>
-              <button className="px-6 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2">
-                <Archive size={18} />
-                <div className="text-left">
-                  <div>Archive</div>
+            </div>
 
+            <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Recipient Type */}
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">Send To</label>
+                  <select
+                    value={composeData.recipientType}
+                    onChange={(e) => setComposeData({ ...composeData, recipientType: e.target.value, recipientName: '' })}
+                    className="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-400 focus:outline-none bg-white text-sm"
+                  >
+                    <option value="student">Student</option>
+                    <option value="parent">Parent</option>
+                    <option value="class">Whole Class</option>
+                    <option value="broadcast">Broadcast (All)</option>
+                  </select>
                 </div>
-              </button>
+
+                {/* Category/Tag */}
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">Category</label>
+                  <select
+                    value={composeData.tag}
+                    onChange={(e) => setComposeData({ ...composeData, tag: e.target.value })}
+                    className="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-400 focus:outline-none bg-white text-sm"
+                  >
+                    <option value="Academic">Academic</option>
+                    <option value="Attendance">Attendance</option>
+                    <option value="Behavior">Behavior</option>
+                    <option value="General">General</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Recipient Selection (if not broadcast) */}
+              {composeData.recipientType !== 'broadcast' && (
+                <div className="space-y-2">
+                  <label className="text-sm font-bold text-slate-700">
+                    Select {composeData.recipientType === 'student' ? 'Student' :
+                      composeData.recipientType === 'parent' ? 'Parent' : 'Class'}
+                  </label>
+                  <select
+                    value={composeData.recipientName}
+                    onChange={(e) => setComposeData({ ...composeData, recipientName: e.target.value })}
+                    className="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-400 focus:outline-none bg-white text-sm"
+                  >
+                    <option value="">Select a {composeData.recipientType}...</option>
+                    {composeData.recipientType === 'student' && studentList.map(name => (
+                      <option key={name} value={name}>{name}</option>
+                    ))}
+                    {composeData.recipientType === 'parent' && parentList.map(name => (
+                      <option key={name} value={name}>{name}</option>
+                    ))}
+                    {composeData.recipientType === 'class' && classList.map(name => (
+                      <option key={name} value={name}>{name}</option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {/* Subject */}
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-700">Subject (Heading)</label>
+                <input
+                  type="text"
+                  placeholder="What is this message about?"
+                  value={composeData.subject}
+                  onChange={(e) => setComposeData({ ...composeData, subject: e.target.value })}
+                  className="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-400 focus:outline-none text-sm"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-slate-700">Message Content</label>
+                <textarea
+                  placeholder="Type your message here..."
+                  value={composeData.content}
+                  onChange={(e) => setComposeData({ ...composeData, content: e.target.value })}
+                  className="w-full p-4 border-2 border-slate-200 rounded-2xl focus:border-blue-400 focus:outline-none min-h-[150px] text-sm font-medium"
+                />
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-3 pt-4 border-t border-slate-100">
+                <button
+                  onClick={() => setShowCompose(false)}
+                  className="flex-1 px-6 py-4 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-all"
+                >
+                  Discard
+                </button>
+                <button
+                  onClick={handleSendMessage}
+                  disabled={!composeData.subject || !composeData.content || (composeData.recipientType !== 'broadcast' && !composeData.recipientName)}
+                  className="flex-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Send size={18} />
+                  <span>Send Message</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

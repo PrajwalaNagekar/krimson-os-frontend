@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { 
+import {
   Upload, Download, Search, Filter, Star, Eye, Share2,
   FileText, Video, FileImage, File, BookOpen, Users,
   Calendar, ThumbsUp, MessageSquare, X, ChevronDown,
-  Play, Image, FileSpreadsheet, Award, Cloud, Link
+  Play, Image, FileSpreadsheet, Award, Cloud, Link,
+  Beaker, ClipboardList, AlertTriangle, ExternalLink,
+  PlusCircle, Trash2, Repeat, CheckCircle, ShieldAlert
 } from 'lucide-react';
 
 const ResourceLibrary = () => {
@@ -98,25 +100,34 @@ const ResourceLibrary = () => {
   const [filterFormat, setFilterFormat] = useState('all');
   const [showFilters, setShowFilters] = useState(false);
 
+  // --- Lab & Material State ---
+  const [materials, setMaterials] = useState([]);
+  const [newItem, setNewItem] = useState({ name: '', qty: '', type: 'Classroom' });
+  const [labLink, setLabLink] = useState('');
+  const [safetyNotes, setSafetyNotes] = useState([]);
+  const [newSafety, setNewSafety] = useState('');
+  const [extLinks, setExtLinks] = useState([]);
+  const [newLink, setNewLink] = useState('');
+
   // Filter resources
   const filteredResources = resources.filter(resource => {
     // Filter by subject
     if (filterSubject !== 'all' && resource.subject !== filterSubject) return false;
-    
+
     // Filter by grade
     if (filterGrade !== 'all' && resource.grade !== filterGrade) return false;
-    
+
     // Filter by format
     if (filterFormat !== 'all' && resource.format !== filterFormat) return false;
-    
+
     // Filter by search
     if (searchQuery) {
       return resource.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-             resource.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-             resource.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
-             resource.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
+        resource.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        resource.topic.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        resource.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     }
-    
+
     return true;
   });
 
@@ -176,13 +187,45 @@ const ResourceLibrary = () => {
     );
   };
 
+  // --- Lab Actions ---
+  const addMaterial = () => {
+    if (newItem.name) {
+      setMaterials([...materials, { ...newItem, id: Date.now() }]);
+      setNewItem({ name: '', qty: '', type: 'Classroom' });
+    }
+  };
+
+  const addSafetyNote = () => {
+    if (newSafety) {
+      setSafetyNotes([...safetyNotes, newSafety]);
+      setNewSafety('');
+    }
+  };
+
+  const addExternalLink = () => {
+    if (newLink) {
+      setExtLinks([...extLinks, newLink]);
+      setNewLink('');
+    }
+  };
+
+  const loadPreviousList = () => {
+    setMaterials([
+      { id: 1, name: 'Beaker (250ml)', qty: '6', type: 'Lab Equipment' },
+      { id: 2, name: 'Food Coloring', qty: '1 Box', type: 'Consumable' },
+      { id: 3, name: 'Chart Paper', qty: '10', type: 'Classroom' }
+    ]);
+    setSafetyNotes(['Wear safety goggles', 'Handle glass with care']);
+    setLabLink('Lab Session 4: Density Experiments');
+  };
+
   return (
     <div className="space-y-6 md:space-y-8">
       {/* Header Section with Gradient */}
       <div className="bg-gradient-to-r from-cyan-400 via-blue-400 to-pink-400 rounded-3xl p-6 md:p-8 text-white shadow-xl relative overflow-hidden">
         <div className="absolute right-0 top-0 w-48 h-48 md:w-64 md:h-64 bg-white opacity-10 rounded-full blur-3xl -mr-16 -mt-16"></div>
         <div className="absolute bottom-0 left-0 w-32 h-32 md:w-40 md:h-40 bg-pink-300 opacity-20 rounded-full blur-3xl -ml-10 -mb-10"></div>
-        
+
         <div className="relative z-10">
           <div className="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-bold mb-3 backdrop-blur-sm shadow-sm">
             Resource Library & Content Sharing
@@ -196,7 +239,7 @@ const ResourceLibrary = () => {
                 {stats.total} approved materials • {stats.totalDownloads} total downloads
               </p>
             </div>
-            
+
             <div className="flex items-center gap-3">
               <button className="px-6 py-3 bg-white text-blue-600 rounded-xl font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2 active:scale-95">
                 <Upload size={20} />
@@ -359,9 +402,9 @@ const ResourceLibrary = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredResources.map((resource) => {
           const formatInfo = getFormatIcon(resource.format);
-          
+
           return (
-            <div 
+            <div
               key={resource.id}
               className="bg-white rounded-3xl p-6 shadow-md border-2 border-transparent hover:border-blue-200 hover:shadow-xl transition-all duration-300 cursor-pointer"
               onClick={() => setSelectedResource(resource)}
@@ -453,6 +496,239 @@ const ResourceLibrary = () => {
           </p>
         </div>
       )}
+
+      {/* --- LAB & MATERIALS MANAGER SECTION --- */}
+      <div className="mt-12 pt-8 border-t-2 border-slate-100">
+        <div className="flex items-center gap-3 mb-6">
+          <div className="p-3 bg-purple-100 rounded-xl text-purple-600">
+            <Beaker size={24} />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-slate-800">Lab & Material Manager</h2>
+            <p className="text-slate-500 text-sm">Plan lab sessions, manage materials, and ensure safety compliance.</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+          {/* Left Col: Builder */}
+          <div className="lg:col-span-2 space-y-6">
+            {/* Linkage Section */}
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+              <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <Link size={20} className="text-purple-500" /> Lab Linkage
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1 block">Linked Lesson</label>
+                  <select className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-700 outline-none focus:border-purple-400">
+                    <option>Select Lesson Plan...</option>
+                    <option>Newton's Laws Intro</option>
+                    <option>Chemical Reactions Lab</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1 block">Lab Session</label>
+                  <select
+                    className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-700 outline-none focus:border-purple-400"
+                    value={labLink}
+                    onChange={(e) => setLabLink(e.target.value)}
+                  >
+                    <option value="">No Lab Linked</option>
+                    <option value="Lab Session 4: Density Experiments">Lab Session 4: Density Experiments</option>
+                    <option value="Lab Session 5: Optics">Lab Session 5: Optics</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Materials List Builder */}
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+              <div className="flex justify-between items-center mb-6">
+                <h3 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+                  <ClipboardList size={20} className="text-blue-500" /> Materials List
+                </h3>
+                <button
+                  onClick={loadPreviousList}
+                  className="text-xs font-bold text-blue-600 hover:bg-blue-50 px-3 py-2 rounded-lg transition-colors flex items-center gap-1"
+                >
+                  <Repeat size={14} /> Reuse Recent
+                </button>
+              </div>
+
+              <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 mb-6">
+                <div className="grid grid-cols-12 gap-3 items-end">
+                  <div className="col-span-5">
+                    <label className="text-xs font-bold text-slate-400 mb-1 block">Item Name</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. Beaker"
+                      className="w-full p-2 rounded-lg border border-slate-200 text-sm font-semibold"
+                      value={newItem.name}
+                      onChange={e => setNewItem({ ...newItem, name: e.target.value })}
+                    />
+                  </div>
+                  <div className="col-span-3">
+                    <label className="text-xs font-bold text-slate-400 mb-1 block">Qty</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. 250ml"
+                      className="w-full p-2 rounded-lg border border-slate-200 text-sm font-semibold"
+                      value={newItem.qty}
+                      onChange={e => setNewItem({ ...newItem, qty: e.target.value })}
+                    />
+                  </div>
+                  <div className="col-span-3">
+                    <label className="text-xs font-bold text-slate-400 mb-1 block">Type</label>
+                    <select
+                      className="w-full p-2 rounded-lg border border-slate-200 text-sm font-semibold outline-none"
+                      value={newItem.type}
+                      onChange={e => setNewItem({ ...newItem, type: e.target.value })}
+                    >
+                      <option>Classroom</option>
+                      <option>Lab Equipment</option>
+                      <option>Consumable</option>
+                    </select>
+                  </div>
+                  <div className="col-span-1">
+                    <button
+                      onClick={addMaterial}
+                      className="w-full h-[38px] bg-blue-600 text-white rounded-lg flex items-center justify-center hover:bg-blue-700"
+                    >
+                      <PlusCircle size={20} />
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              {/* List Table */}
+              <div className="overflow-hidden rounded-xl border border-slate-200">
+                <table className="w-full text-sm text-left">
+                  <thead className="bg-slate-50 text-slate-500 font-bold">
+                    <tr>
+                      <th className="p-3">Item</th>
+                      <th className="p-3">Qty</th>
+                      <th className="p-3">Type</th>
+                      <th className="p-3"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {materials.length === 0 ? (
+                      <tr>
+                        <td colSpan="4" className="p-8 text-center text-slate-400 font-medium italic">
+                          No materials added yet. Add items above or reuse a list.
+                        </td>
+                      </tr>
+                    ) : (
+                      materials.map((item, idx) => (
+                        <tr key={item.id} className="border-t border-slate-100 hover:bg-slate-50">
+                          <td className="p-3 font-bold text-slate-700">{item.name}</td>
+                          <td className="p-3 text-slate-600">{item.qty}</td>
+                          <td className="p-3">
+                            <span className={`px-2 py-1 rounded-md text-xs font-bold ${item.type === 'Consumable' ? 'bg-orange-100 text-orange-700' :
+                                item.type === 'Lab Equipment' ? 'bg-purple-100 text-purple-700' :
+                                  'bg-green-100 text-green-700'
+                              }`}>
+                              {item.type}
+                            </span>
+                          </td>
+                          <td className="p-3 text-right">
+                            <button
+                              onClick={() => setMaterials(materials.filter(m => m.id !== item.id))}
+                              className="text-red-400 hover:text-red-600"
+                            >
+                              <Trash2 size={16} />
+                            </button>
+                          </td>
+                        </tr>
+                      ))
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Col: Safety & External */}
+          <div className="space-y-6">
+            {/* Safety */}
+            <div className="bg-red-50/50 p-6 rounded-3xl shadow-sm border border-red-100">
+              <h3 className="text-lg font-bold text-red-800 mb-4 flex items-center gap-2">
+                <ShieldAlert size={20} /> Safety & SOPs
+              </h3>
+
+              <div className="flex gap-2 mb-4">
+                <input
+                  type="text"
+                  placeholder="Add safety note..."
+                  className="flex-1 p-2 rounded-lg border border-red-200 text-sm focus:border-red-400 outline-none"
+                  value={newSafety}
+                  onChange={e => setNewSafety(e.target.value)}
+                  onKeyPress={e => e.key === 'Enter' && addSafetyNote()}
+                />
+                <button
+                  onClick={addSafetyNote}
+                  className="bg-red-600 text-white p-2 rounded-lg hover:bg-red-700"
+                >
+                  <PlusCircle size={20} />
+                </button>
+              </div>
+
+              <ul className="space-y-2">
+                {safetyNotes.map((note, idx) => (
+                  <li key={idx} className="flex gap-3 text-sm text-red-700 bg-white p-3 rounded-xl border border-red-100 shadow-sm">
+                    <AlertTriangle size={16} className="shrink-0 mt-0.5" />
+                    {note}
+                  </li>
+                ))}
+                {safetyNotes.length === 0 && (
+                  <p className="text-xs text-red-400 italic text-center py-4">No safety notes added.</p>
+                )}
+              </ul>
+
+              <button className="w-full mt-4 py-2 border-2 border-dashed border-red-200 rounded-xl text-red-500 text-xs font-bold hover:bg-red-50 hover:border-red-300 transition-all flex items-center justify-center gap-2">
+                <Upload size={14} /> Upload SOP Document
+              </button>
+            </div>
+
+            {/* External Links */}
+            <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+              <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <ExternalLink size={20} className="text-blue-500" /> External Resources
+              </h3>
+
+              <div className="flex gap-2 mb-4">
+                <input
+                  type="text"
+                  placeholder="Add URL (virtual lab, demo)..."
+                  className="flex-1 p-2 rounded-lg border border-slate-200 text-sm focus:border-blue-400 outline-none"
+                  value={newLink}
+                  onChange={e => setNewLink(e.target.value)}
+                  onKeyPress={e => e.key === 'Enter' && addExternalLink()}
+                />
+                <button
+                  onClick={addExternalLink}
+                  className="bg-slate-800 text-white p-2 rounded-lg hover:bg-black"
+                >
+                  <PlusCircle size={20} />
+                </button>
+              </div>
+
+              <ul className="space-y-2">
+                {extLinks.map((link, idx) => (
+                  <li key={idx} className="flex items-center gap-2 text-sm text-blue-600 break-all p-2 hover:bg-slate-50 rounded-lg">
+                    <Link size={14} className="shrink-0" />
+                    <a href="#" className="underline decoration-blue-200 hover:decoration-blue-500">{link}</a>
+                  </li>
+                ))}
+                {extLinks.length === 0 && (
+                  <p className="text-xs text-slate-400 italic text-center py-4">No external links.</p>
+                )}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* Resource Detail Modal */}
       {selectedResource && (
