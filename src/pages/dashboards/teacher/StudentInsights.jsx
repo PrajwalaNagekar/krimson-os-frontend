@@ -11,8 +11,8 @@ import {
   Sparkles
 } from 'lucide-react';
 import SuccessToast from '../../../components/common/SuccessToast';
-import InterventionQueue from '../../../components/Dashboard/StudentInsights/InterventionQueue';
-import ConferenceNotes from '../../../components/Dashboard/StudentInsights/ConferenceNotes';
+import InterventionQueue from '../../../components/dashboard/teacher/StudentInsights/InterventionQueue';
+import ConferenceNotes from '../../../components/dashboard/teacher/StudentInsights/ConferenceNotes';
 
 const StudentInsights = () => {
   // Sample student data

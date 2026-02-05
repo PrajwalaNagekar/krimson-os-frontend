@@ -8,13 +8,13 @@ import {
   MessageSquare, XCircle, FileCheck, Zap, Copy, Share2, Paperclip
 } from 'lucide-react';
 
-import CreateAssignmentWizard from '../../../components/Dashboard/AssignmentManager/CreateAssignmentWizard';
-import SubmissionTracker from '../../../components/Dashboard/AssignmentManager/SubmissionTracker';
-import EvaluationStudio from '../../../components/Dashboard/AssignmentManager/EvaluationStudio';
-import QuizBuilder from '../../../components/Dashboard/AssignmentManager/QuizBuilder';
-import AssessmentBlueprint from '../../../components/Dashboard/AssignmentManager/AssessmentBlueprint';
-import RubricBuilder from '../../../components/Dashboard/AssignmentManager/RubricBuilder';
-import AcademicIntegrity from '../../../components/Dashboard/AssignmentManager/AcademicIntegrity';
+import CreateAssignmentWizard from '../../../components/dashboard/teacher/AssignmentManager/CreateAssignmentWizard';
+import SubmissionTracker from '../../../components/dashboard/teacher/AssignmentManager/SubmissionTracker';
+import EvaluationStudio from '../../../components/dashboard/teacher/AssignmentManager/EvaluationStudio';
+import QuizBuilder from '../../../components/dashboard/teacher/AssignmentManager/QuizBuilder';
+import AssessmentBlueprint from '../../../components/dashboard/teacher/AssignmentManager/AssessmentBlueprint';
+import RubricBuilder from '../../../components/dashboard/teacher/AssignmentManager/RubricBuilder';
+import AcademicIntegrity from '../../../components/dashboard/teacher/AssignmentManager/AcademicIntegrity';
 
 const AssignmentManager = () => {
   const { assignments: initialAssignments } = TEACHER_DATA;

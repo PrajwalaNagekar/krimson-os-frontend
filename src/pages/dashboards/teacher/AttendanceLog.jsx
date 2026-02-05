@@ -5,15 +5,15 @@ import {
 } from 'lucide-react';
 
 // Components
-import HeaderSection from '../../../components/Dashboard/AttendanceLog/HeaderSection';
-import StatsSection from '../../../components/Dashboard/AttendanceLog/StatsSection';
-import ActionBar from '../../../components/Dashboard/AttendanceLog/ActionBar';
-import AttendanceList from '../../../components/Dashboard/AttendanceLog/AttendanceList';
-import SubmitSection from '../../../components/Dashboard/AttendanceLog/SubmitSection';
-import AdditionalInfo from '../../../components/Dashboard/AttendanceLog/AdditionalInfo';
-import StudentDetailModal from '../../../components/Dashboard/AttendanceLog/StudentDetailModal';
-import ReasonModal from '../../../components/Dashboard/AttendanceLog/ReasonModal';
-import EditRequestModal from '../../../components/Dashboard/AttendanceLog/EditRequestModal';
+import HeaderSection from '../../../components/dashboard/teacher/AttendanceLog/HeaderSection';
+import StatsSection from '../../../components/dashboard/teacher/AttendanceLog/StatsSection';
+import ActionBar from '../../../components/dashboard/teacher/AttendanceLog/ActionBar';
+import AttendanceList from '../../../components/dashboard/teacher/AttendanceLog/AttendanceList';
+import SubmitSection from '../../../components/dashboard/teacher/AttendanceLog/SubmitSection';
+import AdditionalInfo from '../../../components/dashboard/teacher/AttendanceLog/AdditionalInfo';
+import StudentDetailModal from '../../../components/dashboard/teacher/AttendanceLog/StudentDetailModal';
+import ReasonModal from '../../../components/dashboard/teacher/AttendanceLog/ReasonModal';
+import EditRequestModal from '../../../components/dashboard/teacher/AttendanceLog/EditRequestModal';
 
 const AttendanceLog = () => {
   const { attendance: initialAttendance, subjects, attendanceCalendar, classes } = TEACHER_DATA;
