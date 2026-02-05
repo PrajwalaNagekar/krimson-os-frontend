@@ -1,7 +1,9 @@
-import React from "react";
-import { Book, Wifi, Heart } from "lucide-react";
+import React, { useState } from "react";
+import { Book, Wifi, Heart, ChevronDown } from "lucide-react";
 
 const FAQsSection = ({ faqs, searchQuery }) => {
+  const [openIndex, setOpenIndex] = useState(null);
+
   const filteredFaqs = faqs.filter(
     (f) =>
       f.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -34,32 +36,70 @@ const FAQsSection = ({ faqs, searchQuery }) => {
     }
   };
 
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-slideDown">
-      {filteredFaqs.map((faq) => {
+    <div className="flex flex-col space-y-4 animate-slideDown max-w-4xl mx-auto">
+      {filteredFaqs.map((faq, index) => {
         const Icon = getCategoryIcon(faq.category);
+        const isOpen = openIndex === index;
+
         return (
           <div
             key={faq.id}
-            className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 hover:shadow-md transition-all group cursor-pointer"
+            className={`bg-white rounded-2xl shadow-sm border transition-all duration-300 overflow-hidden ${
+              isOpen
+                ? "border-blue-200 shadow-md"
+                : "border-slate-100 hover:border-blue-100"
+            }`}
           >
-            <div
-              className={`mb-4 w-10 h-10 rounded-xl flex items-center justify-center ${getCategoryStyles(faq.category)}`}
+            <button
+              onClick={() => toggleAccordion(index)}
+              className="w-full flex items-center justify-between p-5 text-left focus:outline-none"
             >
-              <Icon size={20} />
+              <div className="flex items-center gap-4">
+                <div
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${getCategoryStyles(faq.category)}`}
+                >
+                  <Icon size={20} />
+                </div>
+                <div>
+                  <h4
+                    className={`font-bold text-lg transition-colors ${isOpen ? "text-blue-600" : "text-slate-800"}`}
+                  >
+                    {faq.question}
+                  </h4>
+                  <span className="text-xs font-semibold text-slate-400 uppercase tracking-wide">
+                    {faq.category}
+                  </span>
+                </div>
+              </div>
+              <ChevronDown
+                size={20}
+                className={`text-slate-400 transition-transform duration-300 ${isOpen ? "rotate-180 text-blue-500" : ""}`}
+              />
+            </button>
+
+            <div
+              className={`grid transition-[grid-template-rows] duration-300 ease-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+            >
+              <div className="overflow-hidden">
+                <div className="px-5 pb-5 pl-[4.5rem] pt-0">
+                  <p className="text-slate-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              </div>
             </div>
-            <h4 className="font-bold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">
-              {faq.question}
-            </h4>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              {faq.answer}
-            </p>
           </div>
         );
       })}
+
       {filteredFaqs.length === 0 && (
-        <div className="col-span-full text-center py-12">
-          <p className="text-slate-400 font-bold">No results found.</p>
+        <div className="text-center py-12 bg-white rounded-2xl border border-slate-100 border-dashed">
+          <p className="text-slate-400 font-bold">
+            No results found matching "{searchQuery}"
+          </p>
         </div>
       )}
     </div>
