@@ -62,7 +62,7 @@ const DigitalIDModal = ({ isOpen, onClose, user }) => {
               ></div>
 
               {/* Header */}
-              <div className="h-28 bg-gradient-to-br from-blue-600 to-cyan-500 relative flex items-center justify-center">
+              <div className="h-28 bg-gradient-to-br from-blue-600 to-cyan-500 relative flex items-start justify-center pt-8">
                 <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
                 <div className="text-center text-white z-10">
                   <div className="flex items-center justify-center gap-2 mb-1">
@@ -78,7 +78,7 @@ const DigitalIDModal = ({ isOpen, onClose, user }) => {
               </div>
 
               {/* Photo */}
-              <div className="relative -mt-12 mb-4 flex justify-center">
+              <div className="relative -mt-6 mb-4 flex justify-center">
                 <div className="w-32 h-32 rounded-2xl bg-white p-1.5 shadow-lg">
                   <img
                     src={user.avatar}
@@ -93,7 +93,7 @@ const DigitalIDModal = ({ isOpen, onClose, user }) => {
               </div>
 
               {/* Details */}
-              <div className="px-6 text-center flex-1">
+              <div className="px-6 text-center flex-1 pt-2">
                 <h2 className="text-2xl font-bold text-slate-800 mb-1">
                   {user.name}
                 </h2>
