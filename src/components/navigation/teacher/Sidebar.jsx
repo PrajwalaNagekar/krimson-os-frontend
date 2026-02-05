@@ -4,7 +4,7 @@ import {
   Users, BookOpen, CalendarCheck, FileText,
   BarChart2, MessageSquare, Calendar, Activity,
   CheckSquare, Book, FileBarChart, PenTool, PieChart, LogOut,
-  LayoutDashboard, X, UserCircle, Rocket, ClipboardList
+  LayoutDashboard, X, UserCircle, Rocket, ClipboardList, FlaskConical
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -36,6 +36,7 @@ const Sidebar = ({ isOpen, onClose }) => {
     { name: "Attendance Summary", path: "/dashboard/teacher/attendance-summary", icon: <PieChart size={20} /> }, // Screen 14
     { name: "Profile Settings", path: "/dashboard/teacher/profile", icon: <UserCircle size={20} /> }, // Screen 15
     { name: "Support Center", path: "/dashboard/teacher/support", icon: <MessageSquare size={20} /> }, // Screen 16
+    { name: "Lab Management", path: "/dashboard/teacher/labs", icon: <FlaskConical size={20} /> }, // Screen 229-239
   ];
 
   return (

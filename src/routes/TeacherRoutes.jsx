@@ -20,6 +20,7 @@ import AcademicSupport from "../pages/dashboards/teacher/AcademicSupport";
 import AssessmentToolsDashboard from "../pages/dashboards/teacher/AssessmentTools/AssessmentToolsDashboard";
 import PTMManager from "../pages/dashboards/teacher/PTMManager";
 import BehaviourLog from "../pages/dashboards/teacher/BehaviourLog";
+import LabManager from "../pages/dashboards/teacher/LabManager";
 
 
 import Support from "../pages/dashboards/teacher/Support";
@@ -41,6 +42,7 @@ const TeacherRoutes = () => {
         <Route path="insights" element={<StudentInsights />} />
         <Route path="ptm" element={<PTMManager />} />
         <Route path="behaviour" element={<BehaviourLog />} />
+        <Route path="labs" element={<LabManager />} />
         <Route path="tests" element={<TestManager />} />
         <Route path="reports" element={<ReportsAnalytics />} />
         <Route path="resources" element={<ResourceLibrary />} />
