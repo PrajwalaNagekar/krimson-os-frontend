@@ -546,7 +546,49 @@ const AssignmentManager = () => {
                   <span className={`px-3 py-1.5 bg-gradient-to-r ${getStatusColor(selectedAssignment.status)} text-white rounded-xl font-bold text-sm`}>{selectedAssignment.subject}</span>
                   <span className={`px-3 py-1.5 rounded-xl font-bold text-sm border-2 ${getStatusBadge(selectedAssignment.status)}`}>{selectedAssignment.status}</span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-2">{selectedAssignment.title}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">{selectedAssignment.title}</h2>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-slate-50 rounded-xl text-slate-500 border border-slate-100">
+                      <Users size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Class</p>
+                      <p className="text-sm font-bold text-slate-700">{selectedAssignment.class}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-slate-50 rounded-xl text-slate-500 border border-slate-100">
+                      <FileText size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Type</p>
+                      <p className="text-sm font-bold text-slate-700">{selectedAssignment.type}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-slate-50 rounded-xl text-slate-500 border border-slate-100">
+                      <Calendar size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Due Date</p>
+                      <p className="text-sm font-bold text-slate-700">{formatDate(selectedAssignment.due)} • {selectedAssignment.dueTime}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-slate-50 rounded-xl text-slate-500 border border-slate-100">
+                      <Award size={18} />
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Max Marks</p>
+                      <p className="text-sm font-bold text-slate-700">{selectedAssignment.maxMarks || 'N/A'}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
