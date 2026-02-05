@@ -1,29 +1,45 @@
-import React, { useState } from 'react';
-import { X, User, BookOpen, Users, Mail, Phone, Camera } from 'lucide-react';
+import React, { useState } from "react";
+import { X, User, BookOpen, Users, Mail, Phone, Camera } from "lucide-react";
 
-const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availableGroups = [], onSave }) => {
+const EditProfileModal = ({
+  isOpen,
+  onClose,
+  user,
+  availableClubs = [],
+  availableGroups = [],
+  onSave,
+}) => {
   if (!isOpen) return null;
 
   const [formData, setFormData] = useState({
-    about: user.about || '',
-    skills: user.skills ? user.skills.join(', ') : '',
-    goals: user.goals ? user.goals.join('\n') : '',
-    interests: user.interests ? user.interests.join('\n') : '',
+    about: user.about || "",
+    skills: user.skills ? user.skills.join(", ") : "",
+    goals: user.goals ? user.goals.join("\n") : "",
+    interests: user.interests ? user.interests.join("\n") : "",
     joinedClubs: user.joinedClubs || [],
     joinedGroups: user.joinedGroups || [],
-    email: user.email || '',
-    phone: user.phone || '',
-    avatar: user.avatar || ''
+    email: user.email || "",
+    phone: user.phone || "",
+    avatar: user.avatar || "",
   });
 
-  const [activeSection, setActiveSection] = useState('profile'); // 'profile', 'details', 'contact'
+  const [activeSection, setActiveSection] = useState("profile"); // 'profile', 'details', 'contact'
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const skillsArray = formData.skills.split(',').map(s => s.trim()).filter(Boolean);
-    const goalsArray = formData.goals.split('\n').map(s => s.trim()).filter(Boolean);
-    const interestsArray = formData.interests.split('\n').map(s => s.trim()).filter(Boolean);
-    
+    const skillsArray = formData.skills
+      .split(",")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const goalsArray = formData.goals
+      .split("\n")
+      .map((s) => s.trim())
+      .filter(Boolean);
+    const interestsArray = formData.interests
+      .split("\n")
+      .map((s) => s.trim())
+      .filter(Boolean);
+
     onSave({
       about: formData.about,
       skills: skillsArray,
@@ -33,20 +49,21 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
       joinedGroups: formData.joinedGroups,
       email: formData.email,
       phone: formData.phone,
-      avatar: formData.avatar
+      avatar: formData.avatar,
     });
     onClose();
   };
 
   const handleAvatarChange = () => {
     // Simulate avatar upload
-    alert('Avatar upload coming soon! For now, the avatar is managed through your account settings.');
+    alert(
+      "Avatar upload coming soon! For now, the avatar is managed through your account settings.",
+    );
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-end bg-black/60 backdrop-blur-sm">
-      <div className="w-full max-w-3xl h-full bg-white shadow-2xl overflow-y-auto animate-in slide-in-from-right duration-300">
-        
+    <div className="fixed inset-y-0 right-0 left-0 lg:left-80 z-50 bg-white overflow-y-auto animate-in fade-in slide-in-from-bottom-4 duration-300">
+      <div className="max-w-5xl mx-auto min-h-screen bg-white">
         {/* Header */}
         <div className="sticky top-0 bg-white/90 backdrop-blur-md z-10 border-b border-slate-100 p-6 flex justify-between items-center">
           <div className="flex items-center gap-3">
@@ -55,10 +72,15 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
             </div>
             <div>
               <h3 className="font-bold text-xl text-slate-800">Edit Profile</h3>
-              <p className="text-slate-500 text-sm">Update your complete profile</p>
+              <p className="text-slate-500 text-sm">
+                Update your complete profile
+              </p>
             </div>
           </div>
-          <button onClick={onClose} className="p-2 hover:bg-slate-100 rounded-full text-slate-400 hover:text-slate-600 transition-colors">
+          <button
+            onClick={onClose}
+            className="p-2 hover:bg-slate-100 rounded-full text-slate-400 hover:text-slate-600 transition-colors"
+          >
             <X size={24} />
           </button>
         </div>
@@ -66,16 +88,24 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
         {/* Section Tabs */}
         <div className="sticky top-[89px] bg-white z-10 border-b border-slate-100 px-6 flex gap-2">
           {[
-            { id: 'profile', label: 'Profile & About', icon: <BookOpen size={16} /> },
-            { id: 'contact', label: 'Contact & Avatar', icon: <Mail size={16} /> }
-          ].map(tab => (
+            {
+              id: "profile",
+              label: "Profile & About",
+              icon: <BookOpen size={16} />,
+            },
+            {
+              id: "contact",
+              label: "Contact & Avatar",
+              icon: <Mail size={16} />,
+            },
+          ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveSection(tab.id)}
               className={`flex items-center gap-2 px-4 py-3 font-bold text-sm transition-all border-b-2 ${
                 activeSection === tab.id
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-slate-500 hover:text-slate-700'
+                  ? "border-blue-500 text-blue-600"
+                  : "border-transparent text-slate-500 hover:text-slate-700"
               }`}
             >
               {tab.icon}
@@ -85,9 +115,8 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
         </div>
 
         <form onSubmit={handleSubmit} className="p-8 space-y-8">
-          
           {/* SECTION 1: Profile & About */}
-          {activeSection === 'profile' && (
+          {activeSection === "profile" && (
             <div className="space-y-6 animate-in fade-in duration-300">
               <div>
                 <label className="flex items-center gap-2 text-sm font-bold text-slate-700 mb-3">
@@ -99,7 +128,9 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
                   placeholder="Tell us about your learning journey, interests, and goals..."
                   className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-medium text-slate-700 resize-none"
                   value={formData.about}
-                  onChange={(e) => setFormData({ ...formData, about: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, about: e.target.value })
+                  }
                 />
                 <p className="text-xs text-slate-400 mt-2">
                   {formData.about.length} characters
@@ -115,20 +146,29 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
                   placeholder="e.g. Physics, Coding, Debate, Robotics"
                   className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-semibold text-slate-700"
                   value={formData.skills}
-                  onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, skills: e.target.value })
+                  }
                 />
-                <p className="text-xs text-slate-400 mt-2">Separate with commas</p>
+                <p className="text-xs text-slate-400 mt-2">
+                  Separate with commas
+                </p>
               </div>
 
               {formData.skills && (
                 <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
-                  <p className="text-xs font-bold uppercase text-slate-400 mb-2">Skills Preview</p>
+                  <p className="text-xs font-bold uppercase text-slate-400 mb-2">
+                    Skills Preview
+                  </p>
                   <div className="flex flex-wrap gap-2">
-                    {formData.skills.split(',').map((skill, i) => {
+                    {formData.skills.split(",").map((skill, i) => {
                       const trimmed = skill.trim();
                       if (!trimmed) return null;
                       return (
-                        <span key={i} className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm">
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-slate-600 shadow-sm"
+                        >
                           #{trimmed}
                         </span>
                       );
@@ -139,13 +179,14 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
             </div>
           )}
 
-
           {/* SECTION 2: Contact & Avatar */}
-          {activeSection === 'contact' && (
+          {activeSection === "contact" && (
             <div className="space-y-6 animate-in fade-in duration-300">
               {/* Avatar Upload */}
               <div className="text-center">
-                <label className="block text-sm font-bold text-slate-700 mb-4">Profile Picture</label>
+                <label className="block text-sm font-bold text-slate-700 mb-4">
+                  Profile Picture
+                </label>
                 <div className="relative inline-block">
                   <img
                     src={formData.avatar || user.avatar}
@@ -160,7 +201,9 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
                     <Camera size={20} />
                   </button>
                 </div>
-                <p className="text-xs text-slate-400 mt-3">Click camera icon to upload new photo</p>
+                <p className="text-xs text-slate-400 mt-3">
+                  Click camera icon to upload new photo
+                </p>
               </div>
 
               <div>
@@ -173,7 +216,9 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
                   placeholder="student@school.edu"
                   className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all font-semibold text-slate-700"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                 />
               </div>
 
@@ -187,13 +232,16 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
                   placeholder="+1 (555) 123-4567"
                   className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-green-500/20 focus:border-green-500 transition-all font-semibold text-slate-700"
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
                 />
               </div>
 
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
                 <p className="text-sm text-amber-800 font-medium">
-                  ℹ️ Your contact information is visible only to teachers and administrators.
+                  ℹ️ Your contact information is visible only to teachers and
+                  administrators.
                 </p>
               </div>
             </div>
@@ -201,21 +249,20 @@ const EditProfileModal = ({ isOpen, onClose, user, availableClubs = [], availabl
 
           {/* Sticky Actions Bar */}
           <div className="sticky bottom-0 bg-white border-t border-slate-100 flex items-center justify-between gap-3 pt-6 -mx-8 px-8 -mb-8 pb-8">
-            <button 
-              type="button" 
-              onClick={onClose} 
+            <button
+              type="button"
+              onClick={onClose}
               className="px-6 py-3 rounded-xl font-bold text-slate-500 hover:bg-slate-50 transition-colors"
             >
               Cancel
             </button>
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="px-8 py-3 rounded-xl font-bold text-white bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition-all"
             >
               Save All Changes
             </button>
           </div>
-
         </form>
       </div>
     </div>

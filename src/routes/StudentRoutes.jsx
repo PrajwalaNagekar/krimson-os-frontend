@@ -22,6 +22,7 @@ import Facilities from "../pages/dashboards/student/Facilities";
 import ProfilePage from "../pages/common/ProfilePage";
 import ProfileAndGoals from "../pages/dashboards/student/ProfileAndGoals";
 import MyLearningSupport from "../pages/dashboards/student/MyLearningSupport";
+import CalendarEvent from "../pages/dashboards/student/CalendarEvent";
 
 const StudentRoutes = () => {
   return (
@@ -41,6 +42,7 @@ const StudentRoutes = () => {
         <Route path="progress" element={<MyProgress />} />
         <Route path="lab-journey" element={<MyLabJourney />} />
         <Route path="learning-support" element={<MyLearningSupport />} />
+        <Route path="events" element={<CalendarEvent />} />
 
         <Route path="behavior" element={<BehaviorLog />} />
 

@@ -50,6 +50,11 @@ const Sidebar = ({ isOpen, onClose }) => {
       icon: <Calendar size={20} />,
     }, // Screen 2
     {
+      name: "Events",
+      path: "/dashboard/student/events",
+      icon: <CalendarCheck size={20} />,
+    },
+    {
       name: "Attendance",
       path: "/dashboard/student/attendance",
       icon: <CalendarCheck size={20} />,

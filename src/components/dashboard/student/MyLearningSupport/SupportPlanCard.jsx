@@ -109,10 +109,20 @@ const SupportPlanCard = ({ plan }) => {
 
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="px-4 py-2 mt-2 rounded-xl bg-slate-50 text-slate-600 hover:bg-blue-50 hover:text-blue-600 font-medium text-sm transition-all flex items-center gap-2 border border-slate-200 hover:border-blue-200"
+              className={`px-4 py-2 mt-2 rounded-xl font-medium text-sm transition-all flex items-center gap-2 shadow-sm ${
+                isExpanded
+                  ? "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  : "bg-white text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 border border-blue-100 hover:border-blue-300 hover:shadow-md"
+              }`}
             >
-              {isExpanded ? "Show Less" : "View Details"}
-              {isExpanded ? <FiChevronUp /> : <FiChevronDown />}
+              <span className={isExpanded ? "" : "text-blue-600"}>
+                {isExpanded ? "Show Less" : "View Details"}
+              </span>
+              {isExpanded ? (
+                <FiChevronUp className="text-slate-500" />
+              ) : (
+                <FiChevronDown className="text-blue-500" />
+              )}
             </button>
           </div>
         </div>

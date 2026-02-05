@@ -1,23 +1,31 @@
 import React from "react";
 import { Calendar, Clock, User, MapPin, ChevronRight } from "lucide-react";
 
-const PeriodSchedule = ({ timetable, setSelectedClass, setIsModalOpen }) => {
+const PeriodSchedule = ({
+  timetable,
+  setSelectedClass,
+  setIsModalOpen,
+  title = "Monday - Period Schedule",
+  periods,
+  showTeacher = true,
+  showDetailsButton = true,
+}) => {
+  const displayPeriods = periods || (timetable && timetable["monday"]) || [];
   return (
     <div className="bg-white p-8 rounded-3xl shadow-sm">
       <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
-        <Calendar className="text-blue-500" size={20} /> Monday - Period
-        Schedule
+        <Calendar className="text-blue-500" size={20} /> {title}
       </h3>
 
       <div className="space-y-4">
-        {timetable["monday"] ? (
-          timetable["monday"].map((slot, idx) => {
+        {displayPeriods.length > 0 ? (
+          displayPeriods.map((slot, idx) => {
             // Determine border and accent color based on status
             let borderColor = "border-slate-100";
             let accentColor = "bg-slate-200";
             let typeColor = "bg-slate-100 text-slate-700";
 
-            if (slot.status === "active") {
+            if (slot.status === "active" || slot.status === "current") {
               borderColor = "border-yellow-200 bg-yellow-50/50";
               accentColor = "bg-yellow-500";
             } else if (slot.status === "completed") {
@@ -76,23 +84,27 @@ const PeriodSchedule = ({ timetable, setSelectedClass, setIsModalOpen }) => {
                   </div>
 
                   <div className="flex items-center gap-4 mt-3 pt-3 border-t border-slate-100/50">
-                    <div className="flex items-center gap-2">
-                      {slot.teacherImage ? (
-                        <img
-                          src={slot.teacherImage}
-                          alt={slot.teacher}
-                          className="w-6 h-6 rounded-full object-cover border border-slate-200"
-                        />
-                      ) : (
-                        <div className="w-6 h-6 rounded-full bg-slate-200 grid place-items-center">
-                          <User size={14} className="text-slate-500" />
-                        </div>
-                      )}
-                      <span className="text-xs font-bold text-slate-600">
-                        {slot.teacher}
-                      </span>
-                    </div>
-                    <div className="w-px h-4 bg-slate-200"></div>
+                    {showTeacher && (
+                      <div className="flex items-center gap-2">
+                        {slot.teacherImage ? (
+                          <img
+                            src={slot.teacherImage}
+                            alt={slot.teacher}
+                            className="w-6 h-6 rounded-full object-cover border border-slate-200"
+                          />
+                        ) : (
+                          <div className="w-6 h-6 rounded-full bg-slate-200 grid place-items-center">
+                            <User size={14} className="text-slate-500" />
+                          </div>
+                        )}
+                        <span className="text-xs font-bold text-slate-600">
+                          {slot.teacher}
+                        </span>
+                      </div>
+                    )}
+                    {showTeacher && (
+                      <div className="w-px h-4 bg-slate-200"></div>
+                    )}
                     <span className="flex items-center gap-1 text-xs font-bold text-slate-500">
                       <MapPin size={12} className="text-slate-400" />{" "}
                       {slot.room}
@@ -100,12 +112,14 @@ const PeriodSchedule = ({ timetable, setSelectedClass, setIsModalOpen }) => {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-center pl-4">
-                  <button className="px-5 py-2.5 bg-white text-blue-600 text-sm font-bold rounded-xl shadow-sm hover:bg-blue-50 transition-all flex items-center gap-2 transform hover:scale-105 active:scale-95">
-                    View Details
-                    <ChevronRight size={16} />
-                  </button>
-                </div>
+                {showDetailsButton && (
+                  <div className="flex items-center justify-center pl-4">
+                    <button className="px-5 py-2.5 bg-white text-blue-600 text-sm font-bold rounded-xl shadow-sm hover:bg-blue-50 transition-all flex items-center gap-2 transform hover:scale-105 active:scale-95">
+                      View Details
+                      <ChevronRight size={16} />
+                    </button>
+                  </div>
+                )}
               </div>
             );
           })

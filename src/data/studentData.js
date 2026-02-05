@@ -254,6 +254,79 @@ export const STUDENT_DATA = {
         difficulty: "Advanced",
       },
     ],
+    // Calendar Events Data
+    calendarEvents: [
+      {
+        id: 1,
+        title: "Science Fair 2026",
+        date: "2026-02-15",
+        time: "09:00 AM - 04:00 PM",
+        location: "Main Auditorium",
+        description:
+          "Showcase your innovative science projects and compete for the Grand Prize. Open to all grades.",
+        type: "Competition",
+        category: "Academic",
+        registered: true,
+        image:
+          "https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=500&auto=format&fit=crop&q=60",
+      },
+      {
+        id: 2,
+        title: "Inter-House Basketball Final",
+        date: "2026-02-18",
+        time: "03:30 PM - 05:30 PM",
+        location: "Sports Complex",
+        description:
+          "Cheer for your house! Red House vs. Blue House in the championship match.",
+        type: "Sports",
+        category: "Sports",
+        registered: false,
+        image:
+          "https://images.unsplash.com/photo-1546519638-68e109498ee2?w=500&auto=format&fit=crop&q=60",
+      },
+      {
+        id: 3,
+        title: "Robotics Workshop",
+        date: "2026-02-20",
+        time: "10:00 AM - 01:00 PM",
+        location: "Robotics Lab",
+        description:
+          "Learn the basics of Arduino and build your first robot. Limited seats available.",
+        type: "Workshop",
+        category: "STEM",
+        registered: false,
+        image:
+          "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&auto=format&fit=crop&q=60",
+      },
+      {
+        id: 4,
+        title: "Annual Debate Championship",
+        date: "2026-02-25",
+        time: "11:00 AM - 03:00 PM",
+        location: "Lecture Hall A",
+        description:
+          "Witness the best speakers debate on current global issues. Guest judges invited.",
+        type: "Competition",
+        category: "Arts & Culture",
+        registered: true,
+        image:
+          "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&auto=format&fit=crop&q=60",
+      },
+      {
+        id: 5,
+        title: "Career Guidance Session",
+        date: "2026-02-28",
+        time: "02:00 PM - 04:00 PM",
+        location: "Conference Room",
+        description:
+          "Expert counselors guide you on choosing the right career path after high school.",
+        type: "Seminar",
+        category: "Career",
+        registered: false,
+        image:
+          "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&auto=format&fit=crop&q=60",
+      },
+    ],
     learningSupport: {
       plans: [
         {
@@ -301,6 +374,26 @@ export const STUDENT_DATA = {
             { date: "2026-02-15", time: "10:00", topic: "Intro to Speech" },
           ],
           resources: [],
+        },
+      ],
+      insight: {
+        title: "Maximize Your Growth",
+        description:
+          "Consistency is key! Attending your scheduled sessions regularly boosts your improved conceptual understanding by 40%.",
+        buttonText: "View Progress Report",
+      },
+      resources: [
+        {
+          id: 1,
+          title: "Guide to Effective Study",
+          type: "PDF",
+          category: "General Advice",
+        },
+        {
+          id: 2,
+          title: "Request 1-on-1 Session",
+          type: "DOC",
+          category: "Form",
         },
       ],
     },

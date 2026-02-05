@@ -5,13 +5,15 @@ import { authService } from "../../../services/authService";
 import {
   HeroBanner,
   QuickActionsGrid,
-  TodayScheduleCard,
   HomeworkCard,
   AttendanceWidget,
   ExamCountdown,
   AchievementBadges,
   NotificationsList,
 } from "../../../components/dashboard/student/HomeDashboard";
+import TimetableHeader from "../../../components/dashboard/student/TimetableSchedule/TimetableHeader";
+import PeriodSchedule from "../../../components/dashboard/student/TimetableSchedule/PeriodSchedule";
+import { ArrowRight } from "lucide-react";
 
 const HomeDashboard = () => {
   const navigate = useNavigate();
@@ -63,10 +65,25 @@ const HomeDashboard = () => {
       {/* Today's Schedule and Homework */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Today's Timetable */}
-        <TodayScheduleCard
-          todayTimetable={dashboard.todayTimetable}
-          onViewFull={() => navigate("/dashboard/student/timetable")}
-        />
+        {/* Today's Timetable Snapshot */}
+        <div className="space-y-6">
+          <TimetableHeader
+            action={
+              <button
+                onClick={() => navigate("/dashboard/student/timetable")}
+                className="flex items-center gap-2 px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-xl backdrop-blur-md transition-all text-sm font-bold"
+              >
+                View Full <ArrowRight size={16} />
+              </button>
+            }
+          />
+          <PeriodSchedule
+            periods={dashboard.todayTimetable}
+            title="Today Plan"
+            showTeacher={false}
+            showDetailsButton={false}
+          />
+        </div>
 
         {/* Homework & Assignments */}
         <HomeworkCard
