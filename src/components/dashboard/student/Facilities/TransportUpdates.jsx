@@ -12,8 +12,19 @@ import {
   Navigation,
 } from "lucide-react";
 
-const TransportUpdates = ({ transportData }) => {
+const TransportUpdates = ({ transportData, userTransport }) => {
   const [expandedRoute, setExpandedRoute] = useState(null);
+
+  // Filter based on user's assigned transport
+  const filteredRoutes = userTransport
+    ? transportData.routes.filter((route) => route.id === userTransport.routeId)
+    : transportData.routes;
+
+  const filteredAlerts = userTransport
+    ? transportData.alerts.filter(
+        (alert) => alert.routeNumber === userTransport.routeNumber,
+      )
+    : transportData.alerts;
 
   // Color scheme matching student sidebar
   const gradientBg = "bg-gradient-to-br from-cyan-400 via-blue-400 to-pink-400";
@@ -92,63 +103,71 @@ const TransportUpdates = ({ transportData }) => {
           Recent Alerts
         </h3>
         <div className="space-y-3">
-          {transportData.alerts.map((alert) => (
-            <div
-              key={alert.id}
-              className={`${cardGradient} rounded-xl p-4 border-2 ${
-                alert.read ? "border-gray-200" : "border-cyan-300"
-              } hover:shadow-md transition-all duration-300`}
-            >
-              <div className="flex items-start gap-4">
-                {/* Icon */}
-                <div
-                  className={`p-3 rounded-xl ${getPriorityColor(
-                    alert.priority,
-                  )} text-white flex-shrink-0`}
-                >
-                  {getAlertIcon(alert.icon)}
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-start justify-between gap-2 mb-1">
-                    <h4
-                      className={`font-semibold text-gray-800 ${
-                        !alert.read ? "font-bold" : ""
-                      }`}
-                    >
-                      {alert.title}
-                    </h4>
-                    {!alert.read && (
-                      <span className="w-2 h-2 rounded-full bg-cyan-500 flex-shrink-0 mt-1.5"></span>
-                    )}
+          {filteredAlerts.length > 0 ? (
+            filteredAlerts.map((alert) => (
+              <div
+                key={alert.id}
+                className={`${cardGradient} rounded-xl p-4 border-2 ${
+                  alert.read ? "border-gray-200" : "border-cyan-300"
+                } hover:shadow-md transition-all duration-300`}
+              >
+                <div className="flex items-start gap-4">
+                  {/* Icon */}
+                  <div
+                    className={`p-3 rounded-xl ${getPriorityColor(
+                      alert.priority,
+                    )} text-white flex-shrink-0`}
+                  >
+                    {getAlertIcon(alert.icon)}
                   </div>
 
-                  <p className="text-sm text-gray-600 mb-2">{alert.message}</p>
-
-                  <div className="flex items-center justify-between flex-wrap gap-2">
-                    <div className="flex items-center gap-3 text-xs">
-                      <span className="text-gray-500 flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {alert.timestamp}
-                      </span>
-                      <span
-                        className={`px-2 py-1 rounded-full ${getPriorityColor(
-                          alert.priority,
-                        )} text-white font-semibold`}
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-start justify-between gap-2 mb-1">
+                      <h4
+                        className={`font-semibold text-gray-800 ${
+                          !alert.read ? "font-bold" : ""
+                        }`}
                       >
-                        {alert.priority}
+                        {alert.title}
+                      </h4>
+                      {!alert.read && (
+                        <span className="w-2 h-2 rounded-full bg-cyan-500 flex-shrink-0 mt-1.5"></span>
+                      )}
+                    </div>
+
+                    <p className="text-sm text-gray-600 mb-2">
+                      {alert.message}
+                    </p>
+
+                    <div className="flex items-center justify-between flex-wrap gap-2">
+                      <div className="flex items-center gap-3 text-xs">
+                        <span className="text-gray-500 flex items-center gap-1">
+                          <Clock className="w-3 h-3" />
+                          {alert.timestamp}
+                        </span>
+                        <span
+                          className={`px-2 py-1 rounded-full ${getPriorityColor(
+                            alert.priority,
+                          )} text-white font-semibold`}
+                        >
+                          {alert.priority}
+                        </span>
+                      </div>
+                      <span className="text-xs font-semibold text-cyan-600 flex items-center gap-1">
+                        <Bus className="w-3 h-3" />
+                        {alert.routeNumber}
                       </span>
                     </div>
-                    <span className="text-xs font-semibold text-cyan-600 flex items-center gap-1">
-                      <Bus className="w-3 h-3" />
-                      {alert.routeNumber}
-                    </span>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p className="text-gray-500 text-center py-4">
+              No alerts for your route.
+            </p>
+          )}
         </div>
       </div>
 
@@ -159,7 +178,7 @@ const TransportUpdates = ({ transportData }) => {
           Bus Routes
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {transportData.routes.map((route) => (
+          {filteredRoutes.map((route) => (
             <div
               key={route.id}
               className={`${cardGradient} rounded-xl p-5 border-2 border-transparent hover:border-cyan-300 transition-all duration-300 cursor-pointer group`}

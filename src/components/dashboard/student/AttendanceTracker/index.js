@@ -6,3 +6,5 @@ export { default as AttendanceWarning } from "./AttendanceWarning";
 export { default as LeaveRequestForm } from "./LeaveRequestForm";
 export { default as AttendanceTrends } from "./AttendanceTrends";
 export { default as PunctualityStats } from "./PunctualityStats";
+export { default as AttendanceHeader } from "./AttendanceHeader";
+export { default as AttendanceLegend } from "./AttendanceLegend";

@@ -24,8 +24,7 @@ const EventRegistration = ({ events }) => {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold text-slate-800">Upcoming Events</h2>
+      <div className="flex items-center justify-end">
         <div className="flex items-center gap-2">
           <span className="text-xs text-slate-500 font-medium bg-white px-3 py-1 rounded-full border border-slate-200">
             {events.length} Events Total

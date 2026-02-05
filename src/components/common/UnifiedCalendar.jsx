@@ -167,6 +167,7 @@ const UnifiedCalendar = ({
                 cellProps;
 
               const hasCustomBg = customClass.includes("bg-");
+              const hasCustomText = customClass.includes("text-");
 
               return (
                 <div
@@ -187,7 +188,15 @@ const UnifiedCalendar = ({
                   `}
                 >
                   <span
-                    className={`text-lg font-black ${isToday ? "text-white drop-shadow-md" : hasCustomBg ? "text-white" : "text-slate-700"}`}
+                    className={`text-lg font-black ${
+                      isToday
+                        ? "text-white drop-shadow-md"
+                        : hasCustomBg && !hasCustomText
+                          ? "text-white"
+                          : hasCustomText
+                            ? ""
+                            : "text-slate-700"
+                    }`}
                   >
                     {day}
                   </span>

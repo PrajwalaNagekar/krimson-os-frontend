@@ -141,7 +141,10 @@ const Facilities = () => {
           }`}
         >
           {activeSection === "transport" && (
-            <TransportUpdates transportData={transportUpdates} />
+            <TransportUpdates
+              transportData={transportUpdates}
+              userTransport={STUDENT_DATA.user.transport}
+            />
           )}
         </div>
 

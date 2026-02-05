@@ -6,16 +6,27 @@ import { Award } from "lucide-react";
  *
  * Purpose: Display earned achievement badges in a grid
  */
-const AchievementBadges = ({ achievementBadges }) => {
+const AchievementBadges = ({ achievementBadges, onViewAchievements }) => {
   return (
     <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-lg transition-shadow md:col-span-2 lg:col-span-1">
       <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-yellow-400 opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-opacity"></div>
 
-      <div className="flex items-center gap-2 mb-4 relative z-10">
-        <div className="p-2 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl text-white">
-          <Award size={20} />
+      <div className="flex items-center justify-between mb-4 relative z-10">
+        <div className="flex items-center gap-2">
+          <div className="p-2 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl text-white">
+            <Award size={20} />
+          </div>
+          <h4 className="font-bold text-slate-800">Achievements</h4>
         </div>
-        <h4 className="font-bold text-slate-800">Achievements</h4>
+
+        {onViewAchievements && (
+          <button
+            onClick={onViewAchievements}
+            className="text-xs font-bold text-slate-400 hover:text-blue-600 transition-colors"
+          >
+            View Details
+          </button>
+        )}
       </div>
 
       <div className="grid grid-cols-2 gap-3 relative z-10">

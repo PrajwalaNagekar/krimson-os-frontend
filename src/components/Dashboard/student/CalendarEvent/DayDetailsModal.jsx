@@ -14,11 +14,15 @@ const DayDetailsModal = ({ isOpen, onClose, date, events, onAddEvent }) => {
 
   // Filter events for this specific date
   const dayEvents = events.filter((e) => {
-    const d = new Date(e.date);
+    if (!e.date) return false;
+    // Robust date comparison: Parse YYYY-MM-DD string parts
+    // This avoids timezone issues where "2026-02-14" might become "2026-02-13" in Western timezones
+    const [y, m, d] = e.date.split("-").map(Number);
+
     return (
-      d.getDate() === date.getDate() &&
-      d.getMonth() === date.getMonth() &&
-      d.getFullYear() === date.getFullYear()
+      y === date.getFullYear() &&
+      m === date.getMonth() + 1 && // Month is 0-indexed in JS Date
+      d === date.getDate()
     );
   });
 

@@ -104,10 +104,18 @@ const HomeDashboard = () => {
         <ExamCountdown
           upcomingExams={dashboard.upcomingExams}
           onViewSyllabus={() => console.log("View Syllabus")}
+          onViewExams={() => navigate("/dashboard/student/exams")}
         />
 
         {/* Achievement Badges */}
-        <AchievementBadges achievementBadges={dashboard.achievementBadges} />
+        <AchievementBadges
+          achievementBadges={dashboard.achievementBadges}
+          onViewAchievements={() =>
+            navigate("/dashboard/student/profile", {
+              state: { section: "achievements" },
+            })
+          }
+        />
       </div>
 
       {/* Enhanced Notifications */}
