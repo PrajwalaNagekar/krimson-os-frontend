@@ -168,10 +168,10 @@ const UnifiedCalendar = ({
                   className={`
                     group relative aspect-[4/5] md:aspect-square p-3 rounded-[1.5rem] transition-all duration-500 cursor-pointer border
                     ${
-                      isToday
-                        ? "bg-gradient-to-br from-cyan-500 via-blue-500 to-pink-500 shadow-2xl shadow-cyan-300/50 border-cyan-400 scale-105 z-10"
-                        : hasCustomBg
-                          ? `${customClass} border-transparent shadow-sm hover:transform hover:-translate-y-1`
+                      hasCustomBg
+                        ? `${customClass} border-transparent shadow-sm hover:transform hover:-translate-y-1 ${isToday ? "ring-4 ring-cyan-400/50 scale-105 z-10 shadow-xl" : ""}`
+                        : isToday
+                          ? "bg-gradient-to-br from-cyan-500 via-blue-500 to-pink-500 shadow-2xl shadow-cyan-300/50 border-cyan-400 scale-105 z-10"
                           : "bg-white/60 backdrop-blur-sm border-cyan-100/50 hover:border-blue-300/50 hover:shadow-[0_20px_40px_rgba(0,150,200,0.15)] hover:-translate-y-1 hover:bg-white/80"
                     }
                     ${isSelected && !isToday && !hasCustomBg ? "ring-2 ring-pink-500 ring-offset-2 bg-gradient-to-br from-cyan-50 to-pink-50" : ""}

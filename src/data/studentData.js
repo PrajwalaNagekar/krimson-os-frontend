@@ -798,6 +798,7 @@ export const STUDENT_DATA = {
           type: "assignment",
           priority: "high",
         },
+
         {
           title: "Chapter 4 Quiz - Quadratics",
           dueDate: "Tomorrow 9:00 AM",
@@ -6318,6 +6319,86 @@ export const STUDENT_DATA = {
         },
       ],
       previousAttempts: [],
+    },
+  ],
+  // AI-generated preparation checklist
+  preparationChecklist: [
+    {
+      id: 1,
+      task: "Review Physics formulas before lab",
+      subject: "Physics",
+      timeSlot: "Before Period 3",
+      aiReason: "Lab exam next week - strengthen fundamentals",
+      completed: false,
+    },
+    {
+      id: 2,
+      task: "Prepare questions for Math class",
+      subject: "Mathematics",
+      timeSlot: "Before Period 1",
+      aiReason: "You struggled with last topic - seek clarification",
+      completed: true,
+    },
+    {
+      id: 3,
+      task: "Bring project materials",
+      subject: "Chemistry",
+      timeSlot: "Period 4",
+      aiReason: "Group project presentation scheduled",
+      completed: false,
+    },
+  ],
+
+  // Mock data for today's homework reminders
+  todayHomework: [
+    {
+      id: 1,
+      subject: "Mathematics",
+      title: "Complete Trigonometry Worksheet",
+      dueTime: "5:00 PM",
+      priority: "high",
+      estimatedTime: "30 min",
+      status: "pending",
+    },
+    {
+      id: 2,
+      subject: "Physics",
+      title: "Lab Report - Optics Experiment",
+      dueTime: "11:59 PM",
+      priority: "medium",
+      estimatedTime: "45 min",
+      status: "in-progress",
+    },
+    {
+      id: 3,
+      subject: "English",
+      title: "Read Chapter 5",
+      dueTime: "Tomorrow 9:00 AM",
+      priority: "low",
+      estimatedTime: "20 min",
+      status: "pending",
+    },
+  ],
+
+  // Mock data for CCA (Co-Curricular Activities) blocks
+  ccaBlocks: [
+    {
+      id: 1,
+      activity: "Basketball Practice",
+      time: "15:30 - 17:00",
+      venue: "Sports Complex",
+      coach: "Coach Williams",
+      type: "Sports",
+      icon: "🏀",
+    },
+    {
+      id: 2,
+      activity: "Science Club Meeting",
+      time: "16:00 - 17:00",
+      venue: "Lab 1",
+      mentor: "Dr. Patel",
+      type: "Club",
+      icon: "🔬",
     },
   ],
 };

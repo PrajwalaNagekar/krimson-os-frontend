@@ -1,10 +1,10 @@
 import React from "react";
 import { CalendarCheck, Download } from "lucide-react";
 
-const AttendanceHeader = ({ handleDownloadReport }) => {
+const AttendanceHeader = ({ handleDownloadReport, viewMode, setViewMode }) => {
   return (
     <div className="mb-4 md:mb-6 relative z-10">
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-4">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full md:w-auto">
         <div className="flex items-center gap-3 md:gap-4">
           <div className="p-2.5 md:p-3 bg-gradient-to-br from-cyan-400 via-blue-400 to-pink-400 rounded-xl md:rounded-2xl shadow-lg shadow-blue-500/30 animate-gradient">
             <CalendarCheck size={24} className="md:hidden text-white" />
@@ -18,6 +18,26 @@ const AttendanceHeader = ({ handleDownloadReport }) => {
               Track daily, weekly, and term-wise attendance
             </p>
           </div>
+        </div>
+
+        <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm p-1 rounded-xl border border-white/60 shadow-sm">
+          {["today", "monthly", "term"].map((mode) => (
+            <button
+              key={mode}
+              onClick={() => setViewMode(mode)}
+              className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all ${
+                viewMode === mode
+                  ? "bg-gradient-to-r from-cyan-500 to-blue-500 text-white shadow-md shadow-blue-200"
+                  : "text-slate-600 hover:bg-white/80"
+              }`}
+            >
+              {mode === "today"
+                ? "Today Update"
+                : mode === "monthly"
+                  ? "Monthly"
+                  : "Term-wise"}
+            </button>
+          ))}
         </div>
 
         <button
