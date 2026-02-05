@@ -84,7 +84,9 @@ const CheckInModal = ({ isOpen, onClose }) => {
             <div className="bg-purple-100 p-2 rounded-xl">
               <Heart className="text-purple-600" size={20} />
             </div>
-            <h3 className="font-bold text-slate-800 text-lg">Daily Check-in</h3>
+            <h3 className="font-bold text-slate-800 text-lg">
+              Wellbeing Check-in
+            </h3>
           </div>
           <button
             onClick={onClose}
@@ -102,16 +104,18 @@ const CheckInModal = ({ isOpen, onClose }) => {
                 <CheckCircle size={32} />
               </div>
               <h4 className="text-xl font-bold text-slate-800 mb-2">
-                Check-in Saved!
+                Thank you for sharing
               </h4>
-              <p className="text-slate-500">Thanks for sharing how you feel.</p>
+              <p className="text-slate-500 max-w-xs mx-auto">
+                You’re not alone, and support is always available at school.
+              </p>
             </div>
           ) : (
             <>
               {/* Mood Selection */}
               <div className="mb-6">
                 <label className="block text-sm font-bold text-slate-700 mb-3">
-                  How are you feeling right now?
+                  How are you feeling today?
                 </label>
                 <div className="flex justify-between gap-2">
                   {moods.map((mood) => (
@@ -138,7 +142,7 @@ const CheckInModal = ({ isOpen, onClose }) => {
               {/* Note Input */}
               <div className="mb-6">
                 <label className="block text-sm font-bold text-slate-700 mb-2">
-                  What's on your mind?{" "}
+                  Would you like to share a brief reflection?{" "}
                   <span className="text-slate-400 font-normal">(Optional)</span>
                 </label>
                 <textarea
@@ -167,7 +171,7 @@ const CheckInModal = ({ isOpen, onClose }) => {
                 ) : (
                   <>
                     <CheckCircle size={20} />
-                    Submit Check-in
+                    Complete Check-in
                   </>
                 )}
               </button>
@@ -179,7 +183,10 @@ const CheckInModal = ({ isOpen, onClose }) => {
         {!isSuccess && (
           <div className="px-6 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-center gap-2 text-xs text-slate-500">
             <AlertCircle size={14} />
-            <span>This information is private to you and your counselors.</span>
+            <span>
+              Responses are summarized for wellbeing support. Raw text is never
+              shared with parents.
+            </span>
           </div>
         )}
       </div>

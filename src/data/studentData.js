@@ -617,6 +617,76 @@ export const STUDENT_DATA = {
         status: "upcoming",
       },
     ],
+    // House System Data
+    houseSystem: {
+      info: {
+        name: "Red House",
+        color: "bg-red-500", // Tailwind class for UI
+        textColor: "text-red-600",
+        colorHex: "#EF4444",
+        motto: "Courage, Strength, and Determination",
+        totalPoints: 12450,
+        position: 1, // 1st Place
+        mascot: "🦁", // Lion
+      },
+      stats: {
+        contribution: 350, // Points contributed by this student
+        rankInHouse: 15,
+      },
+      recentActivities: [
+        {
+          id: 1,
+          title: "Inter-House Sports Day",
+          date: "2026-01-15",
+          result: "1st Place",
+          description: "Dominated in track and field events.",
+        },
+        {
+          id: 2,
+          title: "Science Fair",
+          date: "2025-12-10",
+          result: "2nd Place",
+          description: "Innovative projects across all grades.",
+        },
+      ],
+      pointsLog: [
+        {
+          id: 1,
+          date: "2026-02-01",
+          category: "Teamwork",
+          description: "Excellence in Group Physics Project",
+          points: 50,
+        },
+        {
+          id: 2,
+          date: "2026-01-25",
+          category: "Leadership",
+          description: "Led the morning assembly",
+          points: 30,
+        },
+        {
+          id: 3,
+          date: "2026-01-15",
+          category: "Sportsmanship",
+          description: "Helping an injured player during soccer",
+          points: 20,
+        },
+        {
+          id: 4,
+          date: "2026-01-10",
+          category: "Service",
+          description: "Volunteered for campus cleanup",
+          points: 40,
+        },
+        {
+          id: 5,
+          date: "2025-12-05",
+          category: "Responsibility",
+          description: "Returned lost library book",
+          points: 10,
+        },
+      ],
+    },
     // Today's Homework
     todayHomework: [
       {
@@ -6401,4 +6471,176 @@ export const STUDENT_DATA = {
       icon: "🔬",
     },
   ],
+
+  // Behavior Log Data
+  behavior: {
+    totalPoints: 1250,
+    rank: 12,
+    percentile: 92,
+    attendanceTrends: [
+      { month: "Aug", percentage: 95 },
+      { month: "Sep", percentage: 98 },
+      { month: "Oct", percentage: 92 },
+      { month: "Nov", percentage: 96 },
+      { month: "Dec", percentage: 94 },
+      { month: "Jan", percentage: 99 },
+    ],
+    punctuality: {
+      onTime: 115,
+      late: 3,
+      percentage: 97.4,
+    },
+    achievements: [
+      {
+        id: 1,
+        title: "Star Student",
+        date: "2026-01-15",
+        category: "Academic",
+        description: "Achieved highest grade in Physics mid-term",
+        points: 50,
+        icon: "Star",
+      },
+      {
+        id: 2,
+        title: "Perfect Attendance",
+        date: "2025-12-20",
+        category: "Attendance",
+        description: "100% attendance for the month of December",
+        points: 30,
+        icon: "Clock",
+      },
+      {
+        id: 3,
+        title: "Science Fair Winner",
+        date: "2025-11-10",
+        category: "Competition",
+        description: "First prize in the annual Science Fair",
+        points: 100,
+        icon: "Trophy",
+      },
+      {
+        id: 4,
+        title: "Helpful Peer",
+        date: "2025-10-05",
+        category: "Community",
+        description: "Volunteered to help formatting reports",
+        points: 20,
+        icon: "Heart",
+      },
+    ],
+    participationPoints: [
+      {
+        id: 1,
+        activity: "Class Discussion",
+        date: "2026-02-01",
+        points: 10,
+        teacher: "Mr. Sharma",
+      },
+      {
+        id: 2,
+        activity: "Group Project Lead",
+        date: "2026-01-28",
+        points: 25,
+        teacher: "Ms. Davis",
+      },
+      {
+        id: 3,
+        activity: "Lab Assistance",
+        date: "2026-01-20",
+        points: 15,
+        teacher: "Dr. Patel",
+      },
+      {
+        id: 4,
+        activity: "Library Volunteer",
+        date: "2026-01-15",
+        points: 20,
+        teacher: "Mrs. Wilson",
+      },
+    ],
+    warnings: [], // Empty for a good student, can add mock data if needed
+    emotionalCheckIns: [
+      {
+        id: 1,
+        date: "2026-02-05",
+        mood: "Happy",
+        notes: "Feeling great about the upcoming project!",
+        timestamp: "08:30 AM",
+      },
+      {
+        id: 2,
+        date: "2026-02-04",
+        mood: "Neutral",
+        notes: "A bit tired but managing well.",
+        timestamp: "09:00 AM",
+      },
+      {
+        id: 3,
+        date: "2026-02-03",
+        mood: "Excited",
+        notes: "Can't wait for the sports event!",
+        timestamp: "08:15 AM",
+      },
+    ],
+    peerAppreciation: [
+      {
+        id: 1,
+        sender: "Sarah M.",
+        recipient: "Alex Johnson",
+        message:
+          "Thanks for helping me understand the physics conflict! You made it so clear.",
+        category: "Helpfulness",
+        date: "2026-02-04",
+        status: "approved",
+        likes: 5,
+        avatar: "https://i.pravatar.cc/150?img=9",
+      },
+      {
+        id: 2,
+        sender: "David K.",
+        recipient: "Alex Johnson",
+        message:
+          "Great teamwork during the basketball game. Loved your energy!",
+        category: "Teamwork",
+        date: "2026-02-03",
+        status: "approved",
+        likes: 12,
+        avatar: "https://i.pravatar.cc/150?img=11",
+      },
+      {
+        id: 3,
+        sender: "Emily R.",
+        recipient: "Whole Class",
+        message:
+          "Everyone was so respectful during the debate today. Proud to be in this class.",
+        category: "Respect",
+        date: "2026-02-02",
+        status: "approved",
+        likes: 24,
+        avatar: "https://i.pravatar.cc/150?img=5",
+      },
+      {
+        id: 4,
+        sender: "Alex Johnson",
+        recipient: "Mr. Sharma",
+        message: "Thank you for the extra time on the lab. It really helped!",
+        category: "Gratitude",
+        date: "2026-02-01",
+        status: "pending", // Example of pending message
+        likes: 0,
+        avatar: "https://i.pravatar.cc/150?img=12",
+      },
+      {
+        id: 5,
+        sender: "Jordan P.",
+        recipient: "New Students",
+        message: "Welcome to the school! We're glad to have you here.",
+        category: "Inclusion",
+        date: "2026-01-30",
+        status: "approved",
+        likes: 8,
+        avatar: "https://i.pravatar.cc/150?img=3",
+      },
+    ],
+  },
 };

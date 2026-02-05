@@ -96,7 +96,10 @@ const EmotionalCheckIn = ({ emotionalCheckIns }) => {
         </div>
 
         <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-400 justify-center">
-          <span>🔒 Private to you and authorized counselors only</span>
+          <span>
+            🔒 Responses are summarized for wellbeing support. Raw text is never
+            shared with parents.
+          </span>
         </div>
       </div>
 

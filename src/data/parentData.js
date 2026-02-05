@@ -222,4 +222,113 @@ export const PARENT_DATA = {
       { day: null, status: null },
     ],
   },
+  coCurricular: {
+    activities: [
+      {
+        id: 1,
+        title: "Inter-School Debate Championship - Regional Finals",
+        category: "Leadership",
+        date: "2026-01-15",
+        points: 50,
+        achievement: "First Place",
+        description:
+          "Led the school debate team to victory in the regional championship. Demonstrated exceptional leadership and public speaking skills.",
+        certificate: true,
+        photos: [
+          { id: 1, name: "winning_moment.jpg" },
+          { id: 2, name: "team_photo.jpg" },
+        ],
+        // color: 'from-purple-500 to-pink-500', // Moved to component logic or kept if specific
+        // icon: Crown // Icons cannot be in JSON/static data easily if they are components. Will map by category string in component.
+        categoryId: "Leadership",
+      },
+      {
+        id: 2,
+        title: "Annual Art Exhibition - Featured Artist",
+        category: "Arts",
+        date: "2026-01-10",
+        points: 40,
+        achievement: "Featured Exhibition",
+        description:
+          "Artwork selected for the school's annual art exhibition. Created a mixed-media piece exploring environmental themes.",
+        certificate: true,
+        photos: [{ id: 1, name: "artwork_display.jpg" }],
+        categoryId: "Arts",
+      },
+      {
+        id: 3,
+        title: "Mathematics Olympiad - District Level",
+        category: "Academics",
+        date: "2026-01-05",
+        points: 45,
+        achievement: "Gold Medal",
+        description:
+          "Secured first place in the district-level Mathematics Olympiad, solving complex problems under time constraints.",
+        certificate: true,
+        photos: [],
+        categoryId: "Academics",
+      },
+      {
+        id: 4,
+        title: "School Swimming Gala - 100m Freestyle",
+        category: "Sports",
+        date: "2025-12-20",
+        points: 35,
+        achievement: "Silver Medal",
+        description:
+          "Achieved personal best time in 100m freestyle at the annual swimming gala. Improved timing by 3 seconds.",
+        certificate: true,
+        photos: [{ id: 1, name: "swimming_medal.jpg" }],
+        categoryId: "Sports",
+      },
+      {
+        id: 5,
+        title: "Music Ensemble Performance - Winter Concert",
+        category: "Arts",
+        date: "2025-12-15",
+        points: 30,
+        achievement: "Outstanding Performance",
+        description:
+          "Performed violin solo as part of the school orchestra during the winter concert. Received standing ovation.",
+        certificate: false,
+        photos: [
+          { id: 1, name: "concert_performance.jpg" },
+          { id: 2, name: "orchestra_group.jpg" },
+        ],
+        categoryId: "Arts",
+      },
+      {
+        id: 6,
+        title: "Community Service - Beach Cleanup Drive",
+        category: "Leadership",
+        date: "2025-12-10",
+        points: 25,
+        achievement: "Service Award",
+        description:
+          "Organized and led a team of 20 students in a beach cleanup initiative, collecting over 100kg of waste.",
+        certificate: true,
+        photos: [{ id: 1, name: "cleanup_team.jpg" }],
+        categoryId: "Leadership",
+      },
+    ],
+    categories: [
+      {
+        id: "all",
+        name: "All Activities",
+        color: "from-slate-500 to-gray-500",
+      },
+      { id: "Sports", name: "Sports", color: "from-green-500 to-emerald-500" },
+      { id: "Arts", name: "Arts", color: "from-orange-500 to-amber-500" },
+      {
+        id: "Academics",
+        name: "Academics",
+        color: "from-blue-500 to-cyan-500",
+      },
+      {
+        id: "Leadership",
+        name: "Leadership",
+        color: "from-purple-500 to-pink-500",
+      },
+    ],
+  },
 };
