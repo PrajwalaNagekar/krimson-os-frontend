@@ -16,6 +16,8 @@ const UnifiedCalendar = ({
   getCellProps,
   hideSidebar = false,
   className = "",
+  showAddButton = false,
+  onDateSelect, // Callback when a date is clicked
 }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -45,7 +47,13 @@ const UnifiedCalendar = ({
 
   const prevMonth = () => setCurrentDate(new Date(year, month - 1, 1));
   const nextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
-  const handleDateClick = (day) => setSelectedDate(new Date(year, month, day));
+  const handleDateClick = (day) => {
+    const newDate = new Date(year, month, day);
+    setSelectedDate(newDate);
+    if (onDateSelect) {
+      onDateSelect(newDate);
+    }
+  };
 
   const isAdminOrPrincipal = role === "admin" || role === "principal";
 
@@ -92,7 +100,7 @@ const UnifiedCalendar = ({
                 </button>
               </div>
 
-              {isAdminOrPrincipal && (
+              {(isAdminOrPrincipal || showAddButton) && (
                 <button
                   onClick={onCreateEvent}
                   className="px-5 py-2.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-pink-500 text-white text-sm font-bold rounded-xl flex items-center gap-2 hover:shadow-xl hover:shadow-cyan-300/50 transition-all active:scale-95"

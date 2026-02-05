@@ -73,7 +73,7 @@ const ProfileHeader = ({
             </button>
             <button
               onClick={onViewID}
-              title="Digital Student ID"
+              title="Student Identity Card"
               className="p-3 rounded-xl bg-slate-50 text-slate-400 hover:text-purple-500 hover:bg-purple-50 transition-colors"
             >
               <IdCard size={20} />
