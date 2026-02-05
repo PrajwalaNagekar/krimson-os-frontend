@@ -7,6 +7,482 @@ export const STUDENT_DATA = {
     avatar: "https://i.pravatar.cc/150?img=12",
     house: "Red House",
     attendance: "94%",
+    about:
+      "I am a passionate learner interested in Physics and Computer Science. I love building things and solving complex problems.",
+    skills: ["Physics", "Coding", "Debate", "Robotics"],
+    goals: [
+      "Achieve 95%+ in Physics",
+      "Win National Science Olympiad",
+      "Master Python Programming",
+      "Publish research paper",
+    ],
+    interests: [
+      "Quantum Physics",
+      "Machine Learning",
+      "Robotics",
+      "Space Exploration",
+      "Environmental Science",
+    ],
+    joinedClubs: [
+      {
+        id: 1,
+        name: "Robotics Club",
+        category: "STEM",
+        role: "Member",
+        joinedDate: "2025-09-01",
+      },
+      {
+        id: 2,
+        name: "Debate Society",
+        category: "Arts & Culture",
+        role: "Active Member",
+        joinedDate: "2025-09-15",
+      },
+    ],
+    joinedGroups: [
+      { id: 1, name: "Grade 10 Class Group", role: "Member" },
+      { id: 2, name: "Red House Team", role: "Member" },
+    ],
+    availableClubs: [
+      {
+        id: 1,
+        name: "Robotics Club",
+        category: "STEM",
+        description:
+          "Build and program robots, participate in competitions, and explore automation and AI.",
+        members: 45,
+      },
+      {
+        id: 2,
+        name: "Debate Society",
+        category: "Arts & Culture",
+        description:
+          "Develop critical thinking and public speaking skills through structured debates.",
+        members: 30,
+      },
+      {
+        id: 3,
+        name: "Science Club",
+        category: "STEM",
+        description:
+          "Conduct experiments, attend science fairs, and explore various scientific fields.",
+        members: 50,
+      },
+      {
+        id: 4,
+        name: "Coding Club",
+        category: "STEM",
+        description:
+          "Learn programming languages, participate in hackathons, and build software projects.",
+        members: 38,
+      },
+      {
+        id: 5,
+        name: "Drama Club",
+        category: "Arts & Culture",
+        description:
+          "Perform in plays, develop acting skills, and explore theatrical production.",
+        members: 25,
+      },
+      {
+        id: 6,
+        name: "Environmental Club",
+        category: "Environment",
+        description:
+          "Work on sustainability projects, organize clean-ups, and promote environmental awareness.",
+        members: 28,
+      },
+      {
+        id: 7,
+        name: "Chess Club",
+        category: "Sports & Games",
+        description:
+          "Learn chess strategies, participate in tournaments, and improve logical thinking.",
+        members: 20,
+      },
+      {
+        id: 8,
+        name: "Art Club",
+        category: "Arts & Culture",
+        description:
+          "Explore various art mediums, create artwork, and participate in exhibitions.",
+        members: 32,
+      },
+      {
+        id: 9,
+        name: "Music Band",
+        category: "Arts & Culture",
+        description:
+          "Play instruments, perform at events, and collaborate on musical compositions.",
+        members: 22,
+      },
+      {
+        id: 10,
+        name: "Astronomy Club",
+        category: "STEM",
+        description:
+          "Study celestial objects, use telescopes, and learn about space exploration.",
+        members: 18,
+      },
+    ],
+    email: "alex.johnson@school.edu",
+    phone: "+1 (555) 123-4567",
+
+    // Skill Badges
+    earnedSkills: [
+      {
+        id: 1,
+        name: "Python Programming",
+        category: "Technical",
+        proficiency: 75,
+        level: "Advanced",
+        earnedDate: "2025-10-15",
+        icon: "💻",
+        description: "Proficient in Python for data analysis and automation",
+      },
+      {
+        id: 2,
+        name: "Robotic Assembly",
+        category: "Technical",
+        proficiency: 65,
+        level: "Intermediate",
+        earnedDate: "2025-09-20",
+        icon: "🤖",
+        description: "Build and program robots for competitions",
+      },
+      {
+        id: 3,
+        name: "Public Speaking",
+        category: "Leadership",
+        proficiency: 80,
+        level: "Advanced",
+        earnedDate: "2025-11-05",
+        icon: "🎤",
+        description: "Confident speaker in debates and presentations",
+      },
+      {
+        id: 4,
+        name: "Research Methods",
+        category: "Academic",
+        proficiency: 70,
+        level: "Advanced",
+        earnedDate: "2025-08-30",
+        icon: "🔬",
+        description: "Design and conduct scientific research",
+      },
+      {
+        id: 5,
+        name: "Data Visualization",
+        category: "Technical",
+        proficiency: 60,
+        level: "Intermediate",
+        earnedDate: "2025-12-10",
+        icon: "📊",
+        description: "Create charts and graphs to present data",
+      },
+      {
+        id: 6,
+        name: "Team Leadership",
+        category: "Leadership",
+        proficiency: 85,
+        level: "Expert",
+        earnedDate: "2025-07-15",
+        icon: "👥",
+        description: "Lead and motivate team members effectively",
+      },
+      {
+        id: 7,
+        name: "Critical Thinking",
+        category: "Academic",
+        proficiency: 78,
+        level: "Advanced",
+        earnedDate: "2025-10-01",
+        icon: "🧠",
+        description: "Analyze complex problems and develop solutions",
+      },
+      {
+        id: 8,
+        name: "Digital Design",
+        category: "Creative",
+        proficiency: 50,
+        level: "Intermediate",
+        earnedDate: "2025-11-20",
+        icon: "🎨",
+        description: "Create digital artwork and graphics",
+      },
+    ],
+
+    recommendedSkills: [
+      {
+        id: 10,
+        name: "Machine Learning Basics",
+        category: "Technical",
+        reason: "Based on your Python skills and AI interests",
+        icon: "🤖",
+        difficulty: "Intermediate",
+      },
+      {
+        id: 11,
+        name: "Arduino Programming",
+        category: "Technical",
+        reason: "Complement your robotics knowledge",
+        icon: "⚡",
+        difficulty: "Beginner",
+      },
+      {
+        id: 12,
+        name: "Scientific Writing",
+        category: "Academic",
+        reason: "Perfect for publishing research papers",
+        icon: "📝",
+        difficulty: "Intermediate",
+      },
+      {
+        id: 13,
+        name: "3D Modeling",
+        category: "Creative",
+        reason: "Enhance your robotics and design projects",
+        icon: "🎲",
+        difficulty: "Intermediate",
+      },
+      {
+        id: 14,
+        name: "Debate Strategy",
+        category: "Leadership",
+        reason: "Build on your public speaking skills",
+        icon: "⚖️",
+        difficulty: "Advanced",
+      },
+    ],
+    learningSupport: {
+      plans: [
+        {
+          id: 1,
+          title: "Mathematics Intervention",
+          type: "Remedial Session",
+          subject: "Mathematics",
+          status: "Active",
+          priority: "High",
+          assignedBy: "Mr. Sharma",
+          startDate: "2026-02-01",
+          endDate: "2026-03-01",
+          progress: 35,
+          goals: [
+            "Master Quadratic Equations",
+            "Improve Graphing Skills",
+            "Complete 3 Practice Sheets",
+          ],
+          upcomingSessions: [
+            { date: "2026-02-05", time: "14:00", topic: "Vertex Form" },
+            { date: "2026-02-12", time: "14:00", topic: "Parabola Properties" },
+          ],
+          resources: [
+            { name: "Quadratic Guide PDF", type: "pdf" },
+            { name: "Practice Worksheet 1", type: "doc" },
+          ],
+        },
+        {
+          id: 2,
+          title: "Public Speaking Workshop",
+          type: "Enrichment",
+          subject: "English",
+          status: "Upcoming",
+          priority: "Medium",
+          assignedBy: "Ms. Davis",
+          startDate: "2026-02-15",
+          endDate: "2026-02-28",
+          progress: 0,
+          goals: [
+            "Deliver 5-minute speech",
+            "Learn voice modulation",
+            "Overcome stage fear",
+          ],
+          upcomingSessions: [
+            { date: "2026-02-15", time: "10:00", topic: "Intro to Speech" },
+          ],
+          resources: [],
+        },
+      ],
+    },
+    achievements: [
+      {
+        id: 1,
+        title: "5 Day Streak",
+        icon: "🔥",
+        color: "orange",
+        description: "Perfect attendance",
+      },
+      {
+        id: 2,
+        title: "Math Wizard",
+        icon: "🎯",
+        color: "blue",
+        description: "95% in Math test",
+      },
+      {
+        id: 3,
+        title: "Quick Learner",
+        icon: "⚡",
+        color: "yellow",
+        description: "10+ modules completed",
+      },
+      {
+        id: 4,
+        title: "Team Player",
+        icon: "🤝",
+        color: "green",
+        description: "Group project excellence",
+      },
+      {
+        id: 5,
+        title: "Science Star",
+        icon: "🌟",
+        color: "purple",
+        description: "Science Fair Winner",
+      },
+      {
+        id: 6,
+        title: "Top Performer",
+        icon: "🏆",
+        color: "gold",
+        description: "Class Rank #3",
+      },
+    ],
+    leaderboard: {
+      classRank: 3,
+      gradeRank: 15,
+      totalStudents: 120,
+      points: 2450,
+    },
+
+    // Health Notes (Limited View)
+    healthNotes: {
+      bloodGroup: "O+",
+      height: "5'8\"",
+      weight: "65 kg",
+      allergies: ["Peanuts", "Dust"],
+      chronicConditions: [],
+      lastCheckupDate: "2025-12-15",
+      vaccinations: [
+        {
+          id: 1,
+          name: "COVID-19 Booster",
+          date: "2025-11-20",
+          status: "completed",
+        },
+        {
+          id: 2,
+          name: "Flu Shot",
+          date: "2025-10-05",
+          status: "completed",
+        },
+      ],
+      emergencyContact: {
+        name: "Sarah Johnson (Mother)",
+        relationship: "Parent",
+        phone: "+1 (555) 123-4567",
+      },
+      physicalActivitiesRestrictions: "None",
+      note: "Limited health information is displayed for privacy. Full medical records are maintained by school nurse and available to authorized personnel only.",
+    },
+  },
+
+  // Activity Log
+  profileActivityLog: {
+    recentActivity: [
+      {
+        id: 1,
+        action: "Logged in",
+        time: "2026-02-02 09:30 AM",
+        ip: "192.168.1.1",
+      },
+      {
+        id: 2,
+        action: "Submitted Assignment",
+        time: "2026-02-01 02:15 PM",
+        ip: "192.168.1.1",
+      },
+      {
+        id: 3,
+        action: "Updated Profile",
+        time: "2026-01-30 11:00 AM",
+        ip: "192.168.1.1",
+      },
+      {
+        id: 4,
+        action: "Password Changed",
+        time: "2026-01-15 10:00 AM",
+        ip: "192.168.1.1",
+      },
+      {
+        id: 5,
+        action: "Logged in",
+        time: "2026-01-14 09:00 AM",
+        ip: "192.168.1.1",
+      },
+    ],
+  },
+
+  // Portfolio Data
+  portfolio: {
+    projects: [
+      {
+        id: 1,
+        title: "Eco-Friendly Smart Home",
+        type: "Project",
+        date: "2025-11-15",
+        thumbnail:
+          "https://images.unsplash.com/photo-1558002038-1091a166111c?w=500&auto=format&fit=crop&q=60",
+        tags: ["Science", "Sustainability"],
+        showcase: true,
+      },
+      {
+        id: 2,
+        title: "History of Rome Timeline",
+        type: "Project",
+        date: "2025-10-20",
+        thumbnail:
+          "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=500&auto=format&fit=crop&q=60",
+        tags: ["History", "Research"],
+        showcase: false,
+      },
+    ],
+    labs: [
+      {
+        id: 3,
+        title: "Optics & Light Refraction",
+        type: "Lab",
+        date: "2026-01-10",
+        thumbnail:
+          "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop&q=60",
+        tags: ["Physics", "Lab Work"],
+        showcase: true,
+      },
+    ],
+    assessments: [
+      {
+        id: 4,
+        title: "Mid-Term Mathematics",
+        type: "Assessment",
+        date: "2025-12-10",
+        thumbnail:
+          "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&auto=format&fit=crop&q=60",
+        tags: ["Math", "Grade A"],
+        showcase: true,
+      },
+    ],
+    cca: [
+      {
+        id: 5,
+        title: "Debate Championship Winner",
+        type: "Achievement",
+        date: "2025-09-05",
+        thumbnail:
+          "https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=500&auto=format&fit=crop&q=60",
+        tags: ["Extra Curricular", "Public Speaking"],
+        showcase: true,
+      },
+    ],
   },
 
   // Screen 1: Home Dashboard
@@ -141,6 +617,76 @@ export const STUDENT_DATA = {
         status: "upcoming",
       },
     ],
+    // House System Data
+    houseSystem: {
+      info: {
+        name: "Red House",
+        color: "bg-red-500", // Tailwind class for UI
+        textColor: "text-red-600",
+        colorHex: "#EF4444",
+        motto: "Courage, Strength, and Determination",
+        totalPoints: 12450,
+        position: 1, // 1st Place
+        mascot: "🦁", // Lion
+      },
+      stats: {
+        contribution: 350, // Points contributed by this student
+        rankInHouse: 15,
+      },
+      recentActivities: [
+        {
+          id: 1,
+          title: "Inter-House Sports Day",
+          date: "2026-01-15",
+          result: "1st Place",
+          description: "Dominated in track and field events.",
+        },
+        {
+          id: 2,
+          title: "Science Fair",
+          date: "2025-12-10",
+          result: "2nd Place",
+          description: "Innovative projects across all grades.",
+        },
+      ],
+      pointsLog: [
+        {
+          id: 1,
+          date: "2026-02-01",
+          category: "Teamwork",
+          description: "Excellence in Group Physics Project",
+          points: 50,
+        },
+        {
+          id: 2,
+          date: "2026-01-25",
+          category: "Leadership",
+          description: "Led the morning assembly",
+          points: 30,
+        },
+        {
+          id: 3,
+          date: "2026-01-15",
+          category: "Sportsmanship",
+          description: "Helping an injured player during soccer",
+          points: 20,
+        },
+        {
+          id: 4,
+          date: "2026-01-10",
+          category: "Service",
+          description: "Volunteered for campus cleanup",
+          points: 40,
+        },
+        {
+          id: 5,
+          date: "2025-12-05",
+          category: "Responsibility",
+          description: "Returned lost library book",
+          points: 10,
+        },
+      ],
+    },
     // Today's Homework
     todayHomework: [
       {
@@ -303,6 +849,272 @@ export const STUDENT_DATA = {
         isSubstitute: false,
       },
     ],
+  },
+
+  // Class Details for Timetable (Current Topic, Latest Post, Upcoming Work, Key Resources)
+  classDetails: {
+    // Monday Classes
+    "Math-1-Monday": {
+      currentTopic: "Quadratic Equations and Graphing Parabolas",
+      latestPost: {
+        message:
+          "Great work on today's practice problems! Remember to review the vertex form before our next class.",
+        time: "2 hours ago",
+      },
+      upcomingWork: [
+        {
+          title: "Trigonometry Worksheet",
+          dueDate: "Today 5:00 PM",
+          type: "assignment",
+          priority: "high",
+        },
+
+        {
+          title: "Chapter 4 Quiz - Quadratics",
+          dueDate: "Tomorrow 9:00 AM",
+          type: "quiz",
+          priority: "medium",
+        },
+      ],
+      keyResources: [
+        {
+          title: "Quadratic Equations Guide",
+          type: "document",
+          icon: "📄",
+          url: "#",
+        },
+        {
+          title: "Practice Problems Set",
+          type: "worksheet",
+          icon: "📝",
+          url: "#",
+        },
+        {
+          title: "Khan Academy - Quadratics",
+          type: "video",
+          icon: "🎥",
+          url: "#",
+        },
+        {
+          title: "Graphing Calculator Tool",
+          type: "tool",
+          icon: "🔧",
+          url: "#",
+        },
+      ],
+    },
+    "English-2-Monday": {
+      currentTopic: "Shakespeare - Romeo & Juliet Act 3 Analysis",
+      latestPost: {
+        message:
+          "The essay submissions were impressive! Remember that our group discussion on themes is scheduled for next week.",
+        time: "3 hours ago",
+      },
+      upcomingWork: [
+        {
+          title: "Essay on Romeo & Juliet",
+          dueDate: "Tomorrow 11:59 PM",
+          type: "essay",
+          priority: "high",
+        },
+        {
+          title: "Reading - Act 4 & 5",
+          dueDate: "Wednesday",
+          type: "reading",
+          priority: "medium",
+        },
+      ],
+      keyResources: [
+        {
+          title: "Romeo & Juliet Full Text",
+          type: "document",
+          icon: "📖",
+          url: "#",
+        },
+        {
+          title: "Character Analysis Notes",
+          type: "document",
+          icon: "📄",
+          url: "#",
+        },
+        {
+          title: "Literary Devices Guide",
+          type: "reference",
+          icon: "📚",
+          url: "#",
+        },
+        { title: "BBC Shakespeare Video", type: "video", icon: "🎥", url: "#" },
+      ],
+    },
+    "Physics-3-Monday": {
+      currentTopic: "Optics - Refraction and Lens Experiments",
+      latestPost: {
+        message:
+          "Lab safety reminder: Please bring your safety goggles for tomorrow's practical session on lenses.",
+        time: "1 hour ago",
+      },
+      upcomingWork: [
+        {
+          title: "Lab Report - Optics Experiment",
+          dueDate: "Wednesday 11:59 PM",
+          type: "lab report",
+          priority: "high",
+        },
+        {
+          title: "Unit Test - Waves & Optics",
+          dueDate: "Friday",
+          type: "test",
+          priority: "urgent",
+        },
+      ],
+      keyResources: [
+        { title: "Optics Lab Manual", type: "document", icon: "📄", url: "#" },
+        {
+          title: "Refraction Simulation",
+          type: "interactive",
+          icon: "🔬",
+          url: "#",
+        },
+        { title: "Ray Diagrams Tutorial", type: "video", icon: "🎥", url: "#" },
+        {
+          title: "Physics Formula Sheet",
+          type: "reference",
+          icon: "📋",
+          url: "#",
+        },
+      ],
+    },
+    "Chemistry-4-Monday": {
+      currentTopic: "Organic Chemistry - Functional Groups and Nomenclature",
+      latestPost: {
+        message:
+          "Don't forget to review the IUPAC naming conventions we discussed. Practice makes perfect!",
+        time: "30 minutes ago",
+      },
+      upcomingWork: [
+        {
+          title: "Organic Chemistry Assignment",
+          dueDate: "Thursday",
+          type: "assignment",
+          priority: "medium",
+        },
+        {
+          title: "Group Project Presentation",
+          dueDate: "Next Monday",
+          type: "project",
+          priority: "high",
+        },
+      ],
+      keyResources: [
+        {
+          title: "Functional Groups Chart",
+          type: "reference",
+          icon: "📊",
+          url: "#",
+        },
+        { title: "IUPAC Naming Guide", type: "document", icon: "📄", url: "#" },
+        {
+          title: "Organic Chemistry 3D Models",
+          type: "interactive",
+          icon: "🧪",
+          url: "#",
+        },
+        {
+          title: "Practice Questions",
+          type: "worksheet",
+          icon: "📝",
+          url: "#",
+        },
+      ],
+    },
+
+    // Tuesday Classes
+    "Chemistry-1-Tuesday": {
+      currentTopic: "Chemical Bonding - Ionic and Covalent Structures",
+      latestPost: {
+        message:
+          "Today's lab on ionic compounds was excellent! Make sure to complete your lab reports by Friday.",
+        time: "5 hours ago",
+      },
+      upcomingWork: [
+        {
+          title: "Chemical Bonding Lab Report",
+          dueDate: "Friday",
+          type: "lab report",
+          priority: "high",
+        },
+        {
+          title: "Bonding Quiz",
+          dueDate: "Next Tuesday",
+          type: "quiz",
+          priority: "medium",
+        },
+      ],
+      keyResources: [
+        {
+          title: "Bonding Theory Notes",
+          type: "document",
+          icon: "📄",
+          url: "#",
+        },
+        {
+          title: "Lewis Structure Tutorial",
+          type: "video",
+          icon: "🎥",
+          url: "#",
+        },
+        {
+          title: "Periodic Table Interactive",
+          type: "interactive",
+          icon: "🔬",
+          url: "#",
+        },
+        { title: "Practice Problems", type: "worksheet", icon: "📝", url: "#" },
+      ],
+    },
+    "History-2-Tuesday": {
+      currentTopic: "World War II - Major Battles and Turning Points",
+      latestPost: {
+        message:
+          "Your timeline projects are due next week. Remember to include primary sources and detailed analysis.",
+        time: "4 hours ago",
+      },
+      upcomingWork: [
+        {
+          title: "WWII Timeline Project",
+          dueDate: "Next Monday",
+          type: "project",
+          priority: "high",
+        },
+        {
+          title: "Chapter 8 Reading",
+          dueDate: "Thursday",
+          type: "reading",
+          priority: "medium",
+        },
+      ],
+      keyResources: [
+        {
+          title: "WWII Documentary Series",
+          type: "video",
+          icon: "🎥",
+          url: "#",
+        },
+        {
+          title: "Primary Sources Collection",
+          type: "document",
+          icon: "📚",
+          url: "#",
+        },
+        {
+          title: "Interactive WWII Map",
+          type: "interactive",
+          icon: "🗺️",
+          url: "#",
+        },
+        { title: "Timeline Template", type: "worksheet", icon: "📝", url: "#" },
+      ],
+    },
   },
 
   // Screen 3: Attendance
@@ -599,7 +1411,424 @@ export const STUDENT_DATA = {
     { subject: "Science", term1: 88, term2: 85, trend: "down" },
   ],
 
-  // Screen 8: Communication
+  // Screen 8: Communication Hub - Messages with Priority \u0026 Expiry
+  communicationMessages: [
+    {
+      id: 1,
+      from: "Principal Office",
+      subject: "Parent-Teacher Meeting",
+      content:
+        "Mandatory parent-teacher meeting scheduled for all grade 10 students. Please inform your parents to attend on February 5th, 2026 at 10:00 AM in the main auditorium. Attendance is compulsory.",
+      time: "2 hrs ago",
+      timestamp: "2026-02-02T08:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "high",
+      isPinned: true,
+      unread: true,
+      requiresAck: true,
+      expiryDate: "2026-02-05T23:59:59",
+    },
+    {
+      id: 2,
+      from: "Exam Department",
+      subject: "Mid-Term Examination Schedule",
+      content:
+        "Mid-term examinations will commence from February 10th, 2026. The detailed schedule has been uploaded to your portal. Please check the exam section for venue and timing details.",
+      time: "5 hrs ago",
+      timestamp: "2026-02-02T05:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "high",
+      isPinned: true,
+      unread: true,
+      requiresAck: true,
+      expiryDate: "2026-02-10T23:59:59",
+    },
+    {
+      id: 3,
+      from: "Mrs. Davis (English)",
+      subject: "Shakespeare Workshop",
+      content:
+        "Join us for an exciting Shakespeare workshop this Saturday! We'll be analyzing Romeo & Juliet and performing selected scenes. Great opportunity to improve your literature understanding.",
+      time: "1 day ago",
+      timestamp: "2026-02-01T14:30:00",
+      category: "teacher",
+      icon: "BookOpen",
+      subjectCode: "ENG-10-B",
+      priority: "normal",
+      isPinned: false,
+      unread: true,
+      requiresAck: false,
+      expiryDate: "2026-02-08T23:59:59",
+    },
+    {
+      id: 4,
+      from: "Mr. Sharma (Physics)",
+      subject: "Lab Report Submission Reminder",
+      content:
+        "This is a reminder to submit your Physics lab reports on Newton's Laws by tomorrow 5 PM. Late submissions will incur penalty. Make sure to include all diagrams and calculations.",
+      time: "1 day ago",
+      timestamp: "2026-02-01T10:00:00",
+      category: "teacher",
+      icon: "BookOpen",
+      subjectCode: "PHY-10-B",
+      priority: "urgent",
+      isPinned: true,
+      unread: false,
+      requiresAck: true,
+      expiryDate: "2026-02-03T17:00:00",
+    },
+    {
+      id: 5,
+      from: "Sports Department",
+      subject: "Annual Sports Day Registration",
+      content:
+        "Registration for Annual Sports Day 2026 is now open! Choose from athletics, basketball, cricket, and many more events. Register before Feb 15th to secure your spot.",
+      time: "2 days ago",
+      timestamp: "2026-01-31T09:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "normal",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-02-15T23:59:59",
+    },
+    {
+      id: 6,
+      from: "Ms. Kumar (Mathematics)",
+      subject: "Extra Classes Announcement",
+      content:
+        "I'm conducting extra classes for Quadratic Equations this week. Sessions will be held on Wednesday and Friday from 4-5 PM in Room 201. All students are welcome!",
+      time: "2 days ago",
+      timestamp: "2026-01-31T08:00:00",
+      category: "teacher",
+      icon: "BookOpen",
+      subjectCode: "MATH-10-B",
+      priority: "normal",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-02-07T23:59:59",
+    },
+    {
+      id: 7,
+      from: "Counselor Ms. Reddy",
+      subject: "Career Guidance Session",
+      content:
+        "Individual career counseling sessions are available this month. If you'd like to discuss your future academic and career plans, please book a slot through the support section.",
+      time: "3 days ago",
+      timestamp: "2026-01-30T11:00:00",
+      category: "private",
+      icon: "User",
+      priority: "low",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-02-28T23:59:59",
+    },
+    {
+      id: 8,
+      from: "Library Department",
+      subject: "New Books Arrived",
+      content:
+        "We've added 50+ new books to our collection including latest science fiction, academic references, and competitive exam preparation materials. Visit the library to explore!",
+      time: "4 days ago",
+      timestamp: "2026-01-29T10:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "low",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-03-01T23:59:59",
+    },
+    {
+      id: 9,
+      from: "Dr. Patel (Chemistry)",
+      subject: "Chemistry Practical Rescheduled",
+      content:
+        "Tomorrow's chemistry practical on organic compounds has been rescheduled to Thursday 11 AM due to lab maintenance. Please bring your lab coats and safety goggles.",
+      time: "5 days ago",
+      timestamp: "2026-01-28T15:00:00",
+      category: "teacher",
+      icon: "BookOpen",
+      subjectCode: "CHEM-10-B",
+      priority: "urgent",
+      isPinned: false,
+      unread: false,
+      requiresAck: true,
+      expiryDate: "2026-02-06T23:59:59",
+    },
+    {
+      id: 10,
+      from: "Student Council",
+      subject: "Valentine's Day Fundraiser",
+      content:
+        "Student Council is organizing a Valentine's Day charity fundraiser! All proceeds will go to local community development. Support the cause and join us for fun activities!",
+      time: "1 week ago",
+      timestamp: "2026-01-26T12:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "low",
+      isPinned: false,
+      unread: false,
+      requiresAck: false,
+      expiryDate: "2026-02-14T23:59:59",
+    },
+    {
+      id: 11,
+      from: "Fee Department",
+      subject: "Term 2 Fee Payment Reminder",
+      content:
+        "This is a gentle reminder that Term 2 fees are due by January 31st, 2026. Please clear your dues to avoid late payment charges. Payment can be made online or at the accounts office.",
+      time: "1 week ago",
+      timestamp: "2026-01-25T09:00:00",
+      category: "school",
+      icon: "Building2",
+      priority: "high",
+      isPinned: false,
+      unread: false,
+      requiresAck: true,
+      expiryDate: "2026-01-31T23:59:59",
+    },
+  ],
+
+  // Screen 8: Groups - WhatsApp-style group communications
+  groups: [
+    {
+      id: 1,
+      name: "Class 10-B",
+      type: "class",
+      memberCount: 42,
+      avatar: "👥",
+      description: "Main class group for announcements and discussions",
+      lastMessage: {
+        sender: "Rahul Sharma",
+        content: "Did anyone complete the physics assignment?",
+        timestamp: "2026-02-02T13:30:00",
+        time: "1 hr ago",
+      },
+      unreadCount: 5,
+      messages: [
+        {
+          id: 1,
+          sender: "Priya Patel",
+          content: "Anyone have notes for chemistry chapter 5?",
+          timestamp: "2026-02-02T10:00:00",
+          time: "10:00 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "You",
+          content: "Yes, I have them. I'll share after school.",
+          timestamp: "2026-02-02T10:15:00",
+          time: "10:15 AM",
+          isOwn: true,
+          status: "read",
+        },
+        {
+          id: 3,
+          sender: "Arjun Singh",
+          content: "Thanks! That would be really helpful.",
+          timestamp: "2026-02-02T10:20:00",
+          time: "10:20 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 4,
+          sender: "Sneha Gupta",
+          content: "Don't forget the math quiz tomorrow!",
+          timestamp: "2026-02-02T12:00:00",
+          time: "12:00 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 5,
+          sender: "Rahul Sharma",
+          content: "Did anyone complete the physics assignment?",
+          timestamp: "2026-02-02T13:30:00",
+          time: "1:30 PM",
+          isOwn: false,
+          status: "delivered",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Science Club",
+      type: "club",
+      memberCount: 15,
+      avatar: "🔬",
+      description: "Science enthusiasts and project collaborators",
+      lastMessage: {
+        sender: "Ms. Kumar",
+        content: "Science fair meeting at 4 PM today",
+        timestamp: "2026-02-02T11:00:00",
+        time: "3 hrs ago",
+      },
+      unreadCount: 2,
+      messages: [
+        {
+          id: 1,
+          sender: "Ms. Kumar",
+          content: "Great work on your projects everyone! Keep it up.",
+          timestamp: "2026-02-02T09:00:00",
+          time: "9:00 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "Vikram Reddy",
+          content: "When is the next meeting?",
+          timestamp: "2026-02-02T09:30:00",
+          time: "9:30 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 3,
+          sender: "Ms. Kumar",
+          content: "Science fair meeting at 4 PM today",
+          timestamp: "2026-02-02T11:00:00",
+          time: "11:00 AM",
+          isOwn: false,
+          status: "delivered",
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: "Math Study Group",
+      type: "study",
+      memberCount: 8,
+      avatar: "📐",
+      description: "Collaborative math problem solving",
+      lastMessage: {
+        sender: "You",
+        content: "I figured out problem 12! Want me to explain?",
+        timestamp: "2026-02-01T16:45:00",
+        time: "Yesterday",
+      },
+      unreadCount: 0,
+      messages: [
+        {
+          id: 1,
+          sender: "Ananya Desai",
+          content: "Problem 12 is really tough! Anyone solved it?",
+          timestamp: "2026-02-01T15:00:00",
+          time: "Yesterday 3:00 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "Karan Mehta",
+          content: "Still working on it. The quadratic part is confusing.",
+          timestamp: "2026-02-01T15:30:00",
+          time: "Yesterday 3:30 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 3,
+          sender: "You",
+          content: "I figured out problem 12! Want me to explain?",
+          timestamp: "2026-02-01T16:45:00",
+          time: "Yesterday 4:45 PM",
+          isOwn: true,
+          status: "read",
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: "Football Team",
+      type: "sports",
+      memberCount: 22,
+      avatar: "⚽",
+      description: "School football team coordination",
+      lastMessage: {
+        sender: "Coach Williams",
+        content: "Practice tomorrow at 7 AM sharp!",
+        timestamp: "2026-02-01T18:00:00",
+        time: "Yesterday",
+      },
+      unreadCount: 1,
+      messages: [
+        {
+          id: 1,
+          sender: "Coach Williams",
+          content: "Great game today team! Excellent teamwork.",
+          timestamp: "2026-02-01T17:00:00",
+          time: "Yesterday 5:00 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "Captain Rohan",
+          content: "Thanks coach! Everyone played well.",
+          timestamp: "2026-02-01T17:15:00",
+          time: "Yesterday 5:15 PM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 3,
+          sender: "Coach Williams",
+          content: "Practice tomorrow at 7 AM sharp!",
+          timestamp: "2026-02-01T18:00:00",
+          time: "Yesterday 6:00 PM",
+          isOwn: false,
+          status: "delivered",
+        },
+      ],
+    },
+    {
+      id: 5,
+      name: "Debate Society",
+      type: "club",
+      memberCount: 12,
+      avatar: "🎤",
+      description: "Debate practice and competition updates",
+      lastMessage: {
+        sender: "Sarah Khan",
+        content: "Topic for Friday's debate: Climate Change Solutions",
+        timestamp: "2026-02-01T14:00:00",
+        time: "Yesterday",
+      },
+      unreadCount: 0,
+      messages: [
+        {
+          id: 1,
+          sender: "Mr. Patel",
+          content: "Remember to prepare your arguments for the next session.",
+          timestamp: "2026-02-01T10:00:00",
+          time: "Yesterday 10:00 AM",
+          isOwn: false,
+          status: "read",
+        },
+        {
+          id: 2,
+          sender: "Sarah Khan",
+          content: "Topic for Friday's debate: Climate Change Solutions",
+          timestamp: "2026-02-01T14:00:00",
+          time: "Yesterday 2:00 PM",
+          isOwn: false,
+          status: "read",
+        },
+      ],
+    },
+  ],
+
+  // Screen 8: Communication (Legacy)
   messages: [
     {
       id: 1,
@@ -1227,6 +2456,558 @@ export const STUDENT_DATA = {
         ],
       },
     ],
+
+    // Pillar Activity Views - Six Key Domains
+    pillarActivities: {
+      // Pillar overview stats
+      totalPillarActivities: 24,
+      pillarStats: [
+        { pillar: "Imaginarium", count: 4, points: 45, icon: "🎨" },
+        { pillar: "Literary", count: 4, points: 40, icon: "📚" },
+        { pillar: "Science & Astronomy", count: 4, points: 50, icon: "🔬" },
+        { pillar: "Leadership & Service", count: 4, points: 55, icon: "🤝" },
+        { pillar: "Sports & Wellness", count: 4, points: 60, icon: "⚽" },
+        { pillar: "Music & Dance", count: 4, points: 35, icon: "🎵" },
+      ],
+
+      // Detailed activities by pillar
+      imaginarium: [
+        {
+          id: 1,
+          title: "Digital Art Creation Workshop",
+          description:
+            "Created digital illustrations using advanced graphic design tools and techniques",
+          date: "2026-01-18",
+          duration: "3 days",
+          points: 15,
+          level: "Advanced",
+          mentors: ["Ms. Sarah Chen", "Mr. David Park"],
+          skills: ["Digital Design", "Creativity", "Visual Communication"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 2,
+          title: "3D Modeling Challenge",
+          description:
+            "Designed and rendered 3D models for a sustainable city project",
+          date: "2025-12-20",
+          duration: "1 week",
+          points: 12,
+          level: "Intermediate",
+          mentors: ["Mr. Alex Turner"],
+          skills: ["3D Modeling", "Problem Solving", "Innovation"],
+          status: "completed",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 3,
+          title: "Creative Photography Exhibition",
+          description: "Captured and curated a photo series on 'Urban Nature'",
+          date: "2025-11-15",
+          duration: "2 weeks",
+          points: 10,
+          level: "Beginner",
+          mentors: ["Ms. Rachel Green"],
+          skills: ["Photography", "Artistic Vision", "Curation"],
+          status: "completed",
+          certificate: true,
+          showcase: false,
+        },
+        {
+          id: 4,
+          title: "Innovation Hackathon",
+          description:
+            "Developed creative solutions for school sustainability challenges",
+          date: "2025-10-10",
+          duration: "2 days",
+          points: 8,
+          level: "Intermediate",
+          mentors: ["Dr. James Wilson"],
+          skills: ["Innovation", "Teamwork", "Design Thinking"],
+          status: "completed",
+          certificate: false,
+          showcase: true,
+        },
+      ],
+
+      literary: [
+        {
+          id: 5,
+          title: "Poetry Slam Competition",
+          description: "Performed original poetry on social justice themes",
+          date: "2026-01-12",
+          duration: "1 day",
+          points: 12,
+          level: "Advanced",
+          mentors: ["Mrs. Emma Thompson"],
+          skills: ["Creative Writing", "Public Speaking", "Expression"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 6,
+          title: "School Magazine Editorial Team",
+          description:
+            "Served as editor for the quarterly school literary magazine",
+          date: "2025-12-01",
+          duration: "3 months",
+          points: 15,
+          level: "Advanced",
+          mentors: ["Mr. Robert Brown"],
+          skills: ["Editing", "Leadership", "Content Creation"],
+          status: "in-progress",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 7,
+          title: "Book Club Leadership",
+          description: "Led weekly discussions on contemporary literature",
+          date: "2025-11-05",
+          duration: "Ongoing",
+          points: 8,
+          level: "Intermediate",
+          mentors: ["Ms. Lisa Anderson"],
+          skills: ["Critical Analysis", "Leadership", "Communication"],
+          status: "in-progress",
+          certificate: false,
+          showcase: false,
+        },
+        {
+          id: 8,
+          title: "Creative Writing Workshop",
+          description: "Completed intensive workshop on short story writing",
+          date: "2025-10-25",
+          duration: "5 days",
+          points: 5,
+          level: "Beginner",
+          mentors: ["Mr. Michael Davis"],
+          skills: [
+            "Storytelling",
+            "Narrative Structure",
+            "Character Development",
+          ],
+          status: "completed",
+          certificate: true,
+          showcase: false,
+        },
+      ],
+
+      scienceAstronomy: [
+        {
+          id: 9,
+          title: "Astronomy Night Observation",
+          description:
+            "Led stargazing session and identified 20+ celestial objects",
+          date: "2026-01-08",
+          duration: "1 night",
+          points: 15,
+          level: "Advanced",
+          mentors: ["Dr. Neil Sharma", "Ms. Stella Kumar"],
+          skills: ["Astronomy", "Scientific Observation", "Teaching"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 10,
+          title: "Science Fair Project - Renewable Energy",
+          description:
+            "Developed working solar panel efficiency comparison model",
+          date: "2025-12-15",
+          duration: "6 weeks",
+          points: 18,
+          level: "Advanced",
+          mentors: ["Dr. Priya Patel"],
+          skills: ["Research", "Experimentation", "Presentation"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 11,
+          title: "Rocket Launch Workshop",
+          description: "Built and launched model rockets studying aerodynamics",
+          date: "2025-11-20",
+          duration: "3 days",
+          points: 10,
+          level: "Intermediate",
+          mentors: ["Mr. Raj Gupta"],
+          skills: ["Physics", "Engineering", "Teamwork"],
+          status: "completed",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 12,
+          title: "Planetarium Visit & Report",
+          description:
+            "Attended planetarium show and wrote detailed astronomical report",
+          date: "2025-10-18",
+          duration: "1 day",
+          points: 7,
+          level: "Beginner",
+          mentors: ["Ms. Kavita Singh"],
+          skills: ["Astronomy", "Scientific Writing", "Research"],
+          status: "completed",
+          certificate: false,
+          showcase: false,
+        },
+      ],
+
+      leadershipService: [
+        {
+          id: 13,
+          title: "Community Clean-Up Drive Leader",
+          description:
+            "Organized and led 50+ volunteers in neighborhood cleanup",
+          date: "2026-01-15",
+          duration: "1 day",
+          points: 20,
+          level: "Advanced",
+          mentors: ["Mr. John Williams"],
+          skills: ["Leadership", "Community Service", "Organization"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 14,
+          title: "Peer Mentoring Program",
+          description:
+            "Mentored 5 junior students in math and science subjects",
+          date: "2025-12-01",
+          duration: "3 months",
+          points: 15,
+          level: "Advanced",
+          mentors: ["Mrs. Sandra Lee"],
+          skills: ["Mentoring", "Teaching", "Empathy"],
+          status: "in-progress",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 15,
+          title: "School Prefect Duties",
+          description:
+            "Served as school prefect maintaining discipline and assisting students",
+          date: "2025-09-01",
+          duration: "Ongoing",
+          points: 12,
+          level: "Intermediate",
+          mentors: ["Principal Dr. Monica Verma"],
+          skills: ["Leadership", "Responsibility", "Communication"],
+          status: "in-progress",
+          certificate: false,
+          showcase: false,
+        },
+        {
+          id: 16,
+          title: "Food Drive Organizer",
+          description:
+            "Collected and distributed food packages to 30+ families",
+          date: "2025-11-22",
+          duration: "2 weeks",
+          points: 8,
+          level: "Intermediate",
+          mentors: ["Mrs. Karen Martinez"],
+          skills: ["Organization", "Community Service", "Compassion"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+      ],
+
+      sportsWellness: [
+        {
+          id: 17,
+          title: "Inter-School Football Tournament",
+          description: "Represented school in regional football championship",
+          date: "2026-01-20",
+          duration: "3 days",
+          points: 20,
+          level: "Advanced",
+          mentors: ["Coach Mike Johnson"],
+          skills: ["Teamwork", "Physical Fitness", "Strategy"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 18,
+          title: "Yoga & Mindfulness Workshop",
+          description: "Completed wellness workshop focused on mental health",
+          date: "2025-12-10",
+          duration: "1 week",
+          points: 10,
+          level: "Beginner",
+          mentors: ["Ms. Priya Reddy"],
+          skills: ["Wellness", "Mindfulness", "Self-Care"],
+          status: "completed",
+          certificate: true,
+          showcase: false,
+        },
+        {
+          id: 19,
+          title: "Swimming Championship",
+          description: "Won silver medal in 100m freestyle event",
+          date: "2025-11-08",
+          duration: "2 days",
+          points: 18,
+          level: "Advanced",
+          mentors: ["Coach Sarah Wilson"],
+          skills: ["Swimming", "Endurance", "Discipline"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 20,
+          title: "Sports Day Volunteer",
+          description: "Assisted in organizing annual school sports day events",
+          date: "2025-10-05",
+          duration: "1 day",
+          points: 12,
+          level: "Intermediate",
+          mentors: ["Mr. David Clarke"],
+          skills: ["Organization", "Leadership", "Event Management"],
+          status: "completed",
+          certificate: false,
+          showcase: false,
+        },
+      ],
+
+      musicDance: [
+        {
+          id: 21,
+          title: "Annual Concert Performance",
+          description:
+            "Performed classical guitar solo at school annual concert",
+          date: "2026-01-25",
+          duration: "1 evening",
+          points: 12,
+          level: "Advanced",
+          mentors: ["Mr. Carlos Rodriguez"],
+          skills: ["Music", "Performance", "Stage Presence"],
+          status: "completed",
+          certificate: true,
+          showcase: true,
+        },
+        {
+          id: 22,
+          title: "Dance Competition - Contemporary",
+          description:
+            "Participated in inter-school contemporary dance competition",
+          date: "2025-12-18",
+          duration: "1 day",
+          points: 10,
+          level: "Intermediate",
+          mentors: ["Ms. Anjali Nair"],
+          skills: ["Dance", "Expression", "Coordination"],
+          status: "completed",
+          certificate: false,
+          showcase: true,
+        },
+        {
+          id: 23,
+          title: "School Band Member",
+          description: "Regular member of school band performing at events",
+          date: "2025-09-01",
+          duration: "Ongoing",
+          points: 8,
+          level: "Intermediate",
+          mentors: ["Mr. Thomas Lee"],
+          skills: ["Music", "Collaboration", "Rhythm"],
+          status: "in-progress",
+          certificate: false,
+          showcase: false,
+        },
+        {
+          id: 24,
+          title: "Vocal Training Workshop",
+          description:
+            "Completed beginner vocal training covering techniques and theory",
+          date: "2025-10-30",
+          duration: "4 weeks",
+          points: 5,
+          level: "Beginner",
+          mentors: ["Ms. Maria Santos"],
+          skills: ["Singing", "Vocal Technique", "Music Theory"],
+          status: "completed",
+          certificate: true,
+          showcase: false,
+        },
+      ],
+    },
+
+    // CCA Attendance Tracking
+    ccaAttendance: {
+      overview: {
+        totalActivities: 4,
+        totalSessions: 32,
+        attendedSessions: 28,
+        attendancePercentage: 87.5,
+        missedSessions: 4,
+      },
+      activities: [
+        {
+          id: 1,
+          name: "Robotics Club",
+          category: "STEM",
+          schedule: "Every Monday & Wednesday, 3:30 PM - 5:00 PM",
+          instructor: "Mr. David Park",
+          totalSessions: 12,
+          attendedSessions: 11,
+          missedSessions: 1,
+          attendancePercentage: 92,
+          sessions: [
+            {
+              date: "2026-01-27",
+              status: "present",
+              topic: "Arduino Programming Basics",
+            },
+            {
+              date: "2026-01-22",
+              status: "present",
+              topic: "Sensor Integration",
+            },
+            {
+              date: "2026-01-20",
+              status: "present",
+              topic: "Motor Control Systems",
+            },
+            {
+              date: "2026-01-15",
+              status: "absent",
+              topic: "Robot Assembly Workshop",
+              reason: "Medical appointment",
+            },
+            { date: "2026-01-13", status: "present", topic: "Circuit Design" },
+            {
+              date: "2026-01-08",
+              status: "present",
+              topic: "Power Supply Management",
+            },
+          ],
+        },
+        {
+          id: 2,
+          name: "Debate Society",
+          category: "Arts & Culture",
+          schedule: "Every Thursday, 4:00 PM - 5:30 PM",
+          instructor: "Ms. Rachel Adams",
+          totalSessions: 8,
+          attendedSessions: 7,
+          missedSessions: 1,
+          attendancePercentage: 87.5,
+          sessions: [
+            {
+              date: "2026-01-23",
+              status: "present",
+              topic: "Parliamentary Debate Practice",
+            },
+            {
+              date: "2026-01-16",
+              status: "present",
+              topic: "Argumentation Techniques",
+            },
+            {
+              date: "2026-01-09",
+              status: "present",
+              topic: "Public Speaking Skills",
+            },
+            {
+              date: "2026-01-02",
+              status: "absent",
+              topic: "Mock Debate Competition",
+              reason: "Family function",
+            },
+            {
+              date: "2025-12-19",
+              status: "present",
+              topic: "Research Methods",
+            },
+          ],
+        },
+        {
+          id: 3,
+          name: "Basketball Team",
+          category: "Sports",
+          schedule: "Every Tuesday & Friday, 4:00 PM - 5:30 PM",
+          instructor: "Coach Michael Brown",
+          totalSessions: 8,
+          attendedSessions: 7,
+          missedSessions: 1,
+          attendancePercentage: 87.5,
+          sessions: [
+            {
+              date: "2026-01-24",
+              status: "present",
+              topic: "Team Practice Match",
+            },
+            {
+              date: "2026-01-21",
+              status: "present",
+              topic: "Defensive Drills",
+            },
+            {
+              date: "2026-01-17",
+              status: "present",
+              topic: "Shooting Practice",
+            },
+            {
+              date: "2026-01-14",
+              status: "present",
+              topic: "Passing & Movement",
+            },
+            {
+              date: "2026-01-10",
+              status: "absent",
+              topic: "Conditioning Session",
+              reason: "Minor injury",
+            },
+          ],
+        },
+        {
+          id: 4,
+          name: "Music Band",
+          category: "Arts & Culture",
+          schedule: "Every Saturday, 10:00 AM - 12:00 PM",
+          instructor: "Ms. Emily Watson",
+          totalSessions: 4,
+          attendedSessions: 3,
+          missedSessions: 1,
+          attendancePercentage: 75,
+          sessions: [
+            {
+              date: "2026-01-25",
+              status: "present",
+              topic: "Full Band Rehearsal",
+            },
+            {
+              date: "2026-01-18",
+              status: "present",
+              topic: "New Song Practice",
+            },
+            {
+              date: "2026-01-11",
+              status: "absent",
+              topic: "Individual Section Practice",
+              reason: "Out of town",
+            },
+            {
+              date: "2026-01-04",
+              status: "present",
+              topic: "Ensemble Coordination",
+            },
+          ],
+        },
+      ],
+    },
   },
 
   // Legacy activities for backward compatibility
@@ -1826,5 +3607,3040 @@ export const STUDENT_DATA = {
       longestStreak: 28,
       totalDaysActive: 87,
     },
+  },
+
+  // Detailed Mastery Data for Assignments
+  masteryData: {
+    3: {
+      score: 92,
+      status: "Mastered",
+      concepts: [
+        { name: "Quadratic Equations", strength: "strong" },
+        { name: "Factorization", strength: "strong" },
+        { name: "Graph Interpretation", strength: "partial" },
+      ],
+      nextAction: "advance",
+      nextActionText: "You can proceed to Assignment 12: Advanced Algebra",
+      feedback: {
+        wellDone:
+          "Excellent grasp of quadratic solving techniques and systematic approach.",
+        improve: "Minor improvements needed in graph interpretation.",
+        reason:
+          "Your mastery score is 92%, demonstrating strong understanding of core concepts.",
+        nextSteps:
+          "Continue to advanced algebra topics and review graph interpretation notes.",
+      },
+      canProgress: true,
+    },
+    5: {
+      score: 78,
+      status: "Strong Pass",
+      concepts: [
+        { name: "Photosynthesis", strength: "strong" },
+        { name: "Cell Structure", strength: "partial" },
+        { name: "Enzymes", strength: "strong" },
+      ],
+      nextAction: "reinforcement",
+      nextActionText: "Complete one reinforcement task before next assignment",
+      feedback: {
+        wellDone: "Great understanding of photosynthesis and enzyme functions.",
+        improve: "Cell structure details need more attention.",
+        reason:
+          "Your score of 78% shows solid understanding with room for reinforcement.",
+        nextSteps:
+          "Complete the cell structure review quiz, then proceed to next assignment.",
+      },
+      canProgress: true,
+      reinforcementTask: "Cell Structure Review Quiz (5 questions)",
+    },
+    6: {
+      score: 55,
+      status: "Weak",
+      concepts: [
+        { name: "Essay Structure", strength: "partial" },
+        { name: "Thesis Development", strength: "weak" },
+        { name: "Citation Format", strength: "strong" },
+      ],
+      nextAction: "remedial",
+      nextActionText: "Complete remedial tasks before proceeding",
+      feedback: {
+        wellDone: "Your citation formatting is accurate and consistent.",
+        improve:
+          "Thesis statements need more clarity and essay structure requires improvement.",
+        reason:
+          "With a score of 55%, additional practice is needed to build mastery.",
+        nextSteps:
+          "Watch the essay structure tutorial, complete 5 practice exercises, and retake assessment.",
+      },
+      canProgress: false,
+      remedialTasks: [
+        "Watch: Essay Structure Fundamentals (12 min)",
+        "Read: Thesis Development Guide",
+        "Practice: 5 Thesis Writing Exercises",
+        "Reassessment Quiz",
+      ],
+    },
+    7: {
+      score: 35,
+      status: "Not Mastered",
+      concepts: [
+        { name: "Trigonometry Basics", strength: "weak" },
+        { name: "Angle Calculation", strength: "weak" },
+        { name: "Unit Circle", strength: "weak" },
+      ],
+      nextAction: "block",
+      nextActionText: "Progress blocked - Full remediation required",
+      feedback: {
+        wellDone: "You showed effort in attempting all questions.",
+        improve: "Core trigonometry concepts need comprehensive review.",
+        reason:
+          "Your score of 35% indicates fundamental gaps that must be addressed.",
+        nextSteps:
+          "Complete the full remedial program and schedule a review session with your teacher.",
+      },
+      canProgress: false,
+      teacherNotified: true,
+      remedialTasks: [
+        "Watch: Trigonometry Foundations (20 min)",
+        "Read: Unit Circle Explained (with examples)",
+        "Practice: 10 Basic Angle Questions",
+        "Practice: 10 Unit Circle Questions",
+        "One-on-one Teacher Session",
+        "Complete Reassessment",
+      ],
+    },
+    10: {
+      score: 88,
+      status: "Strong Pass",
+      concepts: [
+        { name: "Ionic Bonding", strength: "strong" },
+        { name: "Covalent Bonding", strength: "strong" },
+        { name: "Metallic Bonding", strength: "partial" },
+      ],
+      nextAction: "reinforcement",
+      nextActionText: "Complete one reinforcement task before next assignment",
+      feedback: {
+        wellDone:
+          "Excellent understanding of ionic and covalent bonding principles.",
+        improve: "Metallic bonding concepts need slight review.",
+        reason: "Your 88% demonstrates strong mastery with minor gaps.",
+        nextSteps:
+          "Review metallic bonding notes and proceed to molecular geometry.",
+      },
+      canProgress: true,
+      reinforcementTask: "Metallic Bonding Quick Review (3 questions)",
+    },
+    11: {
+      score: 65,
+      status: "Pass",
+      concepts: [
+        { name: "Timeline Accuracy", strength: "strong" },
+        { name: "Historical Analysis", strength: "partial" },
+        { name: "Context Understanding", strength: "partial" },
+      ],
+      nextAction: "reinforcement",
+      nextActionText: "Complete targeted practice before next assignment",
+      feedback: {
+        wellDone: "Timeline dates and events are accurate and well-organized.",
+        improve:
+          "Historical analysis lacks depth. Add more context and significance to events.",
+        reason:
+          "Your 65% shows good factual knowledge but needs deeper analytical thinking.",
+        nextSteps:
+          "Read the historical analysis guide and practice with 2 sample events.",
+      },
+      canProgress: true,
+      reinforcementTask: "Historical Analysis Practice (2 events)",
+    },
+  },
+
+  assignmentHistory: {
+    3: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-15",
+        masteryScore: 85,
+        status: "Strong Pass",
+        concepts: [
+          { name: "Quadratic Equations", strength: "strong" },
+          { name: "Factorization", strength: "partial" },
+          { name: "Graph Interpretation", strength: "weak" },
+        ],
+        feedback: {
+          strengths: "Good problem-solving approach with quadratic equations.",
+          improvements: "Graph interpretation needs more practice.",
+        },
+        hasResponses: true,
+      },
+      {
+        attemptNumber: 2,
+        date: "2026-01-20",
+        masteryScore: 92,
+        status: "Mastered",
+        concepts: [
+          { name: "Quadratic Equations", strength: "strong" },
+          { name: "Factorization", strength: "strong" },
+          { name: "Graph Interpretation", strength: "partial" },
+        ],
+        feedback: {
+          strengths: "Excellent mastery of core algebra concepts.",
+          improvements: "Minor improvements in graph interpretation.",
+        },
+        hasResponses: true,
+      },
+    ],
+    5: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-18",
+        masteryScore: 78,
+        status: "Strong Pass",
+        concepts: [
+          { name: "Photosynthesis", strength: "strong" },
+          { name: "Cell Structure", strength: "partial" },
+          { name: "Enzymes", strength: "strong" },
+        ],
+        feedback: {
+          strengths: "Strong understanding of photosynthesis and enzymes.",
+          improvements: "Cell structure details need review.",
+        },
+        hasResponses: true,
+      },
+    ],
+    6: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-10",
+        masteryScore: 48,
+        status: "Weak",
+        concepts: [
+          { name: "Essay Structure", strength: "weak" },
+          { name: "Thesis Development", strength: "weak" },
+          { name: "Citation Format", strength: "partial" },
+        ],
+        feedback: {
+          strengths: "Basic citation format is present.",
+          improvements:
+            "Thesis needs clarity, essay structure requires improvement.",
+        },
+        hasResponses: true,
+      },
+      {
+        attemptNumber: 2,
+        date: "2026-01-14",
+        masteryScore: 55,
+        status: "Weak",
+        concepts: [
+          { name: "Essay Structure", strength: "partial" },
+          { name: "Thesis Development", strength: "weak" },
+          { name: "Citation Format", strength: "strong" },
+        ],
+        feedback: {
+          strengths:
+            "Citation format improved, essay structure shows progress.",
+          improvements: "Thesis development still needs work.",
+        },
+        hasResponses: true,
+      },
+    ],
+    7: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-12",
+        masteryScore: 35,
+        status: "Not Mastered",
+        concepts: [
+          { name: "Trigonometry Basics", strength: "weak" },
+          { name: "Angle Calculation", strength: "weak" },
+          { name: "Unit Circle", strength: "weak" },
+        ],
+        feedback: {
+          strengths: "Effort shown in attempting all questions.",
+          improvements: "Core trigonometry concepts need comprehensive review.",
+        },
+        hasResponses: true,
+      },
+    ],
+    10: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-22",
+        masteryScore: 88,
+        status: "Strong Pass",
+        concepts: [
+          { name: "Ionic Bonding", strength: "strong" },
+          { name: "Covalent Bonding", strength: "strong" },
+          { name: "Metallic Bonding", strength: "partial" },
+        ],
+        feedback: {
+          strengths: "Excellent grasp of ionic and covalent bonding.",
+          improvements: "Metallic bonding needs slight review.",
+        },
+        hasResponses: true,
+      },
+    ],
+    11: [
+      {
+        attemptNumber: 1,
+        date: "2026-01-25",
+        masteryScore: 65,
+        status: "Pass",
+        concepts: [
+          { name: "Timeline Accuracy", strength: "strong" },
+          { name: "Historical Analysis", strength: "partial" },
+          { name: "Context Understanding", strength: "partial" },
+        ],
+        feedback: {
+          strengths: "Timeline dates and events are accurate.",
+          improvements: "Historical analysis needs more depth.",
+        },
+        hasResponses: true,
+      },
+    ],
+  },
+
+  conceptWeaknessAnalysis: {
+    6: [
+      // English Essay (Weak)
+      {
+        concept: "Thesis Development",
+        gap: "Lack of Specificity",
+        observation:
+          "Thesis statements tend to be broad generalizations rather than arguable claims.",
+        recommendation:
+          'Use the "Though/However" formula to create tension in your argument.',
+        action: "Practice: Refine 3 broad thesis statements",
+      },
+      {
+        concept: "Essay Structure",
+        gap: "Topic Sentence Alignment",
+        observation:
+          "Paragraphs often drift from the main point introduced in the topic sentence.",
+        recommendation:
+          "Ensure every sentence in the body paragraph directly supports the topic sentence.",
+        action: "Review: Paragraph Unity Guide",
+      },
+    ],
+    7: [
+      // Trigonometry (Not Mastered)
+      {
+        concept: "Unit Circle",
+        gap: "Quadrant-Sign Confusion",
+        observation:
+          "Consistently misidentifying +/- signs for Sine and Cosine in Quadrants II and III.",
+        recommendation:
+          'Remember "All Students Take Calculus" (ASTC) mnemonic for signs.',
+        action: "Drill: 20 Quadrant Sign Identification problems",
+      },
+      {
+        concept: "Angle Calculation",
+        gap: "Reference Angle Calculation",
+        observation:
+          "Difficulty converting obtuse angles to acute reference angles.",
+        recommendation:
+          "Visualize the angle to the nearest x-axis (180° or 360°).",
+        action: "Practice: Find reference angles for 10 given angles",
+      },
+    ],
+    5: [
+      // Biology (Strong Pass - but has partial concept)
+      {
+        concept: "Cell Structure",
+        gap: "Organelle Function Differentiation",
+        observation:
+          "Confusing functions of Golgi Apparatus and Endoplasmic Reticulum.",
+        recommendation:
+          "Create a comparison table highlighting synthesis vs. packaging roles.",
+        action: "Task: Complete Organelle Match-up Activity",
+      },
+    ],
+  },
+
+  // Chapter Details with Assignments, Quizzes, AI Suggestions
+  chapterDetails: {
+    default: {
+      assignments: [
+        { id: 1, name: "Problem Set 1", status: "completed", score: 95 },
+        { id: 2, name: "Worksheet Practice", status: "completed", score: 88 },
+        {
+          id: 3,
+          name: "Advanced Problems",
+          status: "in-progress",
+          score: null,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Chapter Quiz", status: "completed", score: 92 },
+        { id: 2, name: "Practice Test", status: "pending", score: null },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Core Concept Review",
+          description:
+            "Review the fundamental principles to improve your baseline understanding.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+          badge: "Needs Attention",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Advanced Application",
+          description: "Try solving real-world problems using these concepts.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+          badge: "Recommended",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Quadratic Formula",
+          weakness: "Sign Errors in Discriminant",
+          observation: "Frequent calculation errors when a or c is negative.",
+          recommendation:
+            "Use parentheses for every substitution: b² - 4(a)(c)",
+          fix: "Practice: 5 Discriminant Calcs",
+        },
+      ],
+    },
+  },
+
+  recommendedResources: [
+    { title: "Advanced Calculus Guide", subject: "MATH", icon: "📐" },
+    { title: "Periodic Table Study", subject: "CHEMISTRY", icon: "⚗️" },
+    { title: "World History Timeline", subject: "HISTORY", icon: "📜" },
+  ],
+
+  communicationMessages: [
+    {
+      id: 1,
+      category: "school",
+      from: "Principal's Office",
+      subject: "Winter Break Update",
+      content:
+        "The school will remain closed from Dec 24th to Jan 2nd for winter break. Classes will resume on Jan 3rd. Wishing all students and parents a wonderful holiday season!",
+      timestamp: "2026-01-19T09:30:00",
+      time: "2 hrs ago",
+      unread: true,
+      priority: "high",
+      requiresAck: true,
+      icon: "Building2",
+    },
+    {
+      id: 2,
+      category: "teacher",
+      from: "Mrs. Davis (English)",
+      subject: "Essay Feedback: Improving Thesis Statements",
+      content:
+        "Hi Alex, I've reviewed your latest essay. Your arguments are strong, but work on refining your thesis statement to be more specific. See the attached comments for details.",
+      timestamp: "2026-01-18T14:15:00",
+      time: "Yesterday",
+      unread: false,
+      priority: "medium",
+      requiresAck: false,
+      icon: "User",
+    },
+    {
+      id: 3,
+      category: "private",
+      from: "Mr. Sharma (Physics)",
+      subject: "Regarding Physics Project",
+      content:
+        "Alex, please meet me after class to discuss your project proposal. I have some suggestions for the experiment setup.",
+      timestamp: "2026-01-15T10:00:00",
+      time: "Jan 15",
+      unread: true,
+      priority: "low",
+      requiresAck: false,
+      icon: "Lock",
+    },
+  ],
+
+  examPerformance: {
+    average: 82,
+    strongest: { subject: "Mathematics", score: 95 },
+    weakest: { subject: "History", score: 68 },
+    term1Avg: 78,
+    term2Avg: 82,
+    examHistory: [
+      { id: 1, exam: "Mid-Term 1", date: "Oct 2025", score: 78, grade: "B+" },
+      { id: 2, exam: "Final Term 1", date: "Dec 2025", score: 81, grade: "A-" },
+      { id: 3, exam: "Unit Test 1", date: "Jan 2026", score: 85, grade: "A" },
+    ],
+  },
+
+  gradesTeacherInsights: [
+    {
+      teacher: "Mr. Sharma",
+      subject: "Mathematics",
+      insight:
+        "Alex is showing consistent improvement in calculus. Needs to focus more on probability.",
+      date: "Jan 15, 2026",
+    },
+    {
+      teacher: "Mrs. Davis",
+      subject: "English",
+      insight:
+        "Great creativity in writing assignments. Grammar usage has improved significantly.",
+      date: "Jan 12, 2026",
+    },
+  ],
+
+  libraryData: {
+    issuedBooks: [
+      {
+        id: 1,
+        title: "Advanced Physics Concepts",
+        author: "H.C. Verma",
+        issueDate: "2026-01-15",
+        dueDate: "2026-01-29",
+        cover: "https://covers.openlibrary.org/b/id/8259443-M.jpg",
+        status: "Overdue",
+        fine: 15,
+      },
+      {
+        id: 2,
+        title: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        issueDate: "2026-01-20",
+        dueDate: "2026-02-03",
+        cover: "https://covers.openlibrary.org/b/id/12632205-M.jpg",
+        status: "Active",
+        fine: 0,
+      },
+    ],
+    borrowingHistory: [
+      {
+        id: 101,
+        title: "A Brief History of Time",
+        author: "Stephen Hawking",
+        returnedDate: "2025-12-15",
+        status: "Returned",
+      },
+      {
+        id: 102,
+        title: "The Great Gatsby",
+        author: "F. Scott Fitzgerald",
+        returnedDate: "2025-11-20",
+        status: "Returned",
+      },
+    ],
+    stats: {
+      booksRead: 12,
+      currentLoans: 2,
+      fineDue: 15,
+      totalVisits: 45,
+    },
+  },
+
+  profileActivityLog: [
+    { id: 1, action: "Login", time: "Today, 09:00 AM", ip: "192.168.1.10" },
+    {
+      id: 2,
+      action: "Submitted Assignment",
+      time: "Yesterday, 02:30 PM",
+      ip: "192.168.1.10",
+    },
+    {
+      id: 3,
+      action: "Updated Profile",
+      time: "Jan 10, 11:15 AM",
+      ip: "192.168.1.10",
+    },
+  ],
+
+  supportFaqs: [
+    {
+      id: 1,
+      question: "How do I start a new assignment?",
+      category: "Academic",
+      answer:
+        "Go to the Assignments tab, click on the assignment card, and press 'Start'. Ensure you submit before the due date.",
+    },
+    {
+      id: 2,
+      question: "My grade isn't updating after submission.",
+      category: "Academic",
+      answer:
+        "Grades may take up to 24 hours to sync after teacher approval. If it takes longer, please raise a ticket.",
+    },
+    {
+      id: 3,
+      question: "Where can I find the exam syllabus?",
+      category: "Academic",
+      answer:
+        "The syllabus is available in the 'Resources' section under each subject folder, or directly on the Exam Dashboard.",
+    },
+    {
+      id: 4,
+      question: "How do I request a re-evaluation?",
+      category: "Academic",
+      answer:
+        "You can request a re-evaluation within 3 days of result declaration via the 'Grades' page.",
+    },
+    {
+      id: 5,
+      question: "I can't log in to the library portal.",
+      category: "Technical",
+      answer:
+        "Ensure you are using your student ID (e.g., S-2023-XXX). Reset your password in Settings if the issue persists.",
+    },
+    {
+      id: 6,
+      question: "How to connect to school WiFi?",
+      category: "Technical",
+      answer:
+        "Use network 'School_Student' and your student credentials. If it fails, forget the network and try again.",
+    },
+    {
+      id: 7,
+      question: "My profile picture isn't uploading.",
+      category: "Technical",
+      answer:
+        "Please ensure the image file is under 2MB and in JPG or PNG format.",
+    },
+    {
+      id: 8,
+      question: "Tablet/Laptop not syncing with projector.",
+      category: "Technical",
+      answer:
+        "For screen mirroring issues, ensure both devices are on the same 'Classroom' network.",
+    },
+    {
+      id: 9,
+      question: "I feel overwhelmed with exam stress.",
+      category: "Wellness",
+      answer:
+        "It's okay to feel this way. Visit the Wellness Corner to book a session with our counselor or try our breathing exercises.",
+    },
+    {
+      id: 10,
+      question: "How to manage study time better?",
+      category: "Wellness",
+      answer:
+        "Check out the 'Study Tips' in your Analytics dashboard or speak to a student mentor for a personalized schedule.",
+    },
+    {
+      id: 11,
+      question: "Who can I talk to about bullying?",
+      category: "Wellness",
+      answer:
+        "We have a zero-tolerance policy. Please reach out to the Counselor directly or submit an anonymous report via the 'Request Help' tab.",
+    },
+    {
+      id: 12,
+      question: "I'm having trouble sleeping due to anxiety.",
+      category: "Wellness",
+      answer:
+        "Our Wellness Corner has guided sleep meditations. If it persists, please book a chat with the school counselor.",
+    },
+  ],
+  // Screen 10: Library Account
+  libraryData: {
+    currentLoans: [
+      {
+        id: 1,
+        bookTitle: "A Brief History of Time",
+        author: "Stephen Hawking",
+        issueDate: "2026-01-10",
+        dueDate: "2026-01-24",
+        status: "overdue",
+        daysOverdue: 6,
+      },
+      {
+        id: 2,
+        bookTitle: "To Kill a Mockingbird",
+        author: "Harper Lee",
+        issueDate: "2026-01-20",
+        dueDate: "2026-02-03",
+        status: "normal",
+        daysRemaining: 4,
+      },
+    ],
+    borrowingHistory: [
+      {
+        id: 101,
+        bookTitle: "1984",
+        issueDate: "2025-12-01",
+        returnDate: "2025-12-15",
+        status: "returnedOnTime",
+      },
+      {
+        id: 102,
+        bookTitle: "The Great Gatsby",
+        issueDate: "2025-11-10",
+        returnDate: "2025-11-26",
+        status: "returnedLate",
+      },
+    ],
+  },
+
+  // Screen 12: Help & Support (Simple Version)
+  helpAndSupport: {
+    options: [
+      {
+        id: 1,
+        title: "Browse FAQs",
+        description:
+          "Find answers to common questions about exams, fees, and login issues.",
+        icon: "HelpCircle",
+        color: "blue",
+      },
+      {
+        id: 2,
+        title: "Raise a Ticket",
+        description:
+          "Report a technical problem or academic concern to the administration.",
+        icon: "MessageCircle",
+        color: "purple",
+      },
+    ],
+    concerns: {
+      title: "Wellness Helpline",
+      description:
+        "Feeling stressed or anxious? Talk to our counselors confidentially.",
+      action: "Chat with Counselor",
+    },
+  },
+
+  // Screen 9: Tasks
+  tasks: [
+    {
+      id: 1,
+      title: "Complete Math Worksheet",
+      dueDate: "Today, 5:00 PM",
+      status: "pending",
+      priority: "high",
+    },
+    {
+      id: 2,
+      title: "Read Chapter 4: History",
+      dueDate: "Tomorrow",
+      status: "in-progress",
+      priority: "medium",
+    },
+    {
+      id: 3,
+      title: "Submit Science Project Proposal",
+      dueDate: "Jan 15",
+      status: "completed",
+      priority: "high",
+    },
+  ],
+
+  // Screen 1: Attendance Context
+  attendanceContext: {
+    currentMonth: "January 2026",
+    daysInMonth: 31,
+    heatmapStart: "2026-01-",
+  },
+
+  // Analytics Focus Area
+  analyticsFocusArea: {
+    subject: "Chemistry",
+    score: 78,
+    message:
+      "Your Chemistry score (78%) is slightly below your average. Consistent revision of organic compounds is recommended this week.",
+  },
+
+  // My Lab Journey Data
+  labJourney: {
+    // Lab Booking - Scheduled lab sessions
+    labBookings: [
+      {
+        id: 1,
+        subject: "Physics",
+        labName: "Optics Laboratory",
+        room: "Lab 3",
+        date: "2026-02-05",
+        time: "10:30 AM - 12:30 PM",
+        teacher: "Mr. Sharma",
+        experiment: "Refraction and Lens Experiments",
+        status: "upcoming",
+        prepStatus: "Completed",
+        materialsNeeded: ["Safety goggles", "Lab coat", "Calculator"],
+      },
+      {
+        id: 2,
+        subject: "Chemistry",
+        labName: "Organic Chemistry Lab",
+        room: "Lab 2",
+        date: "2026-02-06",
+        time: "02:00 PM - 04:00 PM",
+        teacher: "Dr. Patel",
+        experiment: "Functional Groups Analysis",
+        status: "upcoming",
+        prepStatus: "Pending",
+        materialsNeeded: ["Lab coat", "Gloves", "Safety goggles"],
+      },
+      {
+        id: 3,
+        subject: "Biology",
+        labName: "Microbiology Lab",
+        room: "Lab 4",
+        date: "2026-02-03",
+        time: "09:00 AM - 11:00 AM",
+        teacher: "Ms. Kapoor",
+        experiment: "Cell Structure Observation",
+        status: "completed",
+        prepStatus: "Completed",
+        materialsNeeded: ["Microscope slides", "Cover slips", "Lab coat"],
+      },
+      {
+        id: 4,
+        subject: "Physics",
+        labName: "Mechanics Lab",
+        room: "Lab 1",
+        date: "2026-02-08",
+        time: "11:00 AM - 01:00 PM",
+        teacher: "Mr. Sharma",
+        experiment: "Simple Pendulum - Time Period Calculation",
+        status: "upcoming",
+        prepStatus: "In Progress",
+        materialsNeeded: ["Stopwatch", "Meter scale", "Thread"],
+      },
+    ],
+
+    // Lab Safety Instructions - Hardcoded
+    safetyInstructions: {
+      generalRules: [
+        {
+          id: 1,
+          title: "Always Wear Proper PPE",
+          description:
+            "Lab coat, safety goggles, and closed-toe shoes are mandatory in all lab sessions.",
+          icon: "👔",
+          priority: "high",
+        },
+        {
+          id: 2,
+          title: "No Food or Drinks",
+          description:
+            "Absolutely no eating, drinking, or chewing gum in the laboratory.",
+          icon: "🚫",
+          priority: "high",
+        },
+        {
+          id: 3,
+          title: "Report All Accidents",
+          description:
+            "Immediately inform your teacher of any spills, breaks, or injuries, no matter how minor.",
+          icon: "🚨",
+          priority: "high",
+        },
+        {
+          id: 4,
+          title: "Read Instructions Carefully",
+          description:
+            "Before starting any experiment, read all instructions thoroughly and ask questions if unsure.",
+          icon: "📖",
+          priority: "medium",
+        },
+        {
+          id: 5,
+          title: "Keep Workspace Clean",
+          description:
+            "Maintain a tidy workspace. Clean up all materials and equipment after completing your work.",
+          icon: "🧹",
+          priority: "medium",
+        },
+      ],
+      equipmentHandling: [
+        {
+          id: 1,
+          title: "Handle Glassware with Care",
+          description:
+            "Check for cracks before use. Report damaged glassware immediately.",
+          icon: "🧪",
+        },
+        {
+          id: 2,
+          title: "Proper Chemical Handling",
+          description:
+            "Never touch, taste, or smell chemicals unless specifically instructed. Use spatulas and pipettes.",
+          icon: "⚗️",
+        },
+        {
+          id: 3,
+          title: "Electrical Safety",
+          description:
+            "Keep electrical equipment away from water. Turn off equipment when not in use.",
+          icon: "⚡",
+        },
+        {
+          id: 4,
+          title: "Bunsen Burner Safety",
+          description:
+            "Tie back long hair. Keep flammable materials away from flames. Turn off gas when done.",
+          icon: "🔥",
+        },
+      ],
+      emergencyProcedures: [
+        {
+          id: 1,
+          title: "Fire Emergency",
+          description:
+            "Alert others immediately. Use fire extinguisher if trained. Evacuate calmly through designated exits.",
+          icon: "🧯",
+        },
+        {
+          id: 2,
+          title: "Chemical Spill",
+          description:
+            "Alert teacher immediately. Do not attempt to clean large spills yourself. Evacuate if fumes are present.",
+          icon: "🧴",
+        },
+        {
+          id: 3,
+          title: "Eye Contact with Chemicals",
+          description:
+            "Rinse eyes at eyewash station for 15 minutes. Keep eyes open while rinsing. Seek medical attention.",
+          icon: "👁️",
+        },
+        {
+          id: 4,
+          title: "First Aid Station",
+          description:
+            "Location: Near Lab Entrance. Contains: bandages, burn gel, eye wash, emergency contact numbers.",
+          icon: "🏥",
+        },
+      ],
+    },
+
+    // Lab Logbook - Experiment entries
+    labLogbook: [
+      {
+        id: 1,
+        title: "Refraction Through Glass Slab",
+        subject: "Physics",
+        date: "2026-01-28",
+        labRoom: "Lab 3",
+        teacher: "Mr. Sharma",
+        hypothesis:
+          "Light bends when passing from one medium to another due to change in speed, following Snell's Law.",
+        procedure: [
+          "Set up glass slab on white paper with incident ray marked",
+          "Direct light ray at various angles through the glass slab",
+          "Mark emergent ray positions for each angle of incidence",
+          "Measure angles of incidence, refraction, and emergence",
+          "Calculate refractive index using Snell's Law formula",
+        ],
+        observations:
+          "Light ray bent towards normal when entering glass, bent away when exiting. Emergent ray parallel to incident ray but laterally displaced.",
+        conclusion:
+          "Verified Snell's Law. Calculated refractive index of glass: 1.52 (close to theoretical value of 1.5)",
+        status: "completed",
+        grade: "A",
+        aiSuggestion:
+          "Consider exploring how refraction varies with different wavelengths of light (dispersion).",
+      },
+      {
+        id: 2,
+        title: "Photosynthesis Rate Measurement",
+        subject: "Biology",
+        date: "2026-01-25",
+        labRoom: "Lab 4",
+        teacher: "Ms. Kapoor",
+        hypothesis:
+          "Rate of photosynthesis increases with light intensity up to a saturation point.",
+        procedure: [
+          "Set up aquatic plant (Hydrilla) in beaker with water",
+          "Place light source at varying distances (10cm, 20cm, 30cm, 40cm)",
+          "Count oxygen bubbles released per minute at each distance",
+          "Repeat measurements 3 times for accuracy",
+          "Plot graph of bubble rate vs. light intensity",
+        ],
+        observations:
+          "Bubble rate: 45/min at 10cm, 28/min at 20cm, 15/min at 30cm, 8/min at 40cm. Clear inverse relationship with distance.",
+        conclusion:
+          "Photosynthesis rate decreases with distance from light source (reduced light intensity). Supports hypothesis.",
+        status: "completed",
+        grade: "A+",
+        aiSuggestion:
+          "Excellent observation skills. Next, try varying CO₂ concentration to study limiting factors.",
+      },
+      {
+        id: 3,
+        title: "Acid-Base Titration",
+        subject: "Chemistry",
+        date: "2026-01-20",
+        labRoom: "Lab 2",
+        teacher: "Dr. Patel",
+        hypothesis:
+          "The unknown acid concentration can be determined by neutralization with a standard base solution.",
+        procedure: [
+          "Fill burette with 0.1M NaOH solution",
+          "Pipette 10ml unknown HCl into conical flask",
+          "Add 2 drops phenolphthalein indicator",
+          "Titrate slowly until persistent pink color appears",
+          "Record burette readings and calculate molarity",
+        ],
+        observations:
+          "Initial reading: 0.0ml, Final reading: 12.4ml. Solution turned from colorless to light pink at endpoint.",
+        conclusion:
+          "Unknown acid concentration calculated as 0.124M using neutralization equation. Endpoint clearly visible with phenolphthalein.",
+        status: "completed",
+        grade: "B+",
+        aiSuggestion:
+          "Good technique. For improvement, try multiple trials and calculate average to reduce error.",
+      },
+      {
+        id: 4,
+        title: "Pendulum Time Period vs Length",
+        subject: "Physics",
+        date: "2026-02-01",
+        labRoom: "Lab 1",
+        teacher: "Mr. Sharma",
+        hypothesis:
+          "Time period of a simple pendulum is directly proportional to the square root of its length.",
+        procedure: [
+          "Set up pendulum with 20cm thread length",
+          "Measure time for 20 oscillations, calculate average time period",
+          "Repeat for lengths: 40cm, 60cm, 80cm, 100cm",
+          "Plot graph of T² vs L",
+          "Calculate 'g' from slope of graph",
+        ],
+        observations:
+          "Linear relationship between T² and L observed. Slope = 4π²/g used to determine gravitational acceleration.",
+        conclusion:
+          "Verified T ∝ √L relationship. Calculated g = 9.78 m/s² (2% error from standard value 9.8 m/s²)",
+        status: "in-progress",
+        grade: null,
+        aiSuggestion:
+          "Include error analysis discussing possible sources of the 2% deviation (air resistance, human reaction time).",
+      },
+    ],
+
+    // Observation Notes - Detailed measurements
+    observationNotes: [
+      {
+        id: 1,
+        experimentTitle: "Refraction Through Glass Slab",
+        subject: "Physics",
+        date: "2026-01-28",
+        dataTable: [
+          {
+            trial: 1,
+            angleOfIncidence: 30,
+            angleOfRefraction: 19,
+            angleOfEmergence: 30,
+            lateralDisplacement: 0.8,
+          },
+          {
+            trial: 2,
+            angleOfIncidence: 45,
+            angleOfRefraction: 28,
+            angleOfEmergence: 45,
+            lateralDisplacement: 1.2,
+          },
+          {
+            trial: 3,
+            angleOfIncidence: 60,
+            angleOfRefraction: 35,
+            angleOfEmergence: 60,
+            lateralDisplacement: 1.6,
+          },
+        ],
+        qualitativeObservations: [
+          "Incident ray, refracted ray, and normal all lie in same plane",
+          "Emergent ray parallel to incident ray but displaced laterally",
+          "Greater angle of incidence results in larger lateral displacement",
+          "No dispersion observed (white light remained white)",
+        ],
+        aiSuggestion:
+          "Record glass slab thickness for more precise refractive index calculation.",
+      },
+      {
+        id: 2,
+        experimentTitle: "Photosynthesis Rate Measurement",
+        subject: "Biology",
+        date: "2026-01-25",
+        dataTable: [
+          {
+            distance: "10 cm",
+            trial1: 46,
+            trial2: 44,
+            trial3: 45,
+            average: 45,
+          },
+          {
+            distance: "20 cm",
+            trial1: 29,
+            trial2: 27,
+            trial3: 28,
+            average: 28,
+          },
+          {
+            distance: "30 cm",
+            trial1: 16,
+            trial2: 14,
+            trial3: 15,
+            average: 15,
+          },
+          {
+            distance: "40 cm",
+            trial1: 9,
+            trial2: 7,
+            trial3: 8,
+            average: 8,
+          },
+        ],
+        qualitativeObservations: [
+          "Plant appeared healthier and greener in brighter light",
+          "Bubbles more vigorous and consistent at 10cm distance",
+          "At 40cm, bubbles became irregular and slow",
+          "Water temperature remained constant (25°C) throughout",
+        ],
+        aiSuggestion:
+          "Consider recording bubble size as well as count for more accurate oxygen production measurement.",
+      },
+      {
+        id: 3,
+        experimentTitle: "Pendulum Time Period",
+        subject: "Physics",
+        date: "2026-02-01",
+        dataTable: [
+          { length: 20, time20Osc: 17.8, timePeriod: 0.89, tSquared: 0.79 },
+          { length: 40, time20Osc: 25.3, timePeriod: 1.27, tSquared: 1.61 },
+          { length: 60, time20Osc: 31.0, timePeriod: 1.55, tSquared: 2.4 },
+          { length: 80, time20Osc: 35.8, timePeriod: 1.79, tSquared: 3.2 },
+          { length: 100, time20Osc: 40.1, timePeriod: 2.01, tSquared: 4.04 },
+        ],
+        qualitativeObservations: [
+          "Pendulum motion remained in single plane for small amplitudes",
+          "Slight energy loss observed over multiple oscillations",
+          "Thread remained taut throughout oscillations",
+          "Air resistance effect minimal for small bob",
+        ],
+        aiSuggestion:
+          "Try varying bob mass to verify that time period is independent of mass.",
+      },
+    ],
+
+    // Inference Builder - Reasoning from observations
+    inferences: [
+      {
+        id: 1,
+        title: "Understanding Snell's Law",
+        subject: "Physics",
+        experiment: "Refraction Through Glass Slab",
+        date: "2026-01-29",
+        observation:
+          "Light bent towards normal when entering glass, bent away when exiting. Emergent ray parallel to incident ray.",
+        reasoning: [
+          {
+            step: 1,
+            question: "Why does light bend when entering glass?",
+            studentAnswer:
+              "Light slows down in glass because it's denser than air, causing the direction to change.",
+            aiCoaching:
+              "Excellent! This shows understanding of the relationship between medium density and light speed.",
+            strength: "strong",
+          },
+          {
+            step: 2,
+            question: "Why is the emergent ray parallel to the incident ray?",
+            studentAnswer:
+              "Because the light exits into the same medium (air) it entered from, and the surfaces are parallel.",
+            aiCoaching:
+              "Perfect reasoning! You've identified the key factors: parallel surfaces and same initial/final medium.",
+            strength: "strong",
+          },
+          {
+            step: 3,
+            question: "What real-world applications use this principle?",
+            studentAnswer:
+              "Eyeglasses, cameras, telescopes, and microscopes all use refraction to focus light.",
+            aiCoaching:
+              "Great examples! Can you think about how this relates to prisms and rainbows as well?",
+            strength: "strong",
+          },
+        ],
+        finalInference:
+          "Refraction occurs due to change in light speed across media. The refractive index quantifies this change. Parallel surfaces ensure emergent ray parallels incident ray despite lateral displacement.",
+        masteryLevel: "Advanced",
+      },
+      {
+        id: 2,
+        title: "Photosynthesis and Light Intensity",
+        subject: "Biology",
+        experiment: "Photosynthesis Rate Measurement",
+        date: "2026-01-26",
+        observation:
+          "Oxygen bubble rate decreased from 45/min to 8/min as light distance increased from 10cm to 40cm.",
+        reasoning: [
+          {
+            step: 1,
+            question: "What does the bubble rate represent?",
+            studentAnswer:
+              "The bubbles are oxygen gas produced during photosynthesis, so more bubbles mean faster photosynthesis.",
+            aiCoaching:
+              "Exactly right! You've made the connection between observable bubbles and the chemical process.",
+            strength: "strong",
+          },
+          {
+            step: 2,
+            question: "Why does increasing distance reduce bubble rate?",
+            studentAnswer:
+              "Light intensity decreases with distance, so less light energy is available for photosynthesis.",
+            aiCoaching:
+              "Good! This follows the inverse square law. Can you explain what might happen at very high light intensity?",
+            strength: "partial",
+          },
+          {
+            step: 3,
+            question: "What other factors could limit photosynthesis rate?",
+            studentAnswer:
+              "CO2 concentration, water availability, and temperature could also limit the rate.",
+            aiCoaching:
+              "Excellent understanding of limiting factors! You're thinking about the bigger picture of plant biology.",
+            strength: "strong",
+          },
+        ],
+        finalInference:
+          "Light intensity is a limiting factor for photosynthesis. As intensity increases, rate increases until another factor (CO2, water, enzymes) becomes limiting. This explains why plants need adequate sunlight for optimal growth.",
+        masteryLevel: "Proficient",
+      },
+      {
+        id: 3,
+        title: "Simple Harmonic Motion Principles",
+        subject: "Physics",
+        experiment: "Pendulum Time Period",
+        date: "2026-02-02",
+        observation:
+          "T² vs L graph showed linear relationship with slope proportional to 1/g.",
+        reasoning: [
+          {
+            step: 1,
+            question: "Why is the relationship between T² and L linear?",
+            studentAnswer:
+              "Because the formula T = 2π√(L/g) means T² = (4π²/g)L, which is y = mx form.",
+            aiCoaching:
+              "Outstanding mathematical insight! You've connected the physics formula to linear graph representation.",
+            strength: "strong",
+          },
+          {
+            step: 2,
+            question: "Why doesn't the bob's mass affect the time period?",
+            studentAnswer:
+              "I'm not completely sure, but I think gravity accelerates all masses equally?",
+            aiCoaching:
+              "You're on the right track! Think about F = ma and gravitational force. The mass cancels out in the equation.",
+            strength: "partial",
+          },
+          {
+            step: 3,
+            question: "What causes the 2% error in your calculated 'g' value?",
+            studentAnswer:
+              "Maybe air resistance, or I didn't count the oscillations perfectly, or the thread stretched slightly.",
+            aiCoaching:
+              "Excellent error analysis! These are all valid sources. Which do you think had the biggest impact?",
+            strength: "strong",
+          },
+        ],
+        finalInference:
+          "Simple pendulum motion depends only on length and gravity, not mass. This is characteristic of SHM where restoring force is proportional to displacement. Experimental errors are inevitable but can be minimized through careful technique.",
+        masteryLevel: "Proficient",
+      },
+    ],
+
+    // Reflection Journal - Metacognitive entries
+    reflectionJournal: [
+      {
+        id: 1,
+        title: "The Beauty of Physics in Everyday Life",
+        date: "2026-01-30",
+        linkedExperiments: ["Refraction Through Glass Slab"],
+        subjects: ["Physics"],
+        prompt:
+          "Reflect on how today's lab connects to your daily experiences.",
+        reflection:
+          "Today's refraction experiment made me realize why a straw looks bent in a glass of water - something I've seen countless times but never understood! The way light bends between air and water is the same principle. It's amazing how physics explains these 'magic tricks' of nature. I also thought about how eyeglasses work for my grandmother - they're using refraction to correct her vision by bending light before it enters her eye. Science suddenly feels less like abstract formulas and more like understanding the world around me. I want to observe more carefully in daily life now.",
+        tags: ["Real-world connection", "Curiosity", "Observation skills"],
+        skillsDeveloped: [
+          "Scientific observation",
+          "Critical thinking",
+          "Making connections",
+        ],
+        valuesReflection:
+          "This experience reminds me to stay curious and question ordinary things. There's so much to learn from simply paying attention.",
+        aiCoaching:
+          "Beautiful reflection! You're making strong connections between theory and observation. Consider: How might this principle apply to photography or art?",
+        mood: "Excited",
+      },
+      {
+        id: 2,
+        title: "Patience and Precision in Scientific Work",
+        date: "2026-01-26",
+        linkedExperiments: [
+          "Photosynthesis Rate Measurement",
+          "Acid-Base Titration",
+        ],
+        subjects: ["Biology", "Chemistry"],
+        prompt:
+          "What challenges did you face today, and what did you learn about yourself?",
+        reflection:
+          "Counting oxygen bubbles for a full minute was harder than I expected - I kept losing count and had to restart! It taught me that good science requires extreme patience and focus. I used to rush through things, but today I learned that careful, repeated measurements are what make results reliable. When I finally got consistent readings across three trials, I felt proud. It's not about being fast; it's about being accurate. The same thing happened during titration - one drop too many and I'd overshoot the endpoint. These labs are teaching me self-discipline and attention to detail, which I know will help in other subjects too, even beyond science.",
+        tags: ["Perseverance", "Self-discipline", "Attention to detail"],
+        skillsDeveloped: ["Patience", "Precision", "Experimental technique"],
+        valuesReflection:
+          "I'm learning that excellence requires patience. Quick results aren't always good results. This applies to studying for exams too - consistent effort over time beats last-minute cramming.",
+        aiCoaching:
+          "Wonderful self-awareness! You're developing a growth mindset. How might you apply this 'precision over speed' lesson to other areas of your academic work?",
+        mood: "Reflective",
+      },
+      {
+        id: 3,
+        title: "Understanding Through Struggle",
+        date: "2026-02-02",
+        linkedExperiments: ["Pendulum Time Period vs Length"],
+        subjects: ["Physics"],
+        prompt: "Describe a moment of confusion and how you worked through it.",
+        reflection:
+          "I was really confused when plotting T² vs L because my first graph wasn't linear at all - I thought I'd completely messed up the experiment. But instead of giving up, I rechecked my calculations and realized I had written down one length measurement wrong (60 cm instead of 80 cm). After correcting it, the beautiful straight line appeared! This taught me that mistakes don't mean failure - they're opportunities to check your work and learn. I also learned to stay calm when things don't match expectations. My initial frustration turned into satisfaction when I fixed the error. It felt like solving a puzzle. Mr. Sharma said 'Science is 10% inspiration and 90% perspiration,' and I really understand that now.",
+        tags: ["Problem-solving", "Resilience", "Error analysis"],
+        skillsDeveloped: [
+          "Troubleshooting",
+          "Self-correction",
+          "Emotional regulation",
+        ],
+        valuesReflection:
+          "Mistakes are valuable learning moments, not signs of incompetence. The key is to stay calm and methodically check your work. I want to carry this attitude into exams - even if I get stuck, I should stay calm and work through it.",
+        aiCoaching:
+          "Exceptional growth mindset! Your ability to persist through confusion is a key scientific skill. How did it feel when your corrected graph showed the expected linear relationship?",
+        mood: "Accomplished",
+      },
+      {
+        id: 4,
+        title: "Teamwork in the Laboratory",
+        date: "2026-01-28",
+        linkedExperiments: ["Photosynthesis Rate Measurement"],
+        subjects: ["Biology"],
+        prompt: "How did working with lab partners impact your learning today?",
+        reflection:
+          "Today I worked with Priya and Arjun on the photosynthesis experiment. Initially, we argued about who would control the light distance and who would count bubbles. But then we realized we could take turns and cross-check each other's counts. This made our data much more reliable! Arjun noticed patterns I missed, and Priya suggested we record water temperature (which I hadn't thought of). I learned that collaboration isn't about dividing work - it's about combining perspectives to get better results. Three pairs of eyes are definitely better than one in science. I also learned to listen more and be less stubborn about 'my way' of doing things. Different approaches can all be valid.",
+        tags: ["Teamwork", "Collaboration", "Communication"],
+        skillsDeveloped: [
+          "Collaborative problem-solving",
+          "Active listening",
+          "Flexibility",
+        ],
+        valuesReflection:
+          "Working together makes us all smarter. I should be more open to others' ideas instead of assuming my way is the only right way. Humility and teamwork are important values in science and in life.",
+        aiCoaching:
+          "Fantastic insight about collaboration! Scientific breakthroughs often come from teams combining different viewpoints. How can you bring this collaborative spirit to group projects in other subjects?",
+        mood: "Grateful",
+      },
+    ],
+  },
+  // Screen 13: Support & Well-being
+  supportData: {
+    hero: {
+      title: "Help & Wellbeing Hub",
+      subtitle:
+        "Need help with studies, technical issues, or just want to talk? We're here for you.",
+      placeholder: "Search for help (e.g., 'grades', 'wifi', 'stress')...",
+    },
+    tabs: [
+      "FAQs",
+      "Request Help",
+      "Connect with Wellbeing",
+      "Govt & Regulations",
+    ],
+    ticketForm: {
+      categories: ["Academic", "Technical", "Facility", "Other"],
+      priorities: ["Low", "Medium", "High", "Critical"],
+    },
+    recentTickets: [
+      {
+        id: "#TKT-1024",
+        title: "Library Access Issue",
+        status: "Resolved",
+        statusColor: "green",
+        time: "2 days ago",
+      },
+      {
+        id: "#TKT-1035",
+        title: "Grade Discrepancy in Math",
+        status: "Open",
+        statusColor: "blue",
+        time: "Today",
+      },
+    ],
+    counselorAvailability: {
+      days: "Monday - Friday",
+      hours: "9:00 AM - 3:00 PM",
+      walkInLabel: "Walk-in Hours",
+      walkInHours: "12:00 PM - 1:00 PM",
+      counselorName: "Dr. Emily Stone",
+      location: "Room 104",
+    },
+    wellnessArticles: [
+      {
+        icon: "Book",
+        color: "green",
+        title: "Managing Exam Stress",
+        desc: "Practical techniques to stay calm during exams.",
+        action: "Read Article",
+      },
+      {
+        icon: "Heart",
+        color: "blue",
+        title: "Building Resilience",
+        desc: "Develop mental strength to handle challenges.",
+        action: "Learn More",
+      },
+      {
+        icon: "User",
+        color: "purple",
+        title: "Self-Care Tips",
+        desc: "Simple habits for better mental health.",
+        action: "Explore Tips",
+      },
+    ],
+    regulations: [
+      {
+        icon: "Gavel",
+        title: "Compulsory Education Act",
+        badge: "MOE Singapore",
+        description:
+          "Under the Compulsory Education Act, all Singaporean children residing in Singapore are required to attend school regularly. This ensures every child has the opportunity to receive a core education.",
+        checklist: ["Mandatory primary education", "Regular attendance checks"],
+        action: "Read Full Act",
+        variant: "indigo",
+      },
+      {
+        icon: "Lock",
+        title: "PDPA & Data Privacy",
+        badge: "Data Protection",
+        description:
+          "Your personal data is protected under the Personal Data Protection Act (PDPA). Schools collect data only for educational purposes and ensure strict confidentiality.",
+        checklist: [
+          "Consent required for data use",
+          "Right to access your records",
+        ],
+        action: "View Privacy Policy",
+        variant: "purple",
+      },
+      {
+        icon: "Globe",
+        title: "Cyber Wellness",
+        badge: "Digital Safety",
+        description:
+          "Guidelines to ensure safe and responsible use of technology. Includes topics on cyberbullying, netiquette, and managing screen time effectively.",
+        checklist: [],
+        action: "Cyber Wellness Tips",
+        variant: "cyan",
+      },
+      {
+        icon: "Heart",
+        title: "Student Welfare",
+        badge: "Support",
+        description:
+          "Information on financial assistance schemes (FAS), bursaries, and counseling support available for students in need.",
+        checklist: [],
+        action: "Check Eligibility",
+        variant: "rose",
+      },
+    ],
+  },
+
+  // Facilities Data
+  facilitiesData: {
+    // Cafeteria Menu
+    cafeteriaMenu: {
+      today: "Monday",
+      date: "2026-02-03",
+      meals: [
+        {
+          id: 1,
+          type: "Breakfast",
+          time: "7:30 AM - 8:30 AM",
+          icon: "☀️",
+          items: [
+            {
+              id: 1,
+              name: "Idli with Sambar",
+              category: "Main Course",
+              type: "Vegetarian",
+              price: "₹40",
+              calories: 180,
+              protein: "6g",
+              carbs: "35g",
+              fat: "2g",
+              allergens: ["Lentils"],
+              ingredients: ["Rice", "Urad Dal", "Sambar Mix", "Vegetables"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 2,
+              name: "Masala Dosa",
+              category: "Main Course",
+              type: "Vegetarian",
+              price: "₹50",
+              calories: 250,
+              protein: "8g",
+              carbs: "42g",
+              fat: "6g",
+              allergens: ["Lentils"],
+              ingredients: ["Rice", "Urad Dal", "Potato", "Spices"],
+              available: true,
+              popular: false,
+            },
+            {
+              id: 3,
+              name: "Poha",
+              category: "Main Course",
+              type: "Vegetarian",
+              price: "₹35",
+              calories: 160,
+              protein: "4g",
+              carbs: "30g",
+              fat: "3g",
+              allergens: ["Peanuts"],
+              ingredients: [
+                "Flattened Rice",
+                "Peanuts",
+                "Vegetables",
+                "Spices",
+              ],
+              available: true,
+              popular: false,
+            },
+            {
+              id: 4,
+              name: "Fresh Fruit Juice",
+              category: "Beverage",
+              type: "Vegetarian",
+              price: "₹25",
+              calories: 80,
+              protein: "1g",
+              carbs: "18g",
+              fat: "0g",
+              allergens: [],
+              ingredients: ["Seasonal Fruits", "Sugar"],
+              available: true,
+              popular: true,
+            },
+          ],
+        },
+        {
+          id: 2,
+          type: "Lunch",
+          time: "12:30 PM - 2:00 PM",
+          icon: "🌞",
+          items: [
+            {
+              id: 5,
+              name: "Paneer Butter Masala",
+              category: "Main Course",
+              type: "Vegetarian",
+              price: "₹80",
+              calories: 320,
+              protein: "14g",
+              carbs: "22g",
+              fat: "18g",
+              allergens: ["Dairy", "Nuts"],
+              ingredients: ["Paneer", "Tomato", "Cream", "Cashews", "Spices"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 6,
+              name: "Chicken Curry",
+              category: "Main Course",
+              type: "Non-Vegetarian",
+              price: "₹90",
+              calories: 380,
+              protein: "28g",
+              carbs: "18g",
+              fat: "22g",
+              allergens: [],
+              ingredients: ["Chicken", "Onion", "Tomato", "Spices", "Oil"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 7,
+              name: "Dal Tadka",
+              category: "Main Course",
+              type: "Vegetarian",
+              price: "₹60",
+              calories: 220,
+              protein: "12g",
+              carbs: "32g",
+              fat: "6g",
+              allergens: ["Lentils"],
+              ingredients: ["Toor Dal", "Ghee", "Cumin", "Garlic", "Tomato"],
+              available: true,
+              popular: false,
+            },
+            {
+              id: 8,
+              name: "Jeera Rice",
+              category: "Accompaniment",
+              type: "Vegetarian",
+              price: "₹40",
+              calories: 200,
+              protein: "4g",
+              carbs: "42g",
+              fat: "3g",
+              allergens: [],
+              ingredients: ["Basmati Rice", "Cumin", "Ghee"],
+              available: true,
+              popular: false,
+            },
+            {
+              id: 9,
+              name: "Roti (3 pieces)",
+              category: "Accompaniment",
+              type: "Vegetarian",
+              price: "₹30",
+              calories: 240,
+              protein: "8g",
+              carbs: "48g",
+              fat: "2g",
+              allergens: ["Gluten"],
+              ingredients: ["Wheat Flour", "Water", "Salt"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 10,
+              name: "Mixed Salad",
+              category: "Side Dish",
+              type: "Vegetarian",
+              price: "₹25",
+              calories: 40,
+              protein: "2g",
+              carbs: "8g",
+              fat: "0g",
+              allergens: [],
+              ingredients: ["Cucumber", "Tomato", "Carrot", "Lemon"],
+              available: true,
+              popular: false,
+            },
+            {
+              id: 11,
+              name: "Raita",
+              category: "Side Dish",
+              type: "Vegetarian",
+              price: "₹20",
+              calories: 60,
+              protein: "3g",
+              carbs: "6g",
+              fat: "2g",
+              allergens: ["Dairy"],
+              ingredients: ["Yogurt", "Cucumber", "Spices"],
+              available: true,
+              popular: false,
+            },
+          ],
+        },
+        {
+          id: 3,
+          type: "Snacks",
+          time: "4:00 PM - 5:00 PM",
+          icon: "🍪",
+          items: [
+            {
+              id: 12,
+              name: "Samosa",
+              category: "Snack",
+              type: "Vegetarian",
+              price: "₹20",
+              calories: 150,
+              protein: "3g",
+              carbs: "20g",
+              fat: "7g",
+              allergens: ["Gluten"],
+              ingredients: ["Potato", "Peas", "Flour", "Spices"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 13,
+              name: "Veg Sandwich",
+              category: "Snack",
+              type: "Vegetarian",
+              price: "₹35",
+              calories: 200,
+              protein: "6g",
+              carbs: "32g",
+              fat: "5g",
+              allergens: ["Gluten"],
+              ingredients: ["Bread", "Vegetables", "Butter", "Cheese"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 14,
+              name: "Tea",
+              category: "Beverage",
+              type: "Vegetarian",
+              price: "₹10",
+              calories: 50,
+              protein: "1g",
+              carbs: "10g",
+              fat: "1g",
+              allergens: ["Dairy"],
+              ingredients: ["Tea Leaves", "Milk", "Sugar"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 15,
+              name: "Fresh Cookies",
+              category: "Snack",
+              type: "Vegetarian",
+              price: "₹25",
+              calories: 180,
+              protein: "3g",
+              carbs: "26g",
+              fat: "8g",
+              allergens: ["Gluten", "Dairy", "Eggs"],
+              ingredients: [
+                "Flour",
+                "Butter",
+                "Sugar",
+                "Eggs",
+                "Chocolate Chips",
+              ],
+              available: true,
+              popular: false,
+            },
+          ],
+        },
+        {
+          id: 4,
+          type: "Dinner",
+          time: "7:00 PM - 8:30 PM",
+          icon: "🌙",
+          items: [
+            {
+              id: 16,
+              name: "Chole Bhature",
+              category: "Main Course",
+              type: "Vegetarian",
+              price: "₹70",
+              calories: 450,
+              protein: "14g",
+              carbs: "62g",
+              fat: "16g",
+              allergens: ["Gluten"],
+              ingredients: ["Chickpeas", "Flour", "Spices", "Oil"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 17,
+              name: "Biryani",
+              category: "Main Course",
+              type: "Non-Vegetarian",
+              price: "₹100",
+              calories: 520,
+              protein: "24g",
+              carbs: "68g",
+              fat: "18g",
+              allergens: ["Dairy"],
+              ingredients: ["Rice", "Chicken", "Spices", "Yogurt", "Saffron"],
+              available: true,
+              popular: true,
+            },
+            {
+              id: 18,
+              name: "Veg Pulao",
+              category: "Main Course",
+              type: "Vegetarian",
+              price: "₹65",
+              calories: 280,
+              protein: "8g",
+              carbs: "52g",
+              fat: "6g",
+              allergens: [],
+              ingredients: ["Rice", "Mixed Vegetables", "Spices", "Ghee"],
+              available: true,
+              popular: false,
+            },
+            {
+              id: 19,
+              name: "Gulab Jamun",
+              category: "Dessert",
+              type: "Vegetarian",
+              price: "₹30",
+              calories: 180,
+              protein: "4g",
+              carbs: "32g",
+              fat: "6g",
+              allergens: ["Dairy", "Gluten"],
+              ingredients: ["Milk Powder", "Flour", "Sugar Syrup", "Cardamom"],
+              available: true,
+              popular: true,
+            },
+          ],
+        },
+      ],
+      specialNotes: [
+        "🌿 Jain food available on request",
+        "🥗 Salad bar open during lunch hours",
+        "💧 Drinking water available 24/7",
+        "⚠️ Please inform staff about allergies",
+      ],
+    },
+
+    // Transport Updates
+    transportUpdates: {
+      routes: [
+        {
+          id: 1,
+          routeNumber: "Route 01",
+          routeName: "North Campus",
+          areas: ["Sector 15", "Sector 22", "Sector 35", "Phase 7"],
+          totalStops: 12,
+          vehicleNumber: "HR-51-AB-1234",
+          driver: {
+            name: "Rajesh Kumar",
+            phone: "+91 98765 43210",
+            experience: "15 years",
+          },
+          conductor: {
+            name: "Amit Singh",
+            phone: "+91 98765 43211",
+          },
+          timing: {
+            departure: "7:00 AM",
+            arrival: "8:15 AM",
+            returnDeparture: "3:30 PM",
+            returnArrival: "4:45 PM",
+          },
+          capacity: 50,
+          currentOccupancy: 42,
+          status: "On Time",
+          color: "green",
+        },
+        {
+          id: 2,
+          routeNumber: "Route 02",
+          routeName: "South Campus",
+          areas: ["DLF Phase 1", "Golf Course Road", "Sohna Road"],
+          totalStops: 10,
+          vehicleNumber: "HR-51-CD-5678",
+          driver: {
+            name: "Suresh Patel",
+            phone: "+91 98765 43212",
+            experience: "12 years",
+          },
+          conductor: {
+            name: "Vikram Sharma",
+            phone: "+91 98765 43213",
+          },
+          timing: {
+            departure: "7:15 AM",
+            arrival: "8:30 AM",
+            returnDeparture: "3:30 PM",
+            returnArrival: "5:00 PM",
+          },
+          capacity: 50,
+          currentOccupancy: 38,
+          status: "On Time",
+          color: "green",
+        },
+        {
+          id: 3,
+          routeNumber: "Route 03",
+          routeName: "East Campus",
+          areas: ["Faridabad", "Ballabgarh", "Surajkund"],
+          totalStops: 15,
+          vehicleNumber: "HR-51-EF-9012",
+          driver: {
+            name: "Manish Gupta",
+            phone: "+91 98765 43214",
+            experience: "10 years",
+          },
+          conductor: {
+            name: "Rahul Verma",
+            phone: "+91 98765 43215",
+          },
+          timing: {
+            departure: "6:45 AM",
+            arrival: "8:20 AM",
+            returnDeparture: "3:30 PM",
+            returnArrival: "5:15 PM",
+          },
+          capacity: 55,
+          currentOccupancy: 50,
+          status: "Running Late",
+          color: "orange",
+          delay: "10 min",
+        },
+      ],
+      alerts: [
+        {
+          id: 1,
+          title: "Route 03 Delayed",
+          message:
+            "Route 03 (East Campus) is running 10 minutes late due to heavy traffic on Mathura Road. Expected arrival: 8:30 AM",
+          timestamp: "2026-02-03 07:45 AM",
+          priority: "high",
+          category: "delay",
+          routeNumber: "Route 03",
+          icon: "AlertTriangle",
+          color: "red",
+          read: false,
+        },
+        {
+          id: 2,
+          title: "New Stop Added - Route 01",
+          message:
+            "A new pick-up/drop point has been added at Sector 28 Metro Station on Route 01, effective from tomorrow (Feb 4th)",
+          timestamp: "2026-02-02 06:30 PM",
+          priority: "medium",
+          category: "announcement",
+          routeNumber: "Route 01",
+          icon: "MapPin",
+          color: "blue",
+          read: false,
+        },
+        {
+          id: 3,
+          title: "Driver Change - Route 02",
+          message:
+            "Temporary driver change for Route 02 today. Mr. Anil Yadav will be driving instead of regular driver Mr. Suresh Patel",
+          timestamp: "2026-02-03 06:00 AM",
+          priority: "medium",
+          category: "announcement",
+          routeNumber: "Route 02",
+          icon: "User",
+          color: "yellow",
+          read: true,
+        },
+        {
+          id: 4,
+          title: "Safety Inspection Completed",
+          message:
+            "All school buses have successfully completed the quarterly safety inspection. Certificates available in transport office",
+          timestamp: "2026-02-01 05:00 PM",
+          priority: "low",
+          category: "info",
+          routeNumber: "All Routes",
+          icon: "CheckCircle",
+          color: "green",
+          read: true,
+        },
+        {
+          id: 5,
+          title: "Route Timings - Winter Schedule",
+          message:
+            "Reminder: Winter schedule is in effect. Morning departure times are 15 minutes later than summer schedule",
+          timestamp: "2026-01-31 04:00 PM",
+          priority: "low",
+          category: "info",
+          routeNumber: "All Routes",
+          icon: "Clock",
+          color: "blue",
+          read: true,
+        },
+      ],
+      emergencyContacts: [
+        {
+          id: 1,
+          title: "Transport Manager",
+          name: "Mr. Deepak Sharma",
+          phone: "+91 98765 00001",
+          email: "transport@school.edu",
+          available: "24/7",
+        },
+        {
+          id: 2,
+          title: "School Office",
+          name: "Main Reception",
+          phone: "+91 98765 00002",
+          email: "contact@school.edu",
+          available: "7:00 AM - 6:00 PM",
+        },
+      ],
+      safetyGuidelines: [
+        "🚌 Always board the bus from the designated stop",
+        "🪑 Remain seated while the bus is in motion",
+        "🔇 Keep noise levels low for driver's concentration",
+        "📱 Emergency contact numbers saved in school app",
+        "⚠️ Report any safety concerns immediately",
+        "🎒 Keep bags and belongings secure",
+      ],
+    },
+  },
+  projects: {
+    workspace: [
+      {
+        id: 1,
+        title: "Eco-Friendly Smart Home Research",
+        type: "Research Note",
+        lastModified: "2 hours ago",
+        status: "Draft",
+        content:
+          "Investigating solar panel efficiency and smart grid integration...",
+        tags: ["Research", "Energy"],
+      },
+      {
+        id: 2,
+        title: "Home Automation Blueprint",
+        type: "Draft",
+        lastModified: "1 day ago",
+        status: "In Progress",
+        content: "Initial layout for sensor placement in the living room...",
+        tags: ["Design", "IoT"],
+      },
+      {
+        id: 3,
+        title: "Sustainability Report.pdf",
+        type: "Media Upload",
+        lastModified: "3 days ago",
+        status: "Uploaded",
+        content: "Reference document for environmental impact assessment.",
+        tags: ["Reference", "PDF"],
+      },
+    ],
+    milestones: [
+      {
+        id: 1,
+        title: "Phase 1: Research & Planning",
+        status: "Completed",
+        dueDate: "2026-01-20",
+        steps: [
+          { id: "s1", name: "Literature Review", completed: true },
+          { id: "s2", name: "Define Requirements", completed: true },
+        ],
+      },
+      {
+        id: 2,
+        title: "Phase 2: Prototype Design",
+        status: "In Progress",
+        dueDate: "2026-02-10",
+        steps: [
+          { id: "s3", name: "Create Circuit Diagrams", completed: true },
+          { id: "s4", name: "Select Components", completed: false },
+          { id: "s5", name: "Initial Simulation", completed: false },
+        ],
+      },
+      {
+        id: 3,
+        title: "Phase 3: Implementation",
+        status: "Pending",
+        dueDate: "2026-03-01",
+        steps: [
+          { id: "s6", name: "Assemble Hardware", completed: false },
+          { id: "s7", name: "Write Firmware", completed: false },
+        ],
+      },
+    ],
+  },
+  behavior: {
+    totalPoints: 1450,
+    rank: 5,
+    percentile: 96,
+    warnings: [
+      {
+        id: 1,
+        type: "Uniform Violation",
+        severity: "Minor",
+        resolved: true,
+        description: "Improper footwear during assembly.",
+        teacher: "Mr. Sharma",
+        date: "2026-01-15",
+        counselorNotes: "Student provided valid reason. Warning issued.",
+      },
+    ],
+    achievements: [
+      {
+        id: 1,
+        title: "Perfect Attendance",
+        points: 50,
+        date: "2026-01-31",
+        icon: "Calendar",
+      },
+      {
+        id: 2,
+        title: "Helpful Peer",
+        points: 30,
+        date: "2026-01-25",
+        icon: "Heart",
+      },
+    ],
+    participationPoints: [
+      { week: "Week 1", points: 45 },
+      { week: "Week 2", points: 30 },
+      { week: "Week 3", points: 60 },
+      { week: "Week 4", points: 50 },
+    ],
+    emotionalCheckIns: [
+      {
+        id: 1,
+        date: "2026-02-03",
+        moodEmoji: "😊",
+        moodText: "Happy",
+        note: "The physics lab was really interesting today! I felt confident understanding the concepts.",
+      },
+      {
+        id: 2,
+        date: "2026-02-01",
+        moodEmoji: "🤔",
+        moodText: "Thoughtful",
+        note: "Thinking about my upcoming history project. Need to plan better.",
+      },
+      {
+        id: 3,
+        date: "2026-01-28",
+        moodEmoji: "😌",
+        moodText: "Calm",
+        note: "Good day overall. Finished all assignments on time.",
+      },
+    ],
+    punctuality: {
+      onTime: 18,
+      late: 2,
+      percentage: 90,
+    },
+    attendanceTrends: [
+      { week: "Week 1", attendance: 90 },
+      { week: "Week 2", attendance: 95 },
+      { week: "Week 3", attendance: 85 },
+      { week: "Week 4", attendance: 92 },
+    ],
+  },
+
+  // Attendance Tracker Data
+  attendance: {
+    percentage: 94,
+    totalDays: 180,
+    presentDays: 169,
+    heatmap: {
+      present: ["2026-02-01", "2026-02-02", "2026-02-03", "2026-02-04"],
+      absent: ["2025-01-28"],
+    },
+    weeklyAttendance: [
+      { day: "Mon", percentage: 100 },
+      { day: "Tue", percentage: 90 },
+      { day: "Wed", percentage: 95 },
+      { day: "Thu", percentage: 85 },
+      { day: "Fri", percentage: 100 },
+      { day: "Sat", percentage: 0 },
+      { day: "Sun", percentage: 0 },
+    ],
+  },
+  attendanceContext: {
+    currentMonth: "February 2026",
+    daysInMonth: 28,
+    heatmapStart: "2026-02-01",
+  },
+
+  // Quiz Player Data
+  quizzes: [
+    {
+      id: 1,
+      title: "Physics: Laws of Motion",
+      subject: "Physics",
+      chapter: "Chapter 5: Force and Laws of Motion",
+      description: "Test your understanding of Newton's Laws of Motion",
+      duration: 1800, // 30 minutes in seconds (backend-configured)
+      totalQuestions: 10,
+      attemptsAllowed: 2,
+      attemptsUsed: 0,
+      status: "available", // available, in-progress, completed, locked
+      dueDate: "2026-02-10",
+      questions: [
+        {
+          id: 1,
+          question: "What is Newton's First Law of Motion?",
+          type: "multiple-choice",
+          options: [
+            "Force equals mass times acceleration",
+            "An object at rest stays at rest unless acted upon by a force",
+            "For every action, there is an equal and opposite reaction",
+            "Energy cannot be created or destroyed",
+          ],
+          correctAnswer: 1,
+          points: 10,
+          explanation:
+            "Newton's First Law, also known as the Law of Inertia, states that an object at rest stays at rest and an object in motion stays in motion with the same speed and direction unless acted upon by an unbalanced force. This law describes the property of inertia.",
+        },
+        {
+          id: 2,
+          question: "Which formula represents Newton's Second Law?",
+          type: "multiple-choice",
+          options: ["F = ma", "E = mc²", "P = mv", "W = Fd"],
+          correctAnswer: 0,
+          points: 10,
+          explanation:
+            "Newton's Second Law is expressed as F = ma, where F is the net force applied to an object, m is its mass, and a is the acceleration produced. This law shows that force is directly proportional to both mass and acceleration.",
+        },
+        {
+          id: 3,
+          question: "What is the SI unit of force?",
+          type: "multiple-choice",
+          options: ["Joule", "Newton", "Watt", "Pascal"],
+          correctAnswer: 1,
+          points: 10,
+          explanation:
+            "The SI unit of force is the Newton (N), named after Sir Isaac Newton. One Newton is defined as the force required to accelerate a 1 kg mass at 1 m/s². Other options: Joule is energy, Watt is power, Pascal is pressure.",
+        },
+        {
+          id: 4,
+          question:
+            "If a 5 kg object accelerates at 2 m/s², what is the force applied?",
+          type: "multiple-choice",
+          options: ["7 N", "10 N", "3 N", "2.5 N"],
+          correctAnswer: 1,
+          points: 10,
+          explanation:
+            "Using Newton's Second Law (F = ma), we multiply mass (5 kg) by acceleration (2 m/s²) to get F = 5 × 2 = 10 N. This demonstrates the direct relationship between force, mass, and acceleration.",
+        },
+        {
+          id: 5,
+          question:
+            "Newton's Third Law states that forces always come in pairs.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 10,
+          explanation:
+            "Newton's Third Law states that for every action, there is an equal and opposite reaction. This means forces always occur in pairs - if object A exerts a force on object B, then object B exerts an equal and opposite force on object A.",
+        },
+        {
+          id: 6,
+          question: "What happens to an object when no net force acts on it?",
+          type: "multiple-choice",
+          options: [
+            "It accelerates",
+            "It maintains constant velocity",
+            "It stops immediately",
+            "It changes direction",
+          ],
+          correctAnswer: 1,
+          points: 10,
+          explanation:
+            "According to Newton's First Law, when no net force acts on an object, it will maintain its current state of motion - either remaining at rest or continuing to move at constant velocity. This is the principle of inertia.",
+        },
+        {
+          id: 7,
+          question: "Friction is an example of which type of force?",
+          type: "multiple-choice",
+          options: ["Gravitational", "Electromagnetic", "Contact", "Nuclear"],
+          correctAnswer: 2,
+          points: 10,
+          explanation:
+            "Friction is a contact force that occurs when two surfaces interact. It opposes motion and requires physical contact between objects. Gravitational and electromagnetic are non-contact forces, while nuclear forces act at the atomic level.",
+        },
+        {
+          id: 8,
+          question: "What is inertia?",
+          type: "multiple-choice",
+          options: [
+            "The tendency of an object to resist changes in motion",
+            "The speed of an object",
+            "The force applied to an object",
+            "The weight of an object",
+          ],
+          correctAnswer: 0,
+          points: 10,
+          explanation:
+            "Inertia is the property of matter that causes it to resist changes in its state of motion. An object's inertia is directly related to its mass - more massive objects have greater inertia and require more force to change their motion.",
+        },
+        {
+          id: 9,
+          question:
+            "A rocket moves forward by expelling gas backward. This demonstrates:",
+          type: "multiple-choice",
+          options: [
+            "Newton's First Law",
+            "Newton's Second Law",
+            "Newton's Third Law",
+            "Law of Conservation of Energy",
+          ],
+          correctAnswer: 2,
+          points: 10,
+          explanation:
+            "This is a perfect example of Newton's Third Law (action-reaction). The rocket expels gas backward (action), and the gas exerts an equal and opposite force on the rocket (reaction), pushing it forward. This is how rockets work in the vacuum of space.",
+        },
+        {
+          id: 10,
+          question:
+            "If the mass of an object doubles, and the same force is applied, the acceleration:",
+          type: "multiple-choice",
+          options: ["Doubles", "Halves", "Stays the same", "Quadruples"],
+          correctAnswer: 1,
+          points: 10,
+          explanation:
+            "From F = ma, we can derive a = F/m. If mass doubles while force stays constant, acceleration is halved. This inverse relationship shows that more massive objects are harder to accelerate with the same force.",
+        },
+      ],
+      previousAttempts: [],
+    },
+    {
+      id: 2,
+      title: "Mathematics: Quadratic Equations",
+      subject: "Mathematics",
+      chapter: "Chapter 4: Quadratic Equations",
+      description: "Solve quadratic equations and understand parabolic graphs",
+      duration: 2400, // 40 minutes in seconds
+      totalQuestions: 8,
+      attemptsAllowed: 2,
+      attemptsUsed: 1,
+      status: "available",
+      dueDate: "2026-02-12",
+      questions: [
+        {
+          id: 1,
+          question: "What is the standard form of a quadratic equation?",
+          type: "multiple-choice",
+          options: ["y = mx + b", "ax² + bx + c = 0", "x² + y² = r²", "y = x³"],
+          correctAnswer: 1,
+          points: 12.5,
+        },
+        {
+          id: 2,
+          question: "What is the discriminant in the quadratic formula?",
+          type: "multiple-choice",
+          options: ["b² - 4ac", "b² + 4ac", "2b - ac", "4ac - b²"],
+          correctAnswer: 0,
+          points: 12.5,
+        },
+        {
+          id: 3,
+          question:
+            "If the discriminant is negative, how many real roots does the equation have?",
+          type: "multiple-choice",
+          options: ["0", "1", "2", "Infinite"],
+          correctAnswer: 0,
+          points: 12.5,
+        },
+        {
+          id: 4,
+          question: "The vertex of a parabola y = x² is at the origin.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 12.5,
+        },
+        {
+          id: 5,
+          question: "What is the quadratic formula?",
+          type: "multiple-choice",
+          options: [
+            "x = (-b ± √(b² - 4ac)) / 2a",
+            "x = -b / 2a",
+            "x = b² - 4ac",
+            "x = ab + c",
+          ],
+          correctAnswer: 0,
+          points: 12.5,
+        },
+        {
+          id: 6,
+          question: "A parabola opens downward when:",
+          type: "multiple-choice",
+          options: ["a > 0", "a < 0", "a = 0", "b > 0"],
+          correctAnswer: 1,
+          points: 12.5,
+        },
+        {
+          id: 7,
+          question: "The axis of symmetry of y = ax² + bx + c is x = -b/2a.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 12.5,
+        },
+        {
+          id: 8,
+          question: "Solve: x² - 5x + 6 = 0. What are the roots?",
+          type: "multiple-choice",
+          options: ["x = 2, 3", "x = -2, -3", "x = 1, 6", "x = -1, -6"],
+          correctAnswer: 0,
+          points: 12.5,
+        },
+      ],
+      previousAttempts: [
+        {
+          attemptNumber: 1,
+          score: 75,
+          totalPoints: 100,
+          completedAt: "2026-02-02T14:30:00Z",
+          timeTaken: 1800, // 30 minutes
+          answers: [1, 0, 0, 0, 0, 1, 0, 0],
+          correctCount: 6,
+          earnedPoints: 75,
+        },
+      ],
+    },
+    {
+      id: 3,
+      title: "Chemistry: Periodic Table",
+      subject: "Chemistry",
+      chapter: "Chapter 3: Periodic Classification of Elements",
+      description: "Test your knowledge of elements and periodic trends",
+      duration: 1200, // 20 minutes in seconds
+      totalQuestions: 12,
+      attemptsAllowed: 3,
+      attemptsUsed: 2,
+      status: "completed",
+      dueDate: "2026-02-05",
+      questions: [
+        {
+          id: 1,
+          question: "What is the atomic number of Carbon?",
+          type: "multiple-choice",
+          options: ["6", "12", "8", "14"],
+          correctAnswer: 0,
+          points: 8.33,
+          explanation:
+            "Carbon has an atomic number of 6, which means it has 6 protons in its nucleus. The number  12 you might see is its atomic mass (actually 12.01), not its atomic number.",
+        },
+        {
+          id: 2,
+          question: "Which element is a noble gas?",
+          type: "multiple-choice",
+          options: ["Oxygen", "Nitrogen", "Helium", "Hydrogen"],
+          correctAnswer: 2,
+          points: 8.33,
+          explanation:
+            "Helium is a noble gas found in Group 18 of the periodic table. Noble gases are characterized by having a complete outer electron shell, making them very unreactive.",
+        },
+        {
+          id: 3,
+          question:
+            "Elements in the same group have similar chemical properties.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 8.33,
+        },
+        {
+          id: 4,
+          question: "What is the symbol for Gold?",
+          type: "multiple-choice",
+          options: ["Go", "Au", "Gd", "Ag"],
+          correctAnswer: 1,
+          points: 8.33,
+        },
+        {
+          id: 5,
+          question: "Atomic radius increases as you move down a group.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 8.33,
+        },
+        {
+          id: 6,
+          question: "Which period does Sodium belong to?",
+          type: "multiple-choice",
+          options: ["Period 1", "Period 2", "Period 3", "Period 4"],
+          correctAnswer: 2,
+          points: 8.33,
+        },
+        {
+          id: 7,
+          question: "Halogens are found in Group 17.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 8.33,
+        },
+        {
+          id: 8,
+          question: "What is the most abundant element in the universe?",
+          type: "multiple-choice",
+          options: ["Oxygen", "Carbon", "Hydrogen", "Nitrogen"],
+          correctAnswer: 2,
+          points: 8.33,
+        },
+        {
+          id: 9,
+          question: "Metals tend to lose electrons and form positive ions.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 8.33,
+        },
+        {
+          id: 10,
+          question: "Which element has the highest electronegativity?",
+          type: "multiple-choice",
+          options: ["Fluorine", "Oxygen", "Chlorine", "Nitrogen"],
+          correctAnswer: 0,
+          points: 8.33,
+        },
+        {
+          id: 11,
+          question: "The atomic mass is the sum of protons and neutrons.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 8.33,
+        },
+        {
+          id: 12,
+          question: "Which is NOT a transition metal?",
+          type: "multiple-choice",
+          options: ["Iron", "Copper", "Aluminum", "Zinc"],
+          correctAnswer: 2,
+          points: 8.33,
+        },
+      ],
+      previousAttempts: [
+        {
+          attemptNumber: 1,
+          score: 66.64,
+          totalPoints: 100,
+          completedAt: "2026-01-30T10:15:00Z",
+          timeTaken: 720,
+          answers: [0, 2, 0, 1, 0, 2, 0, 2, 0, 0, 0, 2],
+          correctCount: 8,
+          earnedPoints: 66,
+        },
+        {
+          attemptNumber: 2,
+          score: 91.63,
+          totalPoints: 100,
+          completedAt: "2026-02-01T11:20:00Z",
+          timeTaken: 840,
+          answers: [0, 2, 0, 1, 0, 2, 0, 2, 0, 0, 0, 2],
+          correctCount: 11,
+          earnedPoints: 92,
+        },
+      ],
+    },
+    {
+      id: 4,
+      title: "History: World War II",
+      subject: "History",
+      chapter: "Chapter 7: The World Wars",
+      description: "Major events and outcomes of World War II",
+      duration: 3600, // 60 minutes in seconds
+      totalQuestions: 15,
+      attemptsAllowed: 1,
+      attemptsUsed: 0,
+      status: "available",
+      dueDate: "2026-02-15",
+      questions: [
+        {
+          id: 1,
+          question: "In which year did World War II begin?",
+          type: "multiple-choice",
+          options: ["1939", "1940", "1941", "1945"],
+          correctAnswer: 0,
+          points: 6.67,
+          explanation:
+            "World War II began on September 1, 1939, when Nazi Germany invaded Poland. This led Britain and France to declare war on Germany two days later, marking the official start of the global conflict.",
+        },
+        {
+          id: 2,
+          question: "What event led the United States to enter World War II?",
+          type: "multiple-choice",
+          options: [
+            "Invasion of Poland",
+            "Pearl Harbor attack",
+            "D-Day invasion",
+            "Battle of Britain",
+          ],
+          correctAnswer: 1,
+          points: 6.67,
+        },
+        {
+          id: 3,
+          question: "The Allied Powers included the USA, UK, and Soviet Union.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+        {
+          id: 4,
+          question: "Who was the leader of Nazi Germany during WWII?",
+          type: "multiple-choice",
+          options: [
+            "Benito Mussolini",
+            "Joseph Stalin",
+            "Adolf Hitler",
+            "Winston Churchill",
+          ],
+          correctAnswer: 2,
+          points: 6.67,
+        },
+        {
+          id: 5,
+          question: "D-Day occurred on June 6, 1944.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+        {
+          id: 6,
+          question: "Which city was NOT atomic bombed?",
+          type: "multiple-choice",
+          options: ["Hiroshima", "Nagasaki", "Tokyo", "All were bombed"],
+          correctAnswer: 2,
+          points: 6.67,
+        },
+        {
+          id: 7,
+          question:
+            "The Holocaust resulted in the deaths of approximately 6 million Jews.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+        {
+          id: 8,
+          question:
+            "Which battle is considered the turning point on the Eastern Front?",
+          type: "multiple-choice",
+          options: [
+            "Battle of Berlin",
+            "Battle of Stalingrad",
+            "Battle of Kursk",
+            "Battle of Moscow",
+          ],
+          correctAnswer: 1,
+          points: 6.67,
+        },
+        {
+          id: 9,
+          question: "World War II ended in 1945.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+        {
+          id: 10,
+          question: "What was Operation Overlord?",
+          type: "multiple-choice",
+          options: [
+            "Invasion of Normandy",
+            "Attack on Pearl Harbor",
+            "Battle of Britain",
+            "Siege of Leningrad",
+          ],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+        {
+          id: 11,
+          question: "The Axis Powers included Germany, Italy, and Japan.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+        {
+          id: 12,
+          question: "Who was the British Prime Minister during most of WWII?",
+          type: "multiple-choice",
+          options: [
+            "Neville Chamberlain",
+            "Winston Churchill",
+            "Clement Attlee",
+            "Anthony Eden",
+          ],
+          correctAnswer: 1,
+          points: 6.67,
+        },
+        {
+          id: 13,
+          question:
+            "The Battle of Midway was a decisive naval battle in the Pacific.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+        {
+          id: 14,
+          question: "What was the code name for the atomic bomb project?",
+          type: "multiple-choice",
+          options: [
+            "Manhattan Project",
+            "Operation Barbarossa",
+            "Operation Torch",
+            "Project Mercury",
+          ],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+        {
+          id: 15,
+          question: "VE Day (Victory in Europe) was celebrated on May 8, 1945.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 6.67,
+        },
+      ],
+      previousAttempts: [],
+    },
+    {
+      id: 5,
+      title: "English: Grammar and Vocabulary",
+      subject: "English",
+      chapter: "Chapter 2: Grammar Fundamentals",
+      description:
+        "Test your understanding of English grammar rules and vocabulary",
+      duration: 1500, // 25 minutes in seconds
+      totalQuestions: 10,
+      attemptsAllowed: 2,
+      attemptsUsed: 0,
+      status: "locked", // Unlocks after completing assignment
+      dueDate: "2026-02-20",
+      questions: [
+        {
+          id: 1,
+          question: "Identify the correct sentence:",
+          type: "multiple-choice",
+          options: [
+            "She don't like apples",
+            "She doesn't like apples",
+            "She doesn't likes apples",
+            "She not like apples",
+          ],
+          correctAnswer: 1,
+          points: 10,
+          explanation:
+            "The correct sentence is 'She doesn't like apples'. In the third person singular (he/she/it), we use 'doesn't' (does not) as the auxiliary verb, followed by the base form of the main verb ('like', not 'likes').",
+        },
+        {
+          id: 2,
+          question: "What is the synonym of 'benevolent'?",
+          type: "multiple-choice",
+          options: ["Kind", "Evil", "Angry", "Neutral"],
+          correctAnswer: 0,
+          points: 10,
+        },
+        {
+          id: 3,
+          question: "A pronoun replaces a noun in a sentence.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 10,
+        },
+        {
+          id: 4,
+          question: "Which is a coordinating conjunction?",
+          type: "multiple-choice",
+          options: ["Although", "And", "Because", "When"],
+          correctAnswer: 1,
+          points: 10,
+        },
+        {
+          id: 5,
+          question: "The past tense of 'go' is 'went'.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 0,
+          points: 10,
+        },
+        {
+          id: 6,
+          question: "What does 'ubiquitous' mean?",
+          type: "multiple-choice",
+          options: ["Rare", "Present everywhere", "Ancient", "Mysterious"],
+          correctAnswer: 1,
+          points: 10,
+        },
+        {
+          id: 7,
+          question: "An adjective modifies a verb.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 1,
+          points: 10,
+        },
+        {
+          id: 8,
+          question:
+            "Choose the correct form: 'Neither John ___ Mary is coming.'",
+          type: "multiple-choice",
+          options: ["or", "nor", "and", "but"],
+          correctAnswer: 1,
+          points: 10,
+        },
+        {
+          id: 9,
+          question: "A metaphor is a direct comparison using 'like' or 'as'.",
+          type: "true-false",
+          options: ["True", "False"],
+          correctAnswer: 1,
+          points: 10,
+        },
+        {
+          id: 10,
+          question: "What is the antonym of 'ephemeral'?",
+          type: "multiple-choice",
+          options: ["Temporary", "Permanent", "Quick", "Delicate"],
+          correctAnswer: 1,
+          points: 10,
+        },
+      ],
+      previousAttempts: [],
+    },
+  ],
+  // AI-generated preparation checklist
+  preparationChecklist: [
+    {
+      id: 1,
+      task: "Review Physics formulas before lab",
+      subject: "Physics",
+      timeSlot: "Before Period 3",
+      aiReason: "Lab exam next week - strengthen fundamentals",
+      completed: false,
+    },
+    {
+      id: 2,
+      task: "Prepare questions for Math class",
+      subject: "Mathematics",
+      timeSlot: "Before Period 1",
+      aiReason: "You struggled with last topic - seek clarification",
+      completed: true,
+    },
+    {
+      id: 3,
+      task: "Bring project materials",
+      subject: "Chemistry",
+      timeSlot: "Period 4",
+      aiReason: "Group project presentation scheduled",
+      completed: false,
+    },
+  ],
+
+  // Mock data for today's homework reminders
+  todayHomework: [
+    {
+      id: 1,
+      subject: "Mathematics",
+      title: "Complete Trigonometry Worksheet",
+      dueTime: "5:00 PM",
+      priority: "high",
+      estimatedTime: "30 min",
+      status: "pending",
+    },
+    {
+      id: 2,
+      subject: "Physics",
+      title: "Lab Report - Optics Experiment",
+      dueTime: "11:59 PM",
+      priority: "medium",
+      estimatedTime: "45 min",
+      status: "in-progress",
+    },
+    {
+      id: 3,
+      subject: "English",
+      title: "Read Chapter 5",
+      dueTime: "Tomorrow 9:00 AM",
+      priority: "low",
+      estimatedTime: "20 min",
+      status: "pending",
+    },
+  ],
+
+  // Mock data for CCA (Co-Curricular Activities) blocks
+  ccaBlocks: [
+    {
+      id: 1,
+      activity: "Basketball Practice",
+      time: "15:30 - 17:00",
+      venue: "Sports Complex",
+      coach: "Coach Williams",
+      type: "Sports",
+      icon: "🏀",
+    },
+    {
+      id: 2,
+      activity: "Science Club Meeting",
+      time: "16:00 - 17:00",
+      venue: "Lab 1",
+      mentor: "Dr. Patel",
+      type: "Club",
+      icon: "🔬",
+    },
+  ],
+
+  // Behavior Log Data
+  behavior: {
+    totalPoints: 1250,
+    rank: 12,
+    percentile: 92,
+    attendanceTrends: [
+      { month: "Aug", percentage: 95 },
+      { month: "Sep", percentage: 98 },
+      { month: "Oct", percentage: 92 },
+      { month: "Nov", percentage: 96 },
+      { month: "Dec", percentage: 94 },
+      { month: "Jan", percentage: 99 },
+    ],
+    punctuality: {
+      onTime: 115,
+      late: 3,
+      percentage: 97.4,
+    },
+    achievements: [
+      {
+        id: 1,
+        title: "Star Student",
+        date: "2026-01-15",
+        category: "Academic",
+        description: "Achieved highest grade in Physics mid-term",
+        points: 50,
+        icon: "Star",
+      },
+      {
+        id: 2,
+        title: "Perfect Attendance",
+        date: "2025-12-20",
+        category: "Attendance",
+        description: "100% attendance for the month of December",
+        points: 30,
+        icon: "Clock",
+      },
+      {
+        id: 3,
+        title: "Science Fair Winner",
+        date: "2025-11-10",
+        category: "Competition",
+        description: "First prize in the annual Science Fair",
+        points: 100,
+        icon: "Trophy",
+      },
+      {
+        id: 4,
+        title: "Helpful Peer",
+        date: "2025-10-05",
+        category: "Community",
+        description: "Volunteered to help formatting reports",
+        points: 20,
+        icon: "Heart",
+      },
+    ],
+    participationPoints: [
+      {
+        id: 1,
+        activity: "Class Discussion",
+        date: "2026-02-01",
+        points: 10,
+        teacher: "Mr. Sharma",
+      },
+      {
+        id: 2,
+        activity: "Group Project Lead",
+        date: "2026-01-28",
+        points: 25,
+        teacher: "Ms. Davis",
+      },
+      {
+        id: 3,
+        activity: "Lab Assistance",
+        date: "2026-01-20",
+        points: 15,
+        teacher: "Dr. Patel",
+      },
+      {
+        id: 4,
+        activity: "Library Volunteer",
+        date: "2026-01-15",
+        points: 20,
+        teacher: "Mrs. Wilson",
+      },
+    ],
+    warnings: [], // Empty for a good student, can add mock data if needed
+    emotionalCheckIns: [
+      {
+        id: 1,
+        date: "2026-02-05",
+        mood: "Happy",
+        notes: "Feeling great about the upcoming project!",
+        timestamp: "08:30 AM",
+      },
+      {
+        id: 2,
+        date: "2026-02-04",
+        mood: "Neutral",
+        notes: "A bit tired but managing well.",
+        timestamp: "09:00 AM",
+      },
+      {
+        id: 3,
+        date: "2026-02-03",
+        mood: "Excited",
+        notes: "Can't wait for the sports event!",
+        timestamp: "08:15 AM",
+      },
+    ],
+    peerAppreciation: [
+      {
+        id: 1,
+        sender: "Sarah M.",
+        recipient: "Alex Johnson",
+        message:
+          "Thanks for helping me understand the physics conflict! You made it so clear.",
+        category: "Helpfulness",
+        date: "2026-02-04",
+        status: "approved",
+        likes: 5,
+        avatar: "https://i.pravatar.cc/150?img=9",
+      },
+      {
+        id: 2,
+        sender: "David K.",
+        recipient: "Alex Johnson",
+        message:
+          "Great teamwork during the basketball game. Loved your energy!",
+        category: "Teamwork",
+        date: "2026-02-03",
+        status: "approved",
+        likes: 12,
+        avatar: "https://i.pravatar.cc/150?img=11",
+      },
+      {
+        id: 3,
+        sender: "Emily R.",
+        recipient: "Whole Class",
+        message:
+          "Everyone was so respectful during the debate today. Proud to be in this class.",
+        category: "Respect",
+        date: "2026-02-02",
+        status: "approved",
+        likes: 24,
+        avatar: "https://i.pravatar.cc/150?img=5",
+      },
+      {
+        id: 4,
+        sender: "Alex Johnson",
+        recipient: "Mr. Sharma",
+        message: "Thank you for the extra time on the lab. It really helped!",
+        category: "Gratitude",
+        date: "2026-02-01",
+        status: "pending", // Example of pending message
+        likes: 0,
+        avatar: "https://i.pravatar.cc/150?img=12",
+      },
+      {
+        id: 5,
+        sender: "Jordan P.",
+        recipient: "New Students",
+        message: "Welcome to the school! We're glad to have you here.",
+        category: "Inclusion",
+        date: "2026-01-30",
+        status: "approved",
+        likes: 8,
+        avatar: "https://i.pravatar.cc/150?img=3",
+      },
+    ],
   },
 };

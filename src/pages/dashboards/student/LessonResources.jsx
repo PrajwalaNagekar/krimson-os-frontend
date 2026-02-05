@@ -3,7 +3,7 @@ import { STUDENT_DATA } from '../../../data/studentData';
 import { Search, FileText, Video, Beaker, Download, BookOpen, Clock, Filter, X, Bookmark, BookmarkCheck, Wifi, WifiOff, ExternalLink, Play, Eye, ChevronRight } from 'lucide-react';
 
 const LessonResources = () => {
-  const { resources } = STUDENT_DATA;
+  const { resources, recommendedResources } = STUDENT_DATA;
   const [selectedSubject, setSelectedSubject] = useState('All');
   const [selectedTopic, setSelectedTopic] = useState('All');
   const [selectedWeek, setSelectedWeek] = useState('All');
@@ -73,11 +73,7 @@ const LessonResources = () => {
   };
 
   // Recommended resources
-  const recommended = [
-    { title: 'Advanced Calculus Guide', subject: 'MATH', icon: '📐' },
-    { title: 'Periodic Table Study', subject: 'CHEMISTRY', icon: '⚗️' },
-    { title: 'World History Timeline', subject: 'HISTORY', icon: '📜' },
-  ];
+
 
   return (
     <div className="space-y-8 relative">
@@ -303,7 +299,7 @@ const LessonResources = () => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {recommended.map((rec, idx) => (
+          {recommendedResources.map((rec, idx) => (
             <div 
               key={idx} 
               className="bg-white/80 backdrop-blur-sm p-5 rounded-2xl border-2 border-pink-100 hover:border-pink-300 hover:shadow-md transition-all cursor-pointer group"

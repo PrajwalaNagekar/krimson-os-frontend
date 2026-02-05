@@ -11,7 +11,7 @@ const Tasks = () => {
   return (
     <TasksAndNotifications 
       role="student"
-      tasks={[]} // Use internal mocks for now
+      tasks={STUDENT_DATA.tasks || []}
       notifications={STUDENT_DATA.dashboard?.notifications || []}
     />
   );
