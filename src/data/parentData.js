@@ -1,3 +1,90 @@
+export const feeStatus = {
+  totalOutstanding: 850.0,
+  dueDate: "2026-01-25",
+  daysLeft: 6,
+  nextPayment: {
+    description: "Term 1 Tuition Fee - January",
+    amount: 450.0,
+    dueDate: "2026-01-25",
+  },
+  upcomingDues: [
+    {
+      id: 1,
+      description: "Term 1 Tuition Fee - January",
+      amount: 450.0,
+      dueDate: "2026-01-25",
+      category: "Tuition",
+    },
+    {
+      id: 2,
+      description: "Transport Fee - January",
+      amount: 150.0,
+      dueDate: "2026-01-25",
+      category: "Transport",
+    },
+    {
+      id: 3,
+      description: "Activity Fee - Term 1",
+      amount: 250.0,
+      dueDate: "2026-01-25",
+      category: "Activities",
+    },
+  ],
+};
+
+export const transactionHistory = [
+  {
+    id: "TXN001234",
+    description: "Term 1 Tuition Fee - December",
+    date: "2025-12-01",
+    amount: 1200.0,
+    status: "paid",
+    category: "Tuition",
+    paymentMethod: "Stripe",
+    receiptUrl: "#",
+  },
+  {
+    id: "TXN001235",
+    description: "Transport Fee - December",
+    date: "2025-12-01",
+    amount: 150.0,
+    status: "paid",
+    category: "Transport",
+    paymentMethod: "Razorpay",
+    receiptUrl: "#",
+  },
+  {
+    id: "TXN001236",
+    description: "Activity Fee - Term 1",
+    date: "2025-11-15",
+    amount: 250.0,
+    status: "paid",
+    category: "Activities",
+    paymentMethod: "Stripe",
+    receiptUrl: "#",
+  },
+  {
+    id: "TXN001237",
+    description: "Library Fee - Annual",
+    date: "2025-11-01",
+    amount: 100.0,
+    status: "paid",
+    category: "Library",
+    paymentMethod: "Stripe",
+    receiptUrl: "#",
+  },
+];
+
+export const getCategoryColor = (category) => {
+  const colors = {
+    Tuition: "from-blue-500 to-cyan-500",
+    Transport: "from-orange-500 to-amber-500",
+    Activities: "from-purple-500 to-pink-500",
+    Library: "from-emerald-500 to-teal-500",
+  };
+  return colors[category] || "from-slate-500 to-gray-500";
+};
+
 export const PARENT_DATA = {
   user: {
     name: "Administrator", // Matching the screenshot name

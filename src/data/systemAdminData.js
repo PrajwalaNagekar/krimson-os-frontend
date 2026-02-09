@@ -3,43 +3,485 @@ export const SYSTEM_ADMIN_DATA = {
     name: "Neena Guptaa", // Based on BRD System Admin name
     role: "System Administrator",
     id: "SYS-ADMIN-01",
-    avatar: "https://i.pravatar.cc/150?img=60" // Placeholder avatar
+    avatar: "https://i.pravatar.cc/150?img=60", // Placeholder avatar
   },
-  health: { // Screen 1
+  health: {
+    // Screen 1
     uptime: "99.98%",
     cpuUsage: 42, // %
     memoryUsage: 65, // %
     activeSessions: 234,
     apiResponseTime: 120, // ms
     alerts: [
-      { id: 1, type: "error", msg: "Database connection spike detected", time: "10:00 AM" },
-      { id: 2, type: "warning", msg: "API Gateway latency > 300ms", time: "09:45 AM" }
-    ]
-  },
-  security: { // Screen 2
-    users: [
-      { id: "U-101", name: "Administrator", role: "Admin", status: "Active", lastLogin: "Just now" },
-      { id: "U-102", name: "Principal", role: "Principal", status: "Active", lastLogin: "1 hr ago" },
-      { id: "U-103", name: "Teacher A", role: "Teacher", status: "Locked", lastLogin: "2 days ago" }
+      {
+        id: 1,
+        type: "error",
+        msg: "Database connection spike detected",
+        time: "10:00 AM",
+      },
+      {
+        id: 2,
+        type: "warning",
+        msg: "API Gateway latency > 300ms",
+        time: "09:45 AM",
+      },
     ],
-    mfaStatus: "Enabled (Admin Only)"
   },
-  backups: { // Screen 3
+  security: {
+    // Screen 2
+    users: [
+      {
+        id: "U-101",
+        name: "Administrator",
+        role: "Admin",
+        status: "Active",
+        lastLogin: "Just now",
+      },
+      {
+        id: "U-102",
+        name: "Principal",
+        role: "Principal",
+        status: "Active",
+        lastLogin: "1 hr ago",
+      },
+      {
+        id: "U-103",
+        name: "Teacher A",
+        role: "Teacher",
+        status: "Locked",
+        lastLogin: "2 days ago",
+      },
+    ],
+    mfaStatus: "Enabled (Admin Only)",
+  },
+  backups: {
+    // Screen 3
     lastBackup: "Today, 02:00 AM",
     nextBackup: "Tomorrow, 02:00 AM",
     integrityScore: "100%",
     history: [
-      { id: "BK-2026-01-06", type: "Full", size: "4.2 GB", status: "Success", location: "AWS S3" },
-      { id: "BK-2026-01-05", type: "Incremental", size: "120 MB", status: "Success", location: "AWS S3" },
-      { id: "BK-2026-01-04", type: "Incremental", size: "115 MB", status: "Success", location: "AWS S3" }
-    ]
-  },
-  logs: { // Screen 4
-    maintenance: [
-      { id: "LOG-001", action: "Security Patch v1.0.6", user: "System", date: "2026-01-05", status: "Completed" },
-      { id: "LOG-002", action: "User Access Revocation", user: "Neena Guptaa", date: "2026-01-04", status: "Completed" },
-      { id: "LOG-003", action: "Database Indexing", user: "System", date: "2026-01-03", status: "Completed" }
+      {
+        id: "BK-2026-01-06",
+        type: "Full",
+        size: "4.2 GB",
+        status: "Success",
+        location: "AWS S3",
+      },
+      {
+        id: "BK-2026-01-05",
+        type: "Incremental",
+        size: "120 MB",
+        status: "Success",
+        location: "AWS S3",
+      },
+      {
+        id: "BK-2026-01-04",
+        type: "Incremental",
+        size: "115 MB",
+        status: "Success",
+        location: "AWS S3",
+      },
     ],
-    version: "v1.0.6 (Stable)"
-  }
+  },
+  logs: {
+    // Screen 4
+    maintenance: [
+      {
+        id: "LOG-001",
+        action: "Security Patch v1.0.6",
+        user: "System",
+        date: "2026-01-05",
+        status: "Completed",
+      },
+      {
+        id: "LOG-002",
+        action: "User Access Revocation",
+        user: "Neena Guptaa",
+        date: "2026-01-04",
+        status: "Completed",
+      },
+      {
+        id: "LOG-003",
+        action: "Database Indexing",
+        user: "System",
+        date: "2026-01-03",
+        status: "Completed",
+      },
+    ],
+    version: "v1.0.6 (Stable)",
+  },
+  auditLogData: {
+    systemInfo: {
+      version: "4.5.2",
+      lastUpdate: "2026-01-15",
+      nextUpdate: "2026-02-01",
+      status: "Stable",
+      branch: "production/main",
+    },
+    stats: {
+      totalLogs: "12,450",
+      securityIncidents: 3,
+      maintenanceTasks: 45,
+      lastAudit: "2 hours ago",
+    },
+    logs: [
+      {
+        id: "LOG-20260119-001",
+        action: "System Patch Applied",
+        category: "Maintenance",
+        user: "System AUTO",
+        role: "System",
+        date: "2026-01-19 14:30:22",
+        status: "Success",
+        details: "Security patch KB-4592 applied successfully",
+      },
+      {
+        id: "LOG-20260119-002",
+        action: "User Role Modified",
+        category: "Security",
+        user: "Sarah Admin",
+        role: "Super Admin",
+        date: "2026-01-19 13:15:10",
+        status: "Success",
+        details: "Elevated privileges for user: john.doe",
+      },
+      {
+        id: "LOG-20260119-003",
+        action: "Database Backup",
+        category: "Maintenance",
+        user: "Automated Job",
+        role: "System",
+        date: "2026-01-19 04:00:00",
+        status: "Success",
+        details: "Daily full backup to AWS S3",
+      },
+      {
+        id: "LOG-20260118-045",
+        action: "Failed Login Attempt",
+        category: "Incident",
+        user: "Unknown IP",
+        role: "N/A",
+        date: "2026-01-18 22:45:12",
+        status: "Flagged",
+        details: "Multiple failed attempts from 192.168.1.105",
+      },
+      {
+        id: "LOG-20260118-032",
+        action: "Config Updated",
+        category: "Update",
+        user: "Mike IT",
+        role: "System Admin",
+        date: "2026-01-18 10:20:00",
+        status: "Success",
+        details: "Updated firewall rules for port 8080",
+      },
+    ],
+  },
+  backupRecoveryData: {
+    backupStats: {
+      lastBackup: "2026-01-19 17:30:00",
+      lastBackupStatus: "Success",
+      nextScheduled: "2026-01-20 02:00:00",
+      totalBackups: 145,
+      totalSize: "2.4 TB",
+      integrityScore: "100%",
+      cloudStorage: "AWS S3 (ap-south-1)",
+      localStorage: "/var/backups/krimson",
+      encryption: "AES-256",
+      retentionPeriod: "90 days",
+    },
+    backupSchedule: {
+      automated: {
+        enabled: true,
+        frequency: "Daily",
+        time: "02:00 AM",
+        type: "Full Backup",
+        destination: "Cloud + Local",
+      },
+      manual: {
+        lastTriggered: "2026-01-15 14:30:00",
+        triggeredBy: "Admin User",
+        status: "Completed",
+      },
+    },
+    restorePoints: [
+      {
+        id: "BKP-20260119-1730",
+        version: "v4.2.15",
+        date: "2026-01-19 17:30:00",
+        type: "Automated Full",
+        size: "18.5 GB",
+        location: "Cloud + Local",
+        status: "Verified",
+        tags: ["Stable", "Production"],
+      },
+      {
+        id: "BKP-20260118-0200",
+        version: "v4.2.14",
+        date: "2026-01-18 02:00:00",
+        type: "Automated Full",
+        size: "18.3 GB",
+        location: "Cloud + Local",
+        status: "Verified",
+        tags: ["Stable"],
+      },
+      {
+        id: "BKP-20260117-1445",
+        version: "v4.2.13",
+        date: "2026-01-17 14:45:00",
+        type: "Manual Incremental",
+        size: "2.1 GB",
+        location: "Local Only",
+        status: "Verified",
+        tags: ["Pre-Update"],
+      },
+      {
+        id: "BKP-20260117-0200",
+        version: "v4.2.12",
+        date: "2026-01-17 02:00:00",
+        type: "Automated Full",
+        size: "18.1 GB",
+        location: "Cloud + Local",
+        status: "Verified",
+        tags: ["Stable"],
+      },
+      {
+        id: "BKP-20260116-0200",
+        version: "v4.2.11",
+        date: "2026-01-16 02:00:00",
+        type: "Automated Full",
+        size: "17.9 GB",
+        location: "Cloud",
+        status: "Corrupted",
+        tags: ["Failed"],
+      },
+    ],
+    cloudBackupSummary: {
+      provider: "AWS S3",
+      region: "ap-south-1 (Mumbai)",
+      totalSize: "1.8 TB",
+      filesCount: "2,45,678",
+      lastSync: "5 mins ago",
+      syncStatus: "Active",
+      bandwidth: "125 Mbps",
+    },
+    localBackupSummary: {
+      path: "/var/backups/krimson",
+      totalSize: "650 GB",
+      filesCount: "1,12,340",
+      diskSpace: "42% used",
+      lastBackup: "12 hours ago",
+      status: "Healthy",
+    },
+    integrityLog: [
+      {
+        id: 1,
+        timestamp: "2026-01-19 17:35:00",
+        file: "BKP-20260119-1730",
+        status: "Passed",
+        checksum: "MD5: a8f5f167...",
+        message: "All files verified successfully",
+      },
+      {
+        id: 2,
+        timestamp: "2026-01-18 02:15:00",
+        file: "BKP-20260118-0200",
+        status: "Passed",
+        checksum: "MD5: b2d4e891...",
+        message: "Integrity check completed",
+      },
+      {
+        id: 3,
+        timestamp: "2026-01-17 14:50:00",
+        file: "BKP-20260117-1445",
+        status: "Passed",
+        checksum: "MD5: c9e7f234...",
+        message: "Incremental backup verified",
+      },
+      {
+        id: 4,
+        timestamp: "2026-01-16 02:20:00",
+        file: "BKP-20260116-0200",
+        status: "Failed",
+        checksum: "N/A",
+        message: "Checksum mismatch detected - file corrupted",
+      },
+    ],
+  },
+  securityAccessControl: {
+    activeSessions: [
+      {
+        id: "USR-1001",
+        name: "Admin User",
+        role: "System Administrator",
+        email: "admin@school.edu",
+        lastLogin: "2026-01-19 17:45:23",
+        device: "Windows Desktop",
+        ipAddress: "192.168.1.100",
+        location: "Mumbai, India",
+        status: "Active",
+        sessionDuration: "2h 15m",
+      },
+      {
+        id: "USR-1002",
+        name: "John Doe",
+        role: "Teacher",
+        email: "john@school.edu",
+        lastLogin: "2026-01-19 16:30:45",
+        device: "iPhone 14",
+        ipAddress: "192.168.1.105",
+        location: "Delhi, India",
+        status: "Active",
+        sessionDuration: "3h 45m",
+      },
+      {
+        id: "USR-1003",
+        name: "Jane Smith",
+        role: "Parent",
+        email: "jane@parent.com",
+        lastLogin: "2026-01-19 18:10:12",
+        device: "Android Tablet",
+        ipAddress: "192.168.1.110",
+        location: "Bangalore, India",
+        status: "Active",
+        sessionDuration: "7m",
+      },
+      {
+        id: "USR-1004",
+        name: "Bob Wilson",
+        role: "Student",
+        email: "bob@student.edu",
+        lastLogin: "2026-01-19 12:15:30",
+        device: "MacBook Pro",
+        ipAddress: "192.168.1.115",
+        location: "Chennai, India",
+        status: "Suspended",
+        sessionDuration: "N/A",
+      },
+    ],
+    rolePermissions: [
+      {
+        role: "System Administrator",
+        permissions: {
+          viewLogs: true,
+          editLogs: true,
+          manageUsers: true,
+          systemSettings: true,
+          securityConfig: true,
+        },
+        color: "from-cyan-500 to-blue-500",
+      },
+      {
+        role: "Teacher",
+        permissions: {
+          viewLogs: true,
+          editLogs: false,
+          manageUsers: false,
+          systemSettings: false,
+          securityConfig: false,
+        },
+        color: "from-blue-500 to-purple-500",
+      },
+      {
+        role: "Parent",
+        permissions: {
+          viewLogs: true,
+          editLogs: false,
+          manageUsers: false,
+          systemSettings: false,
+          securityConfig: false,
+        },
+        color: "from-pink-500 to-purple-500",
+      },
+      {
+        role: "Student",
+        permissions: {
+          viewLogs: false,
+          editLogs: false,
+          manageUsers: false,
+          systemSettings: false,
+          securityConfig: false,
+        },
+        color: "from-purple-500 to-pink-500",
+      },
+    ],
+    twoFactorSettings: {
+      enabled: true,
+      method: "SMS + Authenticator App",
+      enrolledUsers: 156,
+      totalUsers: 245,
+      mandatoryRoles: ["System Administrator", "Teacher", "Finance Manager"],
+    },
+    securityMetrics: {
+      mfaStatus: "Enabled",
+      ssoProvider: "Google Workspace",
+      encryption: "AES-256",
+      failedLoginAttempts: 12,
+      blockedIPs: 3,
+      lastSecurityAudit: "2026-01-15",
+    },
+  },
+  systemHealth: {
+    initialMetrics: {
+      uptime: "99.9%",
+      cpuUsage: 45,
+      memoryUsage: 67,
+      activeSessions: 234,
+      apiResponseTime: 145,
+      databaseStatus: "Healthy",
+      serverStatus: "Online",
+      diskUsage: 58,
+    },
+    alerts: [
+      {
+        id: 1,
+        type: "warning",
+        msg: "High memory usage detected on Server 3",
+        time: "5 mins ago",
+        severity: "medium",
+      },
+      {
+        id: 2,
+        type: "error",
+        msg: "API endpoint /auth/login experiencing slow response",
+        time: "12 mins ago",
+        severity: "high",
+      },
+      {
+        id: 3,
+        type: "warning",
+        msg: "Database connection pool nearing limit",
+        time: "1 hour ago",
+        severity: "medium",
+      },
+    ],
+    cloudLogs: [
+      {
+        time: "18:05:43",
+        event: "Backup completed successfully",
+        status: "success",
+      },
+      {
+        time: "18:03:21",
+        event: "API endpoint health check passed",
+        status: "success",
+      },
+      { time: "17:58:15", event: "New user authentication", status: "info" },
+      {
+        time: "17:55:02",
+        event: "Cache cleared for optimization",
+        status: "info",
+      },
+      {
+        time: "17:50:33",
+        event: "Database maintenance completed",
+        status: "success",
+      },
+    ],
+    databaseMetrics: {
+      connections: "124/200",
+      queryTime: "45ms",
+      cacheHitRate: "98.5%",
+    },
+  },
 };

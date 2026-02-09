@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Sparkles, BrainCircuit, TrendingUp, AlertCircle } from "lucide-react";
-import { PARENT_DATA } from "../../../data/parentData";
+import { PARENT_DATA } from "../../../data/ParentData";
 import { STUDENT_DATA } from "../../../data/studentData"; // Import student data for DailyView
 import AttendanceHeader from "../../../components/dashboard/parent/AttendanceRecord/AttendanceHeader";
 import AttendanceStats from "../../../components/dashboard/parent/AttendanceRecord/AttendanceStats";
@@ -10,6 +10,7 @@ import AbsenceLog from "../../../components/dashboard/parent/AttendanceRecord/Ab
 import TermSummary from "../../../components/dashboard/parent/AttendanceRecord/TermSummary";
 import DailyView from "../../../components/dashboard/student/TimetableSchedule/DailyView"; // Reused component
 import ClassDetailsModal from "../../../components/dashboard/student/TimetableSchedule/ClassDetailsModal"; // For DailyView interaction
+import LeaveRequestForm from "../../../components/dashboard/student/AttendanceTracker/LeaveRequestForm"; // Reused component
 
 const AttendanceRecord = () => {
   const [selectedMonth, setSelectedMonth] = useState(0); // 0 = Jan, 1 = Dec, etc.
@@ -231,6 +232,13 @@ const AttendanceRecord = () => {
               <AttendanceStats attendanceData={attendanceData} />
               <AttendanceTrend monthlyTrend={attendanceData.monthlyTrend} />
             </div>
+          </div>
+        )}
+
+        {/* LEAVE REQUEST FORM */}
+        {viewMode === "leave" && (
+          <div className="animate-fade-in-up">
+            <LeaveRequestForm note="💡 <strong>Note:</strong> Leave requests will be reviewed by the class teacher. You'll receive a notification once approved or rejected." />
           </div>
         )}
       </div>
