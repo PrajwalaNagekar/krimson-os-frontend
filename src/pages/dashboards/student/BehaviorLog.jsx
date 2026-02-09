@@ -18,41 +18,9 @@ import { LayoutDashboard, Shield, Heart } from "lucide-react";
  */
 const BehaviorLog = () => {
   const [activeTab, setActiveTab] = useState("behavior"); // 'behavior' | 'house' | 'appreciation'
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState({ behavior: null, houseSystem: null });
 
-  useEffect(() => {
-    // Simulate API Call
-    const fetchData = async () => {
-      try {
-        await new Promise((resolve) => setTimeout(resolve, 800)); // Simulate delay
-
-        // In a real API, these might be separate endpoints
-        // Mapped to match the component's expected structure
-        setData({
-          behavior: STUDENT_DATA.behavior || {},
-          // Correctly accessing houseSystem from dashboard object
-          houseSystem: STUDENT_DATA.dashboard?.houseSystem || null,
-        });
-      } catch (error) {
-        console.error("Failed to fetch behavior log data", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-900"></div>
-      </div>
-    );
-  }
-
-  const { behavior, houseSystem } = data;
+  const behavior = STUDENT_DATA.behavior || {};
+  const houseSystem = STUDENT_DATA.dashboard?.houseSystem || null;
 
   // Use optional chaining or defaults to prevent errors if data is missing
   const attendanceTrends = behavior?.attendanceTrends || [];

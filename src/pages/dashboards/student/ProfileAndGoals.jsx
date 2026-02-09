@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { STUDENT_DATA } from "../../../data/studentData";
 import { authService } from "../../../services/authService";
 import {
@@ -36,9 +37,23 @@ import DigitalIDModal from "../../../components/dashboard/student/Profile/Digita
 
 const ProfileAndGoals = () => {
   const { user, profileActivityLog, portfolio } = STUDENT_DATA;
+  const location = useLocation();
   const [userData, setUserData] = useState(
     authService.getCurrentUser() || user,
   );
+
+  useEffect(() => {
+    if (location.state?.section === "achievements") {
+      setActiveTab("overview");
+      // Small timeout to allow render
+      setTimeout(() => {
+        const element = document.getElementById("achievements-section");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, [location.state]);
 
   // Tab State
   const [activeTab, setActiveTab] = useState("overview"); // 'overview', 'security', 'preferences', 'permissions', 'activity'
@@ -207,7 +222,9 @@ const ProfileAndGoals = () => {
           />
 
           {/* Achievements Section */}
-          <AchievementsSection user={userData} />
+          <div id="achievements-section">
+            <AchievementsSection user={userData} />
+          </div>
 
           {/* Clubs & Groups Section */}
           <ClubsAndGroupsSection

@@ -3,31 +3,311 @@ export const COUNSELOR_DATA = {
     name: "Dr. Elena Ray",
     role: "School Counselor",
     id: "CNS-2026-01",
-    avatar: "https://i.pravatar.cc/150?img=44"
+    avatar: "https://i.pravatar.cc/150?img=44",
   },
-  behaviorLogs: [ // Screen 1
-    { id: "B-101", student: "Rohan Gupta", class: "5-A", category: "Behavioral", type: "Negative", date: "2026-01-07", description: "Disruptive in Math class.", recordedBy: "Teacher A" },
-    { id: "B-102", student: "Sarah Lee", class: "6-B", category: "Social", type: "Positive", date: "2026-01-06", description: "Helped peer with injury.", recordedBy: "Sports Coach" },
-    { id: "B-103", student: "John Lim", class: "4-C", category: "Emotional", type: "Concern", date: "2026-01-05", description: "Appears withdrawn/anxious.", recordedBy: "Mrs. Tan" }
+  behaviorLogs: [
+    // Screen 1
+    {
+      id: "B-101",
+      student: "Rohan Gupta",
+      class: "5-A",
+      category: "Behavioral",
+      type: "Negative",
+      date: "2026-01-07",
+      description: "Disruptive in Math class.",
+      recordedBy: "Teacher A",
+    },
+    {
+      id: "B-102",
+      student: "Sarah Lee",
+      class: "6-B",
+      category: "Social",
+      type: "Positive",
+      date: "2026-01-06",
+      description: "Helped peer with injury.",
+      recordedBy: "Sports Coach",
+    },
+    {
+      id: "B-103",
+      student: "John Lim",
+      class: "4-C",
+      category: "Emotional",
+      type: "Concern",
+      date: "2026-01-05",
+      description: "Appears withdrawn/anxious.",
+      recordedBy: "Mrs. Tan",
+    },
   ],
-  cases: [ // Screen 2
-    { id: "CASE-55", student: "Aravind Kumar", issue: "Academic Anxiety", status: "Ongoing", progress: 60, severity: "Medium", lastUpdate: "2 days ago" },
-    { id: "CASE-56", student: "Meera Tan", issue: "Peer Conflict", status: "Resolved", progress: 100, severity: "Low", lastUpdate: "1 week ago" },
-    { id: "CASE-57", student: "Rahul V", issue: "Attendance/Truancy", status: "Initial", progress: 10, severity: "High", lastUpdate: "Yesterday" }
+  cases: [
+    // Screen 2
+    {
+      id: "CASE-55",
+      student: "Aravind Kumar",
+      issue: "Academic Anxiety",
+      status: "Ongoing",
+      progress: 60,
+      severity: "Medium",
+      lastUpdate: "2 days ago",
+    },
+    {
+      id: "CASE-56",
+      student: "Meera Tan",
+      issue: "Peer Conflict",
+      status: "Resolved",
+      progress: 100,
+      severity: "Low",
+      lastUpdate: "1 week ago",
+    },
+    {
+      id: "CASE-57",
+      student: "Rahul V",
+      issue: "Attendance/Truancy",
+      status: "Initial",
+      progress: 10,
+      severity: "High",
+      lastUpdate: "Yesterday",
+    },
   ],
-  wellbeing: { // Screen 3
+  wellbeing: {
+    // Screen 3
     avgMoodIndex: 7.2, // out of 10
     highRiskStudents: 3,
-    attendanceCorrelation: [ // Mock data for chart
+    attendanceCorrelation: [
+      // Mock data for chart
       { day: "Mon", attendance: 95, mood: 8 },
       { day: "Tue", attendance: 92, mood: 7 },
       { day: "Wed", attendance: 88, mood: 5 }, // Dip
       { day: "Thu", attendance: 94, mood: 7 },
-      { day: "Fri", attendance: 96, mood: 9 }
-    ]
+      { day: "Fri", attendance: 96, mood: 9 },
+    ],
   },
-  collaboration: [ // Screen 4
-    { id: 1, type: "Meeting", with: "Parent of Rohan Gupta", date: "2026-01-08", time: "10:00 AM", status: "Scheduled" },
-    { id: 2, type: "Feedback", with: "Class Teacher (5-A)", content: "Discussion regarding seating arrangement.", date: "2026-01-06", status: "Completed" }
-  ]
+  collaboration: [
+    {
+      id: 1,
+      type: "Meeting",
+      with: "Parent of Rohan Gupta",
+      date: "2026-01-08",
+      time: "10:00 AM",
+      status: "Scheduled",
+    },
+    {
+      id: 2,
+      type: "Feedback",
+      with: "Class Teacher (5-A)",
+      content: "Discussion regarding seating arrangement.",
+      date: "2026-01-06",
+      status: "Completed",
+    },
+    {
+      id: 3,
+      type: "Meeting",
+      with: "Teacher B",
+      date: "2026-01-05",
+      time: "2:00 PM",
+      status: "Completed",
+    },
+  ],
+  escalationReasons: [
+    "Immediate Safety Risk",
+    "Severe Disciplinary Issue",
+    "External Agency Involvement",
+  ],
+  interventionStats: [
+    {
+      id: 1,
+      label: "Active Cases",
+      value: "5",
+      icon: "Shield",
+      color: "blue",
+      subtext: "get in app",
+    },
+    {
+      id: 2,
+      label: "Follow-ups Due",
+      value: "12",
+      icon: "Bell",
+      color: "orange",
+      subtext: "get in app",
+    },
+    {
+      id: 3,
+      label: "Resolved YTD",
+      value: "28",
+      icon: "CheckCircle",
+      color: "green",
+      subtext: "get in app",
+    },
+    {
+      id: 4,
+      label: "Success Rate",
+      value: "87%",
+      icon: "TrendingUp",
+      color: "purple",
+      subtext: "get in app",
+    },
+  ],
+  mockNotes: [
+    {
+      id: 1,
+      title: "Initial Assessment",
+      date: "2026-01-15",
+      content:
+        "Student showing signs of stress. Recommended weekly check-ins and connection with school psychologist.",
+      type: "blue",
+    },
+    {
+      id: 2,
+      title: "Follow-up Session",
+      date: "2026-01-12",
+      content:
+        "Progress noted. Student engaging more in class. Continue monitoring.",
+      type: "orange",
+    },
+  ],
+  behaviorCategories: [
+    {
+      name: "Behavioral",
+      color: "from-red-400 to-rose-500",
+      icon: "AlertCircle",
+      bg: "bg-red-50",
+      text: "text-red-700",
+    },
+    {
+      name: "Academic",
+      color: "from-blue-400 to-indigo-500",
+      icon: "BookOpen",
+      bg: "bg-blue-50",
+      text: "text-blue-700",
+    },
+    {
+      name: "Social",
+      color: "from-green-400 to-emerald-500",
+      icon: "Users",
+      bg: "bg-green-50",
+      text: "text-green-700",
+    },
+    {
+      name: "Emotional",
+      color: "from-purple-400 to-pink-500",
+      icon: "Heart",
+      bg: "bg-purple-50",
+      text: "text-purple-700",
+    },
+  ],
+  behaviorStats: [
+    {
+      title: "Positive Merits",
+      value: 12,
+      icon: "Smile",
+      color: "text-green-500",
+      bg: "bg-green-50",
+      border: "border-green-100",
+    },
+    {
+      title: "Incidents / Concerns",
+      value: 5,
+      icon: "Frown",
+      color: "text-red-500",
+      bg: "bg-red-50",
+      border: "border-red-100",
+    },
+    {
+      title: "Parent Reports",
+      value: 8,
+      icon: "FileText",
+      color: "text-blue-500",
+      bg: "bg-blue-50",
+      border: "border-blue-100",
+    },
+  ],
+  wellbeingStats: [
+    {
+      value: "245",
+      label: "Total Students",
+      icon: "Users",
+      gradient: "from-blue-500 to-blue-600",
+    },
+    {
+      value: "32",
+      label: "Improved",
+      icon: "TrendingUp",
+      gradient: "from-green-500 to-green-600",
+    },
+    {
+      value: "18",
+      label: "Monitoring",
+      icon: "Target",
+      gradient: "from-orange-500 to-orange-600",
+    },
+    {
+      value: 3, // dynamically references highRiskStudents count in real app, but static here
+      label: "High Risk",
+      icon: "AlertOctagon",
+      gradient: "from-red-500 to-red-600",
+    },
+  ],
+  highRiskStudentsList: [
+    {
+      name: "Sarah Chen",
+      id: "S2024-145",
+      flag: "Sharp Attendance Drop (92% → 67%)",
+      severity: "High",
+      days: "2 days ago",
+    },
+    {
+      name: "Michael Torres",
+      id: "S2024-089",
+      flag: "Performance Dip + Mood Decline",
+      severity: "High",
+      days: "1 week ago",
+    },
+    {
+      name: "Aisha Patel",
+      id: "S2024-203",
+      flag: "Behavioral Changes Noted",
+      severity: "Medium",
+      days: "3 days ago",
+    },
+  ],
+  wellbeingTrendAnalysis: [
+    {
+      label: "Improved Wellbeing",
+      value: "+12%",
+      subtext: "vs. last month",
+      icon: "TrendingUp",
+      color: "green",
+      metric: "",
+      bg: "bg-green-50",
+      borderColor: "border-green-100",
+      iconColor: "text-green-600",
+      textColor: "text-green-700",
+      badgeBg: "bg-green-200",
+    },
+    {
+      label: "Avg Attendance",
+      value: "93.2%",
+      subtext: "School-wide",
+      icon: "Activity",
+      color: "blue",
+      metric: "",
+      bg: "bg-blue-50",
+      borderColor: "border-blue-100",
+      iconColor: "text-blue-600",
+      textColor: "text-blue-700",
+      badgeBg: "", // No badge for this one in UI
+    },
+    {
+      label: "AI Mood Index",
+      value: "7.8/10",
+      subtext: "Campus average",
+      icon: "BrainCircuit",
+      color: "purple",
+      metric: "",
+      bg: "bg-purple-50",
+      borderColor: "border-purple-100",
+      iconColor: "text-purple-600",
+      textColor: "text-purple-700",
+      badgeBg: "", // No badge
+    },
+  ],
 };

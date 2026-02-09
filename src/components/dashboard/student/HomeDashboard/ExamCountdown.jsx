@@ -6,32 +6,28 @@ import { ExternalLink, Timer } from "lucide-react";
  *
  * Purpose: Display upcoming exams with countdown timers
  */
-const ExamCountdown = ({ upcomingExams, onViewSyllabus }) => {
+const ExamCountdown = ({ upcomingExams, onViewSyllabus, onViewExams }) => {
   return (
     <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden group hover:shadow-lg transition-shadow">
       <div className="absolute -top-10 -left-10 w-32 h-32 bg-red-400 opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-opacity"></div>
 
-      <a
-        href="#"
-        onClick={(e) => {
-          e.preventDefault();
-          onViewSyllabus?.();
-        }}
-        className="absolute top-4 right-4 flex items-center gap-1 text-[10px] font-bold text-slate-400 hover:text-blue-600 transition-colors group/link z-10"
-      >
-        <span>View Syllabus</span>
-        <ExternalLink
-          size={10}
-          className="group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform"
-        />
-      </a>
-
       <div className="relative z-10">
-        <div className="flex items-center gap-2 mb-3">
-          <div className="p-2 bg-gradient-to-br from-red-400 to-orange-500 rounded-xl text-white">
-            <Timer size={20} />
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-2">
+            <div className="p-2 bg-gradient-to-br from-red-400 to-orange-500 rounded-xl text-white">
+              <Timer size={20} />
+            </div>
+            <h4 className="font-bold text-slate-800">Exams</h4>
           </div>
-          <h4 className="font-bold text-slate-800">Exam Countdown</h4>
+
+          {onViewExams && (
+            <button
+              onClick={onViewExams}
+              className="text-xs font-bold text-slate-400 hover:text-blue-600 transition-colors"
+            >
+              View All
+            </button>
+          )}
         </div>
 
         <div className="space-y-2">
@@ -45,7 +41,6 @@ const ExamCountdown = ({ upcomingExams, onViewSyllabus }) => {
                   {exam.daysLeft} Days
                 </span>
               </div>
-              <p className="text-xs text-slate-500">{exam.syllabus}</p>
             </div>
           ))}
         </div>

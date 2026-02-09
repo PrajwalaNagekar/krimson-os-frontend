@@ -21,7 +21,7 @@ const AttendanceHeader = ({ handleDownloadReport, viewMode, setViewMode }) => {
         </div>
 
         <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm p-1 rounded-xl border border-white/60 shadow-sm">
-          {["today", "monthly", "term"].map((mode) => (
+          {["today", "monthly", "term", "leave"].map((mode) => (
             <button
               key={mode}
               onClick={() => setViewMode(mode)}
@@ -35,7 +35,9 @@ const AttendanceHeader = ({ handleDownloadReport, viewMode, setViewMode }) => {
                 ? "Today Update"
                 : mode === "monthly"
                   ? "Monthly"
-                  : "Term-wise"}
+                  : mode === "term"
+                    ? "Term-wise"
+                    : "Leave Request"}
             </button>
           ))}
         </div>

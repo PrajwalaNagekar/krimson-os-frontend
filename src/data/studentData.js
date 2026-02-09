@@ -7,6 +7,10 @@ export const STUDENT_DATA = {
     avatar: "https://i.pravatar.cc/150?img=12",
     house: "Red House",
     attendance: "94%",
+    transport: {
+      routeId: 1,
+      routeNumber: "Route 5A",
+    },
     about:
       "I am a passionate learner interested in Physics and Computer Science. I love building things and solving complex problems.",
     skills: ["Physics", "Coding", "Debate", "Robotics"],
@@ -1213,8 +1217,10 @@ export const STUDENT_DATA = {
   // Screen 3: Attendance
   attendance: {
     heatmap: {
-      present: ["2026-01-01", "2026-01-02", "2026-01-03", "2026-01-05"],
-      absent: ["2026-01-04"],
+      present: [2, 3, 4, 5, 6, 9, 10, 11, 13, 16, 17, 19, 20, 23, 24, 25, 26],
+      absent: [12],
+      leave: [18],
+      holidays: [27],
     },
     totalDays: 120,
     presentDays: 112,
@@ -6733,6 +6739,100 @@ export const STUDENT_DATA = {
         status: "approved",
         likes: 8,
         avatar: "https://i.pravatar.cc/150?img=3",
+      },
+    ],
+  },
+
+  parentLinkData: {
+    parentInfo: {
+      name: "Sarah Johnson",
+      email: "sarah.j@example.com",
+      linkedDate: "Sep 2025",
+      syncEnabled: true,
+    },
+    mirrorData: {
+      attendance: {
+        percentage: 94,
+        present: 145,
+        absent: 9,
+      },
+      latestResults: {
+        overall: "Grade A",
+        term: "Term 2 - 2025/26",
+        overallPercentage: 88,
+      },
+      feeStatus: {
+        pending: 0,
+        status: "Paid",
+        dueDate: "N/A",
+      },
+    },
+    parentalMessages: [
+      {
+        id: 1,
+        read: false,
+        subject: "Weekend Curfew",
+        from: "Mom",
+        date: "Today",
+        time: "10:30 AM",
+        message:
+          "Please be home by 9 PM this weekend. We have a family dinner planned.",
+        requiresAck: true,
+        acknowledged: false,
+      },
+      {
+        id: 2,
+        read: true,
+        subject: "School Trip",
+        from: "Dad",
+        date: "Yesterday",
+        time: "6:45 PM",
+        message:
+          "I signed the permission slip and transferred the fees for the science trip.",
+        requiresAck: false,
+        acknowledged: true,
+      },
+    ],
+    teacherComments: [
+      {
+        id: 1,
+        read: false,
+        teacher: "Mr. Sharma (Physics)",
+        subject: "Class Participation",
+        comment:
+          "Alex has been very active in lab sessions. Great leadership shown in the group project.",
+        date: "2 days ago",
+      },
+      {
+        id: 2,
+        read: true,
+        teacher: "Mrs. Wilson (History)",
+        subject: "Assignment Submission",
+        comment:
+          "Late submission of the History essay. Please ensure better time management next time.",
+        date: "1 week ago",
+      },
+    ],
+    jointActivities: [
+      {
+        id: 1,
+        title: "Parent-Teacher Meeting",
+        date: "Feb 15, 2026",
+        time: "10:00 AM",
+        location: "Room 101",
+        description: "Term 2 academic review and progress discussion.",
+        studentAck: true,
+        parentAck: false,
+      },
+      {
+        id: 2,
+        title: "Annual Sports Day",
+        date: "Feb 20, 2026",
+        time: "09:00 AM",
+        location: "School Stadium",
+        description: "Parents invited to watch the track and field events.",
+        studentAck: false,
+        parentAck: true,
       },
     ],
   },

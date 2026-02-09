@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 import ParentLayout from "../layouts/ParentLayout";
 import ParentHomeDashboard from "../pages/dashboards/parent/HomeDashboard";
 import ParentChildrenOverview from "../pages/dashboards/parent/ChildrenOverview";
@@ -16,28 +16,32 @@ import ParentCoCurricularTracker from "../pages/dashboards/parent/CoCurricularTr
 import ParentFeedbackSurvey from "../pages/dashboards/parent/FeedbackSurvey";
 import ParentSupportCenter from "../pages/dashboards/parent/SupportCenter";
 import ParentProfile from "../pages/dashboards/parent/ParentProfile";
+import ParentFacilities from "../pages/dashboards/parent/Facilities";
+import ParentMeetingsCircles from "../pages/dashboards/parent/MeetingsCircles";
 
 const ParentRoutes = () => {
   return (
     <Routes>
-        <Route element={<ParentLayout />}>
-           <Route index element={<Navigate to="home" replace />} />
-           <Route path="home" element={<ParentHomeDashboard />} />
-           <Route path="children" element={<ParentChildrenOverview />} />
-           <Route path="attendance" element={<ParentAttendanceRecord />} />
-           <Route path="homework" element={<ParentHomeworkAssignments />} />
-           <Route path="exams" element={<ParentExamPerformance />} />
-           <Route path="reports" element={<ParentReportCard />} />
-           <Route path="communication" element={<ParentCommunicationHub />} />
-           <Route path="fees" element={<ParentFeePayments />} />
-           <Route path="behavior" element={<ParentBehaviorReports />} />
-           <Route path="calendar" element={<ParentCalendarEvents />} />
-           <Route path="notices" element={<ParentNoticesCirculars />} />
-           <Route path="cca" element={<ParentCoCurricularTracker />} />
-           <Route path="feedback" element={<ParentFeedbackSurvey />} />
-           <Route path="support" element={<ParentSupportCenter />} />
-           <Route path="profile" element={<ParentProfile />} />
-        </Route>
+      <Route element={<ParentLayout />}>
+        <Route index element={<Navigate to="home" replace />} />
+        <Route path="home" element={<ParentHomeDashboard />} />
+        <Route path="children" element={<ParentChildrenOverview />} />
+        <Route path="attendance" element={<ParentAttendanceRecord />} />
+        <Route path="homework" element={<ParentHomeworkAssignments />} />
+        <Route path="exams" element={<ParentExamPerformance />} />
+        <Route path="reports" element={<ParentReportCard />} />
+        <Route path="communication" element={<ParentCommunicationHub />} />
+        <Route path="fees" element={<ParentFeePayments />} />
+        <Route path="behavior" element={<ParentBehaviorReports />} />
+        <Route path="calendar" element={<ParentCalendarEvents />} />
+        <Route path="notices" element={<ParentNoticesCirculars />} />
+        <Route path="cca" element={<ParentCoCurricularTracker />} />
+        <Route path="feedback" element={<ParentFeedbackSurvey />} />
+        <Route path="support" element={<ParentSupportCenter />} />
+        <Route path="facilities" element={<ParentFacilities />} />
+        <Route path="meetings-circles" element={<ParentMeetingsCircles />} />
+        <Route path="profile" element={<ParentProfile />} />
+      </Route>
     </Routes>
   );
 };

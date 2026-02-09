@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Shield, Lock, Globe, AlertCircle, ArrowRight, Key } from "lucide-react";
+import {
+  Shield,
+  Lock,
+  Globe,
+  AlertCircle,
+  ArrowRight,
+  Key,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { authService } from "../../services/authService";
 import { useAppDispatch } from "../../store/hooks";
@@ -33,16 +40,20 @@ const LoginPage = () => {
 
       // Call API to verify credentials
       await authService.login(authEmail, authPassword);
-      
+
       // On success, prepare for Step 2
       setStep(2); // Move to OTP
-      dispatch(addNotification({ type: 'info', message: 'Credentials verified. Please enter OTP.' }));
-      
+      dispatch(
+        addNotification({
+          type: "info",
+          message: "Credentials verified. Please enter OTP.",
+        }),
+      );
     } catch (err) {
       console.error(err);
       const msg = err.message || "Login failed. Invalid credentials.";
       setError(msg);
-      dispatch(addNotification({ type: 'error', message: msg }));
+      dispatch(addNotification({ type: "error", message: msg }));
     } finally {
       setLoading(false);
     }
@@ -64,11 +75,15 @@ const LoginPage = () => {
       }
 
       setLoading(false);
-      dispatch(addNotification({ type: 'success', message: 'Identity Verified. Redirecting...' }));
-      
+      dispatch(
+        addNotification({
+          type: "success",
+          message: "Identity Verified. Redirecting...",
+        }),
+      );
+
       // REDIRECT TO WELCOME LANDING
       navigate("/welcome");
-
     }, 1500);
   };
 
@@ -80,7 +95,6 @@ const LoginPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-cyan-300 via-blue-300 to-pink-300 flex items-center justify-center p-2 sm:p-4 font-sans selection:bg-blue-100">
       {/* Main Glass Card Container */}
       <div className="max-w-6xl w-full bg-white/80 backdrop-blur-xl rounded-2xl sm:rounded-[3rem] shadow-2xl shadow-purple-900/10 overflow-hidden flex flex-col lg:flex-row min-h-[500px] sm:min-h-[600px] border border-white/50">
-        
         {/* LEFT SIDEBAR: Branding - Unchanged */}
         <div className="lg:w-5/12 flex flex-col justify-between relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-cyan-300 via-blue-300 to-pink-300"></div>
@@ -89,7 +103,7 @@ const LoginPage = () => {
               <Shield className="h-6 w-6 sm:h-7 sm:w-7 text-slate-800" />
             </div>
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 tracking-tight">
-              Krimson SSO
+              Krimson OS
             </h1>
             <p className="text-slate-700 text-sm sm:text-base lg:text-lg">
               Centralized School Ecosystem
@@ -120,16 +134,14 @@ const LoginPage = () => {
 
         {/* RIGHT SIDE: UNIFIED LOGIN FORM */}
         <div className="lg:w-7/12 p-6 sm:p-8 lg:p-12 xl:p-16 flex flex-col justify-center relative">
-          
           <div className="max-w-md w-full mx-auto">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
               {step === 1 ? "Authorized Login" : "Two-Factor Auth"}
             </h2>
             <p className="text-slate-500 mb-6 sm:mb-8 text-sm sm:text-base">
-              {step === 1 
+              {step === 1
                 ? "Access the Singapore Campus Portal via SSO."
-                : "Please enter the OTP sent to your device."
-              }
+                : "Please enter the OTP sent to your device."}
             </p>
 
             {error && (
@@ -141,7 +153,10 @@ const LoginPage = () => {
 
             {/* STEP 1: EMAIL & PASSWORD */}
             {step === 1 && (
-              <form onSubmit={handleCredentialSubmit} className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-300">
+              <form
+                onSubmit={handleCredentialSubmit}
+                className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-300"
+              >
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-1.5">
                     Email / User ID
@@ -169,7 +184,7 @@ const LoginPage = () => {
                     placeholder="••••••••"
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={loading}
@@ -183,9 +198,9 @@ const LoginPage = () => {
                     </>
                   )}
                 </button>
-                
-                <button 
-                  type="button" 
+
+                <button
+                  type="button"
                   onClick={handleForgotPassword}
                   className="w-full text-center text-sm font-medium text-slate-500 hover:text-blue-600 transition-colors mt-2"
                 >
@@ -196,17 +211,22 @@ const LoginPage = () => {
 
             {/* STEP 2: OTP / 2FA */}
             {step === 2 && (
-              <form onSubmit={handleOtpSubmit} className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-300">
+              <form
+                onSubmit={handleOtpSubmit}
+                className="space-y-5 animate-in fade-in slide-in-from-right-4 duration-300"
+              >
                 <div className="p-4 bg-blue-50 border border-blue-100 rounded-xl flex gap-3 items-start">
-                   <div className="p-2 bg-white rounded-lg shadow-sm text-blue-600">
-                     <Shield className="h-5 w-5" />
-                   </div>
-                   <div>
-                     <p className="text-sm font-bold text-slate-800">PDPA Compliance Verify</p>
-                     <p className="text-xs text-slate-500">
-                       We've sent a 6-digit code to your registered device.
-                     </p>
-                   </div>
+                  <div className="p-2 bg-white rounded-lg shadow-sm text-blue-600">
+                    <Shield className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-slate-800">
+                      PDPA Compliance Verify
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      We've sent a 6-digit code to your registered device.
+                    </p>
+                  </div>
                 </div>
 
                 <div>
@@ -239,45 +259,53 @@ const LoginPage = () => {
                     </>
                   )}
                 </button>
-                
-                <button 
+
+                <button
                   type="button"
-                  onClick={() => { setStep(1); setError(""); }}
+                  onClick={() => {
+                    setStep(1);
+                    setError("");
+                  }}
                   className="w-full text-center text-sm text-slate-500 hover:text-slate-800 font-medium py-2"
                 >
                   Back to Login
                 </button>
               </form>
             )}
-            
+
             {/* ROLE SIMULATOR : Added as per user request for easy access */}
             <div className="mt-8 pt-6 border-t border-slate-100/50">
-               <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Select Role to Simulate Access:</p>
-               <div className="grid grid-cols-2 gap-2 h-48 overflow-y-auto pr-2 custom-scrollbar">
-                  {[
-                    { label: "Student", path: "/dashboard/student" },
-                    { label: "Teacher", path: "/dashboard/teacher" },
-                    { label: "Parent", path: "/dashboard/parent" },
-                    { label: "Principal", path: "/dashboard/principal" },
-                    { label: "Administrator", path: "/dashboard/admin" },
-                    { label: "Finance", path: "/dashboard/finance" },
-                    { label: "Management", path: "/dashboard/management" },
-                    { label: "Registrar", path: "/dashboard/registrar" },
-                    { label: "Academic Coordinator", path: "/dashboard/coordinator" },
-                    { label: "Counselor", path: "/dashboard/counselor" },
-                    { label: "Librarian", path: "/dashboard/librarian" },
-                    { label: "System Admin", path: "/dashboard/it-admin" },
-                  ].map((role) => (
-                    <button
-                      key={role.label}
-                      onClick={() => navigate(role.path)}
-                      className="p-2 text-left text-sm font-medium text-slate-600 bg-slate-50 hover:bg-white hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg transition-all flex items-center justify-between group"
-                    >
-                      {role.label}
-                      <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </button>
-                  ))}
-               </div>
+              <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">
+                Select Role to Simulate Access:
+              </p>
+              <div className="grid grid-cols-2 gap-2 h-48 overflow-y-auto pr-2 custom-scrollbar">
+                {[
+                  { label: "Student", path: "/dashboard/student" },
+                  { label: "Teacher", path: "/dashboard/teacher" },
+                  { label: "Parent", path: "/dashboard/parent" },
+                  { label: "Principal", path: "/dashboard/principal" },
+                  { label: "Administrator", path: "/dashboard/admin" },
+                  { label: "Finance", path: "/dashboard/finance" },
+                  { label: "Management", path: "/dashboard/management" },
+                  { label: "Registrar", path: "/dashboard/registrar" },
+                  {
+                    label: "Academic Coordinator",
+                    path: "/dashboard/coordinator",
+                  },
+                  { label: "Counselor", path: "/dashboard/counselor" },
+                  { label: "Librarian", path: "/dashboard/librarian" },
+                  { label: "System Admin", path: "/dashboard/it-admin" },
+                ].map((role) => (
+                  <button
+                    key={role.label}
+                    onClick={() => navigate(role.path)}
+                    className="p-2 text-left text-sm font-medium text-slate-600 bg-slate-50 hover:bg-white hover:text-blue-600 border border-slate-200 hover:border-blue-200 rounded-lg transition-all flex items-center justify-between group"
+                  >
+                    {role.label}
+                    <ArrowRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Version / Info Footer */}
@@ -286,7 +314,6 @@ const LoginPage = () => {
                 Authorized Use Only. System Activity Monitored.
               </p>
             </div>
-
           </div>
         </div>
       </div>

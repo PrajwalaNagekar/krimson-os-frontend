@@ -177,7 +177,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             </div>
             <div>
               <h1 className="font-bold text-base md:text-lg tracking-wide">
-                Krimson SSO
+                Krimson OS
               </h1>
               <p className="text-[10px] md:text-xs text-white/80">
                 Student Portal
