@@ -1,5 +1,5 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import AdminLayout from "../layouts/AdminLayout";
 import AdminOverview from "../pages/dashboards/admin/AdminOverview";
 import AdmissionsConsole from "../pages/dashboards/admin/AdmissionsConsole";
@@ -16,8 +16,9 @@ import BackupSettings from "../pages/dashboards/admin/BackupSettings";
 import AnalyticsCenter from "../pages/dashboards/admin/AnalyticsCenter";
 import SystemSettings from "../pages/dashboards/admin/SystemSettings";
 import Helpdesk from "../pages/dashboards/admin/Helpdesk";
+import AcademicCalendar from "../pages/dashboards/admin/AcademicCalendar";
 
-import ProfilePage from '../pages/common/ProfilePage';
+import ProfilePage from "../pages/common/ProfilePage";
 
 const AdminRoutes = () => {
   return (
@@ -27,7 +28,11 @@ const AdminRoutes = () => {
         <Route path="admissions" element={<AdmissionsConsole />} />
         <Route path="users" element={<UserManagement />} />
         <Route path="classes" element={<ClassConfig />} />
-        <Route path="profile" element={<ProfilePage roleOverride="Administrator" />} /> {/* Added route for profile page */}
+        <Route
+          path="profile"
+          element={<ProfilePage roleOverride="Administrator" />}
+        />{" "}
+        {/* Added route for profile page */}
         <Route path="hr" element={<HRAdmin />} />
         <Route path="finance" element={<FinanceControl />} />
         <Route path="attendance" element={<AttendanceOversight />} />
@@ -39,6 +44,7 @@ const AdminRoutes = () => {
         <Route path="analytics" element={<AnalyticsCenter />} />
         <Route path="settings" element={<SystemSettings />} />
         <Route path="helpdesk" element={<Helpdesk />} />
+        <Route path="academic-calendar" element={<AcademicCalendar />} />
       </Route>
     </Routes>
   );

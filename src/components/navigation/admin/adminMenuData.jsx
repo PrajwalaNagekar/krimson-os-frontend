@@ -15,6 +15,7 @@ import {
   LifeBuoy,
   Database,
   Building,
+  Calendar,
 } from "lucide-react";
 
 export const ADMIN_MENU_ITEMS = [
@@ -23,6 +24,12 @@ export const ADMIN_MENU_ITEMS = [
     name: "Control Dashboard",
     path: "/dashboard/admin",
     icon: <LayoutDashboard size={20} />,
+  },
+  {
+    id: "ad_calendar",
+    name: "Academic Calendar",
+    path: "/dashboard/admin/academic-calendar",
+    icon: <Calendar size={20} />,
   },
   {
     id: "ad2",
