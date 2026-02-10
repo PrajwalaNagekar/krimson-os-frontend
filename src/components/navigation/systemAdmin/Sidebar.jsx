@@ -9,6 +9,9 @@ import {
   LogOut,
   X,
   Settings,
+  Radio, // For Broadcast Communications
+  Bot, // For AI Governance
+  BarChart2, // For Analytics
 } from "lucide-react";
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -40,6 +43,21 @@ const Sidebar = ({ isOpen, onClose }) => {
       icon: <FileText size={20} />,
     }, // Screen 4
     // { name: "Account Settings", path: "/dashboard/it-admin/profile", icon: <Settings size={20} /> }, // Screen 5
+    {
+      name: "Communications",
+      path: "/dashboard/it-admin/communications",
+      icon: <Radio size={20} />,
+    }, // Broadcast Communications
+    {
+      name: "AI Governance",
+      path: "/dashboard/it-admin/ai-governance",
+      icon: <Bot size={20} />,
+    }, // AI Governance
+    {
+      name: "Analytics",
+      path: "/dashboard/it-admin/analytics",
+      icon: <BarChart2 size={20} />,
+    }, // Analytics Dashboards
   ];
 
   return (
