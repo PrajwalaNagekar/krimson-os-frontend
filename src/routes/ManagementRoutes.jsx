@@ -8,6 +8,8 @@ import FinancialHealth from '../pages/dashboards/management/FinancialHealth';
 import OperationalEfficiency from '../pages/dashboards/management/OperationalEfficiency';
 import ComplianceRisk from '../pages/dashboards/management/ComplianceRisk';
 import StrategicPlanning from '../pages/dashboards/management/StrategicPlanning';
+import TransportManagement from '../pages/dashboards/management/TransportManagement';
+import CafeteriaManagement from '../pages/dashboards/management/CafeteriaManagement';
 import ProfilePage from '../pages/common/ProfilePage';
 
 const ManagementRoutes = () => {
@@ -21,8 +23,10 @@ const ManagementRoutes = () => {
         <Route path="operations" element={<OperationalEfficiency />} />
         <Route path="compliance" element={<ComplianceRisk />} />
         <Route path="strategy" element={<StrategicPlanning />} />
+        <Route path="transport" element={<TransportManagement />} />
+        <Route path="cafeteria" element={<CafeteriaManagement />} />
         <Route path="profile" element={<ProfilePage roleOverride="Management" />} />
-        
+
         {/* Default redirect to overview */}
         <Route path="*" element={<Navigate to="overview" replace />} />
       </Route>

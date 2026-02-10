@@ -30,21 +30,11 @@ const AttendanceWidget = ({ attendance, onViewDetails }) => {
       <div className="flex items-center gap-4 relative z-10">
         <div className="relative">
           <AttendanceRing
-            percentage={attendance.replace("%", "")}
+            percentage={attendance?.replace("%", "") || 0}
             size={96}
             strokeWidth={8}
-            showPercentage={false} // We custom display text inside or keep it standard?
-            // Original had text inside. Shared component has text inside.
-            // Let's use showPercentage={false} and overlay custom text if we want different index styling
-            // But SharedRing has pretty standard text. Let's try showPercentage={true} but we need to check if font matches
+            showPercentage={false}
           />
-          {/* Overriding the text display to match original exactly if needed, but SharedRing text is good.
-              Original: text-lg font-bold text-slate-800
-              Shared: text-3xl font-extrabold text-slate-800
-
-              The original widget was smaller/compact.
-              Let's customize the font in SharedRing or render it here.
-          */}
           <span className="absolute inset-0 flex items-center justify-center text-lg font-bold text-slate-800">
             {attendance}
           </span>

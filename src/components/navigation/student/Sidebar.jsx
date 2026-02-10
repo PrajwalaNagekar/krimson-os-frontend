@@ -152,9 +152,8 @@ const Sidebar = ({ isOpen, onClose }) => {
 
       {/* Sidebar Container */}
       <div
-        className={`h-screen sidebar-width-mobile p-3 md:p-4 flex flex-col fixed left-0 top-0 z-50 transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
-        }`}
+        className={`h-screen sidebar-width-mobile p-3 md:p-4 flex flex-col fixed left-0 top-0 z-50 transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+          }`}
       >
         {/* Gradient Container - Updated to Cyan-Blue-Pink to match previous sidebars */}
         <div className="h-full w-full rounded-3xl bg-gradient-to-b from-cyan-400 via-blue-400 to-pink-400 p-4 flex flex-col text-white shadow-2xl relative overflow-hidden">
@@ -194,10 +193,9 @@ const Sidebar = ({ isOpen, onClose }) => {
                 end={item.path === "/dashboard/student/"} // Only exact match for root
                 onClick={onClose}
                 className={({ isActive }) =>
-                  `flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2.5 md:py-3 rounded-xl transition-all duration-200 min-h-[44px] ${
-                    isActive
-                      ? "bg-white text-blue-600 shadow-md font-bold"
-                      : "text-white/90 hover:bg-white/10 hover:translate-x-1"
+                  `flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2.5 md:py-3 rounded-xl transition-all duration-200 min-h-[44px] ${isActive
+                    ? "bg-white text-blue-600 shadow-md font-bold"
+                    : "text-white/90 hover:bg-white/10 hover:translate-x-1"
                   }`
                 }
               >

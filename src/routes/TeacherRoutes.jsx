@@ -21,6 +21,10 @@ import AssessmentToolsDashboard from "../pages/dashboards/teacher/AssessmentTool
 import PTMManager from "../pages/dashboards/teacher/PTMManager";
 import BehaviourLog from "../pages/dashboards/teacher/BehaviourLog";
 import LabManager from "../pages/dashboards/teacher/LabManager";
+import CCAManager from "../pages/dashboards/teacher/CCAManager";
+import EducationalTrips from "../pages/dashboards/teacher/EducationalTrips";
+import CollaborationHub from "../pages/dashboards/teacher/CollaborationHub";
+import AcademicDecision from "../pages/dashboards/teacher/AcademicDecision";
 
 
 import Support from "../pages/dashboards/teacher/Support";
@@ -43,6 +47,11 @@ const TeacherRoutes = () => {
         <Route path="ptm" element={<PTMManager />} />
         <Route path="behaviour" element={<BehaviourLog />} />
         <Route path="labs" element={<LabManager />} />
+        {/* <Route path="cca" element={<CCAManager />} /> */}
+        <Route path="cca" element={<CCAManager />} />
+        <Route path="trips" element={<EducationalTrips />} />
+        <Route path="collaboration" element={<CollaborationHub />} />
+        <Route path="academic-decision" element={<AcademicDecision />} />
         <Route path="tests" element={<TestManager />} />
         <Route path="reports" element={<ReportsAnalytics />} />
         <Route path="resources" element={<ResourceLibrary />} />
