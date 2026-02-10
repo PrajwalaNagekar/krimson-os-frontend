@@ -19,7 +19,7 @@ const AchievementBadges = ({ achievementBadges }) => {
       </div>
 
       <div className="grid grid-cols-2 gap-3 relative z-10">
-        {achievementBadges.map((badge) => (
+        {achievementBadges?.map((badge) => (
           <div
             key={badge.id}
             className="p-3 rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 hover:from-slate-100 hover:to-slate-200 transition-all text-center group/badge cursor-pointer"

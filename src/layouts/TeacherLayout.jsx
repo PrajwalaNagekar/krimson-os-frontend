@@ -14,23 +14,23 @@ const TeacherLayout = () => {
         {/* Header */}
         <header className="flex justify-between items-center mb-6 md:mb-8 lg:mb-10">
           <div className="flex items-center gap-4">
-            <button 
+            <button
               onClick={() => setIsMobileMenuOpen(true)}
               className="lg:hidden p-2 bg-white/50 backdrop-blur border border-white/50 rounded-xl shadow-sm hover:shadow-md transition-all text-slate-600"
             >
               <Menu size={20} />
             </button>
-          <div>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 tracking-tight">Teacher Dashboard</h2>
-            <p className="text-slate-500 text-xs md:text-sm mt-1">Academic Overview & Classroom Management</p>
-          </div>
+            <div>
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 tracking-tight">Teacher Dashboard</h2>
+              <p className="text-slate-500 text-xs md:text-sm mt-1">Academic Overview & Classroom Management</p>
+            </div>
           </div>
           <div className="flex items-center gap-5">
             <div className="relative hidden md:block">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-              <input 
-                type="text" 
-                placeholder="Search resources, students..." 
+              <input
+                type="text"
+                placeholder="Search resources, students..."
                 className="pl-10 pr-4 py-3 w-72 rounded-full border-none bg-white shadow-sm focus:ring-2 focus:ring-blue-100 outline-none text-sm transition-shadow text-slate-700"
               />
             </div>
@@ -39,11 +39,11 @@ const TeacherLayout = () => {
               <span className="absolute top-2 right-2 w-2 h-2 bg-pink-500 rounded-full border border-white"></span>
             </button>
             <Link to="/dashboard/teacher/profile" className="flex items-center gap-3 bg-white p-1.5 pr-4 rounded-full shadow-sm cursor-pointer hover:shadow-md transition-shadow border border-transparent hover:border-blue-50">
-               <img src={TEACHER_DATA.user.avatar} alt="Profile" className="w-9 h-9 rounded-full object-cover ring-2 ring-white" />
-               <div className="hidden md:block text-left">
-                  <p className="text-xs font-bold text-slate-700">{TEACHER_DATA.user.name}</p>
-                  <p className="text-[10px] text-blue-400 uppercase tracking-wider font-bold">{TEACHER_DATA.user.role}</p>
-               </div>
+              <img src={TEACHER_DATA.user.avatar} alt="Profile" className="w-9 h-9 rounded-full object-cover ring-2 ring-white" />
+              <div className="hidden md:block text-left">
+                <p className="text-xs font-bold text-slate-700">{TEACHER_DATA.user.name}</p>
+                <p className="text-[10px] text-blue-400 uppercase tracking-wider font-bold">{TEACHER_DATA.user.role}</p>
+              </div>
             </Link>
           </div>
         </header>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import {
-    Calendar, Clock, Users, BookOpen, ChevronRight,
     Plus, Search, Filter, MoreVertical, FileText,
     CheckCircle, AlertCircle, Trash2, Edit3, ArrowRight,
-    Brain, Lightbulb, Rocket, Zap
+    Brain, Lightbulb, Rocket, Zap, Star, Compass, Sparkles, Award, Target, Activity,
+    Calendar,
+    Clock,
+    ChevronRight
 } from 'lucide-react';
 
 const EnrichmentPlanner = () => {
@@ -12,6 +14,11 @@ const EnrichmentPlanner = () => {
 
     const [showWizard, setShowWizard] = useState(false);
     const [wizardStep, setWizardStep] = useState(1);
+    const [enrichmentStudents] = useState([
+        { id: 1, name: 'Kavya R.', topic: 'Quantum Basics', type: 'Research', mastery: { problemSolving: 85, creativity: 92, research: 78, complexity: 80 }, participation: 'High', projects: ['The Qubit Paradox', 'Light Speed Entanglement'], badges: ['Innovation Pro', 'Research Lead'] },
+        { id: 2, name: 'Ishaan S.', topic: 'AI Ethics', type: 'Advanced Projects', mastery: { problemSolving: 90, creativity: 85, research: 92, complexity: 88 }, participation: 'Platinum', projects: ['Ethical BOT Design'], badges: ['Critical Thinker'] },
+    ]);
+
     const [newSession, setNewSession] = useState({
         title: '',
         type: 'Challenge Project',
@@ -99,17 +106,22 @@ const EnrichmentPlanner = () => {
             <div className="bg-white p-4 md:p-6 rounded-3xl shadow-md">
                 <div className="flex flex-col lg:flex-row gap-4 items-center">
                     <div className="flex flex-1 gap-2 w-full md:w-auto overflow-x-auto no-scrollbar">
-                        {['upcoming', 'drafts', 'history'].map((tab) => (
+                        {[
+                            { id: 'upcoming', label: 'Upcoming', icon: Rocket },
+                            { id: 'drafts', label: 'Drafts', icon: FileText },
+                            { id: 'history', label: 'History', icon: CheckCircle },
+                            { id: 'enrichment', label: 'Enrichment Tracker', icon: Award },
+                        ].map((tab) => (
                             <button
-                                key={tab}
-                                onClick={() => setActiveTab(tab)}
-                                className={`px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 whitespace-nowrap ${activeTab === tab
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`px-6 py-3 rounded-xl font-bold text-sm transition-all flex items-center gap-2 whitespace-nowrap ${activeTab === tab.id
                                     ? 'bg-indigo-600 text-white shadow-md'
                                     : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                                     }`}
                             >
-                                {tab === 'upcoming' ? <Rocket size={16} /> : tab === 'drafts' ? <FileText size={16} /> : <CheckCircle size={16} />}
-                                <span className="capitalize">{tab}</span>
+                                <tab.icon size={16} />
+                                <span className="capitalize">{tab.label}</span>
                             </button>
                         ))}
                     </div>
@@ -129,6 +141,124 @@ const EnrichmentPlanner = () => {
 
             {/* Content Area */}
             <div className="animate-fadeIn">
+                {activeTab === 'enrichment' && (
+                    <div className="space-y-8 animate-in slide-in-from-right-4 duration-500">
+                        {/* Advanced Skill Dashboard */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[
+                                { label: 'Enriched Students', value: enrichmentStudents.length, icon: Star, color: 'indigo' },
+                                { label: 'Project Velocity', value: 'High', icon: Zap, color: 'amber' },
+                                { label: 'Skills Mastered', value: '12', icon: Award, color: 'emerald' },
+                                { label: 'Active Challenges', value: '4', icon: Target, color: 'rose' },
+                            ].map((stat, i) => (
+                                <div key={i} className="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm flex items-center gap-4">
+                                    <div className={`w-10 h-10 bg-${stat.color}-50 text-${stat.color}-500 rounded-xl flex items-center justify-center`}>
+                                        <stat.icon size={20} />
+                                    </div>
+                                    <div>
+                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mb-1">{stat.label}</p>
+                                        <p className="text-xl font-bold text-slate-800">{stat.value}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Student Mastery Cards */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            {enrichmentStudents.map((student) => (
+                                <div key={student.id} className="bg-white rounded-[2.5rem] border border-slate-100 shadow-md p-8 relative overflow-hidden group">
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-bl-[4rem] -mr-8 -mt-8 group-hover:bg-indigo-100 transition-colors"></div>
+
+                                    <div className="relative z-10">
+                                        <div className="flex items-center gap-4 mb-8">
+                                            <div className="w-16 h-16 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-xl font-bold border-4 border-white shadow-xl">
+                                                {student.name.split(' ').map(n => n[0]).join('')}
+                                            </div>
+                                            <div>
+                                                <div className="flex items-center gap-2 mb-1">
+                                                    <h3 className="text-2xl font-bold text-slate-800 tracking-tight">{student.name}</h3>
+                                                    <span className="px-2 py-0.5 bg-indigo-50 text-indigo-600 text-[9px] font-bold uppercase tracking-widest rounded-md border border-indigo-100">
+                                                        {student.participation} Level
+                                                    </span>
+                                                </div>
+                                                <p className="text-sm font-bold text-slate-400 uppercase tracking-wider">Topic: <span className="text-indigo-500">{student.topic}</span></p>
+                                            </div>
+                                        </div>
+
+                                        {/* Skill Mastery Grid */}
+                                        <div className="grid grid-cols-2 gap-6 mb-8">
+                                            {Object.entries(student.mastery).map(([skill, val]) => (
+                                                <div key={skill} className="space-y-2">
+                                                    <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-widest">
+                                                        <span className="text-slate-500">{skill.replace(/([A-Z])/g, ' $1')}</span>
+                                                        <span className="text-slate-800">{val}%</span>
+                                                    </div>
+                                                    <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden border border-slate-200/50">
+                                                        <div className="h-full bg-slate-800 rounded-full" style={{ width: `${val}%` }}></div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        {/* Portfolio Glimpse */}
+                                        <div className="space-y-4">
+                                            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                                                <Compass size={14} className="text-indigo-500" /> Evidence Portfolio
+                                            </h4>
+                                            <div className="flex gap-3">
+                                                {student.projects.map((proj, i) => (
+                                                    <div key={i} className="flex-1 p-4 bg-slate-50 border border-slate-100 rounded-2xl hover:border-indigo-300 transition-all cursor-pointer group/item">
+                                                        <FileText size={16} className="text-slate-400 mb-2 group-hover/item:text-indigo-500" />
+                                                        <p className="text-[11px] font-bold text-slate-700 leading-tight truncate">{proj}</p>
+                                                        <p className="text-[9px] text-slate-400 mt-1">Research Paper</p>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Achievement Milestones */}
+                                        <div className="mt-8 pt-8 border-t border-slate-50 flex items-center justify-between">
+                                            <div className="flex -space-x-2">
+                                                {student.badges.map((badge, i) => (
+                                                    <div key={i} className="w-10 h-10 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center shadow-sm group/badge hover:-translate-y-1 transition-transform cursor-help">
+                                                        <Award size={18} className="text-amber-500" />
+                                                        <div className="absolute bottom-full mb-2 hidden group-hover/badge:block bg-slate-900 text-white text-[9px] px-2 py-1 rounded whitespace-nowrap z-50">
+                                                            {badge}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <button className="flex items-center gap-2 px-6 py-3 bg-slate-50 text-slate-500 hover:bg-indigo-50 hover:text-indigo-600 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all active:scale-95 border border-transparent hover:border-indigo-100">
+                                                Next Challenge <ChevronRight size={14} />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* AI Growth Insight */}
+                        <div className="bg-white rounded-[3rem] p-1 border-2 border-dashed border-slate-200">
+                            <div className="bg-slate-50 rounded-[2.8rem] p-8 flex flex-col md:flex-row items-center gap-8 group">
+                                <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-indigo-500 shadow-sm shrink-0 border border-slate-100 group-hover:rotate-12 transition-transform duration-500">
+                                    <Sparkles size={40} />
+                                </div>
+                                <div className="flex-1 text-center md:text-left">
+                                    <div className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-[10px] font-bold uppercase tracking-widest mb-3">
+                                        AI3 Strategic Growth Advisor
+                                    </div>
+                                    <h3 className="text-xl font-bold text-slate-800 mb-2 tracking-tight uppercase">Talent Plateau Detected</h3>
+                                    <p className="text-sm text-slate-500 font-medium leading-relaxed max-w-2xl">
+                                        Student <span className="text-slate-900 font-bold">Kavya R.</span> has achieved 92% in creativity but has plateaued in research skills. AI suggests assigning a <span className="text-indigo-600 font-bold">cross-disciplinary project</span> with the Humanities department to stimulate new research pathways.
+                                    </p>
+                                </div>
+                                <button className="px-8 py-4 bg-slate-900 text-white rounded-2xl font-bold text-xs uppercase tracking-widest shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all active:scale-95 whitespace-nowrap">
+                                    Generate Plan
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )}
                 {activeTab === 'upcoming' && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {getFilteredSessions('upcoming').map(session => (
