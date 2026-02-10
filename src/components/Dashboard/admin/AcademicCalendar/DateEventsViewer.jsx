@@ -40,7 +40,7 @@ const DateEventsViewer = ({
   };
 
   const getTypeColor = (type) => {
-    switch (type) {
+    switch (type?.toLowerCase()) {
       case "exam":
         return "from-pink-500 to-rose-500";
       case "class":
@@ -94,7 +94,7 @@ const DateEventsViewer = ({
                       <div
                         className={`inline-block px-3 py-1 rounded-lg bg-gradient-to-r ${getTypeColor(event.type)} text-white text-xs font-bold mb-2`}
                       >
-                        {event.type.toUpperCase()}
+                        {(event.type || "Event").toUpperCase()}
                       </div>
 
                       {/* Event Title */}

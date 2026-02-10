@@ -284,7 +284,32 @@ const AcademicCalendar = () => {
           {/* UnifiedCalendar Component */}
           <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-100">
             <UnifiedCalendar
-              events={filteredEvents}
+              events={(() => {
+                // Transform events to include multi-day events across all their dates
+                const expandedEvents = [];
+                filteredEvents.forEach((event) => {
+                  if (event.isMultiDay && event.endDate) {
+                    // For multi-day events, create an entry for each date in the range
+                    const startDate = new Date(event.date);
+                    const endDate = new Date(event.endDate);
+                    const currentDate = new Date(startDate);
+
+                    while (currentDate <= endDate) {
+                      expandedEvents.push({
+                        ...event,
+                        date: currentDate.toISOString().split("T")[0],
+                        _isMultiDayInstance: true,
+                        _originalStartDate: event.date,
+                        _originalEndDate: event.endDate,
+                      });
+                      currentDate.setDate(currentDate.getDate() + 1);
+                    }
+                  } else {
+                    expandedEvents.push(event);
+                  }
+                });
+                return expandedEvents;
+              })()}
               role="admin"
               onCreateEvent={handleCreateEvent}
               onDateSelect={handleDateSelect}
