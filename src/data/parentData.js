@@ -1230,3 +1230,119 @@ export const PARENT_DATA = {
     },
   },
 };
+
+export const behaviorStats = [
+  {
+    titulo: "Behavior Points",
+    valor: "85/100",
+    desc: "Top 10% of class",
+    icon: "Award",
+    color: "text-blue-500",
+    bg: "bg-blue-50",
+  },
+  {
+    titulo: "Attendance",
+    valor: "96%",
+    desc: "Better than last month",
+    icon: "UserCheck",
+    color: "text-green-500",
+    bg: "bg-green-50",
+  },
+  {
+    titulo: "Participation",
+    valor: "High",
+    desc: "Active in 90% of classes",
+    icon: "Hand",
+    color: "text-purple-500",
+    bg: "bg-purple-50",
+  },
+  {
+    titulo: "Homework",
+    valor: "92%",
+    desc: "Submitted on time",
+    icon: "BookOpen",
+    color: "text-orange-500",
+    bg: "bg-orange-50",
+  },
+];
+
+export const monthlyBehaviorData = [
+  { name: "Sep", positive: 45, negative: 5, participation: 85 },
+  { name: "Oct", positive: 50, negative: 2, participation: 88 },
+  { name: "Nov", positive: 48, negative: 4, participation: 82 },
+  { name: "Dec", positive: 55, negative: 1, participation: 92 },
+  { name: "Jan", positive: 52, negative: 3, participation: 90 },
+];
+
+export const teacherFeedback = [
+  {
+    id: 1,
+    teacher: "Mrs. Tan",
+    subject: "Mathematics",
+    date: "2026-02-05",
+    feedback: "Aravind has shown great improvement in problem-solving skills.",
+    category: "Academic Performance",
+    type: "positive",
+    tags: ["Improvement", "Problem Solving", "Math"],
+  },
+  {
+    id: 2,
+    teacher: "Mr. Lee",
+    subject: "Science",
+    date: "2026-02-03",
+    feedback: "Needs to focus more during lab sessions.",
+    category: "Behavior",
+    type: "constructive",
+    tags: ["Focus", "Lab Work", "Science"],
+  },
+  {
+    id: 3,
+    teacher: "Ms. Sarah",
+    subject: "English",
+    date: "2026-01-28",
+    feedback: "Excellent essay on environmental conservation.",
+    category: "Academic Excellence",
+    type: "positive",
+    tags: ["Writing", "Creativity", "English"],
+  },
+];
+
+export const peerCollaboration = [
+  {
+    id: 1,
+    activity: "Science Fair Project",
+    role: "Team Leader",
+    rating: "Excellent",
+    teamSize: 4,
+    date: "2026-02-01",
+    insights: "Led the team effectively and ensured equal participation.",
+    skills: ["Leadership", "Teamwork", "Public Speaking"],
+  },
+  {
+    id: 2,
+    activity: "History Presentation",
+    role: "Researcher",
+    rating: "Very Good",
+    teamSize: 3,
+    date: "2026-01-20",
+    insights: "Provided thorough research but could improve slide design.",
+    skills: ["Research", "Analysis", "Presentation"],
+  },
+];
+
+export const flaggedPatterns = [
+  {
+    id: 1,
+    type: "Attendance",
+    pattern: "Late arrival on Mondays",
+    severity: "low",
+    date: "2026-01-29",
+  },
+  {
+    id: 2,
+    type: "Behavior",
+    pattern: "Distracted during afternoon classes",
+    severity: "medium",
+    date: "2026-02-02",
+  },
+];

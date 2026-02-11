@@ -21,9 +21,6 @@ const AttendanceSection = () => {
             View Report
             <ArrowUpRight size={16} />
           </div>
-          <span className="text-[10px] text-slate-400 font-normal">
-            (get in app)
-          </span>
         </button>
       </div>
 
