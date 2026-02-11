@@ -1,10 +1,7 @@
 import React from "react";
 import { AlertCircle, Eye } from "lucide-react";
 
-const ApplicationsTable = ({
-  paginatedApplications,
-  setSelectedApplication,
-}) => {
+const ApplicationsTable = ({ applications, setSelectedApplication }) => {
   return (
     <div className="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
       <div className="overflow-x-auto">
@@ -35,7 +32,7 @@ const ApplicationsTable = ({
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
-            {paginatedApplications.length === 0 ? (
+            {applications.length === 0 ? (
               <tr>
                 <td colSpan="7" className="p-12 text-center">
                   <div className="flex flex-col items-center gap-3">
@@ -52,7 +49,7 @@ const ApplicationsTable = ({
                 </td>
               </tr>
             ) : (
-              paginatedApplications.map((app) => {
+              applications.map((app) => {
                 const totalDocs = Object.keys(app.documents).length;
                 const verifiedDocs = Object.values(app.documents).filter(
                   (d) => d.verified,
@@ -93,7 +90,13 @@ const ApplicationsTable = ({
                     </td>
                     <td className="p-5">
                       <span
-                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border ${app.leadSource === "Web Form" ? "bg-blue-50 text-blue-600 border-blue-200" : app.leadSource === "Referral" ? "bg-purple-50 text-purple-600 border-purple-200" : "bg-pink-50 text-pink-600 border-pink-200"}`}
+                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border ${
+                          app.leadSource === "Web Form"
+                            ? "bg-blue-50 text-blue-600 border-blue-200"
+                            : app.leadSource === "Referral"
+                              ? "bg-purple-50 text-purple-600 border-purple-200"
+                              : "bg-pink-50 text-pink-600 border-pink-200"
+                        }`}
                       >
                         {app.leadSource}
                       </span>
@@ -118,10 +121,22 @@ const ApplicationsTable = ({
                     </td>
                     <td className="p-5">
                       <span
-                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border ${app.stage === "Enrolled" ? "bg-green-50 text-green-700 border-green-200" : app.stage === "Verified" ? "bg-blue-50 text-blue-700 border-blue-200" : "bg-amber-50 text-amber-700 border-amber-200"}`}
+                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-bold border ${
+                          app.stage === "Enrolled"
+                            ? "bg-green-50 text-green-700 border-green-200"
+                            : app.stage === "Verified"
+                              ? "bg-blue-50 text-blue-700 border-blue-200"
+                              : "bg-amber-50 text-amber-700 border-amber-200"
+                        }`}
                       >
                         <div
-                          className={`w-1.5 h-1.5 rounded-full ${app.stage === "Enrolled" ? "bg-green-500" : app.stage === "Verified" ? "bg-blue-500" : "bg-amber-500"}`}
+                          className={`w-1.5 h-1.5 rounded-full ${
+                            app.stage === "Enrolled"
+                              ? "bg-green-500"
+                              : app.stage === "Verified"
+                                ? "bg-blue-500"
+                                : "bg-amber-500"
+                          }`}
                         />
                         {app.stage}
                       </span>

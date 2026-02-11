@@ -28,7 +28,7 @@ const AnalyticsHeader = () => {
             </h1>
             <p className="text-white/90 text-sm md:text-base max-w-2xl font-medium leading-relaxed">
               Access real-time visual analytics for institutional health and
-              performance metrics.
+              perfromance metrics.
             </p>
           </div>
 

@@ -3,9 +3,6 @@ import { UserPlus } from "lucide-react";
 
 const AdmissionsHeader = () => {
   return (
-    /* ========================================
-           HEADER SECTION WITH GRADIENT THEME
-           ======================================== */
     <div className="relative rounded-3xl overflow-hidden shadow-2xl">
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 via-blue-500 to-pink-500" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-white opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />

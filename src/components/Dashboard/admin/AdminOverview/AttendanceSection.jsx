@@ -1,8 +1,9 @@
 import React from "react";
 import { Users, UserCheck, ArrowUpRight } from "lucide-react";
+import { ADMIN_DATA } from "../../../../data/adminData";
 
-const AttendanceSection = ({ attendance }) => {
-  if (!attendance) return null;
+const AttendanceSection = () => {
+  const { attendance } = ADMIN_DATA.ADMIN_OVERVIEW_DATA;
 
   return (
     <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100 relative overflow-hidden">
@@ -20,6 +21,9 @@ const AttendanceSection = ({ attendance }) => {
             View Report
             <ArrowUpRight size={16} />
           </div>
+          <span className="text-[10px] text-slate-400 font-normal">
+            (get in app)
+          </span>
         </button>
       </div>
 

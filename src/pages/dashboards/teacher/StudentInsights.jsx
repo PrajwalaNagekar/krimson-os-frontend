@@ -1,132 +1,76 @@
-import React, { useState, useEffect } from 'react';
-import { TEACHER_DATA } from '../../../data/teacherData';
-import {
-  User, TrendingUp, TrendingDown, Users, Search, Filter,
-  Award, AlertTriangle, CheckCircle, MessageSquare, Send,
-  Eye, Edit, Shield, Lock, Calendar, BarChart2,
-  Activity, BookOpen, Heart, Star, AlertOctagon, ChevronDown,
-  FileText, X, ThumbsUp, ThumbsDown, Target,
-  Plus,
-  ArrowRightLeft, ListTodo,
-  Sparkles
-} from 'lucide-react';
-import SuccessToast from '../../../components/common/SuccessToast';
-import InterventionQueue from '../../../components/dashboard/teacher/StudentInsights/InterventionQueue';
-import ConferenceNotes from '../../../components/dashboard/teacher/StudentInsights/ConferenceNotes';
+import React, { useState, useEffect } from "react";
+import { TEACHER_DATA } from "../../../data/teacherData";
+import SuccessToast from "../../../components/common/SuccessToast";
+import InterventionQueue from "../../../components/dashboard/teacher/StudentInsights/InterventionQueue";
+import ConferenceNotes from "../../../components/dashboard/teacher/StudentInsights/ConferenceNotes";
+import StudentInsightsHeader from "../../../components/dashboard/teacher/StudentInsights/StudentInsightsHeader";
+import QuickStats from "../../../components/dashboard/teacher/StudentInsights/QuickStats";
+import PrivacyNotice from "../../../components/dashboard/teacher/StudentInsights/PrivacyNotice";
+import SearchFilters from "../../../components/dashboard/teacher/StudentInsights/SearchFilters";
+import StudentGrid from "../../../components/dashboard/teacher/StudentInsights/StudentGrid";
+import EmptyState from "../../../components/dashboard/teacher/StudentInsights/EmptyState";
+import IncidentReportForm from "../../../components/dashboard/teacher/StudentInsights/IncidentReportForm";
+import StudentDetailModal from "../../../components/dashboard/teacher/StudentInsights/StudentDetailModal";
+import FeedbackModal from "../../../components/dashboard/teacher/StudentInsights/FeedbackModal";
+import BehaviorLogModal from "../../../components/dashboard/teacher/StudentInsights/BehaviorLogModal";
 
 const StudentInsights = () => {
-  // Sample student data
-  const [students, setStudents] = useState([
-    {
-      id: 'S1',
-      name: 'Aarav Singh',
-      roll: 1,
-      class: 'Grade 9-A',
-      photo: null,
-      attendance: 96,
-      avgGrade: 88.5,
-      overallGrade: 'A',
-      trend: 'improving',
-      trendValue: 7,
-      atRisk: false,
-      behaviorScore: 92,
-      feedbackHistory: [
-        { date: '2026-01-15', teacher: 'Ms. Johnson', subject: 'Physics', comment: 'Excellent lab work and participation', type: 'positive' },
-        { date: '2026-01-10', teacher: 'Mr. Chen', subject: 'Math', comment: 'Shows great improvement in problem-solving', type: 'positive' },
-      ],
-      behaviorLog: [
-        { date: '2026-01-18', type: 'commendation', note: 'Helped classmate understand complex physics concept', submittedBy: 'Physics Teacher', encrypted: false },
-        { date: '2026-01-12', type: 'commendation', note: 'Outstanding presentation on Newton\'s Laws', submittedBy: 'Physics Teacher', encrypted: false },
-      ]
-    },
-    {
-      id: 'S2',
-      name: 'Bianca Liu',
-      roll: 2,
-      class: 'Grade 9-A',
-      photo: null,
-      attendance: 88,
-      avgGrade: 73.5,
-      overallGrade: 'B',
-      trend: 'declining',
-      trendValue: -6,
-      atRisk: true,
-      behaviorScore: 85,
-      feedbackHistory: [
-        { date: '2026-01-17', teacher: 'Ms. Johnson', subject: 'Physics', comment: 'Needs to improve homework submission consistency', type: 'concern' },
-        { date: '2026-01-14', teacher: 'School Counselor', subject: 'Counseling', comment: 'Discussed time management strategies', type: 'neutral' },
-      ],
-      behaviorLog: [
-        { date: '2026-01-19', type: 'warning', note: 'Late submission of assignment (3rd occurrence)', submittedBy: 'Physics Teacher', encrypted: false },
-        { date: '2026-01-16', type: 'mentorship', note: 'Meeting scheduled with parents to discuss academic challenges. Student shows willingness to improve.', submittedBy: 'Class Teacher', encrypted: true },
-      ]
-    },
-    {
-      id: 'S3',
-      name: 'David Kim',
-      roll: 4,
-      class: 'Grade 9-A',
-      photo: null,
-      attendance: 82,
-      avgGrade: 66.25,
-      overallGrade: 'C',
-      trend: 'declining',
-      trendValue: -8,
-      atRisk: true,
-      behaviorScore: 78,
-      feedbackHistory: [
-        { date: '2026-01-18', teacher: 'Ms. Johnson', subject: 'Physics', comment: 'Struggling with fundamental concepts - additional support needed', type: 'concern' },
-        { date: '2026-01-15', teacher: 'School Counselor', subject: 'Counseling', comment: 'Personal issues affecting academic performance', type: 'concern' },
-      ],
-      behaviorLog: [
-        { date: '2026-01-19', type: 'warning', note: 'Attendance below 85% threshold', submittedBy: 'Attendance System', encrypted: false },
-        { date: '2026-01-17', type: 'mentorship', note: 'Confidential: Student experiencing family difficulties. Additional emotional support provided. Recommended counselor intervention.', submittedBy: 'Class Teacher', encrypted: true },
-        { date: '2026-01-15', type: 'warning', note: 'Low participation in class activities', submittedBy: 'Physics Teacher', encrypted: false },
-      ]
-    },
-  ]);
+  // Sample student data from centralized data
+  const [students, setStudents] = useState(
+    TEACHER_DATA.studentInsights?.students || [],
+  );
 
   const [selectedStudent, setSelectedStudent] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filterRisk, setFilterRisk] = useState('all'); // 'all', 'atRisk', 'onTrack'
-  const [insightMode, setInsightMode] = useState('analytics'); // 'analytics', 'intervention', 'conference'
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filterRisk, setFilterRisk] = useState("all"); // 'all', 'atRisk', 'onTrack'
+  const [insightMode, setInsightMode] = useState("analytics"); // 'analytics', 'intervention', 'conference'
 
   // Modals handle
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
   const [showLogModal, setShowLogModal] = useState(false);
-  const [newFeedback, setNewFeedback] = useState({ subject: '', comment: '', type: 'positive' });
-  const [newLog, setNewLog] = useState({ type: 'commendation', note: '', encrypted: false });
+  const [newFeedback, setNewFeedback] = useState({
+    subject: "",
+    comment: "",
+    type: "positive",
+  });
+  const [newLog, setNewLog] = useState({
+    type: "commendation",
+    note: "",
+    encrypted: false,
+  });
   const [isSending, setIsSending] = useState(false);
-  const [toast, setToast] = useState({ isOpen: false, message: '' });
+  const [toast, setToast] = useState({ isOpen: false, message: "" });
 
   // Incident Report State
   const [incidentForm, setIncidentForm] = useState({
-    date: new Date().toISOString().split('T')[0],
+    date: new Date().toISOString().split("T")[0],
     time: new Date().toTimeString().slice(0, 5),
-    location: '',
-    type: '',
-    severity: 'medium',
-    description: '',
+    location: "",
+    type: "",
+    severity: "medium",
+    description: "",
     primaryStudent: null,
     involvedStudents: [],
-    witnesses: '',
+    witnesses: "",
     actions: [],
-    recommendations: []
+    recommendations: [],
   });
 
   // Filter students
-  const filteredStudents = students.filter(student => {
+  const filteredStudents = students.filter((student) => {
     // Filter by risk status
-    if (filterRisk !== 'all') {
-      if (filterRisk === 'atRisk' && !student.atRisk) return false;
-      if (filterRisk === 'onTrack' && student.atRisk) return false;
+    if (filterRisk !== "all") {
+      if (filterRisk === "atRisk" && !student.atRisk) return false;
+      if (filterRisk === "onTrack" && student.atRisk) return false;
     }
 
     // Filter by search
     if (searchQuery) {
-      return student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      return (
+        student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         student.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        student.roll.toString().includes(searchQuery);
+        student.roll.toString().includes(searchQuery)
+      );
     }
 
     return true;
@@ -135,9 +79,19 @@ const StudentInsights = () => {
   // Calculate statistics
   const stats = {
     total: students.length,
-    atRisk: students.filter(s => s.atRisk).length,
-    avgAttendance: (students.reduce((sum, s) => sum + s.attendance, 0) / students.length).toFixed(1),
-    avgGrade: (students.reduce((sum, s) => sum + s.avgGrade, 0) / students.length).toFixed(1),
+    atRisk: students.filter((s) => s.atRisk).length,
+    avgAttendance:
+      students.length > 0
+        ? (
+            students.reduce((sum, s) => sum + s.attendance, 0) / students.length
+          ).toFixed(1)
+        : 0,
+    avgGrade:
+      students.length > 0
+        ? (
+            students.reduce((sum, s) => sum + s.avgGrade, 0) / students.length
+          ).toFixed(1)
+        : 0,
   };
 
   // Mock API call
@@ -146,13 +100,13 @@ const StudentInsights = () => {
     // fetch('/api/teacher/student-insights')
     //   .then(res => res.json())
     //   .then(data => setStudents(data));
-    console.log('Student Insights loaded - Ready for API integration');
+    console.log("Student Insights loaded - Ready for API integration");
   }, []);
 
   // Sync selectedStudent when students array changes
   useEffect(() => {
     if (selectedStudent) {
-      const updated = students.find(s => s.id === selectedStudent.id);
+      const updated = students.find((s) => s.id === selectedStudent.id);
       if (updated) setSelectedStudent(updated);
     }
   }, [students]);
@@ -163,19 +117,24 @@ const StudentInsights = () => {
 
     const feedbackEntry = {
       ...newFeedback,
-      date: new Date().toISOString().split('T')[0],
-      teacher: TEACHER_DATA.user.name
+      date: new Date().toISOString().split("T")[0],
+      teacher: TEACHER_DATA.user.name,
     };
 
-    setStudents(prev => prev.map(s =>
-      s.id === selectedStudent.id
-        ? { ...s, feedbackHistory: [feedbackEntry, ...s.feedbackHistory] }
-        : s
-    ));
+    setStudents((prev) =>
+      prev.map((s) =>
+        s.id === selectedStudent.id
+          ? { ...s, feedbackHistory: [feedbackEntry, ...s.feedbackHistory] }
+          : s,
+      ),
+    );
 
     setShowFeedbackModal(false);
-    setToast({ isOpen: true, message: `Feedback for ${selectedStudent.name} saved successfully.` });
-    setNewFeedback({ subject: '', comment: '', type: 'positive' });
+    setToast({
+      isOpen: true,
+      message: `Feedback for ${selectedStudent.name} saved successfully.`,
+    });
+    setNewFeedback({ subject: "", comment: "", type: "positive" });
   };
 
   // Handle Add Behavior Log
@@ -184,30 +143,35 @@ const StudentInsights = () => {
 
     const logEntry = {
       ...newLog,
-      date: new Date().toISOString().split('T')[0],
-      submittedBy: TEACHER_DATA.user.name
+      date: new Date().toISOString().split("T")[0],
+      submittedBy: TEACHER_DATA.user.name,
     };
 
-    setStudents(prev => prev.map(s =>
-      s.id === selectedStudent.id
-        ? { ...s, behaviorLog: [logEntry, ...s.behaviorLog] }
-        : s
-    ));
+    setStudents((prev) =>
+      prev.map((s) =>
+        s.id === selectedStudent.id
+          ? { ...s, behaviorLog: [logEntry, ...s.behaviorLog] }
+          : s,
+      ),
+    );
 
     setShowLogModal(false);
-    setToast({ isOpen: true, message: `Behavioral note for ${selectedStudent.name} recorded.` });
-    setNewLog({ type: 'commendation', note: '', encrypted: false });
+    setToast({
+      isOpen: true,
+      message: `Behavioral note for ${selectedStudent.name} recorded.`,
+    });
+    setNewLog({ type: "commendation", note: "", encrypted: false });
   };
 
   // Handle Toggle Risk
   const handleToggleRisk = (id) => {
-    const student = students.find(s => s.id === id);
-    setStudents(prev => prev.map(s =>
-      s.id === id ? { ...s, atRisk: !s.atRisk } : s
-    ));
+    const student = students.find((s) => s.id === id);
+    setStudents((prev) =>
+      prev.map((s) => (s.id === id ? { ...s, atRisk: !s.atRisk } : s)),
+    );
     setToast({
       isOpen: true,
-      message: `${student.name} is now marked as ${!student.atRisk ? 'At Risk' : 'On Track'}.`
+      message: `${student.name} is now marked as ${!student.atRisk ? "At Risk" : "On Track"}.`,
     });
   };
 
@@ -216,918 +180,91 @@ const StudentInsights = () => {
     setIsSending(true);
     setTimeout(() => {
       setIsSending(false);
-      setToast({ isOpen: true, message: `Confidential report for ${selectedStudent.name} transmitted.` });
+      setToast({
+        isOpen: true,
+        message: `Confidential report for ${selectedStudent.name} transmitted.`,
+      });
     }, 2000);
-  };
-
-  // Get trend color
-  const getTrendColor = (trend) => {
-    return trend === 'improving' ? 'text-green-600' : 'text-red-600';
-  };
-
-  const getTrendIcon = (trend) => {
-    return trend === 'improving' ? <TrendingUp size={16} /> : <TrendingDown size={16} />;
-  };
-
-  // Get behavior type color
-  const getBehaviorColor = (type) => {
-    switch (type) {
-      case 'commendation':
-        return 'bg-green-100 text-green-700 border-green-200';
-      case 'warning':
-        return 'bg-orange-100 text-orange-700 border-orange-200';
-      case 'mentorship':
-        return 'bg-purple-100 text-purple-700 border-purple-200';
-      default:
-        return 'bg-slate-100 text-slate-700 border-slate-200';
-    }
-  };
-
-  const getBehaviorIcon = (type) => {
-    switch (type) {
-      case 'commendation':
-        return <ThumbsUp size={16} />;
-      case 'warning':
-        return <AlertTriangle size={16} />;
-      case 'mentorship':
-        return <Heart size={16} />;
-      default:
-        return <FileText size={16} />;
-    }
   };
 
   return (
     <div className="space-y-6 md:space-y-10 animate-in fade-in duration-700">
-      {/* Header Section with Premium Gradient */}
-      <div className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 rounded-[2.5rem] p-10 md:p-12 text-white shadow-2xl relative overflow-hidden group">
-        {/* Decorative Elements */}
-        <div className="absolute right-0 top-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20 group-hover:scale-110 transition-transform duration-1000"></div>
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-pink-400/20 rounded-full blur-3xl -ml-10 -mb-10 group-hover:scale-125 transition-transform duration-1000"></div>
-        <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-blue-400/10 rounded-full blur-2xl animate-pulse"></div>
+      {/* Header Section */}
+      <StudentInsightsHeader
+        insightMode={insightMode}
+        setInsightMode={setInsightMode}
+        stats={stats}
+      />
 
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
-          <div className="space-y-4">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-inner ring-1 ring-white/20">
-              <Sparkles size={12} className="text-cyan-300" />
-              Krimson OS • Unified Insights
-            </div>
-            <h1 className="text-3xl md:text-5xl font-black mb-2 tracking-tighter leading-none">
-              {insightMode === 'analytics' ? 'Student Analytics' :
-                insightMode === 'intervention' ? 'Intervention Queue' : 'Conference Record'}
-            </h1>
-            <p className="opacity-80 font-bold text-sm md:text-lg max-w-2xl leading-relaxed">
-              {insightMode === 'analytics' ? `Comprehensive visibility into ${stats.total} student profiles and behavioral trends.` :
-                insightMode === 'intervention' ? 'Systematic identification and tracking of academic support cycles.' :
-                  'Professional documentation for structured pedagogical conversations.'}
-            </p>
-          </div>
-
-          {/* Tab Navigation Ribbon - Integrated Design */}
-          <div className="inline-flex p-1.5 bg-black/10 backdrop-blur-xl rounded-[1.5rem] border border-white/10 shadow-lg relative z-20">
-            {[
-              { id: 'analytics', label: 'Analytics', icon: <BarChart2 size={16} /> },
-              { id: 'intervention', label: 'Intervention', icon: <ListTodo size={16} /> },
-              { id: 'conference', label: 'Conference', icon: <MessageSquare size={16} /> },
-              { id: 'incident', label: 'Incident Report', icon: <AlertOctagon size={16} /> }
-            ].map(tab => (
-              <button
-                key={tab.id}
-                onClick={() => setInsightMode(tab.id)}
-                className={`px-6 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-300 flex items-center gap-3 ${insightMode === tab.id
-                  ? 'bg-white text-blue-600 shadow-xl scale-105 ring-1 ring-black/5'
-                  : 'text-white/60 hover:text-white hover:bg-white/5'
-                  }`}
-              >
-                {tab.icon}
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {insightMode === 'analytics' ? (
+      {insightMode === "analytics" ? (
         <>
           {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="p-4 md:p-6 rounded-3xl shadow-sm border-2 border-blue-200 bg-white hover:shadow-lg hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Total Students</p>
-                <Users className="text-blue-400 opacity-60" size={20} />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-800">{stats.total}</h3>
-            </div>
-
-            <div className="p-4 md:p-6 rounded-3xl shadow-sm border-2 border-red-200 bg-white hover:shadow-lg hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                  At Risk
-                </p>
-                <AlertTriangle className="text-red-400 opacity-60" size={20} />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-red-600">
-                {stats.atRisk}
-              </h3>
-            </div>
-
-            <div className="p-4 md:p-6 rounded-3xl shadow-sm border-2 border-purple-200 bg-white hover:shadow-lg hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Avg Attendance</p>
-                <Activity className="text-purple-400 opacity-60" size={20} />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-purple-600">{stats.avgAttendance}%</h3>
-              <p className="text-[10px] text-slate-400 mt-1">get in app</p>
-            </div>
-
-            <div className="p-4 md:p-6 rounded-3xl shadow-sm border-2 border-green-200 bg-white hover:shadow-lg hover:scale-105 transition-all duration-300">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Avg Grade</p>
-                <Award className="text-green-400 opacity-60" size={20} />
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-green-600">{stats.avgGrade}%</h3>
-              <p className="text-[10px] text-slate-400 mt-1">get in app</p>
-            </div>
-          </div>
+          <QuickStats stats={stats} />
 
           {/* Data Privacy Notice */}
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-3xl border-2 border-purple-200">
-            <div className="flex items-start gap-4">
-              <div className="p-3 bg-purple-100 rounded-xl">
-                <Shield size={24} className="text-purple-600" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
-                  <Lock size={18} className="text-purple-600" />
-                  Data Privacy & Security
-                </h3>
-                <div className="space-y-2 text-sm text-slate-600">
-                  <p className="flex items-start gap-2">
-                    <CheckCircle size={16} className="text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Sensitive notes are end-to-end encrypted</span>
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <CheckCircle size={16} className="text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>Access restricted to authorized personnel only</span>
-                  </p>
-                  <p className="flex items-start gap-2">
-                    <CheckCircle size={16} className="text-green-500 flex-shrink-0 mt-0.5" />
-                    <span>All behavioral data tagged and audit-logged</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <PrivacyNotice />
 
           {/* Search and Filter */}
-          <div className="bg-white p-4 md:p-6 rounded-3xl shadow-md">
-            <div className="flex flex-col lg:flex-row gap-4">
-              {/* Search */}
-              <div className="flex-1 relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400" size={20} />
-                <input
-                  type="text"
-                  placeholder="Search by name, roll number, or ID..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 border-2 border-slate-200 rounded-xl text-sm font-medium focus:border-blue-400 focus:outline-none transition-colors"
-                />
-              </div>
-
-              {/* Filter Buttons */}
-              <div className="flex gap-2">
-                <button
-                  onClick={() => setFilterRisk('all')}
-                  className={`px-4 py-2 rounded-xl font-bold text-xs transition-all ${filterRisk === 'all'
-                    ? 'bg-blue-500 text-white shadow-md'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                    }`}
-                >
-                  All Students
-                </button>
-                <button
-                  onClick={() => setFilterRisk('atRisk')}
-                  className={`px-4 py-2 rounded-xl font-bold text-xs transition-all ${filterRisk === 'atRisk'
-                    ? 'bg-red-500 text-white shadow-md'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                    }`}
-                >
-                  At Risk Only
-                </button>
-                <button
-                  onClick={() => setFilterRisk('onTrack')}
-                  className={`px-4 py-2 rounded-xl font-bold text-xs transition-all ${filterRisk === 'onTrack'
-                    ? 'bg-green-500 text-white shadow-md'
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                    }`}
-                >
-                  On Track
-                </button>
-              </div>
-            </div>
-          </div>
+          <SearchFilters
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+            filterRisk={filterRisk}
+            setFilterRisk={setFilterRisk}
+          />
 
           {/* Student Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredStudents.map((student) => (
-              <div
-                key={student.id}
-                className={`bg-white rounded-3xl p-6 shadow-md border-2 transition-all duration-300 cursor-pointer ${student.atRisk
-                  ? 'border-red-300 bg-red-50/30 hover:shadow-xl'
-                  : 'border-transparent hover:border-blue-200 hover:shadow-xl'
-                  }`}
-                onClick={() => setSelectedStudent(student)}
-              >
-                {/* Student Header */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-md ${student.atRisk
-                      ? 'bg-gradient-to-br from-red-500 to-pink-500'
-                      : 'bg-gradient-to-br from-blue-500 to-cyan-500'
-                      }`}>
-                      {student.name.charAt(0)}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-slate-800">{student.name}</h4>
-                      <p className="text-xs text-slate-500">Roll: {student.roll} • {student.class}</p>
-                    </div>
-                  </div>
-                  {student.atRisk && (
-                    <span className="px-2 py-1 bg-red-100 text-red-700 rounded-lg text-xs font-bold">
-                      At Risk
-                    </span>
-                  )}
-                </div>
-
-                {/* Quick Stats */}
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  <div className="p-3 bg-slate-50 rounded-xl">
-                    <p className="text-xs text-slate-500 mb-1">Attendance</p>
-                    <p className={`text-lg font-bold ${student.attendance >= 90 ? 'text-green-600' : student.attendance >= 75 ? 'text-orange-600' : 'text-red-600'}`}>
-                      {student.attendance}%
-                    </p>
-                  </div>
-                  <div className="p-3 bg-slate-50 rounded-xl">
-                    <p className="text-xs text-slate-500 mb-1">Avg Grade</p>
-                    <p className="text-lg font-bold text-slate-800">{student.avgGrade}%</p>
-                  </div>
-                </div>
-
-                {/* Trend */}
-                <div className="mb-4 flex items-center justify-between p-3 bg-slate-50 rounded-xl">
-                  <span className="text-xs text-slate-600 font-medium">Performance Trend</span>
-                  <span className={`flex items-center gap-1 font-bold ${getTrendColor(student.trend)}`}>
-                    {getTrendIcon(student.trend)}
-                    <span className="text-sm">{student.trendValue > 0 ? '+' : ''}{student.trendValue}%</span>
-                  </span>
-                </div>
-
-                {/* View Details Button */}
-                <button className="w-full px-4 py-3 bg-blue-50 text-blue-600 border-2 border-blue-200 rounded-xl font-bold hover:bg-blue-100 transition-all flex items-center justify-center gap-2">
-                  <Eye size={16} />
-                  View Full Profile
-                </button>
-              </div>
-            ))}
-          </div>
+          <StudentGrid
+            students={filteredStudents}
+            setSelectedStudent={setSelectedStudent}
+          />
 
           {/* Empty State */}
           {filteredStudents.length === 0 && (
-            <div className="bg-white p-12 rounded-3xl shadow-md text-center">
-              <Users className="mx-auto text-slate-300 mb-3" size={48} />
-              <h3 className="text-lg font-bold text-slate-800 mb-2">No Students Found</h3>
-              <p className="text-sm text-slate-500">
-                {searchQuery || filterRisk !== 'all' ? 'Try adjusting your filters' : 'No students available'}
-              </p>
-            </div>
+            <EmptyState searchQuery={searchQuery} filterRisk={filterRisk} />
           )}
-
         </>
-      ) : insightMode === 'intervention' ? (
+      ) : insightMode === "intervention" ? (
         <InterventionQueue />
-      ) : insightMode === 'conference' ? (
-        <ConferenceNotes atRiskStudents={students.filter(s => s.atRisk)} />
+      ) : insightMode === "conference" ? (
+        <ConferenceNotes atRiskStudents={students.filter((s) => s.atRisk)} />
       ) : (
-        /* Screen 267 — Incident Report (Teacher) */
-        <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            {/* Left Column: Form Details */}
-            <div className="lg:col-span-8 space-y-8">
-              {/* Core Details */}
-              <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-10 shadow-sm">
-                <div className="flex items-center gap-4 mb-8">
-                  <div className="p-3 bg-red-50 rounded-2xl border border-red-100">
-                    <AlertOctagon size={28} className="text-red-500" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-slate-800 tracking-tight">Formal Incident Documentation</h2>
-                    <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-0.5">Administrative Use Only • Serious Occurrences</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Incident Date & Time</label>
-                    <div className="flex gap-3">
-                      <input
-                        type="date"
-                        value={incidentForm.date}
-                        className="flex-1 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500"
-                        onChange={(e) => setIncidentForm({ ...incidentForm, date: e.target.value })}
-                      />
-                      <input
-                        type="time"
-                        value={incidentForm.time}
-                        className="w-32 bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500"
-                        onChange={(e) => setIncidentForm({ ...incidentForm, time: e.target.value })}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Location of Occurrence</label>
-                    <div className="relative">
-                      <input
-                        type="text"
-                        placeholder="e.g., Main Hallway, Playground, Bus-Q7"
-                        className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500"
-                        value={incidentForm.location}
-                        onChange={(e) => setIncidentForm({ ...incidentForm, location: e.target.value })}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Incident Classification</label>
-                    <select
-                      className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-bold focus:outline-none transition-all"
-                      value={incidentForm.type}
-                      onChange={(e) => setIncidentForm({ ...incidentForm, type: e.target.value })}
-                    >
-                      <option value="">Select Category...</option>
-                      <option value="safety">Safety Violation</option>
-                      <option value="physical">Physical Altercation</option>
-                      <option value="harassment">Harassment / Bullying</option>
-                      <option value="property">Property Damage</option>
-                      <option value="theft">Theft / Dishonesty</option>
-                      <option value="escalated">Escalated Behavioral Issue</option>
-                    </select>
-                  </div>
-
-                  <div className="space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest ml-1">Severity Assessment</label>
-                    <div className="grid grid-cols-3 gap-2">
-                      {['low', 'medium', 'high'].map(level => (
-                        <button
-                          key={level}
-                          onClick={() => setIncidentForm({ ...incidentForm, severity: level })}
-                          className={`py-3 rounded-xl border-2 text-[10px] font-bold uppercase tracking-widest transition-all ${incidentForm.severity === level
-                            ? level === 'low' ? 'bg-emerald-50 border-emerald-500 text-emerald-600 shadow-sm' :
-                              level === 'medium' ? 'bg-orange-50 border-orange-500 text-orange-600 shadow-sm' :
-                                'bg-red-50 border-red-500 text-red-600 shadow-xl'
-                            : 'bg-white border-slate-100 text-slate-400 hover:border-slate-200'
-                            }`}
-                        >
-                          {level}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-10 space-y-4">
-                  <div className="flex items-center justify-between px-1">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Factual Description</label>
-                    <button className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 text-blue-600 rounded-full text-[9px] font-bold uppercase tracking-widest hover:bg-blue-100 transition-all border border-blue-100">
-                      <Sparkles size={12} /> Refine for Neutrality (AI)
-                    </button>
-                  </div>
-                  <textarea
-                    rows={8}
-                    className="w-full bg-slate-50 border border-slate-200 rounded-[2rem] p-8 text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500/10 focus:border-blue-500 transition-all resize-none leading-relaxed"
-                    placeholder="Provide an objective, factual account of the incident. Avoid emotional language or assumptions of intent..."
-                    value={incidentForm.description}
-                    onChange={(e) => setIncidentForm({ ...incidentForm, description: e.target.value })}
-                  />
-                  <div className="flex items-center gap-2 p-3 bg-blue-50/50 rounded-xl border border-blue-100">
-                    <Activity size={14} className="text-blue-500" />
-                    <p className="text-[10px] font-bold text-blue-600/70 uppercase tracking-wider">AI Guard: Ensuring completeness and objective tone...</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Immediate Actions */}
-              <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 md:p-10 shadow-sm">
-                <div className="flex items-center gap-3 mb-8">
-                  <div className="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center">
-                    <Shield size={20} className="text-slate-600" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-800 tracking-tight">Immediate Actions Taken</h3>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {[
-                    'Verbal Warning Issued',
-                    'Student Removed From Class',
-                    'Sent to Counsellor',
-                    'Medication / First Aid Provided',
-                    'Security Involved',
-                    'Escalated to HOD',
-                    'Parent Informed (Initial Call)',
-                    'Temporary Timeout'
-                  ].map(action => (
-                    <button
-                      key={action}
-                      onClick={() => {
-                        const exists = incidentForm.actions.includes(action);
-                        setIncidentForm({
-                          ...incidentForm,
-                          actions: exists
-                            ? incidentForm.actions.filter(a => a !== action)
-                            : [...incidentForm.actions, action]
-                        });
-                      }}
-                      className={`p-4 border-2 rounded-2xl text-left transition-all flex items-center gap-3 group ${incidentForm.actions.includes(action)
-                        ? 'border-blue-500 bg-blue-50/50 shadow-sm'
-                        : 'border-slate-100 bg-slate-50 hover:border-slate-300'
-                        }`}
-                    >
-                      <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all ${incidentForm.actions.includes(action) ? 'bg-blue-500 border-blue-500' : 'border-slate-300'}`}>
-                        {incidentForm.actions.includes(action) && <CheckCircle size={12} className="text-white" />}
-                      </div>
-                      <span className={`text-xs font-bold ${incidentForm.actions.includes(action) ? 'text-blue-700' : 'text-slate-600'}`}>
-                        {action}
-                      </span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: People & Attachments */}
-            <div className="lg:col-span-4 space-y-8">
-              {/* Involved Personnel */}
-              <div className="bg-slate-900 border border-slate-800 rounded-[2.5rem] p-8 text-white shadow-2xl relative overflow-hidden group">
-                <Users className="absolute -right-6 -top-6 w-32 h-32 opacity-5 scale-110 group-hover:rotate-12 transition-transform duration-1000" />
-                <h3 className="text-lg font-bold mb-8 flex items-center gap-3">
-                  <User size={20} className="text-blue-400" />
-                  Involved Students
-                </h3>
-
-                <div className="space-y-6">
-                  <div>
-                    <label className="text-[10px] font-bold text-blue-400 uppercase tracking-widest ml-1 mb-2 block">Primary Student Involved</label>
-                    <div className="relative">
-                      <input
-                        type="text"
-                        placeholder="Search student..."
-                        className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all placeholder:text-white/20"
-                      />
-                      <Search size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30" />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="text-[10px] font-bold text-blue-400 uppercase tracking-widest ml-1 mb-2 block">Others Involved / Witnesses</label>
-                    <div className="relative">
-                      <textarea
-                        rows={3}
-                        placeholder="Name other students or staff present..."
-                        className="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all placeholder:text-white/20 resize-none"
-                        value={incidentForm.witnesses}
-                        onChange={(e) => setIncidentForm({ ...incidentForm, witnesses: e.target.value })}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Supporting Evidence */}
-              <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 shadow-sm">
-                <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-3">
-                  <Star size={20} className="text-blue-500" />
-                  Evidence & Notes
-                </h3>
-                <div className="p-8 border-2 border-dashed border-slate-200 rounded-3xl flex flex-col items-center justify-center text-center group hover:border-blue-400 transition-all cursor-pointer bg-slate-50/50">
-                  <div className="p-4 bg-white rounded-2xl shadow-sm mb-4 group-hover:scale-110 transition-transform">
-                    <Plus size={24} className="text-blue-500" />
-                  </div>
-                  <p className="text-sm font-bold text-slate-800 mb-1">Upload Documentation</p>
-                  <p className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">Internal Use Only • Encrypted Storage</p>
-                </div>
-              </div>
-
-              {/* Follow-up Recommendations */}
-              <div className="bg-white border border-slate-200 rounded-[2.5rem] p-8 shadow-sm">
-                <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-3">
-                  <Target size={20} className="text-purple-500" />
-                  Follow-up Recommendation
-                </h3>
-                <div className="space-y-3">
-                  {[
-                    { id: 'counsel', label: 'Counselling Referral', desc: 'Connect with wellbeing department' },
-                    { id: 'parent', label: 'Mandatory Parent Meeting', desc: 'Formal discussion required' },
-                    { id: 'monitor', label: 'Shadowing / Monitoring', desc: 'Increased supervision requested' },
-                    { id: 'review', label: 'Admin Disciplinary Review', desc: 'Escalate to Board/Admin' }
-                  ].map(rec => (
-                    <button
-                      key={rec.id}
-                      onClick={() => {
-                        const exists = incidentForm.recommendations.includes(rec.id);
-                        setIncidentForm({
-                          ...incidentForm,
-                          recommendations: exists
-                            ? incidentForm.recommendations.filter(r => r !== rec.id)
-                            : [...incidentForm.recommendations, rec.id]
-                        });
-                      }}
-                      className={`w-full p-4 border-2 rounded-2xl text-left transition-all group ${incidentForm.recommendations.includes(rec.id)
-                        ? 'border-purple-500 bg-purple-50/50 shadow-sm'
-                        : 'border-slate-50 bg-slate-50 hover:border-slate-200'
-                        }`}
-                    >
-                      <div className="flex items-center justify-between mb-1">
-                        <span className={`text-xs font-bold ${incidentForm.recommendations.includes(rec.id) ? 'text-purple-700' : 'text-slate-700'}`}>{rec.label}</span>
-                        <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all ${incidentForm.recommendations.includes(rec.id) ? 'bg-purple-500 border-purple-500' : 'border-slate-300'}`}>
-                          {incidentForm.recommendations.includes(rec.id) && <CheckCircle size={10} className="text-white" />}
-                        </div>
-                      </div>
-                      <p className="text-[10px] text-slate-400 font-medium">{rec.desc}</p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Form Actions */}
-              <div className="space-y-4 pt-4">
-                <button
-                  onClick={() => {
-                    setToast({ isOpen: true, message: 'Incident Report submitted to Administration.' });
-                    setInsightMode('analytics');
-                  }}
-                  className="w-full px-8 py-5 bg-gradient-to-r from-red-600 to-red-500 text-white rounded-[1.5rem] font-bold shadow-xl shadow-red-200 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 uppercase tracking-widest text-sm"
-                >
-                  <Send size={20} /> Submit Formal Report
-                </button>
-                <div className="flex items-center gap-2 justify-center text-slate-400">
-                  <Shield size={14} />
-                  <span className="text-[9px] font-bold uppercase tracking-widest">Institutional Digital Signature Applied</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        /* Incident Report Form */
+        <IncidentReportForm
+          incidentForm={incidentForm}
+          setIncidentForm={setIncidentForm}
+          setInsightMode={setInsightMode}
+          setToast={setToast}
+        />
       )}
 
       {/* Student Detail Modal */}
-      {selectedStudent && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-            {/* Modal Header */}
-            <div className="flex items-start justify-between mb-6 pb-6 border-b border-slate-200">
-              <div className="flex items-center gap-4">
-                <div className={`w-20 h-20 rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-lg ${selectedStudent.atRisk
-                  ? 'bg-gradient-to-br from-red-500 to-pink-500'
-                  : 'bg-gradient-to-br from-blue-500 to-cyan-500'
-                  }`}>
-                  {selectedStudent.name.charAt(0)}
-                </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-1">
-                    <h2 className="text-2xl md:text-3xl font-bold text-slate-800">{selectedStudent.name}</h2>
-                    <button
-                      onClick={() => handleToggleRisk(selectedStudent.id)}
-                      className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest transition-all ${selectedStudent.atRisk
-                        ? 'bg-red-500 text-white shadow-lg shadow-red-200 animate-pulse'
-                        : 'bg-slate-100 text-slate-400 hover:bg-red-100 hover:text-red-500'
-                        }`}
-                    >
-                      {selectedStudent.atRisk ? 'Marked At Risk' : 'Mark At Risk'}
-                    </button>
-                  </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-600">
-                    <span>Roll: {selectedStudent.roll}</span>
-                    <span>•</span>
-                    <span>{selectedStudent.class}</span>
-                    <span>•</span>
-                    <span>ID: {selectedStudent.id}</span>
-                  </div>
-                </div>
-              </div>
-              <button
-                onClick={() => setSelectedStudent(null)}
-                className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl transition-colors"
-              >
-                <X size={24} />
-              </button>
-            </div>
-
-            {/* Profile Overview */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-              {/* Academic Stats */}
-              <div className="p-5 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl border border-blue-100">
-                <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                  <BarChart2 className="text-blue-500" size={20} />
-                  Academic Performance
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-600">Attendance Rate</span>
-                    <span className={`font-bold ${selectedStudent.attendance >= 90 ? 'text-green-600' : selectedStudent.attendance >= 75 ? 'text-orange-600' : 'text-red-600'}`}>
-                      {selectedStudent.attendance}%
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-600">Average Grade</span>
-                    <span className="font-bold text-slate-800">{selectedStudent.avgGrade}%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-600">Overall Grade</span>
-                    <span className="text-lg font-bold text-blue-600">{selectedStudent.overallGrade}</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-600">Performance Trend</span>
-                    <span className={`font-bold flex items-center gap-1 ${getTrendColor(selectedStudent.trend)}`}>
-                      {getTrendIcon(selectedStudent.trend)}
-                      {selectedStudent.trend === 'improving' ? '+' : ''}{selectedStudent.trendValue}%
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Behavioral Stats */}
-              <div className="p-5 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl border border-purple-100">
-                <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                  <Heart className="text-purple-500" size={20} />
-                  Behavioral Score
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-600">Behavior Score</span>
-                    <span className="font-bold text-slate-800">{selectedStudent.behaviorScore}/100</span>
-                  </div>
-                  <div className="w-full h-3 bg-white rounded-full overflow-hidden">
-                    <div
-                      className={`h-full rounded-full ${selectedStudent.behaviorScore >= 85 ? 'bg-green-500' : selectedStudent.behaviorScore >= 70 ? 'bg-orange-500' : 'bg-red-500'}`}
-                      style={{ width: `${selectedStudent.behaviorScore}%` }}
-                    ></div>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-600">Commendations</span>
-                    <span className="font-bold text-green-600">
-                      {selectedStudent.behaviorLog.filter(log => log.type === 'commendation').length}
-                    </span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-slate-600">Warnings</span>
-                    <span className="font-bold text-orange-600">
-                      {selectedStudent.behaviorLog.filter(log => log.type === 'warning').length}
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Feedback History */}
-            <div className="mb-6 p-5 bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl border border-slate-200">
-              <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                <MessageSquare className="text-slate-500" size={20} />
-                Feedback History
-              </h3>
-              <button
-                onClick={() => setShowFeedbackModal(true)}
-                className="absolute right-5 top-5 p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors"
-              >
-                <Plus size={16} />
-              </button>
-              <div className="space-y-3">
-                {selectedStudent.feedbackHistory.map((feedback, idx) => (
-                  <div key={idx} className="p-4 bg-white rounded-xl border border-slate-100">
-                    <div className="flex items-start justify-between mb-2">
-                      <div>
-                        <p className="font-bold text-slate-800 text-sm">{feedback.subject}</p>
-                        <p className="text-xs text-slate-500">{feedback.teacher} • {new Date(feedback.date).toLocaleDateString()}</p>
-                      </div>
-                      <span className={`px-2 py-1 rounded-lg text-xs font-bold ${feedback.type === 'positive' ? 'bg-green-100 text-green-700' :
-                        feedback.type === 'concern' ? 'bg-orange-100 text-orange-700' :
-                          'bg-slate-100 text-slate-700'
-                        }`}>
-                        {feedback.type}
-                      </span>
-                    </div>
-                    <p className="text-sm text-slate-700">{feedback.comment}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Behavior Log */}
-            <div className="mb-6 p-5 bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl border border-orange-100">
-              <h3 className="font-bold text-slate-800 mb-4 flex items-center gap-2">
-                <FileText className="text-orange-500" size={20} />
-                Behavior Log
-              </h3>
-              <button
-                onClick={() => setShowLogModal(true)}
-                className="absolute right-5 top-5 p-2 bg-orange-100 text-orange-600 rounded-lg hover:bg-orange-200 transition-colors"
-              >
-                <Plus size={16} />
-              </button>
-              <div className="space-y-3">
-                {selectedStudent.behaviorLog.map((log, idx) => (
-                  <div key={idx} className={`p-4 bg-white rounded-xl border ${log.encrypted ? 'border-purple-200' : 'border-slate-100'}`}>
-                    <div className="flex items-start justify-between mb-3">
-                      <div className="flex items-center gap-2">
-                        <span className={`px-3 py-1 rounded-lg text-xs font-bold border ${getBehaviorColor(log.type)} flex items-center gap-1`}>
-                          {getBehaviorIcon(log.type)}
-                          {log.type.toUpperCase()}
-                        </span>
-                        {log.encrypted && (
-                          <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-lg text-xs font-bold flex items-center gap-1 border border-purple-200">
-                            <Lock size={12} />
-                            Encrypted
-                          </span>
-                        )}
-                      </div>
-                      <span className="text-xs text-slate-500">{new Date(log.date).toLocaleDateString()}</span>
-                    </div>
-                    <p className={`text-sm mb-2 ${log.encrypted ? 'text-purple-800 font-medium' : 'text-slate-700'}`}>
-                      {log.note}
-                    </p>
-                    <p className="text-xs text-slate-500">— {log.submittedBy}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div className="grid grid-cols-2 gap-3">
-              <button
-                onClick={handleSendToCounselor}
-                disabled={isSending}
-                className="px-6 py-4 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-xl font-bold hover:from-red-600 hover:to-pink-600 shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-              >
-                {isSending ? <Activity className="animate-spin" size={18} /> : <Send size={18} />}
-                <div className="text-left">
-                  <div>{isSending ? 'Sending...' : 'Send to Counselor'}</div>
-                  <div className="text-[10px] opacity-80">Encrypted Referral</div>
-                </div>
-              </button>
-              <button
-                onClick={() => setShowLogModal(true)}
-                className="px-6 py-4 bg-white text-slate-700 border-2 border-slate-200 rounded-xl font-bold hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
-              >
-                <Edit size={18} />
-                <div className="text-left">
-                  <div>Add Note</div>
-                  <div className="text-[10px] text-slate-400">Behavioral Entry</div>
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <StudentDetailModal
+        selectedStudent={selectedStudent}
+        setSelectedStudent={setSelectedStudent}
+        handleToggleRisk={handleToggleRisk}
+        setShowFeedbackModal={setShowFeedbackModal}
+        setShowLogModal={setShowLogModal}
+        handleSendToCounselor={handleSendToCounselor}
+        isSending={isSending}
+      />
 
       {/* Add Feedback Modal */}
-      {showFeedbackModal && (
-        <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl animate-in zoom-in duration-300">
-            <div className="flex items-center justify-between mb-6 pb-6 border-b border-slate-200">
-              <h2 className="text-2xl font-bold text-slate-800">New Academic Feedback</h2>
-              <button onClick={() => setShowFeedbackModal(false)} className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl">
-                <X size={24} />
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">Message Subject</label>
-                <input
-                  type="text"
-                  placeholder="e.g., Physics Mid-term Progress"
-                  value={newFeedback.subject}
-                  onChange={(e) => setNewFeedback({ ...newFeedback, subject: e.target.value })}
-                  className="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-400 focus:outline-none"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">Feedback Type</label>
-                <div className="grid grid-cols-3 gap-2">
-                  {['positive', 'neutral', 'concern'].map(type => (
-                    <button
-                      key={type}
-                      onClick={() => setNewFeedback({ ...newFeedback, type })}
-                      className={`p-3 rounded-xl border-2 font-bold text-xs capitalize transition-all ${newFeedback.type === type ? 'border-blue-500 bg-blue-50 text-blue-600' : 'border-slate-100 text-slate-500 hover:border-slate-200'}`}
-                    >
-                      {type}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">Detailed Comments</label>
-                <textarea
-                  placeholder="Share your observations..."
-                  value={newFeedback.comment}
-                  onChange={(e) => setNewFeedback({ ...newFeedback, comment: e.target.value })}
-                  className="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-blue-400 focus:outline-none min-h-[120px]"
-                />
-              </div>
-
-              <div className="flex gap-3 pt-4 border-t border-slate-100">
-                <button
-                  onClick={() => setShowFeedbackModal(false)}
-                  className="flex-1 px-6 py-4 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-all"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleAddFeedback}
-                  disabled={!newFeedback.subject || !newFeedback.comment}
-                  className="flex-2 px-6 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all disabled:opacity-50"
-                >
-                  Save Feedback
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <FeedbackModal
+        show={showFeedbackModal}
+        onClose={() => setShowFeedbackModal(false)}
+        newFeedback={newFeedback}
+        setNewFeedback={setNewFeedback}
+        handleAddFeedback={handleAddFeedback}
+      />
 
       {/* Add Behavioral Log Modal */}
-      {showLogModal && (
-        <div className="fixed inset-0 bg-black/50 z-[60] flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-6 md:p-8 max-w-lg w-full shadow-2xl animate-in zoom-in duration-300">
-            <div className="flex items-center justify-between mb-6 pb-6 border-b border-slate-200">
-              <h2 className="text-2xl font-bold text-slate-800">New Behavioral Entry</h2>
-              <button onClick={() => setShowLogModal(false)} className="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-xl">
-                <X size={24} />
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">Log Category</label>
-                <div className="grid grid-cols-3 gap-2">
-                  {['commendation', 'warning', 'mentorship'].map(type => (
-                    <button
-                      key={type}
-                      onClick={() => setNewLog({ ...newLog, type })}
-                      className={`p-2 rounded-xl border-2 font-bold text-[10px] uppercase tracking-wider transition-all ${newLog.type === type ? 'border-orange-500 bg-orange-50 text-orange-600' : 'border-slate-100 text-slate-500 hover:border-slate-200'}`}
-                    >
-                      {type}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-bold text-slate-700">Observation Note</label>
-                <textarea
-                  placeholder="Document specific behaviors or incidents..."
-                  value={newLog.note}
-                  onChange={(e) => setNewLog({ ...newLog, note: e.target.value })}
-                  className="w-full p-3 border-2 border-slate-200 rounded-xl focus:border-orange-400 focus:outline-none min-h-[120px]"
-                />
-              </div>
-
-              <div className="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border border-slate-200">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
-                    <Lock size={18} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-xs text-slate-800 underline decoration-purple-200">End-to-End Encryption</h4>
-                    <p className="text-[10px] text-slate-500">Only authorized personnel can view</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setNewLog({ ...newLog, encrypted: !newLog.encrypted })}
-                  className={`w-10 h-5 rounded-full p-1 transition-colors ${newLog.encrypted ? 'bg-purple-500' : 'bg-slate-300'}`}
-                >
-                  <div className={`w-3 h-3 bg-white rounded-full transition-transform ${newLog.encrypted ? 'translate-x-5' : ''}`} />
-                </button>
-              </div>
-
-              <div className="flex gap-3 pt-4 border-t border-slate-100">
-                <button
-                  onClick={() => setShowLogModal(false)}
-                  className="flex-1 px-6 py-4 bg-slate-100 text-slate-600 rounded-xl font-bold hover:bg-slate-200 transition-all font-outfit"
-                >
-                  Discard
-                </button>
-                <button
-                  onClick={handleAddLog}
-                  disabled={!newLog.note}
-                  className="flex-2 px-6 py-4 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all disabled:opacity-50 font-outfit"
-                >
-                  Save Entry
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <BehaviorLogModal
+        show={showLogModal}
+        onClose={() => setShowLogModal(false)}
+        newLog={newLog}
+        setNewLog={setNewLog}
+        handleAddLog={handleAddLog}
+      />
 
       <SuccessToast
         isOpen={toast.isOpen}

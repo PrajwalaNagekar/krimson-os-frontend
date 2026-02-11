@@ -1,8 +1,9 @@
 import React from "react";
 import { DollarSign, AlertTriangle } from "lucide-react";
+import { ADMIN_DATA } from "../../../../data/adminData";
 
-const FinanceCard = ({ finance }) => {
-  if (!finance) return null;
+const FinanceCard = () => {
+  const { finance } = ADMIN_DATA.ADMIN_OVERVIEW_DATA;
 
   return (
     <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-100">

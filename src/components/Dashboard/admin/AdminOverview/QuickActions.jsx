@@ -45,6 +45,9 @@ const QuickActions = () => {
               <div className="text-left">
                 <p className="font-bold text-slate-700">{action.label}</p>
                 <p className="text-xs text-slate-500">{action.sub}</p>
+                <p className="text-[10px] text-slate-400 mt-0.5">
+                  (get in app)
+                </p>
               </div>
             </div>
             <div className="opacity-0 group-hover:opacity-100 transform translate-x-[-10px] group-hover:translate-x-0 transition-all">
