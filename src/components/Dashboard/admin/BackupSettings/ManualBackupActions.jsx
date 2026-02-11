@@ -59,6 +59,7 @@ const ManualBackupActions = ({ backupConfig, storageBreakdown }) => {
                     className="absolute inset-y-0 left-0 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full"
                     style={{ width: `${item.percentage}%` }}
                   >
+                    <div className="absolute inset-0 bg-white/30 animate-pulse"></div>
                   </div>
                 </div>
               </div>

@@ -88,13 +88,17 @@ const RestorePointsList = ({ restorePoints }) => {
                       Backup #{point.id}
                     </h4>
                     <span
-                      className={`px-2.5 py-1 rounded-lg text-xs font-bold border flex items-center gap-1 ${getStatusColor(point.status)}`}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-bold border flex items-center gap-1 ${getStatusColor(
+                        point.status,
+                      )}`}
                     >
                       {getTypeIcon(point.type)}
                       {point.type}
                     </span>
                     <span
-                      className={`px-2.5 py-1 rounded-lg text-xs font-bold border ${getStatusColor(point.status)}`}
+                      className={`px-2.5 py-1 rounded-lg text-xs font-bold border ${getStatusColor(
+                        point.status,
+                      )}`}
                     >
                       {point.status}
                     </span>
@@ -178,27 +182,18 @@ const RestorePointsList = ({ restorePoints }) => {
                             <Download size={14} />
                             Download Encrypted
                           </div>
-                          <span className="text-[9px] text-slate-400 font-normal">
-                            ()
-                          </span>
                         </button>
                         <button className="flex-1 py-2 bg-blue-50 text-blue-600 rounded-lg text-xs font-bold hover:bg-blue-100 transition-all border border-blue-200 flex flex-col items-center">
                           <div className="flex items-center gap-1">
                             <Upload size={14} />
                             Restore from Point
                           </div>
-                          <span className="text-[9px] text-slate-400 font-normal">
-                            ()
-                          </span>
                         </button>
                         <button className="flex-1 py-2 bg-slate-50 text-slate-600 rounded-lg text-xs font-bold hover:bg-slate-100 transition-all border border-slate-200 flex flex-col items-center">
                           <div className="flex items-center gap-1">
                             <Eye size={14} />
                             View Details
                           </div>
-                          <span className="text-[9px] text-slate-400 font-normal">
-                            ()
-                          </span>
                         </button>
                       </div>
                     </>

@@ -10,8 +10,8 @@ const AuditFilters = ({
   setSelectedDepartment,
   searchQuery,
   setSearchQuery,
-  users,
   departments,
+  users,
 }) => {
   return (
     <div className="bg-white rounded-3xl p-6 border border-slate-200 shadow-lg">

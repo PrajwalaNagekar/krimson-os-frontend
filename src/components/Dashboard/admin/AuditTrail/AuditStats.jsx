@@ -9,7 +9,7 @@ import {
   CheckCircle,
 } from "lucide-react";
 
-const AuditStats = ({ summary }) => {
+const AuditStats = ({ weeklySummary }) => {
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-4">
       <div className="bg-white rounded-2xl p-4 border border-slate-100 shadow-sm hover:shadow-md hover:scale-105 transition-all group">
@@ -19,7 +19,7 @@ const AuditStats = ({ summary }) => {
           </div>
         </div>
         <p className="text-xl font-bold text-slate-800">
-          {summary.totalEvents}
+          {weeklySummary.totalEvents}
         </p>
         <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">
           Total Events
@@ -33,7 +33,7 @@ const AuditStats = ({ summary }) => {
           </div>
         </div>
         <p className="text-xl font-bold text-slate-800">
-          {summary.createEvents}
+          {weeklySummary.createEvents}
         </p>
         <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">
           Created
@@ -46,7 +46,9 @@ const AuditStats = ({ summary }) => {
             <Edit size={16} />
           </div>
         </div>
-        <p className="text-xl font-bold text-slate-800">{summary.editEvents}</p>
+        <p className="text-xl font-bold text-slate-800">
+          {weeklySummary.editEvents}
+        </p>
         <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">
           Edited
         </p>
@@ -59,7 +61,7 @@ const AuditStats = ({ summary }) => {
           </div>
         </div>
         <p className="text-xl font-bold text-slate-800">
-          {summary.deleteEvents}
+          {weeklySummary.deleteEvents}
         </p>
         <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">
           Deleted
@@ -73,7 +75,7 @@ const AuditStats = ({ summary }) => {
           </div>
         </div>
         <p className="text-xl font-bold text-slate-800">
-          {summary.pdpaRelevant}
+          {weeklySummary.pdpaRelevant}
         </p>
         <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">
           PDPA Events
@@ -87,7 +89,7 @@ const AuditStats = ({ summary }) => {
           </div>
         </div>
         <p className="text-xl font-bold text-slate-800">
-          {summary.criticalEvents}
+          {weeklySummary.criticalEvents}
         </p>
         <p className="text-xs text-slate-500 font-medium uppercase tracking-wide">
           Critical

@@ -1,5 +1,5 @@
 import React from "react";
-import { Target } from "lucide-react";
+import { Target, ArrowUpRight } from "lucide-react";
 
 const AdmissionsFunnelChart = ({ data }) => {
   return (
@@ -32,10 +32,6 @@ const AdmissionsFunnelChart = ({ data }) => {
             </div>
           </div>
         ))}
-      </div>
-
-      <div className="mt-4 pt-4 border-t border-slate-100 text-xs text-slate-400">
-        Click on bars for detailed breakdown ()
       </div>
     </div>
   );
