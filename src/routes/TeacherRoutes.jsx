@@ -1,9 +1,9 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import TeacherLayout from "../layouts/TeacherLayout";
 import TeacherHomeDashboard from "../pages/dashboards/teacher/HomeDashboard";
 import ClassManagement from "../pages/dashboards/teacher/ClassManagement";
-import LessonPlanning from "../pages/dashboards/teacher/LessonPlanning/LessonPlanning";
+import LessonPlanning from "../pages/dashboards/teacher/LessonPlanning";
 import AttendanceLog from "../pages/dashboards/teacher/AttendanceLog";
 import AssignmentManager from "../pages/dashboards/teacher/AssignmentManager";
 import Gradebook from "../pages/dashboards/teacher/Gradebook";
@@ -17,7 +17,7 @@ import ReflectionJournal from "../pages/dashboards/teacher/ReflectionJournal";
 import AttendanceSummary from "../pages/dashboards/teacher/AttendanceSummary";
 import RosterAndGroups from "../pages/dashboards/teacher/RosterAndGroups";
 import AcademicSupport from "../pages/dashboards/teacher/AcademicSupport";
-import AssessmentToolsDashboard from "../pages/dashboards/teacher/AssessmentTools/AssessmentToolsDashboard";
+import AssessmentToolsDashboard from "../pages/dashboards/teacher/AssessmentToolsDashboard";
 import PTMManager from "../pages/dashboards/teacher/PTMManager";
 import BehaviourLog from "../pages/dashboards/teacher/BehaviourLog";
 import LabManager from "../pages/dashboards/teacher/LabManager";
@@ -26,9 +26,8 @@ import EducationalTrips from "../pages/dashboards/teacher/EducationalTrips";
 import CollaborationHub from "../pages/dashboards/teacher/CollaborationHub";
 import AcademicDecision from "../pages/dashboards/teacher/AcademicDecision";
 
-
 import Support from "../pages/dashboards/teacher/Support";
-import ProfilePage from '../pages/common/ProfilePage';
+import ProfilePage from "../pages/common/ProfilePage";
 
 const TeacherRoutes = () => {
   return (
@@ -60,7 +59,10 @@ const TeacherRoutes = () => {
         <Route path="roster-groups" element={<RosterAndGroups />} />
         <Route path="academic-support" element={<AcademicSupport />} />
         <Route path="assessments" element={<AssessmentToolsDashboard />} />
-        <Route path="profile" element={<ProfilePage roleOverride="Teacher" />} />
+        <Route
+          path="profile"
+          element={<ProfilePage roleOverride="Teacher" />}
+        />
         <Route path="support" element={<Support />} />
 
         {/* Fallback */}
