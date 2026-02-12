@@ -26,7 +26,7 @@ const GroupsDepartments = ({
           <Plus size={16} />
           Create Department
         </button>
-        <button
+        {/* <button
           onClick={() =>
             setShowCreateForm(showCreateForm === "grade" ? null : "grade")
           }
@@ -38,7 +38,7 @@ const GroupsDepartments = ({
         >
           <Plus size={16} />
           Create Grade
-        </button>
+        </button> */}
         <button
           onClick={() =>
             setShowCreateForm(showCreateForm === "role" ? null : "role")
