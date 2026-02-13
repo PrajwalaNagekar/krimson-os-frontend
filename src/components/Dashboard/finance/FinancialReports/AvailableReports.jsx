@@ -78,7 +78,6 @@ const AvailableReports = ({ reports }) => {
                       <Download className="w-3 h-3" />
                       <span>Export PDF</span>
                     </div>
-                    <div className="text-[10px] opacity-70">get in app</div>
                   </button>
                   <button className="flex-1 px-4 py-2 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-blue-400 transition-all text-sm flex items-center justify-center gap-2">
                     <Eye className="w-3 h-3" />

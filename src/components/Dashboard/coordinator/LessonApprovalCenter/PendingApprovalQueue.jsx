@@ -83,7 +83,6 @@ const PendingApprovalQueue = ({ queue }) => {
                 <ThumbsUp className="w-4 h-4" />
                 <span>Approve</span>
               </div>
-              <div className="text-[10px] opacity-70">get in app</div>
             </button>
 
             <button className="flex-1 md:flex-none px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex flex-col items-center gap-1">
@@ -91,7 +90,6 @@ const PendingApprovalQueue = ({ queue }) => {
                 <MessageSquare className="w-4 h-4" />
                 <span>Request Revision</span>
               </div>
-              <div className="text-[10px] opacity-70">get in app</div>
             </button>
 
             <button className="flex-1 md:flex-none px-6 py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex flex-col items-center gap-1">
@@ -99,7 +97,6 @@ const PendingApprovalQueue = ({ queue }) => {
                 <XCircle className="w-4 h-4" />
                 <span>Reject</span>
               </div>
-              <div className="text-[10px] opacity-70">get in app</div>
             </button>
 
             <button className="px-6 py-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg hover:scale-105 transition-all flex flex-col items-center gap-1">
@@ -107,7 +104,6 @@ const PendingApprovalQueue = ({ queue }) => {
                 <Eye className="w-4 h-4" />
                 <span>View Details</span>
               </div>
-              <div className="text-[10px] opacity-70">get in app</div>
             </button>
           </div>
 

@@ -308,6 +308,16 @@ export const PARENT_DATA = {
       { day: null, status: null },
       { day: null, status: null },
     ],
+    aiInsights: {
+      patternAnalysis: {
+        improvement: "4.5%",
+        trend: "Consistent Thursdays observed.",
+      },
+      prediction: {
+        projected: "96%",
+        message: "Keep it up!",
+      },
+    },
   },
   coCurricular: {
     activities: [
@@ -1229,4 +1239,390 @@ export const PARENT_DATA = {
       ],
     },
   },
+};
+
+export const behaviorStats = [
+  {
+    titulo: "Behavior Points",
+    valor: "85/100",
+    desc: "Top 10% of class",
+    icon: "Award",
+    color: "text-blue-500",
+    bg: "bg-blue-50",
+  },
+  {
+    titulo: "Attendance",
+    valor: "96%",
+    desc: "Better than last month",
+    icon: "UserCheck",
+    color: "text-green-500",
+    bg: "bg-green-50",
+  },
+  {
+    titulo: "Participation",
+    valor: "High",
+    desc: "Active in 90% of classes",
+    icon: "Hand",
+    color: "text-purple-500",
+    bg: "bg-purple-50",
+  },
+  {
+    titulo: "Homework",
+    valor: "92%",
+    desc: "Submitted on time",
+    icon: "BookOpen",
+    color: "text-orange-500",
+    bg: "bg-orange-50",
+  },
+];
+
+export const monthlyBehaviorData = [
+  { name: "Sep", positive: 45, negative: 5, participation: 85 },
+  { name: "Oct", positive: 50, negative: 2, participation: 88 },
+  { name: "Nov", positive: 48, negative: 4, participation: 82 },
+  { name: "Dec", positive: 55, negative: 1, participation: 92 },
+  { name: "Jan", positive: 52, negative: 3, participation: 90 },
+];
+
+export const teacherFeedback = [
+  {
+    id: 1,
+    teacher: "Mrs. Tan",
+    subject: "Mathematics",
+    date: "2026-02-05",
+    feedback: "Aravind has shown great improvement in problem-solving skills.",
+    category: "Academic Performance",
+    type: "positive",
+    tags: ["Improvement", "Problem Solving", "Math"],
+  },
+  {
+    id: 2,
+    teacher: "Mr. Lee",
+    subject: "Science",
+    date: "2026-02-03",
+    feedback: "Needs to focus more during lab sessions.",
+    category: "Behavior",
+    type: "constructive",
+    tags: ["Focus", "Lab Work", "Science"],
+  },
+  {
+    id: 3,
+    teacher: "Ms. Sarah",
+    subject: "English",
+    date: "2026-01-28",
+    feedback: "Excellent essay on environmental conservation.",
+    category: "Academic Excellence",
+    type: "positive",
+    tags: ["Writing", "Creativity", "English"],
+  },
+];
+
+export const peerCollaboration = [
+  {
+    id: 1,
+    activity: "Science Fair Project",
+    role: "Team Leader",
+    rating: "Excellent",
+    teamSize: 4,
+    date: "2026-02-01",
+    insights: "Led the team effectively and ensured equal participation.",
+    skills: ["Leadership", "Teamwork", "Public Speaking"],
+  },
+  {
+    id: 2,
+    activity: "History Presentation",
+    role: "Researcher",
+    rating: "Very Good",
+    teamSize: 3,
+    date: "2026-01-20",
+    insights: "Provided thorough research but could improve slide design.",
+    skills: ["Research", "Analysis", "Presentation"],
+  },
+];
+
+export const flaggedPatterns = [
+  {
+    id: 1,
+    type: "Attendance",
+    pattern: "Late arrival on Mondays",
+    severity: "low",
+    date: "2026-01-29",
+  },
+  {
+    id: 2,
+    type: "Behavior",
+    pattern: "Distracted during afternoon classes",
+    severity: "medium",
+    date: "2026-02-02",
+  },
+];
+
+export const classAverages = {
+  "Grade 5-A": 75,
+  "Grade 3-B": 80,
+};
+
+export const communicationData = {
+  messages: [
+    {
+      id: 1,
+      sender: "Mrs. Sarah Tan",
+      role: "Class Teacher (5-A)",
+      time: "10:45 AM",
+      date: "Today",
+      preview: "Regarding the upcoming field trip to the Science Museum...",
+      read: true,
+      readReceipt: { time: "11:10 AM", date: "Today" },
+      urgent: false,
+      followUp: false,
+      tags: ["Field Trip", "Permission"],
+      history: [
+        {
+          sender: "Mrs. Sarah Tan",
+          text: "Hello, I wanted to remind you about the permission slip for the Science Museum trip next Tuesday.",
+          time: "10:45 AM",
+          isMe: false,
+          read: true,
+        },
+        {
+          sender: "You",
+          text: "Hi, yes I will send it with Aravind tomorrow. Thanks for the reminder.",
+          time: "11:00 AM",
+          isMe: true,
+          read: true,
+        },
+        {
+          sender: "Mrs. Sarah Tan",
+          text: "Perfect. Also, please pack a lunch for him.",
+          time: "11:05 AM",
+          isMe: false,
+          read: true,
+        },
+      ],
+    },
+    {
+      id: 2,
+      sender: "Mr. David Lee",
+      role: "Math Teacher",
+      time: "2:30 PM",
+      date: "Yesterday",
+      preview: "Aravind needs to improve his algebra scores.",
+      read: true,
+      readReceipt: { time: "3:15 PM", date: "Yesterday" },
+      urgent: true,
+      followUp: true,
+      tags: ["Academic", "Follow-up Required"],
+      history: [
+        {
+          sender: "Mr. David Lee",
+          text: "Aravind scored 60% in the last Algebra test. I suggest some extra practice.",
+          time: "2:30 PM",
+          isMe: false,
+          read: true,
+        },
+        {
+          sender: "You",
+          text: "Thank you for letting me know. What specific topics should we focus on?",
+          time: "3:15 PM",
+          isMe: true,
+          read: true,
+        },
+      ],
+    },
+    {
+      id: 3,
+      sender: "Ms. Jennifer Wong",
+      role: "English Teacher",
+      time: "9:15 AM",
+      date: "Today",
+      preview: "Great improvement in reading comprehension!",
+      read: false,
+      urgent: false,
+      followUp: false,
+      tags: ["Positive Feedback"],
+      history: [
+        {
+          sender: "Ms. Jennifer Wong",
+          text: "Great improvement in reading comprehension!",
+          time: "9:15 AM",
+          isMe: false,
+          read: false,
+        },
+      ],
+    },
+  ],
+  announcements: [
+    {
+      id: 1,
+      sender: "School Administration",
+      title: "Annual Sports Day Postponed",
+      time: "2 hours ago",
+      date: "Today",
+      content:
+        "Due to predicted heavy rainfall, the Annual Sports Day scheduled for tomorrow has been postponed to next Friday, January 27th. All participants will be notified via class teachers.",
+      read: false,
+      urgent: true,
+      tags: ["Event Update"],
+    },
+    {
+      id: 2,
+      sender: "Principal Office",
+      title: "Parent-Teacher Meeting Schedule",
+      time: "1 day ago",
+      date: "Yesterday",
+      content:
+        "The PTM for Term 1 will be held on Saturday, 15th Jan. Slots are available for booking through the parent portal. Please book your slots by Wednesday.",
+      read: true,
+      tags: ["PTM", "Important"],
+    },
+    {
+      id: 3,
+      sender: "Health & Safety Committee",
+      title: "COVID-19 Protocols Update",
+      time: "3 days ago",
+      date: "Jan 16",
+      content:
+        "Updated protocols: Masks are now optional for outdoor activities. Hand sanitization stations remain active.",
+      read: true,
+      tags: ["Health"],
+    },
+  ],
+  broadcasts: [
+    {
+      id: 1,
+      sender: "Admin (System)",
+      title: "School Bus Route 4 Delay",
+      time: "08:00 AM",
+      date: "Today",
+      content:
+        "Bus Route 4 is delayed by 15 minutes due to traffic congestion on PIE. Expected arrival: 8:15 AM.",
+      urgent: true,
+      read: true,
+      tags: ["Transport"],
+    },
+    {
+      id: 2,
+      sender: "Class 5-A Coordinator",
+      title: "Tomorrow's Class Photo Session",
+      time: "Yesterday",
+      date: "Jan 18",
+      content:
+        "Class 5-A photo session is scheduled for 10 AM tomorrow. Please ensure students wear full uniform.",
+      urgent: false,
+      read: true,
+      tags: ["Class Activity"],
+    },
+  ],
+  counselorMsgs: [
+    {
+      id: 1,
+      sender: "Ms. Emily White",
+      role: "School Counselor",
+      time: "10:00 AM",
+      date: "3 days ago",
+      preview: "Follow up on Aravind's focus in class.",
+      read: true,
+      readReceipt: { time: "10:30 AM", date: "3 days ago" },
+      confidential: true,
+      followUp: false,
+      tags: ["Confidential", "Student Wellbeing"],
+      history: [
+        {
+          sender: "Ms. Emily White",
+          text: "Hi, I noticed Aravind was a bit distracted lately. Is everything okay at home?",
+          time: "10:00 AM",
+          isMe: false,
+          read: true,
+        },
+        {
+          sender: "You",
+          text: "Thank you for reaching out. He's been adjusting to a new routine. We'll monitor closely.",
+          time: "10:30 AM",
+          isMe: true,
+          read: true,
+        },
+      ],
+    },
+  ],
+};
+
+export const examPerformanceData = {
+  examSchedule: [
+    { 
+      id: 1, 
+      subject: "Mathematics", 
+      topic: "Algebra & Calculus",
+      date: "2026-01-28",
+      time: "09:00 AM",
+      duration: "2 hours",
+      room: "Room 301",
+      status: "upcoming"
+    },
+    { 
+      id: 2, 
+      subject: "Science", 
+      topic: "Physics - Mechanics",
+      date: "2026-01-30",
+      time: "10:30 AM",
+      duration: "1.5 hours",
+      room: "Lab 2",
+      status: "upcoming"
+    },
+    { 
+      id: 3, 
+      subject: "English", 
+      topic: "Literature Analysis",
+      date: "2026-02-02",
+      time: "02:00 PM",
+      duration: "2 hours",
+      room: "Room 205",
+      status: "upcoming"
+    }
+  ],
+  performance: {
+    current: [
+      { subject: 'Mathematics', score: 92, maxScore: 100, color: 'from-blue-400 to-cyan-400' },
+      { subject: 'Science', score: 88, maxScore: 100, color: 'from-green-400 to-emerald-400' },
+      { subject: 'English', score: 95, maxScore: 100, color: 'from-purple-400 to-pink-400' },
+      { subject: 'History', score: 78, maxScore: 100, color: 'from-orange-400 to-amber-400' },
+      { subject: 'Computer Science', score: 90, maxScore: 100, color: 'from-cyan-400 to-blue-400' },
+    ],
+    previous: [
+      { subject: 'Mathematics', score: 85, maxScore: 100, color: 'from-blue-400 to-cyan-400' },
+      { subject: 'Science', score: 82, maxScore: 100, color: 'from-green-400 to-emerald-400' },
+      { subject: 'English', score: 90, maxScore: 100, color: 'from-purple-400 to-pink-400' },
+      { subject: 'History', score: 75, maxScore: 100, color: 'from-orange-400 to-amber-400' },
+      { subject: 'Computer Science', score: 88, maxScore: 100, color: 'from-cyan-400 to-blue-400' },
+    ]
+  },
+  teacherComments: [
+    {
+      subject: "Mathematics",
+      teacher: "Ms. Sarah Johnson",
+      comment: "Excellent progress! Strong understanding of algebraic concepts. Keep practicing calculus derivatives.",
+      date: "2026-01-15",
+      sentiment: "positive"
+    },
+    {
+      subject: "Science",
+      teacher: "Dr. Michael Chen",
+      comment: "Good work on theory. However, lab report writing needs improvement. Focus on detailed observations.",
+      date: "2026-01-14",
+      sentiment: "neutral"
+    },
+    {
+      subject: "English",
+      teacher: "Mrs. Emily Roberts",
+      comment: "Outstanding creative writing! Excellent vocabulary and storytelling techniques. Keep it up!",
+      date: "2026-01-16",
+      sentiment: "positive"
+    },
+    {
+      subject: "History",
+      teacher: "Mr. Robert Taylor",
+      comment: "Needs to work on remembering dates and historical events. Consider creating timeline charts for better retention.",
+      date: "2026-01-13",
+      sentiment: "improvement"
+    }
+  ]
 };

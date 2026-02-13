@@ -161,7 +161,7 @@ const Sidebar = ({ isOpen, onClose, isWideScreen }) => {
               <LayoutDashboard size={24} className="text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-lg tracking-wide">Krimson SSO</h1>
+              <h1 className="font-bold text-lg tracking-wide">Krimson OS</h1>
               <p className="text-xs text-white/80">Singapore</p>
             </div>
           </NavLink>

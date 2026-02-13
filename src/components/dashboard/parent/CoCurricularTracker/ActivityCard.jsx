@@ -145,9 +145,6 @@ const ActivityCard = ({
                         <span className="text-[8px] font-bold text-slate-600">
                           View
                         </span>
-                        <span className="text-[7px] text-slate-400 block">
-                          get in app
-                        </span>
                       </div>
                     </div>
                   </button>
@@ -175,7 +172,6 @@ const ActivityCard = ({
                 <Download size={16} />
                 <div className="flex flex-col items-start">
                   <span className="text-xs font-bold">Download</span>
-                  <span className="text-[8px] opacity-80">get in app</span>
                 </div>
               </button>
             )}

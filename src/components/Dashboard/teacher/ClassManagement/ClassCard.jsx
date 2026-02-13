@@ -81,14 +81,12 @@ const ClassCard = ({ cls, setShowTimetable }) => {
             <PlusCircle size={14} />
             <span>Add Lesson</span>
           </div>
-          <span className="text-[10px] opacity-80">get in app</span>
         </button>
         <button className="flex-1 px-4 py-3 bg-white text-slate-700 border-2 border-slate-200 text-xs font-bold rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all active:scale-95 flex flex-col items-center">
           <div className="flex items-center gap-1 mb-1">
             <BarChart2 size={14} />
             <span>View Reports</span>
           </div>
-          <span className="text-[10px] text-slate-400">get in app</span>
         </button>
       </div>
 

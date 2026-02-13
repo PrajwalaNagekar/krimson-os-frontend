@@ -12,8 +12,11 @@ import ClassConfigFilters from "../../../components/dashboard/admin/ClassConfig/
 import GradeList from "../../../components/dashboard/admin/ClassConfig/GradeList";
 import SectionTable from "../../../components/dashboard/admin/ClassConfig/SectionTable";
 import StudentAllocationModal from "../../../components/dashboard/admin/ClassConfig/StudentAllocationModal";
+import AddGradeForm from "../../../components/dashboard/admin/ClassConfig/AddGradeForm";
+import AddSectionForm from "../../../components/dashboard/admin/ClassConfig/AddSectionForm";
 
 const ClassConfig = () => {
+  const [viewMode, setViewMode] = useState("list"); // 'list', 'addGrade', 'addSection'
   const [selectedGrade, setSelectedGrade] = useState(ADMIN_DATA.grades[0]);
   const [selectedSection, setSelectedSection] = useState(null);
   const [showStudentModal, setShowStudentModal] = useState(false);
@@ -90,6 +93,17 @@ const ClassConfig = () => {
     return true;
   });
 
+  // Render Add Grade Form
+  if (viewMode === "addGrade") {
+    return <AddGradeForm onBack={() => setViewMode("list")} />;
+  }
+
+  // Render Add Section Form
+  if (viewMode === "addSection") {
+    return <AddSectionForm onBack={() => setViewMode("list")} />;
+  }
+
+  // Render Main List View
   return (
     <div className="space-y-8 animate-fadeIn pb-10">
       <ClassConfigHeader activeYear={activeAcademicYear} />
@@ -103,6 +117,8 @@ const ClassConfig = () => {
       <ClassConfigActions
         onToggleFilters={() => setShowFilters(!showFilters)}
         showFilters={showFilters}
+        onAddGrade={() => setViewMode("addGrade")}
+        onAddSection={() => setViewMode("addSection")}
       />
       <ClassConfigFilters
         filters={filters}

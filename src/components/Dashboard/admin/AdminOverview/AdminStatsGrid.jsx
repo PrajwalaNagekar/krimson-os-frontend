@@ -71,7 +71,6 @@ const AdminStatsGrid = () => {
             </h3>
             <p className="text-sm font-semibold text-slate-500">{stat.label}</p>
             <p className="text-xs text-slate-400 mt-1">{stat.sub}</p>
-            <p className="text-[10px] text-slate-400 mt-2">(get in app)</p>
           </div>
         </div>
       ))}
