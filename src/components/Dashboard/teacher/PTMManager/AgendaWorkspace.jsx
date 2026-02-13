@@ -37,40 +37,40 @@ const AgendaWorkspace = ({ selectedSlot, onGenerateAI }) => {
 
       <div className="relative z-10 flex-1 flex flex-col">
         {/* Cinematic Header Bar */}
-        <div className="flex items-center justify-between bg-white/60 backdrop-blur-3xl p-8 rounded-[3rem] border border-white/80 shadow-sm mb-8 ring-1 ring-indigo-500/5">
-          <div className="flex items-center gap-6">
-            <div className="w-20 h-20 bg-gradient-to-br from-indigo-600 to-violet-700 rounded-3xl shadow-xl flex items-center justify-center text-white relative group">
+        <div className="flex flex-col xl:flex-row items-start xl:items-center justify-between bg-white/40 backdrop-blur-3xl p-6 md:p-8 rounded-[3rem] border border-white/80 shadow-[0_8px_32px_-8px_rgba(79,70,229,0.05)] mb-10 ring-1 ring-indigo-500/5">
+          <div className="flex items-center gap-6 mb-6 xl:mb-0">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-indigo-600 to-violet-700 rounded-3xl shadow-xl flex items-center justify-center text-white relative group">
               <Users
                 size={32}
                 className="group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-emerald-500 rounded-full border-4 border-white"></div>
+              <div className="absolute -top-1 -right-1 w-5 h-5 bg-emerald-500 rounded-full border-4 border-white"></div>
             </div>
             <div>
-              <div className="flex items-center gap-4">
-                <h3 className="text-4xl font-bold text-indigo-950 tracking-tight">
+              <div className="flex flex-wrap items-center gap-4">
+                <h3 className="text-3xl md:text-4xl font-black text-indigo-950 tracking-tight leading-none">
                   {selectedSlot.student}
                 </h3>
                 <div className="flex gap-2">
-                  <span className="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-lg text-[10px] font-bold uppercase tracking-widest">
+                  <span className="px-3 py-1 bg-indigo-50 text-indigo-600 rounded-lg text-[9px] font-bold uppercase tracking-widest border border-indigo-100/50">
                     Active Draft
                   </span>
-                  <span className="px-3 py-1 bg-violet-100 text-violet-600 rounded-lg text-[10px] font-bold uppercase tracking-widest">
+                  <span className="px-3 py-1 bg-violet-50 text-violet-600 rounded-lg text-[9px] font-bold uppercase tracking-widest border border-violet-100/50">
                     {selectedSlot.mode}
                   </span>
                 </div>
               </div>
-              <p className="text-sm font-medium text-slate-400 mt-2 flex items-center gap-3">
+              <p className="text-xs md:text-sm font-bold text-slate-400 mt-3 flex items-center gap-4">
                 <span>
                   Parent:{" "}
-                  <span className="text-indigo-600 font-bold">
+                  <span className="text-indigo-600 font-black">
                     {selectedSlot.parent}
                   </span>
                 </span>
-                <span className="w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
+                <span className="w-1 h-1 bg-slate-300 rounded-full"></span>
                 <span>
                   Time:{" "}
-                  <span className="text-indigo-600 font-bold">
+                  <span className="text-indigo-600 font-black">
                     {selectedSlot.time}
                   </span>
                 </span>
@@ -85,42 +85,41 @@ const AgendaWorkspace = ({ selectedSlot, onGenerateAI }) => {
                 onGenerateAI();
               }, 2000);
             }}
-            className="px-8 py-5 bg-indigo-600 text-white rounded-[1.5rem] font-bold text-xs uppercase tracking-widest shadow-[0_20px_40px_-8px_rgba(79,70,229,0.4)] flex items-center gap-4 hover:bg-indigo-700 hover:scale-105 active:scale-95 transition-all group overflow-hidden"
+            className="w-full xl:w-auto px-10 py-5 bg-indigo-600 text-white rounded-[1.5rem] font-bold text-xs uppercase tracking-widest shadow-[0_20px_40px_-5px_rgba(79,70,229,0.3)] flex items-center justify-center gap-4 hover:bg-indigo-700 hover:-translate-y-1 active:translate-y-0 transition-all group overflow-hidden relative"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             <Sparkles
-              size={20}
-              className={`relative z-10 ${
-                aiDrafting
+              size={18}
+              className={`relative z-10 ${aiDrafting
                   ? "animate-spin"
-                  : "group-hover:rotate-12 transition-transform"
-              }`}
+                  : "group-hover:rotate-12 transition-transform duration-500"
+                }`}
             />
             <span className="relative z-10">
-              {aiDrafting ? "Synthesizing Data..." : "Generate AI Insights"}
+              {aiDrafting ? "Synthesizing Framework..." : "Generate AI Insights"}
             </span>
           </button>
         </div>
 
         {/* Redesigned Workspace Fields */}
-        <div className="flex-1 space-y-8 overflow-y-auto px-8 py-4 custom-scrollbar">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex-1 space-y-10 overflow-y-auto px-6 md:px-10 py-6 custom-scrollbar">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             <div className="relative group">
-              <div className="absolute inset-0 bg-indigo-500/5 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-indigo-50 shadow-sm space-y-4 hover:border-indigo-300 transition-all duration-500">
+              <div className="relative p-8 bg-white/60 backdrop-blur-md rounded-[2.5rem] border border-white shadow-[0_4px_24px_-8px_rgba(79,70,229,0.05)] space-y-5 hover:border-indigo-200 transition-all duration-500">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
-                    <Target size={24} />
+                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center shadow-sm">
+                    <Target size={22} />
                   </div>
                   <div>
-                    <label className="text-xs font-bold text-indigo-400 uppercase tracking-widest">
+                    <label className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.2em]">
                       Primary Objective
                     </label>
-                    <p className="text-[10px] font-medium text-slate-400">
-                      Define the core meeting goal
+                    <p className="text-[10px] font-bold text-slate-400 mt-0.5">
+                      Target Meeting Goal
                     </p>
                   </div>
                 </div>
-                <select className="w-full p-5 bg-white border border-indigo-100 rounded-2xl text-base font-bold text-indigo-900 outline-none focus:ring-4 ring-indigo-500/10 appearance-none transition-all cursor-pointer shadow-sm">
+                <select className="w-full p-5 bg-white border border-indigo-50 rounded-2xl text-base font-black text-indigo-900 outline-none focus:ring-4 ring-indigo-500/10 appearance-none transition-all cursor-pointer shadow-sm">
                   <option>Performance Optimization</option>
                   <option>Behavioral Strategy</option>
                   <option>Academic Transition</option>
@@ -130,91 +129,89 @@ const AgendaWorkspace = ({ selectedSlot, onGenerateAI }) => {
             </div>
 
             <div className="relative group">
-              <div className="absolute inset-0 bg-violet-500/5 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="relative p-8 bg-white/40 backdrop-blur-md rounded-[2rem] border border-violet-50 shadow-sm space-y-4 hover:border-violet-300 transition-all duration-500">
+              <div className="relative p-8 bg-white/60 backdrop-blur-md rounded-[2.5rem] border border-white shadow-[0_4px_24px_-8px_rgba(79,70,229,0.05)] space-y-5 hover:border-violet-200 transition-all duration-500">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center">
-                    <FileText size={24} />
+                  <div className="w-12 h-12 rounded-2xl bg-violet-50 text-violet-600 flex items-center justify-center shadow-sm">
+                    <FileText size={22} />
                   </div>
                   <div>
-                    <label className="text-xs font-bold text-violet-400 uppercase tracking-widest">
+                    <label className="text-[10px] font-black text-violet-400 uppercase tracking-[0.2em]">
                       Evidence Library
                     </label>
-                    <p className="text-[10px] font-medium text-slate-400">
-                      Link relevant student data
+                    <p className="text-[10px] font-bold text-slate-400 mt-0.5">
+                      Linked Student Data
                     </p>
                   </div>
                 </div>
-                <div className="w-full p-5 bg-white border-2 border-dashed border-indigo-100 rounded-2xl flex items-center justify-center gap-4 text-indigo-400 font-bold text-sm cursor-pointer hover:border-indigo-400 hover:bg-slate-50 transition-all shadow-sm">
-                  <div className="w-8 h-8 rounded-xl bg-indigo-50 flex items-center justify-center">
-                    <Plus size={18} />
-                  </div>
-                  Attach Evidence Cards
+                <div className="w-full p-5 bg-white border-2 border-dashed border-indigo-100 rounded-2xl flex items-center justify-center gap-4 text-indigo-400 font-black text-xs uppercase tracking-widest cursor-pointer hover:border-indigo-400 hover:bg-indigo-50/30 transition-all shadow-sm">
+                  <Plus size={16} />
+                  Link Evidence Cards
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="space-y-10 pb-12">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between px-4">
+          <div className="space-y-12 pb-16">
+            <div className="space-y-5">
+              <div className="flex items-center justify-between px-2">
                 <div>
-                  <label className="text-sm font-bold text-indigo-950 uppercase tracking-widest">
+                  <label className="text-xs font-black text-indigo-950 uppercase tracking-[0.15em]">
                     Critical Discussion Tracks
                   </label>
-                  <p className="text-[11px] font-medium text-slate-400 mt-1">
-                    High-impact points to cover during the session
+                  <p className="text-[11px] font-bold text-slate-400 mt-1">
+                    Pedagogical observations and talk tracks
                   </p>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 rounded-full text-indigo-600 text-[10px] font-bold uppercase tracking-wider cursor-pointer hover:bg-indigo-100 transition-all">
+                <div className="flex items-center gap-2 px-4 py-2 bg-indigo-50 text-indigo-600 text-[10px] font-black uppercase tracking-widest rounded-full cursor-pointer hover:bg-indigo-600 hover:text-white transition-all shadow-sm">
                   <Sparkles size={14} />
-                  Refine with AI2
+                  Optimize
                 </div>
               </div>
               <textarea
                 placeholder="Synthesize observations into key talk tracks..."
-                className="w-full p-8 bg-white/40 backdrop-blur-md border border-indigo-50 rounded-[2.5rem] text-base font-medium text-indigo-950 outline-none focus:bg-white focus:ring-8 ring-indigo-500/5 min-h-[180px] resize-none transition-all placeholder:text-slate-300 shadow-[inset_0_2px_10px_rgba(79,70,229,0.02)]"
+                className="w-full p-8 bg-white/40 backdrop-blur-md border-2 border-transparent rounded-[3rem] text-base font-medium text-indigo-950 outline-none focus:bg-white focus:border-indigo-100 focus:ring-8 ring-indigo-500/5 min-h-[220px] resize-none transition-all placeholder:text-slate-300 shadow-[inset_0_2px_20px_rgba(79,70,229,0.03)]"
               />
             </div>
 
-            <div className="space-y-4">
-              <div className="px-4">
-                <label className="text-sm font-bold text-indigo-950 uppercase tracking-widest">
+            <div className="space-y-5">
+              <div className="px-2">
+                <label className="text-xs font-black text-indigo-950 uppercase tracking-[0.15em]">
                   Actionable Commitments
                 </label>
-                <p className="text-[11px] font-medium text-slate-400 mt-1">
-                  Define clear ownership for follow-up execution
+                <p className="text-[11px] font-bold text-slate-400 mt-1">
+                  Post-session accountability roadmap
                 </p>
               </div>
               <textarea
                 placeholder="Outline parent & teacher commitments..."
-                className="w-full p-8 bg-white/40 backdrop-blur-md border border-indigo-50 rounded-[2.5rem] text-base font-medium text-indigo-950 outline-none focus:bg-white focus:ring-8 ring-indigo-500/5 min-h-[140px] resize-none transition-all placeholder:text-slate-300 shadow-[inset_0_2px_10px_rgba(79,70,229,0.02)]"
+                className="w-full p-8 bg-white/40 backdrop-blur-md border-2 border-transparent rounded-[3rem] text-base font-medium text-indigo-950 outline-none focus:bg-white focus:border-indigo-100 focus:ring-8 ring-indigo-500/5 min-h-[160px] resize-none transition-all placeholder:text-slate-300 shadow-[inset_0_2px_20px_rgba(79,70,229,0.03)]"
               />
             </div>
           </div>
         </div>
 
         {/* High-Fidelity Workspace Footer */}
-        <div className="relative z-10 px-8 py-6 bg-white/40 backdrop-blur-3xl border-t border-indigo-50 flex items-center justify-between rounded-b-[3.5rem]">
-          <div className="flex items-center gap-4 py-2 px-5 bg-indigo-50/50 rounded-2xl">
+        <div className="relative z-10 px-8 py-6 bg-white/60 backdrop-blur-3xl border-t border-indigo-50/50 flex flex-col sm:flex-row items-center justify-between gap-6 rounded-b-[3.5rem]">
+          <div className="flex items-center gap-5 py-3 px-6 bg-indigo-50/50 rounded-2xl border border-indigo-100/50">
             <div className="relative flex items-center justify-center">
-              <div className="absolute w-full h-full bg-indigo-400/20 rounded-full animate-ping"></div>
-              <Clock size={16} className="text-indigo-400" />
+              <div className="absolute w-6 h-6 bg-indigo-400/20 rounded-full animate-ping"></div>
+              <Clock size={16} className="text-indigo-400 relative z-10" />
             </div>
-            <span className="text-[10px] font-bold text-indigo-900 uppercase tracking-widest">
-              Vault protection active • Auto-saving...
+            <span className="text-[10px] font-black text-indigo-900 uppercase tracking-[0.1em]">
+              Vaulted • Local Auto-save active
             </span>
           </div>
-          <div className="flex gap-4">
-            <button className="px-8 py-4 bg-white border border-indigo-100 text-indigo-400 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-slate-50 transition-all shadow-sm">
+          <div className="flex gap-4 w-full sm:w-auto">
+            <button className="flex-1 sm:flex-none px-10 py-4 bg-white border border-indigo-100 text-indigo-400 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-slate-50 transition-all shadow-sm">
               Reset
             </button>
-            <button className="px-10 py-4 bg-gradient-to-r from-indigo-600 to-violet-700 text-white rounded-[1.25rem] font-bold text-xs uppercase tracking-widest shadow-[0_15px_30px_-5px_rgba(79,70,229,0.3)] hover:shadow-[0_20px_40px_-5px_rgba(79,70,229,0.4)] hover:-translate-y-1 active:translate-y-0 transition-all flex items-center gap-3">
+            <button className="flex-1 sm:flex-none px-12 py-4 bg-gradient-to-r from-indigo-600 to-violet-700 text-white rounded-[1.5rem] font-bold text-xs uppercase tracking-widest shadow-[0_15px_30px_-5px_rgba(79,70,229,0.3)] hover:shadow-[0_20px_40px_-5px_rgba(79,70,229,0.4)] hover:-translate-y-1 active:translate-y-0 transition-all flex items-center justify-center gap-3">
               <Save size={18} />
-              Finalize Framework
+              Finalize Sync
             </button>
           </div>
         </div>
+
       </div>
     </div>
   );

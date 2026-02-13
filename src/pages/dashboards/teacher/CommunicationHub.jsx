@@ -39,7 +39,7 @@ const CommunicationHub = () => {
       from: "You",
       studentName:
         composeData.recipientType === "student" ||
-        composeData.recipientType === "parent"
+          composeData.recipientType === "parent"
           ? composeData.recipientName
           : null,
       classRoom:
@@ -106,11 +106,11 @@ const CommunicationHub = () => {
       prev.map((msg) =>
         msg.id === id
           ? {
-              ...msg,
-              replied: true,
-              read: true,
-              chatHistory: [...(msg.chatHistory || []), newReply],
-            }
+            ...msg,
+            replied: true,
+            read: true,
+            chatHistory: [...(msg.chatHistory || []), newReply],
+          }
           : msg,
       ),
     );

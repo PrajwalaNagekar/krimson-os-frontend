@@ -4,24 +4,25 @@ import { AlertCircle, MessageSquare, TrendingUp } from "lucide-react";
 const SentinelStats = ({ onNudge }) => {
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-[3rem] p-10 shadow-[0_32px_128px_-16px_rgba(79,70,229,0.1)] border border-indigo-50 relative overflow-hidden">
+      <div className="bg-white/70 backdrop-blur-3xl rounded-[3.5rem] p-10 shadow-[0_32px_128px_-16px_rgba(79,70,229,0.08)] border border-white/50 ring-1 ring-indigo-500/5 relative overflow-hidden">
         {/* Subtle background decorations */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-50 rounded-full blur-[40px] -mr-10 -mt-10"></div>
-        <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-50 rounded-full blur-[30px] -ml-8 -mb-8"></div>
+        <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-[40px] -mr-10 -mt-10"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-violet-500/10 rounded-full blur-[30px] -ml-8 -mb-8"></div>
 
-        <div className="flex items-center gap-3 mb-8 relative z-10">
-          <div className="p-3 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-2xl shadow-lg">
-            <AlertCircle size={20} className="text-white" />
+        <div className="flex items-center gap-4 mb-10 relative z-10">
+          <div className="w-14 h-14 bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl shadow-xl flex items-center justify-center text-white">
+            <AlertCircle size={24} />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-slate-800 tracking-tight">
+            <h3 className="text-2xl font-black text-indigo-950 tracking-tight leading-none mb-1.5">
               AI5 Sentinel
             </h3>
-            <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
+            <p className="text-[10px] font-black text-indigo-400 uppercase tracking-[0.2em]">
               Accountability Bot
             </p>
           </div>
         </div>
+
 
         <div className="space-y-4 relative z-10">
           {/* Overdue Alert Card */}
