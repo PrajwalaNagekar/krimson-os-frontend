@@ -59,7 +59,6 @@ const ConflictsWarnings = ({ teacherIssues }) => {
               <button className="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all text-sm flex items-center gap-2 whitespace-nowrap">
                 <Edit className="w-4 h-4" />
                 <span>Resolve</span>
-                <div className="text-[10px] opacity-70">get in app</div>
               </button>
             </div>
           </div>

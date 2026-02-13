@@ -14,7 +14,6 @@ const QuickActions = () => {
             <Plus className="w-4 h-4" />
             <span>Generate Invoice</span>
           </div>
-          <div className="text-[10px] opacity-70">get in app</div>
         </button>
 
         <button className="w-full px-4 py-3 bg-white/20 hover:bg-white/30 rounded-xl font-semibold transition-all backdrop-blur-sm border border-white/10 flex flex-col items-center gap-1">
@@ -22,7 +21,6 @@ const QuickActions = () => {
             <CreditCard className="w-4 h-4" />
             <span>Record Payment</span>
           </div>
-          <div className="text-[10px] opacity-70">get in app</div>
         </button>
 
         <button className="w-full px-4 py-3 bg-white/20 hover:bg-white/30 rounded-xl font-semibold transition-all backdrop-blur-sm border border-white/10 flex items-center justify-center gap-2">

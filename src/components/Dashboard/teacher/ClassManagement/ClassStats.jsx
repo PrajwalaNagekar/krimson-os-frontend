@@ -14,7 +14,6 @@ const ClassStats = ({ classes, avgScore }) => {
         <h3 className="text-2xl md:text-3xl font-bold text-blue-600">
           {classes.reduce((sum, c) => sum + c.students, 0)}
         </h3>
-        <p className="text-[10px] text-slate-400 mt-1">get in app</p>
       </div>
 
       <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-3xl border border-blue-100 hover:scale-105 transition-all duration-300 hover:shadow-lg">
@@ -27,7 +26,6 @@ const ClassStats = ({ classes, avgScore }) => {
         <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
           {classes.length}
         </h3>
-        <p className="text-[10px] text-slate-400 mt-1">get in app</p>
       </div>
 
       <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-3xl border border-purple-100 hover:scale-105 transition-all duration-300 hover:shadow-lg">
@@ -40,7 +38,6 @@ const ClassStats = ({ classes, avgScore }) => {
         <h3 className="text-2xl md:text-3xl font-bold text-purple-600">
           {avgScore}%
         </h3>
-        <p className="text-[10px] text-slate-400 mt-1">get in app</p>
       </div>
 
       <div className="bg-gradient-to-br from-pink-50 to-red-50 p-6 rounded-3xl border border-pink-100 hover:scale-105 transition-all duration-300 hover:shadow-lg">

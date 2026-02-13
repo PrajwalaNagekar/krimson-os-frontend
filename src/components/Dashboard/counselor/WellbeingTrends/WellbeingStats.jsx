@@ -28,7 +28,6 @@ const WellbeingStats = ({ stats }) => {
               <p className="text-xs font-bold uppercase tracking-wider opacity-90">
                 {stat.label}
               </p>
-              <p className="text-xs opacity-60 mt-2">get in app</p>
             </div>
           </div>
         );

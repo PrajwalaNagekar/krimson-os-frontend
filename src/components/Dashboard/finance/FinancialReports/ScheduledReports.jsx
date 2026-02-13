@@ -21,7 +21,6 @@ const ScheduledReports = ({ reports }) => {
             <Settings className="w-4 h-4" />
             <span>Configure</span>
           </div>
-          <div className="text-[10px] opacity-70">get in app</div>
         </button>
       </div>
 

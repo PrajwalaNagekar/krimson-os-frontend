@@ -36,7 +36,6 @@ const TimetableGrid = ({ timetableData, weekDays, periods }) => {
         <button className="px-4 py-2 bg-gradient-to-r from-blue-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all text-sm flex items-center gap-2">
           <Edit className="w-4 h-4" />
           <span>Edit Schedule</span>
-          <div className="text-[10px] opacity-70">get in app</div>
         </button>
       </div>
 

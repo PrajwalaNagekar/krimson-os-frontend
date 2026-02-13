@@ -17,12 +17,10 @@ const CurriculumHeader = () => {
           <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all text-sm flex items-center gap-2">
             <Download className="w-4 h-4" />
             <span>Export Report</span>
-            <div className="text-[10px] opacity-70">get in app</div>
           </button>
           <button className="px-4 py-2 bg-white border-2 border-gray-200 text-gray-700 rounded-xl font-semibold hover:border-blue-400 transition-all text-sm flex items-center gap-2">
             <Upload className="w-4 h-4" />
             <span>Import Curriculum</span>
-            <div className="text-[10px] opacity-70">get in app</div>
           </button>
         </div>
       </div>

@@ -73,7 +73,6 @@ const ApprovalLog = ({ approvalLog }) => {
       <div className="mt-6 text-center">
         <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex items-center gap-2 mx-auto">
           <span>Load More</span>
-          <div className="text-[10px] opacity-70">get in app</div>
         </button>
       </div>
     </div>

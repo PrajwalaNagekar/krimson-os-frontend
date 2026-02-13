@@ -251,17 +251,11 @@ const RefundRequestsList = ({
                             <Check className="w-4 h-4" />
                             <span>Approve</span>
                           </div>
-                          <div className="text-[10px] opacity-70">
-                            get in app
-                          </div>
                         </button>
                         <button className="w-full px-4 py-3 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all flex flex-col items-center gap-1">
                           <div className="flex items-center gap-2">
                             <X className="w-4 h-4" />
                             <span>Reject</span>
-                          </div>
-                          <div className="text-[10px] opacity-70">
-                            get in app
                           </div>
                         </button>
                       </div>
