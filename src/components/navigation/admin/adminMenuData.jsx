@@ -45,7 +45,7 @@ export const ADMIN_MENU_ITEMS = [
   },
   {
     id: "ad4",
-    name: "Class Config",
+    name: "Academic Setup",
     path: "/dashboard/admin/classes",
     icon: <Building size={20} />,
   },

@@ -5,6 +5,9 @@ import AdminOverview from "../pages/dashboards/admin/AdminOverview";
 import AdmissionsConsole from "../pages/dashboards/admin/AdmissionsConsole";
 import UserManagement from "../pages/dashboards/admin/UserManagement";
 import ClassConfig from "../pages/dashboards/admin/ClassConfig";
+import EditStructure from "../pages/dashboards/admin/ClassConfig/EditStructure";
+import NamingConfig from "../pages/dashboards/admin/ClassConfig/NamingConfig";
+import AcademicActivationView from "../pages/dashboards/admin/ClassConfig/AcademicActivationView";
 import HRAdmin from "../pages/dashboards/admin/HRAdmin";
 import FinanceControl from "../pages/dashboards/admin/FinanceControl";
 import AttendanceOversight from "../pages/dashboards/admin/AttendanceOversight";
@@ -28,6 +31,9 @@ const AdminRoutes = () => {
         <Route path="admissions" element={<AdmissionsConsole />} />
         <Route path="users" element={<UserManagement />} />
         <Route path="classes" element={<ClassConfig />} />
+        <Route path="classes/edit" element={<EditStructure />} />
+        <Route path="classes/naming" element={<NamingConfig />} />
+        <Route path="classes/activation" element={<AcademicActivationView />} />
         <Route
           path="profile"
           element={<ProfilePage roleOverride="Administrator" />}

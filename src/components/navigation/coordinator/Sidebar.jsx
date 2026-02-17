@@ -35,6 +35,11 @@ const Sidebar = ({ isOpen, onClose }) => {
       icon: BookOpen,
     },
     {
+      title: "Academic Structure",
+      path: "/dashboard/coordinator/academic-year",
+      icon: Calendar,
+    },
+    {
       title: "Timetable Console",
       path: "/dashboard/coordinator/timetable",
       icon: Calendar,
@@ -50,7 +55,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       icon: BarChart,
     },
     {
-      title: "Teacher Assignment",
+      title: "Teacher Mapping",
       path: "/dashboard/coordinator/teacher-assignment",
       icon: UserPlus,
     },

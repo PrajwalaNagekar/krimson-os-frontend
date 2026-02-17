@@ -849,6 +849,47 @@ export const ADMIN_DATA = {
     ],
   },
 
+  // Organisation Structure Configuration
+  organisationStructure: {
+    schoolProfile: {
+      name: "Krimson OS Singapore",
+      code: "SG-001",
+      affiliation: "Cambridge International",
+      address: "123 Education Lane, Singapore 567890",
+      established: "1998",
+      contactConfig: {
+        primaryEmail: "admin@krimson.sg",
+        supportPhone: "+65 6789 0123",
+      },
+    },
+    structuralRules: {
+      educationLevels: ["Primary", "Secondary", "Senior"],
+      gradeRange: "Grade 1 – Grade 12",
+      maxCapacityPerSection: 40,
+      promotionPolicy: "Automatic with Merit Review",
+      academicYearCycle: "April - March",
+    },
+    namingConfiguration: {
+      sectionPattern: "Alphabetical (A, B, C...)",
+      gradePrefix: "Grade",
+      examCodeFormat: "YYYY-TERM-SUB",
+      studentIdFormat: "ST-{YYYY}-{SEQ}",
+    },
+    academicUsageOverview: {
+      totalActiveGrades: 12,
+      totalSections: 42,
+      totalStudentsEnrolled: 1247,
+      utilizationRate: "85%",
+      lastStructureUpdate: "2025-03-15",
+    },
+    // Maintained for backward compatibility or different views
+    gradeRanges: {
+      primary: "1-5",
+      secondary: "6-10",
+      senior: "11-12",
+    },
+  },
+
   // ---------------------------------------------------
   // ADMIN OVERVIEW MOCK DATA
   // ---------------------------------------------------
