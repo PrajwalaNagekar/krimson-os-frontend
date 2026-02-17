@@ -10,6 +10,7 @@ import {
   Scan,
   LogOut,
   X,
+  UserPlus,
 } from "lucide-react";
 import { authService } from "../../../services/authService";
 
@@ -18,6 +19,16 @@ const Sidebar = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
 
   const menuItems = [
+    {
+      title: "Academic Dashboard",
+      path: "/dashboard/coordinator/academic",
+      icon: Home,
+    },
+    {
+      title: "Curriculum Management",
+      path: "/dashboard/coordinator/curriculum-management",
+      icon: BookOpen,
+    },
     {
       title: "Curriculum Planner",
       path: "/dashboard/coordinator/curriculum",
@@ -38,10 +49,17 @@ const Sidebar = ({ isOpen, onClose }) => {
       path: "/dashboard/coordinator/assessment",
       icon: BarChart,
     },
+    {
+      title: "Teacher Assignment",
+      path: "/dashboard/coordinator/teacher-assignment",
+      icon: UserPlus,
+    },
   ];
 
   const isActive = (path) => {
-    return location.pathname.startsWith(path);
+    return (
+      location.pathname === path || location.pathname.startsWith(`${path}/`)
+    );
   };
 
   const handleLogout = () => {

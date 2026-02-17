@@ -43,7 +43,6 @@ import UserActionPanel from "../../../components/dashboard/admin/UserManagement/
 // Tabs
 import UserAccounts from "../../../components/dashboard/admin/UserManagement/Tabs/UserAccounts";
 import ActivityLogs from "../../../components/dashboard/admin/UserManagement/Tabs/ActivityLogs";
-import GroupsDepartments from "../../../components/dashboard/admin/UserManagement/Tabs/GroupsDepartments";
 import SecurityEscalations from "../../../components/dashboard/admin/UserManagement/Tabs/SecurityEscalations";
 
 const UserManagement = () => {
@@ -193,7 +192,7 @@ const UserManagement = () => {
             {[
               { id: "users", label: "User Accounts", icon: Users },
               { id: "activity", label: "Activity Logs", icon: Activity },
-              { id: "groups", label: "Groups & Departments", icon: Building },
+
               {
                 id: "security",
                 label: "Security & Escalations",
@@ -233,15 +232,6 @@ const UserManagement = () => {
         )}
 
         {activeTab === "activity" && <ActivityLogs logs={data.activityLogs} />}
-
-        {activeTab === "groups" && (
-          <GroupsDepartments
-            departments={data.departments}
-            roleGroups={data.roleGroups} // Added to adminData.js
-            showCreateForm={showCreateForm}
-            setShowCreateForm={setShowCreateForm}
-          />
-        )}
 
         {activeTab === "security" && (
           <SecurityEscalations
