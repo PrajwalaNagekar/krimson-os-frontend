@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 import { PARENT_DATA, classAverages } from "../../../data/parentData";
 import Header from "../../../components/dashboard/parent/ChildrenOverview/Header";
@@ -16,9 +16,32 @@ const ChildrenOverview = () => {
   const { selectedChildIndex, setSelectedChildIndex } = useOutletContext();
   const activeChild = children[selectedChildIndex];
 
+  // Default child preference (stored in localStorage)
+  const [defaultChildId, setDefaultChildId] = useState(() => {
+    return localStorage.getItem("defaultChildId") || null;
+  });
+
+  // Initialize selected child to default on mount
+  useEffect(() => {
+    if (defaultChildId && children.length > 0) {
+      const defaultIndex = children.findIndex(
+        (child) => child.id === defaultChildId,
+      );
+      if (defaultIndex !== -1 && defaultIndex !== selectedChildIndex) {
+        setSelectedChildIndex(defaultIndex);
+      }
+    }
+  }, []);
+
   // Future API: Fetch children data via parent ID
   const fetchChildrenData = () => {
     console.log("Future API: GET /api/parent/children");
+  };
+
+  // Handler to set default child
+  const handleSetDefault = (childId) => {
+    setDefaultChildId(childId);
+    localStorage.setItem("defaultChildId", childId);
   };
 
   return (
@@ -31,6 +54,7 @@ const ChildrenOverview = () => {
         childrenData={children}
         selectedChildIndex={selectedChildIndex}
         setSelectedChildIndex={setSelectedChildIndex}
+        onSetDefault={handleSetDefault}
       />
 
       {/* Active Child Profile Card */}

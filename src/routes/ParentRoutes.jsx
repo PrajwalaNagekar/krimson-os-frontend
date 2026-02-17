@@ -18,6 +18,7 @@ import ParentSupportCenter from "../pages/dashboards/parent/SupportCenter";
 import ParentProfile from "../pages/dashboards/parent/ParentProfile";
 import ParentFacilities from "../pages/dashboards/parent/Facilities";
 import ParentMeetingsCircles from "../pages/dashboards/parent/MeetingsCircles";
+import StudentProfileView from "../pages/dashboards/parent/StudentProfileView";
 
 const ParentRoutes = () => {
   return (
@@ -41,6 +42,7 @@ const ParentRoutes = () => {
         <Route path="facilities" element={<ParentFacilities />} />
         <Route path="meetings-circles" element={<ParentMeetingsCircles />} />
         <Route path="profile" element={<ParentProfile />} />
+        <Route path="children/:childId" element={<StudentProfileView />} />
       </Route>
     </Routes>
   );

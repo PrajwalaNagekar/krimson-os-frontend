@@ -100,6 +100,141 @@ export const PARENT_DATA = {
       photo: "https://i.pravatar.cc/150?img=12",
       attendance: 92, // Screen 1 & 3
       academicGrowth: 78, // Screen 6
+      portfolio: {
+        projects: [
+          {
+            id: 1,
+            title: "Solar System Model",
+            type: "Project",
+            date: "2025-11-15",
+            thumbnail:
+              "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?w=500&auto=format&fit=crop&q=60",
+            tags: ["Science", "Space"],
+            showcase: true,
+          },
+          {
+            id: 2,
+            title: "Water Conservation Poster",
+            type: "Project",
+            date: "2025-10-10",
+            thumbnail:
+              "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&auto=format&fit=crop&q=60",
+            tags: ["Environment", "Art"],
+            showcase: false,
+          },
+        ],
+        labs: [
+          {
+            id: 3,
+            title: "Plant Growth Experiment",
+            type: "Lab",
+            date: "2026-01-05",
+            thumbnail:
+              "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=500&auto=format&fit=crop&q=60",
+            tags: ["Biology", "Botany"],
+            showcase: true,
+          },
+        ],
+        assessments: [
+          {
+            id: 4,
+            title: "Mathematics Mid-Term",
+            type: "Assessment",
+            date: "2025-12-15",
+            thumbnail:
+              "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=500&auto=format&fit=crop&q=60",
+            tags: ["Math", "Grade A"],
+            showcase: true,
+          },
+        ],
+        cca: [
+          {
+            id: 5,
+            title: "Basketball Tournament Winner",
+            type: "Achievement",
+            date: "2025-11-20",
+            thumbnail:
+              "https://images.unsplash.com/photo-1546519638-68e109498ee2?w=500&auto=format&fit=crop&q=60",
+            tags: ["Sports", "Team Award"],
+            showcase: true,
+          },
+        ],
+      },
+      achievements: [
+        {
+          id: 1,
+          title: "5 Day Streak",
+          icon: "🔥",
+          color: "orange",
+          description: "Perfect attendance",
+        },
+        {
+          id: 2,
+          title: "Math Wizard",
+          icon: "🎯",
+          color: "blue",
+          description: "95% in Math test",
+        },
+        {
+          id: 3,
+          title: "Quick Learner",
+          icon: "⚡",
+          color: "yellow",
+          description: "10+ modules completed",
+        },
+        {
+          id: 4,
+          title: "Team Player",
+          icon: "🤝",
+          color: "green",
+          description: "Group project excellence",
+        },
+        {
+          id: 5,
+          title: "Science Star",
+          icon: "🌟",
+          color: "purple",
+          description: "Science Fair Winner",
+        },
+      ],
+      leaderboard: {
+        classRank: 3,
+        gradeRank: 15,
+        totalStudents: 120,
+        points: 2450,
+      },
+      earnedSkills: [
+        {
+          id: 1,
+          name: "Python Programming",
+          category: "Technical",
+          level: "Advanced",
+          proficiency: 85,
+          icon: "🐍",
+          description: "Build applications using Python",
+          earnedDate: "2025-10-15",
+        },
+        {
+          id: 2,
+          name: "Creative Writing",
+          category: "Academic",
+          level: "Intermediate",
+          proficiency: 72,
+          icon: "✍️",
+          description: "Craft compelling stories and essays",
+          earnedDate: "2025-11-05",
+        },
+        {
+          id: 3,
+          name: "Public Speaking",
+          category: "Leadership",
+          level: "Advanced",
+          proficiency: 88,
+          icon: "🎤",
+          description: "Present ideas confidently in public",
+          earnedDate: "2025-09-20",
+        },
+      ],
     },
     {
       id: "S-102",
@@ -108,6 +243,144 @@ export const PARENT_DATA = {
       photo: "https://i.pravatar.cc/150?img=5",
       attendance: 98,
       academicGrowth: 85,
+      portfolio: {
+        projects: [
+          {
+            id: 6,
+            title: "My Family Tree",
+            type: "Project",
+            date: "2025-12-01",
+            thumbnail:
+              "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&auto=format&fit=crop&q=60",
+            tags: ["Social Studies", "Art"],
+            showcase: true,
+          },
+          {
+            id: 7,
+            title: "Animal Habitat Diorama",
+            type: "Project",
+            date: "2025-11-10",
+            thumbnail:
+              "https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=500&auto=format&fit=crop&q=60",
+            tags: ["Science", "3D Model"],
+            showcase: true,
+          },
+        ],
+        labs: [
+          {
+            id: 8,
+            title: "States of Matter Observation",
+            type: "Lab",
+            date: "2026-01-08",
+            thumbnail:
+              "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=500&auto=format&fit=crop&q=60",
+            tags: ["Science", "Chemistry"],
+            showcase: false,
+          },
+        ],
+        assessments: [
+          {
+            id: 9,
+            title: "English Reading Comprehension",
+            type: "Assessment",
+            date: "2025-12-20",
+            thumbnail:
+              "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=500&auto=format&fit=crop&q=60",
+            tags: ["English", "Grade A+"],
+            showcase: true,
+          },
+        ],
+        cca: [
+          {
+            id: 10,
+            title: "Drawing Competition - 1st Place",
+            type: "Achievement",
+            date: "2025-10-15",
+            thumbnail:
+              "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&auto=format&fit=crop&q=60",
+            tags: ["Art", "Gold Medal"],
+            showcase: true,
+          },
+          {
+            id: 11,
+            title: "Storytelling Contest Participant",
+            type: "Achievement",
+            date: "2025-09-20",
+            thumbnail:
+              "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=500&auto=format&fit=crop&q=60",
+            tags: ["English", "Public Speaking"],
+            showcase: false,
+          },
+        ],
+      },
+      achievements: [
+        {
+          id: 1,
+          title: "Perfect Week",
+          icon: "⭐",
+          color: "gold",
+          description: "100% attendance this week",
+        },
+        {
+          id: 2,
+          title: "Art Champion",
+          icon: "🎨",
+          color: "pink",
+          description: "Won drawing competition",
+        },
+        {
+          id: 3,
+          title: "Helpful Friend",
+          icon: "💝",
+          color: "red",
+          description: "Always helps classmates",
+        },
+        {
+          id: 4,
+          title: "Reading Star",
+          icon: "📚",
+          color: "blue",
+          description: "Read 20 books this term",
+        },
+      ],
+      leaderboard: {
+        classRank: 2,
+        gradeRank: 8,
+        totalStudents: 90,
+        points: 1850,
+      },
+      earnedSkills: [
+        {
+          id: 1,
+          name: "Creative Drawing",
+          category: "Creative",
+          level: "Expert",
+          proficiency: 92,
+          icon: "🎨",
+          description: "Create beautiful artwork and illustrations",
+          earnedDate: "2025-10-20",
+        },
+        {
+          id: 2,
+          name: "Reading Comprehension",
+          category: "Academic",
+          level: "Advanced",
+          proficiency: 88,
+          icon: "📖",
+          description: "Understand and analyze texts effectively",
+          earnedDate: "2025-11-12",
+        },
+        {
+          id: 3,
+          name: "Storytelling",
+          category: "Creative",
+          level: "Intermediate",
+          proficiency: 75,
+          icon: "📚",
+          description: "Tell engaging and creative stories",
+          earnedDate: "2025-09-15",
+        },
+      ],
     },
   ],
   connectedApps: [
@@ -1548,81 +1821,246 @@ export const communicationData = {
 
 export const examPerformanceData = {
   examSchedule: [
-    { 
-      id: 1, 
-      subject: "Mathematics", 
+    {
+      id: 1,
+      subject: "Mathematics",
       topic: "Algebra & Calculus",
       date: "2026-01-28",
       time: "09:00 AM",
       duration: "2 hours",
       room: "Room 301",
-      status: "upcoming"
+      status: "upcoming",
     },
-    { 
-      id: 2, 
-      subject: "Science", 
+    {
+      id: 2,
+      subject: "Science",
       topic: "Physics - Mechanics",
       date: "2026-01-30",
       time: "10:30 AM",
       duration: "1.5 hours",
       room: "Lab 2",
-      status: "upcoming"
+      status: "upcoming",
     },
-    { 
-      id: 3, 
-      subject: "English", 
+    {
+      id: 3,
+      subject: "English",
       topic: "Literature Analysis",
       date: "2026-02-02",
       time: "02:00 PM",
       duration: "2 hours",
       room: "Room 205",
-      status: "upcoming"
-    }
+      status: "upcoming",
+    },
   ],
   performance: {
     current: [
-      { subject: 'Mathematics', score: 92, maxScore: 100, color: 'from-blue-400 to-cyan-400' },
-      { subject: 'Science', score: 88, maxScore: 100, color: 'from-green-400 to-emerald-400' },
-      { subject: 'English', score: 95, maxScore: 100, color: 'from-purple-400 to-pink-400' },
-      { subject: 'History', score: 78, maxScore: 100, color: 'from-orange-400 to-amber-400' },
-      { subject: 'Computer Science', score: 90, maxScore: 100, color: 'from-cyan-400 to-blue-400' },
+      {
+        subject: "Mathematics",
+        score: 92,
+        maxScore: 100,
+        color: "from-blue-400 to-cyan-400",
+      },
+      {
+        subject: "Science",
+        score: 88,
+        maxScore: 100,
+        color: "from-green-400 to-emerald-400",
+      },
+      {
+        subject: "English",
+        score: 95,
+        maxScore: 100,
+        color: "from-purple-400 to-pink-400",
+      },
+      {
+        subject: "History",
+        score: 78,
+        maxScore: 100,
+        color: "from-orange-400 to-amber-400",
+      },
+      {
+        subject: "Computer Science",
+        score: 90,
+        maxScore: 100,
+        color: "from-cyan-400 to-blue-400",
+      },
     ],
     previous: [
-      { subject: 'Mathematics', score: 85, maxScore: 100, color: 'from-blue-400 to-cyan-400' },
-      { subject: 'Science', score: 82, maxScore: 100, color: 'from-green-400 to-emerald-400' },
-      { subject: 'English', score: 90, maxScore: 100, color: 'from-purple-400 to-pink-400' },
-      { subject: 'History', score: 75, maxScore: 100, color: 'from-orange-400 to-amber-400' },
-      { subject: 'Computer Science', score: 88, maxScore: 100, color: 'from-cyan-400 to-blue-400' },
-    ]
+      {
+        subject: "Mathematics",
+        score: 85,
+        maxScore: 100,
+        color: "from-blue-400 to-cyan-400",
+      },
+      {
+        subject: "Science",
+        score: 82,
+        maxScore: 100,
+        color: "from-green-400 to-emerald-400",
+      },
+      {
+        subject: "English",
+        score: 90,
+        maxScore: 100,
+        color: "from-purple-400 to-pink-400",
+      },
+      {
+        subject: "History",
+        score: 75,
+        maxScore: 100,
+        color: "from-orange-400 to-amber-400",
+      },
+      {
+        subject: "Computer Science",
+        score: 88,
+        maxScore: 100,
+        color: "from-cyan-400 to-blue-400",
+      },
+    ],
   },
   teacherComments: [
     {
       subject: "Mathematics",
       teacher: "Ms. Sarah Johnson",
-      comment: "Excellent progress! Strong understanding of algebraic concepts. Keep practicing calculus derivatives.",
+      comment:
+        "Excellent progress! Strong understanding of algebraic concepts. Keep practicing calculus derivatives.",
       date: "2026-01-15",
-      sentiment: "positive"
+      sentiment: "positive",
     },
     {
       subject: "Science",
       teacher: "Dr. Michael Chen",
-      comment: "Good work on theory. However, lab report writing needs improvement. Focus on detailed observations.",
+      comment:
+        "Good work on theory. However, lab report writing needs improvement. Focus on detailed observations.",
       date: "2026-01-14",
-      sentiment: "neutral"
+      sentiment: "neutral",
     },
     {
       subject: "English",
       teacher: "Mrs. Emily Roberts",
-      comment: "Outstanding creative writing! Excellent vocabulary and storytelling techniques. Keep it up!",
+      comment:
+        "Outstanding creative writing! Excellent vocabulary and storytelling techniques. Keep it up!",
       date: "2026-01-16",
-      sentiment: "positive"
+      sentiment: "positive",
     },
     {
       subject: "History",
       teacher: "Mr. Robert Taylor",
-      comment: "Needs to work on remembering dates and historical events. Consider creating timeline charts for better retention.",
+      comment:
+        "Needs to work on remembering dates and historical events. Consider creating timeline charts for better retention.",
       date: "2026-01-13",
-      sentiment: "improvement"
-    }
-  ]
+      sentiment: "improvement",
+    },
+  ],
 };
+
+export const homeworkAssignments = [
+  {
+    id: 1,
+    subject: "Mathematics",
+    title: "Algebra Worksheet 4 - Quadratic Equations",
+    status: "Pending",
+    dueDate: "2026-01-22",
+    assignedDate: "2026-01-15",
+    description:
+      "Complete exercises 1-20 from Chapter 5. Show all working steps.",
+    hasDocument: true,
+    documentUrl: "/documents/math_worksheet_4.pdf",
+    teacherName: "Ms. Sarah Johnson",
+    feedback: null,
+    grade: null,
+    acknowledged: false,
+  },
+  {
+    id: 2,
+    subject: "Science",
+    title: "Plant Life Cycle Report",
+    status: "Submitted",
+    dueDate: "2026-01-18",
+    submittedDate: "2026-01-17",
+    assignedDate: "2026-01-10",
+    description:
+      "Research and document the complete life cycle of flowering plants with diagrams.",
+    hasDocument: true,
+    documentUrl: "/documents/science_plant_lifecycle.pdf",
+    teacherName: "Mr. David Chen",
+    feedback:
+      "Good research work. Please add more detailed diagrams for better understanding.",
+    grade: null,
+    acknowledged: true,
+  },
+  {
+    id: 3,
+    subject: "English",
+    title: "Essay: My Summer Vacation",
+    status: "Graded",
+    dueDate: "2026-01-16",
+    submittedDate: "2026-01-15",
+    gradedDate: "2026-01-18",
+    assignedDate: "2026-01-08",
+    description:
+      "Write a creative essay (500 words) about your summer vacation experiences.",
+    hasDocument: true,
+    documentUrl: "/documents/english_essay_summer.pdf",
+    teacherName: "Mrs. Emily Roberts",
+    feedback:
+      "Excellent descriptive writing! Great use of vocabulary and storytelling techniques. Keep up the good work!",
+    grade: "A",
+    score: "92/100",
+    acknowledged: true,
+  },
+  {
+    id: 4,
+    subject: "History",
+    title: "Ancient Civilizations Project",
+    status: "Pending",
+    dueDate: "2026-01-25",
+    assignedDate: "2026-01-12",
+    description:
+      "Create a presentation on any ancient civilization of your choice. Include culture, architecture, and contributions.",
+    hasDocument: true,
+    documentUrl: "/documents/history_project_guidelines.pdf",
+    teacherName: "Mr. Robert Taylor",
+    feedback: null,
+    grade: null,
+    acknowledged: false,
+  },
+  {
+    id: 5,
+    subject: "Physics",
+    title: "Newton's Laws Lab Report",
+    status: "Submitted",
+    dueDate: "2026-01-20",
+    submittedDate: "2026-01-19",
+    assignedDate: "2026-01-13",
+    description:
+      "Document observations and conclusions from the Newton's Laws laboratory experiment.",
+    hasDocument: true,
+    documentUrl: "/documents/physics_lab_report.pdf",
+    teacherName: "Dr. Michael Brown",
+    feedback:
+      "Well-documented observations. Consider adding more analysis in the conclusion section.",
+    grade: null,
+    acknowledged: false,
+  },
+  {
+    id: 6,
+    subject: "Computer Science",
+    title: "Python Programming Assignment",
+    status: "Graded",
+    dueDate: "2026-01-14",
+    submittedDate: "2026-01-13",
+    gradedDate: "2026-01-16",
+    assignedDate: "2026-01-05",
+    description:
+      "Write a Python program to implement a basic calculator with all arithmetic operations.",
+    hasDocument: true,
+    documentUrl: "/documents/cs_python_assignment.pdf",
+    teacherName: "Ms. Jennifer Lee",
+    feedback:
+      "Perfect implementation! Clean code structure and excellent error handling. Outstanding work!",
+    grade: "A+",
+    score: "98/100",
+    acknowledged: true,
+  },
+];

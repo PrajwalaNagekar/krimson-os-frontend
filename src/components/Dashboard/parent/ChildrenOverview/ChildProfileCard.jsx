@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Award, ArrowRight, BookOpen, ExternalLink } from "lucide-react";
 import PerformanceStats from "./PerformanceStats";
 import AcademicComparison from "./AcademicComparison";
 
 const ChildProfileCard = ({ activeChild, classAverages }) => {
+  const navigate = useNavigate();
   return (
     <div className="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-100 relative overflow-hidden">
       {/* Decorative gradient accent */}
@@ -54,22 +56,22 @@ const ChildProfileCard = ({ activeChild, classAverages }) => {
 
         {/* Action Buttons */}
         <div className="flex flex-wrap gap-3">
-          <button className="py-3 px-6 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-2">
+          <button
+            onClick={() =>
+              navigate(`/dashboard/parent/children/${activeChild.id}`)
+            }
+            className="py-3 px-6 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-xl font-bold shadow-lg hover:shadow-xl transition-all hover:scale-[1.02] flex items-center justify-center gap-2 group"
+          >
             View Full Profile
-            <ArrowRight size={18} />
+            <ArrowRight
+              size={18}
+              className="group-hover:translate-x-1 transition-transform"
+            />
           </button>
           <button className="py-3 px-6 border-2 border-slate-200 text-slate-700 rounded-xl font-bold hover:border-slate-300 hover:shadow-md transition-all flex items-center justify-center gap-2">
             <BookOpen size={18} />
             Academic Reports
           </button>
-        </div>
-
-        {/* Go to App Footer */}
-        <div className="mt-6 pt-4 border-t border-slate-100">
-          <div className="flex items-center gap-1 text-[10px] text-slate-400 italic">
-            <span>Go to App</span>
-            <ExternalLink size={10} />
-          </div>
         </div>
       </div>
     </div>
