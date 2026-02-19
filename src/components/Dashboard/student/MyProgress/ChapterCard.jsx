@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Clock,
   Calendar,
@@ -9,6 +10,13 @@ import {
 } from "lucide-react";
 
 const ChapterCard = ({ chapter, unlocked, onSelect, getSubjectColor }) => {
+  const navigate = useNavigate();
+
+  const handleSelect = () => {
+    if (!unlocked) return;
+    navigate(`/dashboard/student/progress/chapter/${chapter.id}`);
+  };
+
   // Helper to determine badge color based on mastery level
   const getMasteryColor = (mastery) => {
     switch (mastery) {
@@ -30,7 +38,7 @@ const ChapterCard = ({ chapter, unlocked, onSelect, getSubjectColor }) => {
           ? "border-slate-200 hover:border-blue-300 hover:shadow-lg"
           : "border-slate-200 bg-slate-50 opacity-75"
       }`}
-      onClick={() => unlocked && onSelect(chapter)}
+      onClick={handleSelect}
     >
       {/* Chapter Number Badge */}
       <div className="flex items-start justify-between mb-4">
@@ -160,7 +168,7 @@ const ChapterCard = ({ chapter, unlocked, onSelect, getSubjectColor }) => {
         <button
           onClick={(e) => {
             e.stopPropagation();
-            onSelect(chapter);
+            handleSelect();
           }}
           className="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-xl text-sm hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
         >

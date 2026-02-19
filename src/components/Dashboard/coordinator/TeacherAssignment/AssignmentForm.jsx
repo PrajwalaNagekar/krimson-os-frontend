@@ -257,7 +257,7 @@ const AssignmentForm = ({
             className="px-8 py-4 flex items-center justify-center gap-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-pink-500 text-white font-bold rounded-xl hover:shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
           >
             <Plus className="h-5 w-5" />
-            <span>New Assignment</span>
+            <span>New Assign</span>
           </button>
         </div>
       </div>

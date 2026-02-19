@@ -10,6 +10,7 @@ import WellbeingCheckin from "../../../components/dashboard/teacher/BehaviourLog
 import WellbeingInsight from "../../../components/dashboard/teacher/BehaviourLog/WellbeingInsight";
 import BehaviourAnalytics from "../../../components/dashboard/teacher/BehaviourLog/BehaviourAnalytics";
 import WellbeingAnalytics from "../../../components/dashboard/teacher/BehaviourLog/WellbeingAnalytics";
+import { ClipboardList, Award, Heart, LineChart, Waves } from "lucide-react";
 
 const BehaviourLog = () => {
   const [activeTab, setActiveTab] = useState("behaviour"); // 'behaviour', 'house-points', 'wellbeing', 'behaviour-analytics', 'wellbeing-analytics'
@@ -139,10 +140,48 @@ const BehaviourLog = () => {
       {/* Header Section with Gradient Card */}
       <BehaviourHeader activeTab={activeTab} setActiveTab={setActiveTab} />
 
+      {/* Navigation Tabs - Moved Outside Header */}
+      <div className="flex flex-wrap items-center gap-4 px-4">
+        {[
+          { id: "behaviour", label: "Behaviour Log", icon: ClipboardList },
+          { id: "house-points", label: "House Points", icon: Award },
+          { id: "wellbeing", label: "Wellbeing Check-in", icon: Heart },
+          {
+            id: "behaviour-analytics",
+            label: "Behaviour Analytics",
+            icon: LineChart,
+          },
+          {
+            id: "wellbeing-analytics",
+            label: "Wellbeing Analytics",
+            icon: Waves,
+          },
+        ].map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            className={`flex items-center gap-3 px-6 py-4 rounded-2xl transition-all duration-300 border-2 ${
+              activeTab === tab.id
+                ? "bg-blue-600 border-blue-600 text-white shadow-xl shadow-blue-200 scale-105"
+                : "bg-white border-slate-100 text-slate-500 hover:border-blue-200 hover:bg-blue-50/50 hover:text-blue-600"
+            }`}
+          >
+            <tab.icon
+              size={22}
+              className={activeTab === tab.id ? "text-white" : "text-current"}
+              strokeWidth={activeTab === tab.id ? 2.5 : 2}
+            />
+            <span className="font-bold text-base tracking-wide">
+              {tab.label}
+            </span>
+          </button>
+        ))}
+      </div>
+
       {/* Main Content Card */}
-      <div className="bg-white rounded-[3.5rem] p-8 lg:p-10 shadow-[0_32px_128px_-16px_rgba(79,70,229,0.1)] border border-slate-100 min-h-[700px] relative overflow-hidden">
+      <div className="bg-white rounded-[3.5rem] p-8 lg:p-10 shadow-[0_32px_128px_-16px_rgba(59,130,246,0.1)] border border-slate-100 min-h-[700px] relative overflow-hidden">
         {/* Background Decor */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-50/50 rounded-full blur-[100px] -mr-32 -mt-32 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-50/50 rounded-full blur-[100px] -mr-32 -mt-32 pointer-events-none"></div>
 
         {/* --- TAB: BEHAVIOUR LOG --- */}
         {activeTab === "behaviour" && (

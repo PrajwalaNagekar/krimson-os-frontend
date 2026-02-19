@@ -1734,3 +1734,35 @@ export const ACADEMIC_YEAR_DATA = {
     },
   ],
 };
+
+// =============================================================================
+// ACADEMIC YEAR TERMS
+// Source of truth for Terms — defined ONLY in Academic Year setup.
+// Curriculum Management fetches these by term_id reference (no local creation).
+// =============================================================================
+export const ACADEMIC_YEAR_TERMS = [
+  {
+    id: "term-1",
+    name: "Term 1",
+    startDate: "2025-04-01",
+    endDate: "2025-09-30",
+    duration: "Apr – Sep",
+    teachingWeeks: 18,
+    revisionWeeks: 2,
+    assessmentWeeks: 2,
+    academicYearId: "ay-2025-2026",
+    academicYearName: "2025-2026",
+  },
+  {
+    id: "term-2",
+    name: "Term 2",
+    startDate: "2025-10-01",
+    endDate: "2026-03-31",
+    duration: "Oct – Mar",
+    teachingWeeks: 18,
+    revisionWeeks: 2,
+    assessmentWeeks: 2,
+    academicYearId: "ay-2025-2026",
+    academicYearName: "2025-2026",
+  },
+];

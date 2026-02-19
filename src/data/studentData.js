@@ -4055,22 +4055,887 @@ export const STUDENT_DATA = {
     ],
   },
 
-  // Chapter Details with Assignments, Quizzes, AI Suggestions
+  // Chapter Details — static data per chapterId
+  // API-ready: in production, fetch from /api/student/chapters/:id/details
   chapterDetails: {
-    default: {
+    // ─── MATHEMATICS ──────────────────────────────────────────────
+    1: {
       assignments: [
-        { id: 1, name: "Problem Set 1", status: "completed", score: 95 },
-        { id: 2, name: "Worksheet Practice", status: "completed", score: 88 },
+        {
+          id: 1,
+          name: "Real Numbers Worksheet",
+          status: "completed",
+          score: 96,
+        },
+        { id: 2, name: "HCF & LCM Practice", status: "completed", score: 93 },
         {
           id: 3,
-          name: "Advanced Problems",
+          name: "Decimal Expansion Problems",
+          status: "completed",
+          score: 90,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Chapter 1 Quiz", status: "completed", score: 95 },
+        {
+          id: 2,
+          name: "Euclid's Division Quiz",
+          status: "completed",
+          score: 92,
+        },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Explore Irrational Numbers",
+          description:
+            "Dive deeper into the proof that √2 is irrational — a classic extension problem.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Practice",
+          title: "Speed Drill: HCF & LCM",
+          description:
+            "Timed exercises to sharpen calculation speed for board exams.",
+          icon: "Lightbulb",
+          color: "bg-green-50 border-green-200 text-green-700",
+        },
+      ],
+      conceptWeaknesses: [],
+    },
+    2: {
+      assignments: [
+        {
+          id: 1,
+          name: "Zeros of Polynomial Set",
+          status: "completed",
+          score: 94,
+        },
+        {
+          id: 2,
+          name: "Division Algorithm Practice",
+          status: "completed",
+          score: 91,
+        },
+        {
+          id: 3,
+          name: "Algebraic Identities Sheet",
           status: "in-progress",
           score: null,
         },
       ],
       quizzes: [
-        { id: 1, name: "Chapter Quiz", status: "completed", score: 92 },
+        { id: 1, name: "Polynomials Quiz", status: "completed", score: 92 },
         { id: 2, name: "Practice Test", status: "pending", score: null },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Graph Polynomial Functions",
+          description:
+            "Visualise how changing coefficients shifts the graph — strengthens conceptual understanding.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Remedial",
+          title: "Revisit Division Algorithm",
+          description:
+            "Work through 3 extra examples to make the remainder theorem click.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+      ],
+      conceptWeaknesses: [],
+    },
+    3: {
+      assignments: [
+        {
+          id: 1,
+          name: "Graphical Method Problems",
+          status: "completed",
+          score: 90,
+        },
+        {
+          id: 2,
+          name: "Algebraic Methods Set",
+          status: "completed",
+          score: 87,
+        },
+        {
+          id: 3,
+          name: "Cross-multiplication Worksheet",
+          status: "completed",
+          score: 85,
+        },
+      ],
+      quizzes: [
+        {
+          id: 1,
+          name: "Linear Equations Quiz",
+          status: "completed",
+          score: 88,
+        },
+        { id: 2, name: "Word Problems Test", status: "completed", score: 84 },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Real-Life Applications",
+          description:
+            "Model price-quantity and distance-speed equations using systems.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Practice",
+          title: "Consistency & Inconsistency",
+          description:
+            "Practice identifying consistent and inconsistent systems from graphs.",
+          icon: "Lightbulb",
+          color: "bg-purple-50 border-purple-200 text-purple-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Cross-multiplication",
+          weakness: "Sign confusion when transposing",
+          observation: "Errors when both equations have negative coefficients.",
+          recommendation:
+            "Rewrite each equation in standard ax + by = c form before cross-multiplying.",
+        },
+      ],
+    },
+    4: {
+      assignments: [
+        {
+          id: 1,
+          name: "Factorization Practice",
+          status: "completed",
+          score: 85,
+        },
+        {
+          id: 2,
+          name: "Quadratic Formula Set",
+          status: "in-progress",
+          score: null,
+        },
+        {
+          id: 3,
+          name: "Nature of Roots Worksheet",
+          status: "pending",
+          score: null,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Chapter 4 Quiz", status: "pending", score: null },
+        {
+          id: 2,
+          name: "Discriminant Practice",
+          status: "pending",
+          score: null,
+        },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Sign Errors in Discriminant",
+          description:
+            "Use parentheses for every substitution: b² - 4(a)(c) to avoid sign mistakes.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Applications of Quadratics",
+          description:
+            "Solve projectile motion and area maximisation problems using quadratic equations.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Quadratic Formula",
+          weakness: "Sign Errors in Discriminant",
+          observation:
+            "Frequent calculation errors when 'a' or 'c' is negative.",
+          recommendation:
+            "Use parentheses for every substitution: b² - 4(a)(c)",
+        },
+        {
+          id: 2,
+          topic: "Factorization",
+          weakness: "Middle term splitting",
+          observation:
+            "Difficulty finding correct factor pairs under time pressure.",
+          recommendation:
+            "List all factor pairs of 'ac' before selecting — don't guess.",
+        },
+      ],
+    },
+    5: {
+      assignments: [
+        { id: 1, name: "nth Term Problems", status: "completed", score: 80 },
+        {
+          id: 2,
+          name: "Sum of n Terms Set",
+          status: "in-progress",
+          score: null,
+        },
+        { id: 3, name: "AP Word Problems", status: "pending", score: null },
+      ],
+      quizzes: [
+        { id: 1, name: "AP Quiz", status: "pending", score: null },
+        { id: 2, name: "Practice Test", status: "pending", score: null },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Master the AP Formula",
+          description:
+            "Drill aₙ = a + (n-1)d until it's automatic — it unlocks all other AP problems.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Sum Formula Derivation",
+          description:
+            "Understand WHERE Sₙ = n/2(2a + (n-1)d) comes from — improves retention.",
+          icon: "Lightbulb",
+          color: "bg-indigo-50 border-indigo-200 text-indigo-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Sum Formula",
+          weakness: "Confusing Sₙ and nth term",
+          observation:
+            "Applying the nth term formula where the sum formula is needed.",
+          recommendation:
+            "Remember: aₙ finds ONE term; Sₙ finds the TOTAL of all terms up to n.",
+        },
+      ],
+    },
+    // ─── PHYSICS ──────────────────────────────────────────────────
+    13: {
+      assignments: [
+        {
+          id: 1,
+          name: "Mirror Formula Problems",
+          status: "completed",
+          score: 96,
+        },
+        { id: 2, name: "Lens Calculations", status: "completed", score: 93 },
+        {
+          id: 3,
+          name: "Refraction Lab Report",
+          status: "completed",
+          score: 90,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Light Chapter Quiz", status: "completed", score: 94 },
+        { id: 2, name: "Ray Diagrams Test", status: "completed", score: 91 },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Real Camera Optics",
+          description:
+            "Explore how concave mirrors and convex lenses work in cameras and telescopes.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Practice",
+          title: "Speed-draw Ray Diagrams",
+          description:
+            "Timed practice drawing incident, reflected and refracted rays for all mirror types.",
+          icon: "Lightbulb",
+          color: "bg-purple-50 border-purple-200 text-purple-700",
+        },
+      ],
+      conceptWeaknesses: [],
+    },
+    14: {
+      assignments: [
+        { id: 1, name: "Human Eye Diagram", status: "completed", score: 92 },
+        {
+          id: 2,
+          name: "Defects of Vision Problems",
+          status: "completed",
+          score: 89,
+        },
+        {
+          id: 3,
+          name: "Scattering Worksheet",
+          status: "in-progress",
+          score: null,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Human Eye Quiz", status: "completed", score: 89 },
+        {
+          id: 2,
+          name: "Atmospheric Scattering Test",
+          status: "pending",
+          score: null,
+        },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Why is the Sky Blue?",
+          description:
+            "Deep dive into Rayleigh scattering and explain why sunsets are red.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Remedial",
+          title: "Myopia vs. Hypermetropia",
+          description:
+            "Create a comparison table of corrective lenses for each vision defect.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Vision Defects",
+          weakness: "Mixing up corrective lenses",
+          observation:
+            "Myopia corrected with concave lens is frequently confused with hypermetropia fix.",
+          recommendation:
+            "Myopia = distant blur = concave lens; Hypermetropia = near blur = convex lens.",
+        },
+      ],
+    },
+    15: {
+      assignments: [
+        { id: 1, name: "Ohm's Law Problems", status: "completed", score: 88 },
+        {
+          id: 2,
+          name: "Resistance in Series/Parallel",
+          status: "in-progress",
+          score: null,
+        },
+        { id: 3, name: "Circuit Diagrams Set", status: "pending", score: null },
+      ],
+      quizzes: [
+        { id: 1, name: "Electricity Quiz", status: "pending", score: null },
+        { id: 2, name: "Power & Energy Test", status: "pending", score: null },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Parallel Resistance Formula",
+          description:
+            "Practice 1/R = 1/R₁ + 1/R₂ with 5 varied circuits before continuing.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Power in Daily Life",
+          description:
+            "Calculate actual electricity bills using P = V²/R — connects theory to real cost.",
+          icon: "Lightbulb",
+          color: "bg-green-50 border-green-200 text-green-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Parallel Circuits",
+          weakness: "Incorrect equivalent resistance",
+          observation:
+            "Adding resistances directly instead of using the reciprocal formula.",
+          recommendation:
+            "Always use 1/Rₑq = Σ(1/Rᵢ) for parallel; only direct sum for series.",
+        },
+      ],
+    },
+    // ─── CHEMISTRY ────────────────────────────────────────────────
+    25: {
+      assignments: [
+        {
+          id: 1,
+          name: "Balancing Equations Set",
+          status: "completed",
+          score: 97,
+        },
+        {
+          id: 2,
+          name: "Types of Reactions Worksheet",
+          status: "completed",
+          score: 95,
+        },
+        {
+          id: 3,
+          name: "Redox Reactions Practice",
+          status: "completed",
+          score: 93,
+        },
+      ],
+      quizzes: [
+        {
+          id: 1,
+          name: "Chemical Reactions Quiz",
+          status: "completed",
+          score: 96,
+        },
+        {
+          id: 2,
+          name: "Oxidation States Test",
+          status: "completed",
+          score: 94,
+        },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Industrial Reactions",
+          description:
+            "Study the Haber and Contact processes — links reactions to real industry.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Practice",
+          title: "Quick-balance Drill",
+          description:
+            "Balance 10 equations without a calculator — builds exam confidence.",
+          icon: "Lightbulb",
+          color: "bg-green-50 border-green-200 text-green-700",
+        },
+      ],
+      conceptWeaknesses: [],
+    },
+    26: {
+      assignments: [
+        { id: 1, name: "pH Scale Problems", status: "completed", score: 93 },
+        {
+          id: 2,
+          name: "Neutralization Reactions",
+          status: "completed",
+          score: 90,
+        },
+        {
+          id: 3,
+          name: "Salt Formation Lab Report",
+          status: "completed",
+          score: 88,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Acids & Bases Quiz", status: "completed", score: 91 },
+        { id: 2, name: "Indicators Test", status: "completed", score: 89 },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Buffer Solutions",
+          description:
+            "Explore how blood maintains pH 7.4 — an excellent real-world application.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Practice",
+          title: "Predict the Product",
+          description:
+            "Given an acid and base, predict the salt and water formed — 10 quick questions.",
+          icon: "Lightbulb",
+          color: "bg-purple-50 border-purple-200 text-purple-700",
+        },
+      ],
+      conceptWeaknesses: [],
+    },
+    27: {
+      assignments: [
+        {
+          id: 1,
+          name: "Physical Properties Comparison",
+          status: "completed",
+          score: 82,
+        },
+        {
+          id: 2,
+          name: "Reactivity Series Problems",
+          status: "in-progress",
+          score: null,
+        },
+        { id: 3, name: "Corrosion Case Study", status: "pending", score: null },
+      ],
+      quizzes: [
+        {
+          id: 1,
+          name: "Metals & Non-metals Quiz",
+          status: "pending",
+          score: null,
+        },
+        {
+          id: 2,
+          name: "Reactivity Series Test",
+          status: "pending",
+          score: null,
+        },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Memorise Reactivity Series",
+          description:
+            "Use the mnemonic 'Please Stop Called Me A Cute Zebra Instead For Gold'.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Extraction of Metals",
+          description:
+            "Study how position in reactivity series determines the extraction method.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Reactivity Series",
+          weakness: "Order confusion for mid-range metals",
+          observation: "Difficulty placing Fe, Sn, Pb relative to each other.",
+          recommendation:
+            "Write the full series from memory daily until the order is automatic.",
+        },
+      ],
+    },
+    // ─── BIOLOGY ──────────────────────────────────────────────────
+    37: {
+      assignments: [
+        {
+          id: 1,
+          name: "Life Processes Diagram",
+          status: "completed",
+          score: 95,
+        },
+        {
+          id: 2,
+          name: "Nutrition in Plants Worksheet",
+          status: "completed",
+          score: 92,
+        },
+        {
+          id: 3,
+          name: "Respiration Lab Report",
+          status: "completed",
+          score: 90,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Life Processes Quiz", status: "completed", score: 93 },
+        {
+          id: 2,
+          name: "Digestive System Test",
+          status: "completed",
+          score: 91,
+        },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Compare Aerobic & Anaerobic",
+          description:
+            "Create a side-by-side table of energy produced, location, and by-products.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Practice",
+          title: "Label the Diagrams",
+          description:
+            "Practise labelling the alimentary canal and lung structures under time pressure.",
+          icon: "Lightbulb",
+          color: "bg-green-50 border-green-200 text-green-700",
+        },
+      ],
+      conceptWeaknesses: [],
+    },
+    38: {
+      assignments: [
+        {
+          id: 1,
+          name: "Control & Coordination Notes",
+          status: "completed",
+          score: 88,
+        },
+        {
+          id: 2,
+          name: "Nervous System Diagram",
+          status: "completed",
+          score: 85,
+        },
+        {
+          id: 3,
+          name: "Hormones & Endocrine Glands",
+          status: "in-progress",
+          score: null,
+        },
+      ],
+      quizzes: [
+        {
+          id: 1,
+          name: "Control & Coordination Quiz",
+          status: "completed",
+          score: 86,
+        },
+        { id: 2, name: "Reflex Arc Test", status: "pending", score: null },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Organelle Function Match-up",
+          description:
+            "Confusing Golgi and ER? Complete the organelle match-up activity to fix this.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Hormonal Feedback Loops",
+          description:
+            "Explore how thyroid hormones use negative feedback — a fascinating system.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Cell Structure",
+          weakness: "Organelle Function Differentiation",
+          observation:
+            "Confusing functions of Golgi Apparatus and Endoplasmic Reticulum.",
+          recommendation:
+            "Create a comparison table highlighting synthesis vs. packaging roles.",
+        },
+      ],
+    },
+    // ─── ENGLISH ──────────────────────────────────────────────────
+    41: {
+      assignments: [
+        {
+          id: 1,
+          name: "Poetry Analysis Essay",
+          status: "completed",
+          score: 85,
+        },
+        {
+          id: 2,
+          name: "Comprehension Passage",
+          status: "completed",
+          score: 88,
+        },
+        { id: 3, name: "Character Sketch", status: "in-progress", score: null },
+      ],
+      quizzes: [
+        { id: 1, name: "Poetry Quiz", status: "completed", score: 84 },
+        { id: 2, name: "Grammar Test", status: "completed", score: 90 },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Thesis Statement Practice",
+          description:
+            "Use the 'Though/However' formula to add tension and specificity to your arguments.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Advanced Poetic Devices",
+          description:
+            "Go beyond simile/metaphor — explore enjambment, caesura, and volta.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Essay Structure",
+          weakness: "Topic Sentence Alignment",
+          observation:
+            "Paragraphs often drift from the main point introduced in the topic sentence.",
+          recommendation:
+            "Ensure every sentence in the body paragraph directly supports the topic sentence.",
+        },
+      ],
+    },
+    // ─── HISTORY ──────────────────────────────────────────────────
+    46: {
+      assignments: [
+        { id: 1, name: "Nationalism Timeline", status: "completed", score: 94 },
+        {
+          id: 2,
+          name: "Unification of Italy Essay",
+          status: "completed",
+          score: 91,
+        },
+        {
+          id: 3,
+          name: "French Revolution Analysis",
+          status: "completed",
+          score: 89,
+        },
+      ],
+      quizzes: [
+        {
+          id: 1,
+          name: "Nationalism in Europe Quiz",
+          status: "completed",
+          score: 94,
+        },
+        { id: 2, name: "Map-based Test", status: "completed", score: 90 },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Extension",
+          title: "Compare European Nationalisms",
+          description:
+            "Contrast German and Italian unification — key differences are frequently tested.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+        {
+          id: 2,
+          type: "Practice",
+          title: "Map Practice",
+          description:
+            "Locate major treaty cities and national boundaries on a blank Europe map.",
+          icon: "Lightbulb",
+          color: "bg-purple-50 border-purple-200 text-purple-700",
+        },
+      ],
+      conceptWeaknesses: [],
+    },
+    47: {
+      assignments: [
+        {
+          id: 1,
+          name: "Non-Cooperation Movement Report",
+          status: "completed",
+          score: 80,
+        },
+        {
+          id: 2,
+          name: "Civil Disobedience Essay",
+          status: "in-progress",
+          score: null,
+        },
+        {
+          id: 3,
+          name: "Independence Movement Timeline",
+          status: "pending",
+          score: null,
+        },
+      ],
+      quizzes: [
+        {
+          id: 1,
+          name: "Nationalism in India Quiz",
+          status: "pending",
+          score: null,
+        },
+        {
+          id: 2,
+          name: "Gandhi's Movements Test",
+          status: "pending",
+          score: null,
+        },
+      ],
+      aiSuggestions: [
+        {
+          id: 1,
+          type: "Remedial",
+          title: "Sequence the Movements",
+          description:
+            "Create a chronological chart: Non-Cooperation → Civil Disobedience → Quit India.",
+          icon: "RefreshCw",
+          color: "bg-orange-50 border-orange-200 text-orange-700",
+        },
+        {
+          id: 2,
+          type: "Extension",
+          title: "Women in Freedom Struggle",
+          description:
+            "Explore contributions of Sarojini Naidu and Kasturba Gandhi beyond the textbook.",
+          icon: "TrendingUp",
+          color: "bg-blue-50 border-blue-200 text-blue-700",
+        },
+      ],
+      conceptWeaknesses: [
+        {
+          id: 1,
+          topic: "Historical Analysis",
+          weakness: "Lacks depth in significance",
+          observation:
+            "Answers describe events accurately but don't explain their historical impact.",
+          recommendation:
+            "Always add: 'This was significant because…' after every key fact.",
+        },
+      ],
+    },
+    // ─── FALLBACK ─────────────────────────────────────────────────
+    default: {
+      assignments: [
+        { id: 1, name: "Chapter Problem Set", status: "completed", score: 88 },
+        {
+          id: 2,
+          name: "Worksheet Practice",
+          status: "in-progress",
+          score: null,
+        },
+      ],
+      quizzes: [
+        { id: 1, name: "Chapter Quiz", status: "pending", score: null },
       ],
       aiSuggestions: [
         {
@@ -4081,7 +4946,6 @@ export const STUDENT_DATA = {
             "Review the fundamental principles to improve your baseline understanding.",
           icon: "RefreshCw",
           color: "bg-orange-50 border-orange-200 text-orange-700",
-          badge: "Needs Attention",
         },
         {
           id: 2,
@@ -4090,20 +4954,9 @@ export const STUDENT_DATA = {
           description: "Try solving real-world problems using these concepts.",
           icon: "TrendingUp",
           color: "bg-blue-50 border-blue-200 text-blue-700",
-          badge: "Recommended",
         },
       ],
-      conceptWeaknesses: [
-        {
-          id: 1,
-          topic: "Quadratic Formula",
-          weakness: "Sign Errors in Discriminant",
-          observation: "Frequent calculation errors when a or c is negative.",
-          recommendation:
-            "Use parentheses for every substitution: b² - 4(a)(c)",
-          fix: "Practice: 5 Discriminant Calcs",
-        },
-      ],
+      conceptWeaknesses: [],
     },
   },
 
@@ -6836,4 +7689,21 @@ export const STUDENT_DATA = {
       },
     ],
   },
+
+  // Chapter Detail — subject name to resource key mapping
+  chapterDetailSubjectMap: {
+    Mathematics: "MATH",
+    Physics: "PHYSICS",
+    Chemistry: "CHEMISTRY",
+    Biology: "BIOLOGY",
+    History: "HISTORY",
+    English: "ENGLISH",
+  },
+
+  // Chapter Detail — mock resource fallbacks per type
+  chapterDetailMockResources: [
+    { id: "mock-1", type: "Video" },
+    { id: "mock-2", type: "Document" },
+    { id: "mock-3", type: "Experiment" },
+  ],
 };
