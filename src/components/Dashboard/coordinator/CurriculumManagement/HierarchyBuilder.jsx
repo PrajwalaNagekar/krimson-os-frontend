@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { CURRICULUM_MANAGEMENT_DATA } from "../../../../data/coordinatorData";
+import {
+  CURRICULUM_MANAGEMENT_DATA,
+  ACADEMIC_YEAR_TERMS,
+} from "../../../../data/coordinatorData";
 import CurriculumList from "./CurriculumList";
 import CurriculumSelectionForm from "./CurriculumSelectionForm";
 import SyllabusBuilder from "./SyllabusBuilder";
@@ -114,6 +117,7 @@ const HierarchyBuilder = () => {
       frameworks={frameworks}
       grades={grades}
       subjects={subjects}
+      academicTerms={ACADEMIC_YEAR_TERMS}
       onBackToList={handleBackToList}
     />
   );

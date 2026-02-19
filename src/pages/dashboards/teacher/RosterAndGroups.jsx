@@ -4,7 +4,7 @@ import RosterHeader from "../../../components/dashboard/teacher/RosterAndGroups/
 import RosterStats from "../../../components/dashboard/teacher/RosterAndGroups/RosterStats";
 import RosterTabs from "../../../components/dashboard/teacher/RosterAndGroups/RosterTabs";
 import RosterList from "../../../components/dashboard/teacher/RosterAndGroups/RosterList";
-import GroupCluster from "../../../components/dashboard/teacher/RosterAndGroups/GroupCluster";
+import LearningGroups from "../../../components/dashboard/teacher/RosterAndGroups/LearningGroups";
 import CommunicationHub from "../../../components/dashboard/teacher/RosterAndGroups/CommunicationHub";
 import StudentGroupSelector from "../../../components/dashboard/teacher/RosterAndGroups/StudentGroupSelector";
 import AIStrategicAnalysis from "../../../components/dashboard/teacher/RosterAndGroups/AIStrategicAnalysis";
@@ -49,11 +49,14 @@ const RosterAndGroups = () => {
 
   // --- Actions ---
   const createNewGroup = () => {
+    // This is for the header button - generally creates a placeholder
+    // Or we could trigger the modal in LearningGroups if we lifted state
     const newGroup = {
       id: Date.now(),
-      name: `New Strategic Group ${groups.length + 1}`,
+      name: `New Group ${groups.length + 1}`,
       members: [],
-      type: "General",
+      type: "Mixed Ability",
+      description: "Newly created group",
     };
     setGroups([newGroup, ...groups]);
     setActiveTab("groups");
@@ -184,13 +187,12 @@ const RosterAndGroups = () => {
         )}
 
         {activeTab === "groups" && (
-          <GroupCluster
+          <LearningGroups
             groups={groups}
+            setGroups={setGroups}
+            students={students}
             createNewGroup={createNewGroup}
-            setSelectorGroupId={setSelectorGroupId}
-            initiateChat={initiateChat}
             deleteGroup={deleteGroup}
-            config={data.groupClusterConfig}
           />
         )}
 

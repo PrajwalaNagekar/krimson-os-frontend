@@ -11,7 +11,8 @@ import ExamDashboard from "../pages/dashboards/student/ExamDashboard";
 import GradesReport from "../pages/dashboards/student/GradesReport";
 import CommunicationHub from "../pages/dashboards/student/CommunicationHub";
 import PerformanceAnalytics from "../pages/dashboards/student/PerformanceAnalytics";
-import MyProgress from "../pages/dashboards/student/MyProgress";
+import MyProgress from "../pages/dashboards/student/Myprogress/Myprogress";
+import ChapterDetail from "../pages/dashboards/student/Myprogress/ChapterDetail";
 import MyLabJourney from "../pages/dashboards/student/MyLabJourney";
 
 import BehaviorLog from "../pages/dashboards/student/BehaviorLog";
@@ -40,6 +41,7 @@ const StudentRoutes = () => {
         <Route path="communication" element={<CommunicationHub />} />
         <Route path="analytics" element={<PerformanceAnalytics />} />
         <Route path="progress" element={<MyProgress />} />
+        <Route path="progress/chapter/:chapterId" element={<ChapterDetail />} />
         <Route path="lab-journey" element={<MyLabJourney />} />
         <Route path="learning-support" element={<MyLearningSupport />} />
         <Route path="events" element={<CalendarEvent />} />
