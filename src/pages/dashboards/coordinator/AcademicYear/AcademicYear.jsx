@@ -1,63 +1,28 @@
 /**
- * @component AcademicYear
- * @description Coordinator Screen - Academic Year & Structure Management
+ * @page AcademicYear (list/dashboard)
+ * @description Screen A – Displays all academic years with status, Edit/View, and [+ New] navigation.
  */
-import React, { useState } from "react";
-import { ACADEMIC_YEAR_DATA } from "../../../../data/coordinatorData";
-import { ADMIN_DATA } from "../../../../data/adminData";
-import AcademicYearHeader from "../../../../components/dashboard/coordinator/AcademicYear/AcademicYearHeader";
-import AcademicYearDashboard from "../../../../components/dashboard/coordinator/AcademicYear/AcademicYearDashboard";
-import GradesAndSectionsManager from "../../../../components/dashboard/coordinator/AcademicYear/GradesAndSectionsManager";
-import AddGradeFormCoordinator from "../../../../components/dashboard/coordinator/AcademicYear/AddGradeFormCoordinator";
-import AddSectionFormCoordinator from "../../../../components/dashboard/coordinator/AcademicYear/AddSectionFormCoordinator";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import AcademicYearList from "../../../../components/dashboard/coordinator/AcademicYear/AcademicYearList";
+import { ACADEMIC_YEARS_LIST } from "../../../../data/coordinatorData";
 
 const AcademicYear = () => {
-  const [viewMode, setViewMode] = useState("dashboard"); // 'dashboard', 'grades', 'addGrade', 'addSection'
-  const [selectedGrade, setSelectedGrade] = useState(null);
-
-  const academicYearData = ACADEMIC_YEAR_DATA;
-
-  // Render Add Grade Form
-  if (viewMode === "addGrade") {
-    return <AddGradeFormCoordinator onBack={() => setViewMode("grades")} />;
-  }
-
-  // Render Add Section Form
-  if (viewMode === "addSection") {
-    return (
-      <AddSectionFormCoordinator
-        selectedGrade={selectedGrade}
-        onBack={() => setViewMode("grades")}
-      />
-    );
-  }
+  const navigate = useNavigate();
+  // TODO: Replace with API call — const { data: years } = useGetAcademicYearsQuery();
+  const years = ACADEMIC_YEARS_LIST;
 
   return (
-    <div className="space-y-6 animate-fadeIn pb-10">
-      <AcademicYearHeader
-        activeYear={academicYearData.activeYear}
-        viewMode={viewMode}
-        setViewMode={setViewMode}
-      />
-
-      {viewMode === "dashboard" && (
-        <AcademicYearDashboard
-          academicYearData={academicYearData}
-          onManageGrades={() => setViewMode("grades")}
-        />
-      )}
-
-      {viewMode === "grades" && (
-        <GradesAndSectionsManager
-          grades={ADMIN_DATA.grades}
-          onAddGrade={() => setViewMode("addGrade")}
-          onAddSection={(grade) => {
-            setSelectedGrade(grade);
-            setViewMode("addSection");
-          }}
-        />
-      )}
-    </div>
+    <AcademicYearList
+      years={years}
+      onNew={() => navigate("/dashboard/coordinator/academic-year/create")}
+      onEdit={(id) =>
+        navigate(`/dashboard/coordinator/academic-year/edit/${id}`)
+      }
+      onView={(id) =>
+        navigate(`/dashboard/coordinator/academic-year/view/${id}`)
+      }
+    />
   );
 };
 

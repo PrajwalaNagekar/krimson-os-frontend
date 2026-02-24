@@ -10,6 +10,8 @@ import AssessmentTracker from "../pages/dashboards/coordinator/AssessmentTracker
 import AcademicYear from "../pages/dashboards/coordinator/AcademicYear";
 import {
   CreateAcademicYear,
+  EditAcademicYear,
+  ViewAcademicYear,
   ActivateYear,
   LockYear,
 } from "../pages/dashboards/coordinator/AcademicYear";
@@ -30,6 +32,8 @@ const CoordinatorRoutes = () => {
         <Route path="curriculum" element={<CurriculumPlanner />} />
         <Route path="academic-year" element={<AcademicYear />} />
         <Route path="academic-year/create" element={<CreateAcademicYear />} />
+        <Route path="academic-year/edit/:id" element={<EditAcademicYear />} />
+        <Route path="academic-year/view/:id" element={<ViewAcademicYear />} />
         <Route path="academic-year/activate" element={<ActivateYear />} />
         <Route path="academic-year/lock" element={<LockYear />} />
         <Route path="timetable" element={<TimetableConsole />} />

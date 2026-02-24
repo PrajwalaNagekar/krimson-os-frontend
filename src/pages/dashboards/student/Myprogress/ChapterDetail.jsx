@@ -81,14 +81,6 @@ const ChapterDetail = () => {
         {/* Breadcrumb — left */}
         <nav className="flex items-center gap-1.5 text-sm">
           <button
-            onClick={() => navigate("/dashboard/student")}
-            className="flex items-center gap-1 text-slate-500 hover:text-blue-600 transition-colors font-medium"
-          >
-            <Home size={14} />
-            Dashboard
-          </button>
-          <ChevronRight size={14} className="text-slate-400" />
-          <button
             onClick={() => navigate("/dashboard/student/progress")}
             className="text-slate-500 hover:text-blue-600 transition-colors font-medium"
           >

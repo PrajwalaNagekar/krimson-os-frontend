@@ -1766,3 +1766,320 @@ export const ACADEMIC_YEAR_TERMS = [
     academicYearName: "2025-2026",
   },
 ];
+
+// =============================================================================
+// ACADEMIC YEARS LIST
+// Used by the Academic Year Wizard (Screens A–G).
+// API-integration-ready: replace static array with API call.
+// =============================================================================
+export const ACADEMIC_YEARS_LIST = [
+  {
+    id: "ay-2025-2026",
+    name: "2025-2026",
+    startDate: "2025-04-01",
+    endDate: "2026-03-31",
+    description: "Academic Year 2025-26 for SSSGS",
+    status: "active", // active | draft | closed | archived
+    terms: [
+      {
+        id: "t1",
+        name: "Term 1",
+        startDate: "2025-04-01",
+        endDate: "2025-06-30",
+        totalWeeks: 13,
+        instructionalWeeks: 10,
+        breakWeeks: 2,
+        examWeeks: 1,
+        assessmentWindows: {
+          diagnostic: [
+            { id: "d1", startDate: "2025-04-01", endDate: "2025-04-10" },
+          ],
+          formative: [
+            { id: "f1", startDate: "2025-05-01", endDate: "2025-05-15" },
+            { id: "f2", startDate: "2025-06-01", endDate: "2025-06-15" },
+          ],
+          summative: [
+            { id: "s1", startDate: "2025-06-20", endDate: "2025-06-30" },
+          ],
+          project: [
+            { id: "p1", startDate: "2025-06-10", endDate: "2025-06-20" },
+          ],
+        },
+      },
+      {
+        id: "t2",
+        name: "Term 2",
+        startDate: "2025-07-15",
+        endDate: "2025-10-15",
+        totalWeeks: 13,
+        instructionalWeeks: 10,
+        breakWeeks: 2,
+        examWeeks: 1,
+        assessmentWindows: {
+          diagnostic: [],
+          formative: [
+            { id: "f3", startDate: "2025-08-01", endDate: "2025-08-15" },
+            { id: "f4", startDate: "2025-09-01", endDate: "2025-09-15" },
+          ],
+          summative: [
+            { id: "s2", startDate: "2025-10-05", endDate: "2025-10-15" },
+          ],
+          project: [],
+        },
+      },
+      {
+        id: "t3",
+        name: "Term 3",
+        startDate: "2025-11-01",
+        endDate: "2026-03-31",
+        totalWeeks: 21,
+        instructionalWeeks: 16,
+        breakWeeks: 3,
+        examWeeks: 2,
+        assessmentWindows: {
+          diagnostic: [],
+          formative: [
+            { id: "f5", startDate: "2025-12-01", endDate: "2025-12-15" },
+            { id: "f6", startDate: "2026-01-15", endDate: "2026-01-30" },
+          ],
+          summative: [
+            { id: "s3", startDate: "2026-03-15", endDate: "2026-03-31" },
+          ],
+          project: [
+            { id: "p2", startDate: "2026-03-01", endDate: "2026-03-14" },
+          ],
+        },
+      },
+    ],
+    holidays: {
+      school: [
+        {
+          id: "sh1",
+          name: "Summer Break",
+          startDate: "2025-07-01",
+          endDate: "2025-07-14",
+        },
+        {
+          id: "sh2",
+          name: "Diwali Break",
+          startDate: "2025-10-20",
+          endDate: "2025-10-31",
+        },
+        {
+          id: "sh3",
+          name: "Winter Break",
+          startDate: "2025-12-25",
+          endDate: "2026-01-05",
+        },
+      ],
+      public: [
+        { id: "ph1", name: "Independence Day", date: "2025-08-15" },
+        { id: "ph2", name: "Gandhi Jayanti", date: "2025-10-02" },
+        { id: "ph3", name: "Republic Day", date: "2026-01-26" },
+      ],
+      training: [{ id: "tr1", name: "Staff PD Day", date: "2026-03-30" }],
+    },
+  },
+  {
+    id: "ay-2024-2025",
+    name: "2024-2025",
+    startDate: "2024-04-01",
+    endDate: "2025-03-31",
+    description: "Academic Year 2024-25 for SSSGS",
+    status: "closed",
+    terms: [
+      {
+        id: "t4",
+        name: "Term 1",
+        startDate: "2024-04-01",
+        endDate: "2024-06-30",
+        totalWeeks: 13,
+        instructionalWeeks: 10,
+        breakWeeks: 2,
+        examWeeks: 1,
+        assessmentWindows: {
+          diagnostic: [
+            { id: "d2", startDate: "2024-04-01", endDate: "2024-04-10" },
+          ],
+          formative: [
+            { id: "f7", startDate: "2024-05-05", endDate: "2024-05-18" },
+          ],
+          summative: [
+            { id: "s4", startDate: "2024-06-18", endDate: "2024-06-28" },
+          ],
+          project: [],
+        },
+      },
+      {
+        id: "t5",
+        name: "Term 2",
+        startDate: "2024-07-15",
+        endDate: "2024-10-15",
+        totalWeeks: 13,
+        instructionalWeeks: 11,
+        breakWeeks: 1,
+        examWeeks: 1,
+        assessmentWindows: {
+          diagnostic: [],
+          formative: [
+            { id: "f8", startDate: "2024-08-12", endDate: "2024-08-22" },
+          ],
+          summative: [
+            { id: "s5", startDate: "2024-10-07", endDate: "2024-10-15" },
+          ],
+          project: [],
+        },
+      },
+      {
+        id: "t6",
+        name: "Term 3",
+        startDate: "2024-11-01",
+        endDate: "2025-03-31",
+        totalWeeks: 21,
+        instructionalWeeks: 17,
+        breakWeeks: 2,
+        examWeeks: 2,
+        assessmentWindows: {
+          diagnostic: [],
+          formative: [
+            { id: "f9", startDate: "2024-12-09", endDate: "2024-12-18" },
+          ],
+          summative: [
+            { id: "s6", startDate: "2025-03-10", endDate: "2025-03-28" },
+          ],
+          project: [
+            { id: "p3", startDate: "2025-03-03", endDate: "2025-03-10" },
+          ],
+        },
+      },
+    ],
+    holidays: {
+      school: [
+        {
+          id: "sh4",
+          name: "Summer Break",
+          startDate: "2024-07-01",
+          endDate: "2024-07-14",
+        },
+        {
+          id: "sh5",
+          name: "Diwali Break",
+          startDate: "2024-11-01",
+          endDate: "2024-11-05",
+        },
+        {
+          id: "sh6",
+          name: "Winter Break",
+          startDate: "2024-12-25",
+          endDate: "2025-01-02",
+        },
+      ],
+      public: [
+        { id: "ph4", name: "Independence Day", date: "2024-08-15" },
+        { id: "ph5", name: "Gandhi Jayanti", date: "2024-10-02" },
+        { id: "ph6", name: "Republic Day", date: "2025-01-26" },
+      ],
+      training: [{ id: "tr2", name: "Staff PD Day", date: "2025-03-28" }],
+    },
+  },
+  {
+    id: "ay-2023-2024",
+    name: "2023-2024",
+    startDate: "2023-04-01",
+    endDate: "2024-03-31",
+    description: "Academic Year 2023-24 for SSSGS",
+    status: "archived",
+    terms: [
+      {
+        id: "t7",
+        name: "Term 1",
+        startDate: "2023-04-01",
+        endDate: "2023-06-30",
+        totalWeeks: 13,
+        instructionalWeeks: 10,
+        breakWeeks: 2,
+        examWeeks: 1,
+        assessmentWindows: {
+          diagnostic: [
+            { id: "d3", startDate: "2023-04-03", endDate: "2023-04-12" },
+          ],
+          formative: [
+            { id: "f10", startDate: "2023-05-08", endDate: "2023-05-18" },
+          ],
+          summative: [
+            { id: "s7", startDate: "2023-06-19", endDate: "2023-06-29" },
+          ],
+          project: [],
+        },
+      },
+      {
+        id: "t8",
+        name: "Term 2",
+        startDate: "2023-07-17",
+        endDate: "2023-10-13",
+        totalWeeks: 13,
+        instructionalWeeks: 10,
+        breakWeeks: 2,
+        examWeeks: 1,
+        assessmentWindows: {
+          diagnostic: [],
+          formative: [
+            { id: "f11", startDate: "2023-08-14", endDate: "2023-08-24" },
+          ],
+          summative: [
+            { id: "s8", startDate: "2023-10-05", endDate: "2023-10-13" },
+          ],
+          project: [],
+        },
+      },
+      {
+        id: "t9",
+        name: "Term 3",
+        startDate: "2023-11-01",
+        endDate: "2024-03-31",
+        totalWeeks: 21,
+        instructionalWeeks: 16,
+        breakWeeks: 3,
+        examWeeks: 2,
+        assessmentWindows: {
+          diagnostic: [],
+          formative: [
+            { id: "f12", startDate: "2023-12-11", endDate: "2023-12-20" },
+          ],
+          summative: [
+            { id: "s9", startDate: "2024-03-11", endDate: "2024-03-29" },
+          ],
+          project: [],
+        },
+      },
+    ],
+    holidays: {
+      school: [
+        {
+          id: "sh7",
+          name: "Summer Break",
+          startDate: "2023-07-01",
+          endDate: "2023-07-16",
+        },
+        {
+          id: "sh8",
+          name: "Diwali Break",
+          startDate: "2023-11-12",
+          endDate: "2023-11-15",
+        },
+        {
+          id: "sh9",
+          name: "Winter Break",
+          startDate: "2023-12-25",
+          endDate: "2024-01-03",
+        },
+      ],
+      public: [
+        { id: "ph7", name: "Independence Day", date: "2023-08-15" },
+        { id: "ph8", name: "Gandhi Jayanti", date: "2023-10-02" },
+        { id: "ph9", name: "Republic Day", date: "2024-01-26" },
+      ],
+      training: [{ id: "tr3", name: "Staff PD Day", date: "2024-03-29" }],
+    },
+  },
+];
