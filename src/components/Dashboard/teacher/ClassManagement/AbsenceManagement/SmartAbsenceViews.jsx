@@ -7,6 +7,7 @@ import {
   ArrowLeft,
   Clock,
   ChevronRight,
+  ChevronDown,
   Sparkles,
   Upload,
   Paperclip,
@@ -143,11 +144,11 @@ const SmartAbsenceViews = ({ data }) => {
         </div>
         <div className="relative z-10 flex flex-col sm:flex-row items-center gap-3">
           <div className="flex flex-col sm:flex-row items-center gap-2">
-            <div className="flex items-center gap-2 bg-white/20 px-3 py-2 rounded-xl backdrop-blur-sm border border-white/30">
+            <div className="relative flex items-center bg-white/20 px-3 py-2 rounded-xl backdrop-blur-sm border border-white/30">
               <select
                 value={absenceReason}
                 onChange={(e) => setAbsenceReason(e.target.value)}
-                className="bg-transparent text-white font-bold text-[13px] outline-none border-none focus:ring-0 cursor-pointer appearance-none"
+                className="bg-transparent text-white font-bold text-[13px] outline-none border-none focus:ring-0 cursor-pointer appearance-none pr-6 w-full"
               >
                 {LEAVE_TYPES.map((type) => (
                   <option
@@ -159,6 +160,10 @@ const SmartAbsenceViews = ({ data }) => {
                   </option>
                 ))}
               </select>
+              <ChevronDown
+                size={14}
+                className="text-white absolute right-3 pointer-events-none"
+              />
             </div>
 
             <div className="flex items-center gap-2 bg-white/20 px-3 py-2 rounded-xl backdrop-blur-sm border border-white/30">

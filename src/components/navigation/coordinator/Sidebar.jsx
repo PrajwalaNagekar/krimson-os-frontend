@@ -35,7 +35,7 @@ const Sidebar = ({ isOpen, onClose }) => {
       icon: BookOpen,
     },
     {
-      title: "Academic Structure",
+      title: "Academic Year",
       path: "/dashboard/coordinator/academic-year",
       icon: Calendar,
     },

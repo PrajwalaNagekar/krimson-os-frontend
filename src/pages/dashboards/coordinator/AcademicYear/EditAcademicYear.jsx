@@ -1,11 +1,11 @@
 /**
- * @page CreateAcademicYear
- * @description Wizard orchestrator for creating a new academic year (Screens B–G).
+ * @page EditAcademicYear
+ * @description Pre-fills the wizard with existing year data for editing.
  * Step 1: Basic Info → Step 2: Term Structure → Step 3: Week Breakup
  * → Step 4: Assessment Windows → Step 5: Holidays → Step 6: Review & Save
  */
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
 import StepProgressBar from "../../../../components/dashboard/coordinator/AcademicYear/StepProgressBar";
@@ -15,6 +15,7 @@ import InstructionalWeeksStep from "../../../../components/dashboard/coordinator
 import AssessmentWindowsStep from "../../../../components/dashboard/coordinator/AcademicYear/AssessmentWindowsStep";
 import HolidaysStep from "../../../../components/dashboard/coordinator/AcademicYear/HolidaysStep";
 import ReviewStep from "../../../../components/dashboard/coordinator/AcademicYear/ReviewStep";
+import { ACADEMIC_YEARS_LIST } from "../../../../data/coordinatorData";
 
 const makeAssessmentEntry = () => ({
   diagnostic: [],
@@ -23,30 +24,38 @@ const makeAssessmentEntry = () => ({
   project: [],
 });
 
-const CreateAcademicYear = () => {
+const EditAcademicYear = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+
+  // TODO: Replace with API call — const { data: year } = useGetAcademicYearQuery(id);
+  const year = ACADEMIC_YEARS_LIST.find((y) => y.id === id);
+
   const [currentStep, setCurrentStep] = useState(1);
 
-  // Step 1: Basic Info
+  // Step 1: Basic Info — no description field
   const [basicInfo, setBasicInfo] = useState({
-    name: "",
-    startDate: "",
-    endDate: "",
+    name: year?.name || "",
+    startDate: year?.startDate || "",
+    endDate: year?.endDate || "",
   });
 
-  // Step 2: Terms — start EMPTY; user adds them one-by-one
-  const [terms, setTerms] = useState([]);
+  // Step 2: Terms — pre-filled from existing data
+  const [terms, setTerms] = useState(year?.terms || []);
 
-  // Step 4: Assessment data synced to term count
-  const [assessmentData, setAssessmentData] = useState([]);
+  // Step 4: Assessment data — one entry per term, pre-filled
+  const [assessmentData, setAssessmentData] = useState(
+    (year?.terms || []).map(
+      (term) => term.assessmentWindows || makeAssessmentEntry(),
+    ),
+  );
 
-  // Step 5: Holidays
-  const [holidays, setHolidays] = useState({
-    school: [],
-    public: [],
-  });
+  // Step 5: Holidays — pre-filled
+  const [holidays, setHolidays] = useState(
+    year?.holidays || { school: [], public: [] },
+  );
 
-  // When term list changes, keep assessmentData rows in sync
+  // Keep assessmentData in sync when terms added/removed
   const handleTermsChange = (newTerms) => {
     setTerms(newTerms);
     setAssessmentData((prev) =>
@@ -68,14 +77,28 @@ const CreateAcademicYear = () => {
   const goBack = () => setCurrentStep((s) => s - 1);
 
   const handleSave = (status) => {
-    const payload = { basicInfo, terms, assessmentData, holidays, status };
-    // TODO: Replace with API call — await createAcademicYear(payload);
-    console.log("[CreateAcademicYear] Saving:", payload);
+    const payload = { id, basicInfo, terms, assessmentData, holidays, status };
+    // TODO: Replace with API call — await updateAcademicYear(payload);
+    console.log("[EditAcademicYear] Saving:", payload);
     navigate("/dashboard/coordinator/academic-year");
   };
 
-  const reviewFormData = { basicInfo, terms, assessmentData, holidays };
+  // Year not found guard
+  if (!year) {
+    return (
+      <div className="flex flex-col items-center justify-center py-32 text-slate-400">
+        <p className="text-lg font-semibold">Academic year not found.</p>
+        <button
+          onClick={() => navigate("/dashboard/coordinator/academic-year")}
+          className="mt-4 text-blue-600 underline text-sm"
+        >
+          Back to list
+        </button>
+      </div>
+    );
+  }
 
+  const reviewFormData = { basicInfo, terms, assessmentData, holidays };
   const BACK_PATH = "/dashboard/coordinator/academic-year";
 
   return (
@@ -97,10 +120,10 @@ const CreateAcademicYear = () => {
             <span className="text-sm font-medium">Back to Academic Years</span>
           </button>
           <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight drop-shadow-sm mb-1">
-            Create Academic Year
+            Edit — {year.name}
           </h1>
           <p className="text-white/80 text-sm font-medium">
-            Follow the steps to configure your new academic year.
+            Update the configuration for this academic year.
           </p>
         </div>
       </div>
@@ -178,4 +201,4 @@ const CreateAcademicYear = () => {
   );
 };
 
-export default CreateAcademicYear;
+export default EditAcademicYear;
