@@ -2,7 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import TeacherLayout from "../layouts/TeacherLayout";
 import TeacherHomeDashboard from "../pages/dashboards/teacher/HomeDashboard";
-import ClassManagement from "../pages/dashboards/teacher/ClassManagement";
+import ClassManagement from "../pages/dashboards/teacher/ClassManagement/ClassManagement";
+import AbsenceManagementPage from "../pages/dashboards/teacher/ClassManagement/AbsenceManagement";
+import SubstitutionResponse from "../pages/dashboards/teacher/ClassManagement/SubstitutionResponse";
+import ClassDetail from "../pages/dashboards/teacher/ClassManagement/ClassDetail";
 import LessonPlanning from "../pages/dashboards/teacher/LessonPlanning";
 import AttendanceLog from "../pages/dashboards/teacher/AttendanceLog";
 import AssignmentManager from "../pages/dashboards/teacher/AssignmentManager";
@@ -35,7 +38,16 @@ const TeacherRoutes = () => {
       <Route element={<TeacherLayout />}>
         <Route index element={<TeacherHomeDashboard />} />
         <Route path="home" element={<TeacherHomeDashboard />} />
-        <Route path="classes" element={<ClassManagement />} />
+        {/* Class Management — nested routes */}
+        <Route path="classes">
+          <Route index element={<ClassManagement />} />
+          <Route path="absence" element={<AbsenceManagementPage />} />
+          <Route
+            path="substitution-response"
+            element={<SubstitutionResponse />}
+          />
+          <Route path=":classId" element={<ClassDetail />} />
+        </Route>
         <Route path="lessons" element={<LessonPlanning />} />
         <Route path="attendance" element={<AttendanceLog />} />
         <Route path="assignments" element={<AssignmentManager />} />
