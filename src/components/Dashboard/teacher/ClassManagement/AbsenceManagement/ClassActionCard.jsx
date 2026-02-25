@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Users,
   MapPin,
@@ -14,7 +15,15 @@ import {
 import ActionButton from "./ActionButton";
 
 const ClassActionCard = ({ cls, selectedAction, onSelectAction }) => {
-  const handleAction = (act) => onSelectAction(cls.id, act);
+  const navigate = useNavigate();
+
+  const handleAction = (act) => {
+    if (act === "POSTPONE") {
+      navigate(`/dashboard/teacher/classes/absence/postpone/${cls.id}`);
+    } else {
+      onSelectAction(cls.id, act);
+    }
+  };
 
   return (
     <div className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden flex flex-col transition-all hover:border-blue-200">
@@ -145,20 +154,15 @@ const ClassActionCard = ({ cls, selectedAction, onSelectAction }) => {
             )}
 
             {/* Postponement Scheduler */}
-            {selectedAction === "POSTPONE" && cls.postponeSlots && (
+            {selectedAction === "POSTPONE" && (
               <div className="space-y-3">
                 <h4 className="flex items-center gap-1.5 text-[11px] font-black uppercase tracking-widest text-slate-500">
                   <CalendarCheck size={14} className="text-emerald-500" />{" "}
-                  Postponement Scheduler
+                  Postponement Navigation
                 </h4>
-                <select className="w-full sm:w-2/3 p-3 bg-white border border-slate-200 rounded-xl text-[13px] font-semibold text-slate-700 focus:ring-1 focus:ring-emerald-500 outline-none">
-                  {cls.postponeSlots.map((slot, i) => (
-                    <option key={i}>
-                      {slot.date} — {slot.room} ({slot.type})
-                    </option>
-                  ))}
-                  <option>Find another slot...</option>
-                </select>
+                <p className="text-[12px] font-semibold text-slate-600">
+                  Navigating to dedicated postpone page...
+                </p>
               </div>
             )}
 

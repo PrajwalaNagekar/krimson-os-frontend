@@ -24,25 +24,32 @@ const formatDate = (d) => {
 
 const WEEK_TYPES = [
   {
-    field: "instructionalWeeks",
+    field: "Teaching Weeks",
     label: "Teaching Weeks",
     color: "text-blue-600",
     barColor: "bg-gradient-to-r from-cyan-400 to-blue-500",
     dotColor: "bg-blue-400",
   },
   {
-    field: "breakWeeks",
-    label: "Project Weeks",
+    field: "Revision",
+    label: "Revision Weeks",
     color: "text-amber-600",
     barColor: "bg-gradient-to-r from-amber-400 to-orange-400",
     dotColor: "bg-amber-400",
   },
   {
-    field: "examWeeks",
-    label: "Assessment Weeks",
+    field: "Assessments weeks",
+    label: "Assessments Weeks",
     color: "text-pink-600",
     barColor: "bg-gradient-to-r from-pink-400 to-rose-400",
     dotColor: "bg-pink-400",
+  },
+  {
+    field: "Project Weeks",
+    label: "Project Weeks",
+    color: "text-purple-600",
+    barColor: "bg-gradient-to-r from-violet-400 to-purple-500",
+    dotColor: "bg-purple-500",
   },
 ];
 

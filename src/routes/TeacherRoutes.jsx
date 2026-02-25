@@ -3,10 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import TeacherLayout from "../layouts/TeacherLayout";
 import TeacherHomeDashboard from "../pages/dashboards/teacher/HomeDashboard";
 import ClassManagement from "../pages/dashboards/teacher/ClassManagement/ClassManagement";
-import AbsenceManagementPage from "../pages/dashboards/teacher/ClassManagement/AbsenceManagement";
+import AbsenceManagementPage from "../pages/dashboards/teacher/ClassManagement/AbsenseMangemnt/AbsenseMangemnt";
+import PostponePage from "../pages/dashboards/teacher/ClassManagement/AbsenseMangemnt/Postpone/Postpone";
 import SubstitutionResponse from "../pages/dashboards/teacher/ClassManagement/SubstitutionResponse";
 import ClassDetail from "../pages/dashboards/teacher/ClassManagement/ClassDetail";
-import LessonPlanning from "../pages/dashboards/teacher/LessonPlanning";
+//import LessonPlanning from "../pages/dashboards/teacher/LessonPlanning";
 import AttendanceLog from "../pages/dashboards/teacher/AttendanceLog";
 import AssignmentManager from "../pages/dashboards/teacher/AssignmentManager";
 import Gradebook from "../pages/dashboards/teacher/Gradebook";
@@ -28,6 +29,7 @@ import CCAManager from "../pages/dashboards/teacher/CCAManager";
 import EducationalTrips from "../pages/dashboards/teacher/EducationalTrips";
 import CollaborationHub from "../pages/dashboards/teacher/CollaborationHub";
 import AcademicDecision from "../pages/dashboards/teacher/AcademicDecision";
+import CurriculumBuilder from "../pages/dashboards/teacher/CurriculumBuilder/CurriculumBuilder";
 
 import Support from "../pages/dashboards/teacher/Support";
 import ProfilePage from "../pages/common/ProfilePage";
@@ -41,14 +43,17 @@ const TeacherRoutes = () => {
         {/* Class Management — nested routes */}
         <Route path="classes">
           <Route index element={<ClassManagement />} />
-          <Route path="absence" element={<AbsenceManagementPage />} />
+          <Route path="absence">
+            <Route index element={<AbsenceManagementPage />} />
+            <Route path="postpone/:classId" element={<PostponePage />} />
+          </Route>
           <Route
             path="substitution-response"
             element={<SubstitutionResponse />}
           />
           <Route path=":classId" element={<ClassDetail />} />
         </Route>
-        <Route path="lessons" element={<LessonPlanning />} />
+        {/* <Route path="lessons" element={<LessonPlanning />} /> */}
         <Route path="attendance" element={<AttendanceLog />} />
         <Route path="assignments" element={<AssignmentManager />} />
         <Route path="grades" element={<Gradebook />} />
@@ -76,6 +81,7 @@ const TeacherRoutes = () => {
           element={<ProfilePage roleOverride="Teacher" />}
         />
         <Route path="support" element={<Support />} />
+        <Route path="curriculum-builder" element={<CurriculumBuilder />} />
 
         {/* Fallback */}
         <Route path="*" element={<TeacherHomeDashboard />} />

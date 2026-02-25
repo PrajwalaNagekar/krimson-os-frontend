@@ -20,8 +20,12 @@ import {
   UserCircle,
   Rocket,
   ClipboardList,
-  FlaskConical, Trophy, Users2, Compass,
+  FlaskConical,
+  Trophy,
+  Users2,
+  Compass,
   GraduationCap,
+  Layers,
 } from "lucide-react";
 
 const Sidebar = ({ isOpen, onClose }) => {
@@ -38,15 +42,15 @@ const Sidebar = ({ isOpen, onClose }) => {
       icon: <LayoutDashboard size={20} />,
     }, // Screen 1
     {
-      name: "My Classes & subjects",
+      name: "My Timetable",
       path: "/dashboard/teacher/classes",
       icon: <Users size={20} />,
     }, // Screen 2
-    {
-      name: "Lesson Plans",
-      path: "/dashboard/teacher/lessons",
-      icon: <BookOpen size={20} />,
-    }, // Screen 3
+    // {
+    //   name: "Lesson Plans",
+    //   path: "/dashboard/teacher/lessons",
+    //   icon: <BookOpen size={20} />,
+    // }, // Screen 3
     {
       name: "Attendance Log",
       path: "/dashboard/teacher/attendance",
@@ -62,6 +66,11 @@ const Sidebar = ({ isOpen, onClose }) => {
       path: "/dashboard/teacher/academic-support",
       icon: <BookOpen size={20} />,
     }, // Combined
+    {
+      name: "Curriculum Builder",
+      path: "/dashboard/teacher/curriculum-builder",
+      icon: <Layers size={20} />,
+    },
     {
       name: "Roster & Groups",
       path: "/dashboard/teacher/roster-groups",
@@ -138,9 +147,21 @@ const Sidebar = ({ isOpen, onClose }) => {
       path: "/dashboard/teacher/labs",
       icon: <FlaskConical size={20} />,
     }, // Screen 229-239
-    { name: "CCA Management", path: "/dashboard/teacher/cca", icon: <Trophy size={20} /> }, // New CCA Module
-    { name: "Collaboration Space", path: "/dashboard/teacher/collaboration", icon: <Users2 size={20} /> }, // Screen 250-252
-    { name: "Academic Decision", path: "/dashboard/teacher/academic-decision", icon: <GraduationCap size={20} /> }, // Screens 262-
+    {
+      name: "CCA Management",
+      path: "/dashboard/teacher/cca",
+      icon: <Trophy size={20} />,
+    }, // New CCA Module
+    {
+      name: "Collaboration Space",
+      path: "/dashboard/teacher/collaboration",
+      icon: <Users2 size={20} />,
+    }, // Screen 250-252
+    {
+      name: "Academic Decision",
+      path: "/dashboard/teacher/academic-decision",
+      icon: <GraduationCap size={20} />,
+    }, // Screens 262-
     {
       name: "Profile Settings",
       path: "/dashboard/teacher/profile",
@@ -160,8 +181,9 @@ const Sidebar = ({ isOpen, onClose }) => {
 
       {/* Sidebar Container */}
       <div
-        className={`h-screen sidebar-width-mobile p-3 md:p-4 flex flex-col fixed left-0 top-0 z-50 transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
-          }`}
+        className={`h-screen sidebar-width-mobile p-3 md:p-4 flex flex-col fixed left-0 top-0 z-50 transition-transform duration-300 ${
+          isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        }`}
       >
         {/* Gradient Container - Updated to Cyan-Blue-Pink */}
         <div className="h-full w-full rounded-3xl bg-gradient-to-b from-cyan-400 via-blue-400 to-pink-400 p-4 flex flex-col text-white shadow-2xl relative overflow-hidden">
@@ -183,8 +205,12 @@ const Sidebar = ({ isOpen, onClose }) => {
               <BookOpen className="h-5 w-5 md:h-6 md:w-6 text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-base md:text-lg tracking-wide">Krimson OS</h1>
-              <p className="text-[10px] md:text-xs text-white/80">Teacher Portal</p>
+              <h1 className="font-bold text-base md:text-lg tracking-wide">
+                Krimson OS
+              </h1>
+              <p className="text-[10px] md:text-xs text-white/80">
+                Teacher Portal
+              </p>
             </div>
           </div>
 
@@ -196,9 +222,10 @@ const Sidebar = ({ isOpen, onClose }) => {
                 to={item.path}
                 onClick={onClose}
                 className={({ isActive }) =>
-                  `flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2.5 md:py-3 rounded-xl transition-all duration-200 min-h-[44px] ${isActive
-                    ? "bg-white text-blue-600 shadow-md font-bold"
-                    : "text-white/90 hover:bg-white/10 hover:translate-x-1"
+                  `flex items-center gap-2 md:gap-3 px-3 md:px-4 py-2.5 md:py-3 rounded-xl transition-all duration-200 min-h-[44px] ${
+                    isActive
+                      ? "bg-white text-blue-600 shadow-md font-bold"
+                      : "text-white/90 hover:bg-white/10 hover:translate-x-1"
                   }`
                 }
               >

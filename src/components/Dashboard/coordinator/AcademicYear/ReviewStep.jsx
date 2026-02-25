@@ -100,6 +100,8 @@ const ReviewStep = ({
   const allHolidays = [
     ...(holidays?.school || []).map((h) => ({ ...h, type: "School" })),
     ...(holidays?.public || []).map((h) => ({ ...h, type: "Public" })),
+    ...(holidays?.training || []).map((h) => ({ ...h, type: "Training" })),
+    ...(holidays?.events || []).map((h) => ({ ...h, type: "Event" })),
   ];
 
   return (
@@ -221,7 +223,11 @@ const ReviewStep = ({
                       className={`text-xs px-2 py-0.5 rounded-full font-medium ${
                         h.type === "School"
                           ? "bg-emerald-100 text-emerald-700"
-                          : "bg-amber-100 text-amber-700"
+                          : h.type === "Public"
+                            ? "bg-amber-100 text-amber-700"
+                            : h.type === "Training"
+                              ? "bg-purple-100 text-purple-700"
+                              : "bg-blue-100 text-blue-700"
                       }`}
                     >
                       {h.type}

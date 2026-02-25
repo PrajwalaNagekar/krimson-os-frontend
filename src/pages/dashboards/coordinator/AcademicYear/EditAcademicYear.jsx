@@ -52,7 +52,7 @@ const EditAcademicYear = () => {
 
   // Step 5: Holidays — pre-filled
   const [holidays, setHolidays] = useState(
-    year?.holidays || { school: [], public: [] },
+    year?.holidays || { school: [], public: [], training: [], events: [] },
   );
 
   // Keep assessmentData in sync when terms added/removed

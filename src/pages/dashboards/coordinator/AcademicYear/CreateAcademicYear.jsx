@@ -44,6 +44,8 @@ const CreateAcademicYear = () => {
   const [holidays, setHolidays] = useState({
     school: [],
     public: [],
+    training: [],
+    events: [],
   });
 
   // When term list changes, keep assessmentData rows in sync

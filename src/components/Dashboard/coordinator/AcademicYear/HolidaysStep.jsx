@@ -3,7 +3,16 @@
  * @description Screen F – Manage school holidays and public holidays.
  */
 import React from "react";
-import { MapPin, ArrowLeft, ArrowRight, Plus, Trash2, Sun } from "lucide-react";
+import {
+  MapPin,
+  ArrowLeft,
+  ArrowRight,
+  Plus,
+  Trash2,
+  Sun,
+  Users,
+  Flag,
+} from "lucide-react";
 
 const inputClass =
   "w-full px-3 py-2.5 rounded-xl border-2 border-slate-200 focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all outline-none text-sm text-slate-800 bg-white";
@@ -28,8 +37,30 @@ const SECTIONS = [
     bg: "bg-amber-50",
     border: "border-amber-200",
     dot: "bg-amber-400",
-    hasRange: false,
+    hasRange: true,
     placeholder: "e.g. Independence Day",
+  },
+  {
+    key: "training",
+    label: "Training Days",
+    icon: Users,
+    color: "text-purple-700",
+    bg: "bg-purple-50",
+    border: "border-purple-200",
+    dot: "bg-purple-400",
+    hasRange: true,
+    placeholder: "e.g. Staff PD Day",
+  },
+  {
+    key: "events",
+    label: "School Events",
+    icon: Flag,
+    color: "text-blue-700",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
+    dot: "bg-blue-400",
+    hasRange: true,
+    placeholder: "e.g. Annual Sports Day",
   },
 ];
 
@@ -76,7 +107,8 @@ const HolidaysStep = ({ holidays, onChangeHolidays, onBack, onNext }) => {
             Holidays & Events
           </h2>
           <p className="text-sm text-slate-500">
-            Add school holidays and public holidays for the academic year.
+            Add school holidays, public holidays, training days, and school
+            events.
           </p>
         </div>
       </div>
